@@ -49,6 +49,7 @@ listing:
     grid-columns: 4
     contents:
       - bios/ian.qmd
+      - bios/camille.qmd
     sort: 
       - "name"
     fields: [image, title, description]
