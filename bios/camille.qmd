@@ -1,0 +1,23 @@
+---
+title: "Camille Giuliano"
+name: "Camille Giuliano"
+image: https://github.com/camillegiuliano/photos/blob/main/pfp.jpg
+comments: false
+about:
+  id: camille
+  template: solana
+  image: https://github.com/camillegiuliano/photos/blob/main/pfp.jpg
+  image-shape: rounded
+links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/camillegiuliano
+    - icon: envelope
+      text: e-mail
+      href: "mailto: camille.giuliano@nrcan-rncan.gc.ca"
+---
+
+::: {#camille}
+Camille works as a forest research analyst at the Pacific Forestry
+Centre.
+:::
