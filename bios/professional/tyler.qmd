@@ -1,0 +1,30 @@
+---
+title: "Tyler Rudolph"
+name: "Tyler Rudolph"
+image: https://gravatar.com/valiantlya46f132164
+comments: false
+about: 
+  id: tyler
+  template: solana
+  image: https://gravatar.com/valiantlya46f132164
+  image-shape: rounded
+  links: 
+    - icon: globe
+      text: webpage
+      href: https://www.researchgate.net/profile/Tyler-Rudolph
+    - icon: github
+      text: GitHub
+      href: https://github.com/tylerdrudolph 
+    - icon: envelope
+      text: e-mail
+      href: "mailto: tyler.rudolph@nrcan-rncan.gc.ca"
+---
+
+::: {#tyler}
+Research Associate\
+Integrative Ecology & Economics Branch, [Great Lakes Forestry
+Centre](https://natural-resources.canada.ca/great-lakes-forestry-centre/13459)\
+[Canadian Forest
+Service](https://natural-resources.canada.ca/our-natural-resources/forests-forestry/the-canadian-forest-service/about-canadian-forest-service/17545),
+[Natural Resources Canada](https://www.nrcan.gc.ca/home)
+:::
