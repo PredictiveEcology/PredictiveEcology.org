@@ -1,52 +1,59 @@
 [
   {
-    "objectID": "workshops/June-2024-SpaDES-workshop.html",
-    "href": "workshops/June-2024-SpaDES-workshop.html",
+    "objectID": "workshops/Nov-2024-SpaDES-workshop.html",
+    "href": "workshops/Nov-2024-SpaDES-workshop.html",
     "title": "Robust and nimble scientific workflows, using SpaDES",
     "section": "",
-    "text": "Signup is still active below – please add your email address if you are interested"
+    "text": "Update: links to presentation files have been added to the agenda.\nIf you missed it, but would like to attend a future workshop, please reach out to Eliot or Ian so that we can add you to the wait list."
   },
   {
-    "objectID": "workshops/June-2024-SpaDES-workshop.html#date-june-11---13-2024",
-    "href": "workshops/June-2024-SpaDES-workshop.html#date-june-11---13-2024",
+    "objectID": "workshops/Nov-2024-SpaDES-workshop.html#date-nov-19---21-2024",
+    "href": "workshops/Nov-2024-SpaDES-workshop.html#date-nov-19---21-2024",
     "title": "Robust and nimble scientific workflows, using SpaDES",
-    "section": "Date: June 11 - 13, 2024",
-    "text": "Date: June 11 - 13, 2024"
+    "section": "Date: Nov 19 - 21, 2024",
+    "text": "Date: Nov 19 - 21, 2024"
   },
   {
-    "objectID": "workshops/June-2024-SpaDES-workshop.html#location-virtual-with-ms-teams",
-    "href": "workshops/June-2024-SpaDES-workshop.html#location-virtual-with-ms-teams",
+    "objectID": "workshops/Nov-2024-SpaDES-workshop.html#location-pacific-forestry-centre",
+    "href": "workshops/Nov-2024-SpaDES-workshop.html#location-pacific-forestry-centre",
     "title": "Robust and nimble scientific workflows, using SpaDES",
-    "section": "Location: Virtual with MS Teams",
-    "text": "Location: Virtual with MS Teams\nThe dates have been finalized!\nThanks to all who filled in the survey below."
+    "section": "Location: Pacific Forestry Centre",
+    "text": "Location: Pacific Forestry Centre\nThis workshop will be in person. We will be 4 people who have worked with SpaDES and ecological models: Eliot McIntire, Ian Eddy, Celine Boisvenue, and Camille Giuliano."
   },
   {
-    "objectID": "workshops/June-2024-SpaDES-workshop.html#tentative-logistics",
-    "href": "workshops/June-2024-SpaDES-workshop.html#tentative-logistics",
+    "objectID": "workshops/Nov-2024-SpaDES-workshop.html#agenda",
+    "href": "workshops/Nov-2024-SpaDES-workshop.html#agenda",
     "title": "Robust and nimble scientific workflows, using SpaDES",
-    "section": "Tentative Logistics",
-    "text": "Tentative Logistics\nThe workshop will be flexible in that you can attend/skip the sessions at your leisure and according to your own availability. Each session will be a combination of relatively short video presentations with “work-on-your-own” time, so that you can advance as fast as you want. We will maintain the virtual chat open throughout the day, including between video sessions, to allow for questions, troubleshooting, conversations etc. A detailed agenda of session times and topics, and details for the virtual room, will be circulated closer to the date.\nWe expect the workshop to run every day from 8:30am to 3:00pm Pacific Time. Our goal is to create a schedule of individual learning modules that we will follow precisely like a conference, so that people can disconnect and reconnect as needed.\nWe are developing a book that we will use for the workshop. We are slowly building up the chapters, please visit if you are curious, but the content will be edited on an ongoing basis until the workshop. (https://predictiveecology.org/training/_book/)\nWe will be updating the logistics for the Workshop here: (https://predictiveecology.org/workshops/June-2024-SpaDES-workshop.html)\nWe look forward to connecting with you all in June!\nCeres and Eliot"
+    "section": "Agenda",
+    "text": "Agenda\n“WOYO”, Work On Your Own + health breaks\nIn each session you will have time to work through the examples and take breaks. We will be present in the room for the entire WOYO period, responding to questions and encouraging discussion. The last 15min of each WOYO will be discussion.\nAll times in Pacific Daylight Time (GMT-7)\nPresentation slides will be added at the end of each day.\n\n\n\nDAY 1\nSpaDES foundations\n\n\n\n9:00 - 10:00\nIntroduction\n\n\n\n\nWorkshop logistics\n\n\n\n\nWhat is SpaDES and why use it?\n\n\n\n\nDownload presentation\n\n\n\n10:00 - 10:30\nIntroduction to SpaDES modules\n\n\n\n10:30 - 11:00\nWOYO and Break\n\n\n\n11:00 - 11:30\nModule files and metadata\n\n\n\n\nDownload presentation\n\n\n\n11:30 - 12:00\nWOYO and Discussion\n\n\n\n12:00 - 1:30\nLUNCH BREAK\n\n\n\n1:30 - 2:00\nModule inputs\n\n\n\n\nDownload presentation\n\n\n\n2:00 - 3:00\nWOYO and Discussion\n\n\n\n3:00 - 3:30\nThe simList\n\n\n\n\nDownload presentation\n\n\n\n3:30 - 4:30\nWOYO and Discussion\n\n\n\nDAY 2\nContinuous workflows with simple examples\n\n\n\n9:00 - 9:30\nRevisit previous WOYO and Day 1\n\n\n\n9:30 - 10:00\nModules & events\n\n\n\n\nEvent scheduling\n\n\n\n\nDownload presentation\n\n\n\n10:00 - 11:00\nWOYO Discussion and Break\n\n\n\n11:00 - 11:30\nContinuous workflows\n\n\n\n\nCaching\n\n\n\n\nDownload presentation\n\n\n\n11:30 - 12:00\nWOYO and Discussion\n\n\n\n12:00 - 1:30\nLUNCH BREAK\n\n\n\n1:30 - 2:00\nprepInputs()\n\n\n\n\nDownload presentation\n\n\n\n2:00 - 3:00\nWOYO and Discussion and Break\n\n\n\n3:00 - 3:30\nSpaDES workflows and projects with setupProject\n\n\n\n\nA simple workflow for an ecological example\n\n\n\n\nDownload presentation\n\n\n\n3:30 - 4:30\nWOYO and Discussion\n\n\n\nDAY 3\nUsing continuous workflows with real challenges\n\n\n\n9:00 - 9:30\nRecap, review |\n\n\n\n9:30 - 10:00\nFlexibility comes at a cost, but it’s worth it! Download presentation\n\n\n\n10:00 - 11:30\nForest carbon\n\n\n\n\nDownload presentation\n\n\n\n11:30 - 12:00\nWOYO and Discussion and Break\n\n\n\n11:30 - 12:00\nWOYO and Discussion\n\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n\n1:30 - 2:00\nForest landscape modelling - parameterisation, | simulation/prediction |\n\n\n\n2:00 - 2:30\nForests and wildfire\n\n\n\n2:30 - 3:00\nWOYO and Discussion and Break\n\n\n\n3:00 - 4:30\nForest Degradation Discussion and Brainstorming\n\n\n\n\nHow do we estimate baselines? What is Natural Range of Variation and how does SpaDES help us?"
   },
   {
-    "objectID": "workshops/June-2024-SpaDES-workshop.html#signup",
-    "href": "workshops/June-2024-SpaDES-workshop.html#signup",
-    "title": "Robust and nimble scientific workflows, using SpaDES",
-    "section": "Signup",
-    "text": "Signup\nIf you are interested in participating, please sign up here. Please also indicate preferences of which topics are of interest and at what level. We will attempt to customize the workshop accordingly.\n\n&lt;p&gt;Loading…&lt;/p&gt;"
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "This list is currently only for Eliot McIntire. To see other members’ publications, see AlexChubaty, Yong Luo, AlanaClason, Sarah Bauduin, Jean Marchal, Sébastien Renard, Ceres Barros"
   },
   {
-    "objectID": "presentations.html#invited-talks",
-    "href": "presentations.html#invited-talks",
-    "title": "Presentations",
-    "section": "Invited Talks",
-    "text": "Invited Talks"
+    "objectID": "posts/2024-10-29-workshop announcement.html",
+    "href": "posts/2024-10-29-workshop announcement.html",
+    "title": "SpaDES Workshop planning for Nov 2024 begins",
+    "section": "",
+    "text": "Final arrangements have been made and dates have been settled!\nI will be leading a 3 day workshop on training with SpaDES with focus on how to use it for Forest Degradation. on Nov 19-21, 2024 in person in Victoria, BC at the Pacific Forestry Centre.\nIf you are interested in a future workshop, virtual or in person, please contact Eliot or Ian."
   },
   {
-    "objectID": "presentations.html#presentations",
-    "href": "presentations.html#presentations",
-    "title": "Presentations",
-    "section": "Presentations",
-    "text": "Presentations"
+    "objectID": "posts/2024-07-03-SpaDESWSsurvey.html",
+    "href": "posts/2024-07-03-SpaDESWSsurvey.html",
+    "title": "SpaDES Workshop - Post-workshop survey",
+    "section": "",
+    "text": "Thank you once again to all who participated in the Robust and nimble scientific workflows, using SpaDES workshop in June 11-13, 2024.\nWe ask all participants - regardless of how many sessions they attended – to fill out the exit survey below.\nYou answers are much needed, as they will help shape and improve future workshops.\n\nLoading…\n\nCeres and Eliot"
+  },
+  {
+    "objectID": "posts/2024-06-06-SpaDES Workshop Agenda.html",
+    "href": "posts/2024-06-06-SpaDES Workshop Agenda.html",
+    "title": "SpaDES Workshop Agenda added",
+    "section": "",
+    "text": "Registration is now closed for the SpaDES workshop in June 11 - 13, 2024, and the outline of the agenda has been posted.\nNote that although the agenda content/timings are unlikely to change much, there might be some minor adjustments in the next few days. Stay tuned!\nThank you,\nEliot and Ceres"
   },
   {
     "objectID": "posts/2024-04-17-SpaDES Workshop announcement.html",
@@ -392,32 +399,53 @@
     "text": "Title\n\n\nDescription\n\n\n\n\n\n\n\n\n\nSpaDES for Dummies\n\n\nGuide to the SpaDES modelling toolkit in R\n\n\n\n\n\n\n\nCreating and integrating simple models in SpaDES\n\n\nThis guide provides a simple and yet comprehensive guide to creating and then integrating SpaDES compatible modules (hereby “SpaDES modules”).\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "bios/yong.html",
-    "href": "bios/yong.html",
+    "objectID": "bios/professional/tyler.html",
+    "href": "bios/professional/tyler.html",
+    "title": "Tyler Rudolph",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Associate\nIntegrative Ecology & Economics Branch, Great Lakes Forestry Centre\nCanadian Forest Service, Natural Resources Canada"
+  },
+  {
+    "objectID": "bios/professional/jonathan.html",
+    "href": "bios/professional/jonathan.html",
+    "title": "Jonathan Van Elslander",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, Natural Resources Canada, Canadian Forest Service, Victoria, BC."
+  },
+  {
+    "objectID": "bios/professional/camille.html",
+    "href": "bios/professional/camille.html",
+    "title": "Camille Giuliano",
+    "section": "",
+    "text": "Research Associate, Natural Resources Canada, Canadian Forest Service, Victoria, BC."
+  },
+  {
+    "objectID": "bios/past/yong.html",
+    "href": "bios/past/yong.html",
     "title": "Dr. Yong Luo",
     "section": "",
     "text": "LinkedIn\n  \n\n      \n(Postdoctoral Fellow 2017)"
   },
   {
-    "objectID": "bios/sarah.html",
-    "href": "bios/sarah.html",
+    "objectID": "bios/past/sarah.html",
+    "href": "bios/past/sarah.html",
     "title": "Dr. Sarah Bauduin",
     "section": "",
     "text": "webpage\n  \n\n      \n(PhD 2017)"
   },
   {
-    "objectID": "bios/josh.html",
-    "href": "bios/josh.html",
+    "objectID": "bios/past/josh.html",
+    "href": "bios/past/josh.html",
     "title": "Dr Josh Nowak",
     "section": "",
     "text": "webpage\n  \n\n      \n(PhD 2015)"
   },
   {
-    "objectID": "bios/ian.html",
-    "href": "bios/ian.html",
-    "title": "Ian Eddy",
+    "objectID": "bios/past/alana.html",
+    "href": "bios/past/alana.html",
+    "title": "Dr Alana Clason",
     "section": "",
-    "text": "LinkedIn\n  \n\n      \n(Canadian Forest Service – Geospatial Scientist 2018 - )\nIan works part time with our team on various topics related to cumulative effects, GIS, SpaDES, modeling and data analytics."
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch fellow at the Bulkley Valley Research Centre.\nAlana’s PhD was completed in 2018.\nDissertation title:\nWhitebark pine at the northern edge: current constraints and future potential northern distribution under a changing climate."
   },
   {
     "objectID": "bios/current/genevieve.html",
@@ -462,39 +490,18 @@
     "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia & Université Laval\nMy research interests lie in applied ecology, conservation and forecasting of a broad array of ecosystems and species. Specifically, I am interested in using modern quantitative techniques to understand the natural complexity of ecosystems, ultimately, to allow forecasting of organisms and ecosystem processes. I use a variety of quantitative techniques, including Hierarchical Bayes, Spatial Analysis, Landscape Simulation Modeling, Structural Equation Modeling, and Non-Linear Models to achieve the best ecological inference from ecological data. Through each of the systems I study, I strive to understand the ecological processes and to test this understanding by forecasting."
   },
   {
-    "objectID": "benchmarking.html",
-    "href": "benchmarking.html",
-    "title": "Benchmarking",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Predictive Ecology Community",
     "section": "",
-    "text": "Introduction\nWe started benchmarking R with a series of low and high level functions. The objective of this experiment is to show some speed comparisons between R and other languages and software, including C++ and GIS software. Clearly this is NOT a comparison between R and, say, C++, because many of the functions in R are written in C++ and are wrapped in R. But, if simple R functions are fast, then we can focus our time on more complex things needed for simulation and science.\nSo, is R fast enough?\nAnswer: R is more than fast enough!\n\n\nBenchmarking posts\n\n{% for post in site.tags.benchmark limit: 20 %}\n\n&lt;li&gt;\n     &lt;a href=\"{{ post.url }}\"&gt;{{ post.title }}&lt;/a&gt;\n     &lt;span&gt;({{ post.date | date:\"%Y-%m-%d\" }})&lt;/span&gt;\n&lt;/li&gt;\n&lt;/div&gt;\n{% endfor %}"
-  },
-  {
-    "objectID": "Workshops.html#upcoming-workshops",
-    "href": "Workshops.html#upcoming-workshops",
-    "title": "Workshops",
-    "section": "Upcoming workshops",
-    "text": "Upcoming workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for ecological applications\n\n\nMay 8, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "Workshops.html#past-workshops",
-    "href": "Workshops.html#past-workshops",
-    "title": "Workshops",
-    "section": "Past workshops",
-    "text": "Past workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\nvideo\n\n\n\n\n\n\n\n\n\nSpaDES Workshop at EFI\n\n\nSpades Workshop at EFI\n\n\nApr 15, 2024\n\n\nundefined\n\n\n\n\n\n\nNo matching items\n\n\n\nVideos"
-  },
-  {
-    "objectID": "Workshops.html#pre-covid-workshops",
-    "href": "Workshops.html#pre-covid-workshops",
-    "title": "Workshops",
-    "section": "Pre-COVID workshops",
-    "text": "Pre-COVID workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2021\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2019\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nSep 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nMay 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nDec 7, 2016\n\n\n\n\n\n\nNo matching items"
+    "text": "This site assembles an up to date collection of contributors to Predictive Ecology, primarily through the use of SpaDES. We are connected through the common goal of upholding the principles of PERFICT so that we can create a dynamic network of interconnected science modules. The community has active members in Europe and across Canada.\nThe Predictive Ecology Community began in Victoria, British Columbia, Canada, at the Pacific Forestry Centre and at Laval University, Quebec in 2015. Since then, students and postdocs have been primarily at University of British Columbia and Université Laval.\n\nResearchers\n\n\n\n\n\n\n\n\n\n\nDr Eliot McIntire\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Alex Chubaty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Barry Cooke\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Céline Boisvenue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Ceres Barros\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Frances Stewart\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Julie Turner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Steve Cumming\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Tati Micheletti\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nResearch Professional\n\n\n\n\n\n\n\n\n\n\nAllen Larocque\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCamille Giuliano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIan Eddy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJonathan Van Elslander\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSusan Murray\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTyler Rudolph\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nCurrent students/post docs\n\n\n\n\n\n\n\n\n\n\nAna Raymundo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeneviève Degré-Timmons\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsolde Lane Shaw\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nFormer Personnel\n\n\n\n\n\n\n\n\n\n\nDr Alana Clason\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Jean Marchal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Josh Nowak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMario van Telgen\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Sarah Bauduin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSebastien Renard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Yong Luo\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPrior to 2015\n\nÉmilie Tarroux (Post Doctoral Fellow 2015) Facilitation in the boreal forest.\nJulien Beguin (PhD 2013) Caribou, harvesting and fire in the North Shore of Quebec.\nJulia Chacon Labella (PhD - Visiting 2013) Facilitation in semi-arid ecosystems.\nChristian Roy (PhD - 2011) Continental-scale understanding of duck populations.\nPierre Racine (Research Professional 2013) Review of existing modeling platforms\nGhislain Rompré (Post Doctoral Fellow 2009) Modeling endangered butterflies.\nPamela Garcia-Cournoyer (MSc 2010) Harvesting and conservation in Quebec.\nÉmilie Allard (MSc 2009) Understanding deer movement and habitat use in the Upper Laurentian region.\nMelanie Smith (MSc 2008) Spatial goshawk modeling.\nCéline Macabiau (PhD 2009) Spatial population dynamics of spruce grouse in Quebec.\nFrancesca Marucco (PhD 2009) Modeling wolf recolonization in the European Alps. (University of Montana, Supervisor: Dan Pletscher).\nMotoshi Honda (MSc 2008) Hydrology\nAlex Fajardo (Post Doctoral Fellow 2006) Facilitation in Chilean mountain ecosystems.\n\n\n\nCo-op students\n\nTrevor Schiavone (UVic 2015) SpaDES GUI development.\nBrandon Leech (UVic 2015) SpaDES GUI development.\nGreg Zhang (UBC 2015) SpaDES developer.\nAlexander Tso (UBC 2016)\nGreyson Wang (SFU 2015)\nOlivia Sung (UBC 2015)"
   },
   {
     "objectID": "SpaDES.html",
     "href": "SpaDES.html",
     "title": "SpaDES",
     "section": "",
-    "text": "SpaDES is a metapackage for R that facilitates PERFICT workflows. It began as a tool for spatial simulation for Ecology, but it has evolved over time."
+    "text": "SpaDES is a metapackage for R that facilitates PERFICT workflows. It began as a tool for spatial simulation for Ecology, but it has evolved over time to the more general Spatial Discrete Event System."
   },
   {
     "objectID": "SpaDES.html#links",
@@ -532,18 +539,32 @@
     "text": "This page is still under construction\nThis table links to a collection of projects that the Predictive Ecology Community, as presented on this web page, is involved in. There may be other SpaDES projects that we are not aware of that are not presented here.\n\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nLast-updated\n\n\n\n\n\n\n\n\n\nWestern Boreal Initiative\n\n\nA large project that is addressing climate and cumulative effects on landscapes of the western boreal forests of Canada\n\n\n2024-04-17\n\n\n\n\n\n\n\nCASTOR\n\n\nCastor - Forest and Land Use Simulator\n\n\n2024-04-17\n\n\n\n\n\n\n\nLANDWEB\n\n\nDefine historical NRV conditions at landscape scales across 140 million ha of the western boreal\n\n\n2024-04-17\n\n\n\n\n\n\n\nLandscapes in Motion\n\n\nA study to inform future management and policy in this important region of Alberta.\n\n\n2022-04-17\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Predictive Ecology Community",
-    "section": "",
-    "text": "This site assembles an up to date collection of contributors to Predictive Ecology, primarily through the use of SpaDES. We are connected through the common goal of upholding the principles of PERFICT so that we can create a dynamic network of interconnected science modules. The community has active members in Europe and across Canada.\nThe Predictive Ecology Community began in Victoria, British Columbia, Canada, at the Pacific Forestry Centre and at Laval University, Quebec in 2015. Since then, students and postdocs have been primarily at University of British Columbia and Université Laval.\n\nResearchers\n\n\n\n\n\n\n\n\n\n\nDr Eliot McIntire\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Alex Chubaty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Barry Cooke\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Céline Boisvenue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Ceres Barros\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Frances Stewart\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Julie Turner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Steve Cumming\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Tati Micheletti\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nCurrent students/post docs\n\n\n\n\n\n\n\n\n\n\nAna Raymundo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeneviève Degré-Timmons\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsolde Lane Shaw\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nResearch Professional\n\n\n\n\n\n\n\n\n\n\nIan Eddy\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nFormer Personnel\n\n\n\n\n\n\n\n\n\n\nDr Alana Clason\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Jean Marchal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Josh Nowak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMario van Telgen\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Sarah Bauduin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSebastien Renard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Yong Luo\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPrior to 2015\n\nÉmilie Tarroux (Post Doctoral Fellow 2015) Facilitation in the boreal forest.\nJulien Beguin (PhD 2013) Caribou, harvesting and fire in the North Shore of Quebec.\nJulia Chacon Labella (PhD - Visiting 2013) Facilitation in semi-arid ecosystems.\nChristian Roy (PhD - 2011) Continental-scale understanding of duck populations.\nPierre Racine (Research Professional 2013) Review of existing modeling platforms\nGhislain Rompré (Post Doctoral Fellow 2009) Modeling endangered butterflies.\nPamela Garcia-Cournoyer (MSc 2010) Harvesting and conservation in Quebec.\nÉmilie Allard (MSc 2009) Understanding deer movement and habitat use in the Upper Laurentian region.\nMelanie Smith (MSc 2008) Spatial goshawk modeling.\nCéline Macabiau (PhD 2009) Spatial population dynamics of spruce grouse in Quebec.\nFrancesca Marucco (PhD 2009) Modeling wolf recolonization in the European Alps. (University of Montana, Supervisor: Dan Pletscher).\nMotoshi Honda (MSc 2008) Hydrology\nAlex Fajardo (Post Doctoral Fellow 2006) Facilitation in Chilean mountain ecosystems.\n\n\n\nCo-op students\n\nTrevor Schiavone (UVic 2015) SpaDES GUI development.\nBrandon Leech (UVic 2015) SpaDES GUI development.\nGreg Zhang (UBC 2015) SpaDES developer.\nAlexander Tso (UBC 2016)\nGreyson Wang (SFU 2015)\nOlivia Sung (UBC 2015)"
+    "objectID": "Workshops.html#upcoming-workshops",
+    "href": "Workshops.html#upcoming-workshops",
+    "title": "Workshops",
+    "section": "Upcoming workshops",
+    "text": "Upcoming workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Forest Degradation\n\n\nJan 24, 2025\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for ecological applications\n\n\nJan 24, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "bios/alana.html",
-    "href": "bios/alana.html",
-    "title": "Dr Alana Clason",
+    "objectID": "Workshops.html#past-workshops",
+    "href": "Workshops.html#past-workshops",
+    "title": "Workshops",
+    "section": "Past workshops",
+    "text": "Past workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\nvideo\n\n\n\n\n\n\n\n\n\nSpaDES Workshop at EFI\n\n\nSpades Workshop at EFI\n\n\nApr 15, 2024\n\n\nundefined\n\n\n\n\n\n\nNo matching items\n\n\n\nVideos"
+  },
+  {
+    "objectID": "Workshops.html#pre-covid-workshops",
+    "href": "Workshops.html#pre-covid-workshops",
+    "title": "Workshops",
+    "section": "Pre-COVID workshops",
+    "text": "Pre-COVID workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2021\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2019\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nSep 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nMay 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nDec 7, 2016\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "benchmarking.html",
+    "href": "benchmarking.html",
+    "title": "Benchmarking",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch fellow at the Bulkley Valley Research Centre.\nAlana’s PhD was completed in 2018.\nDissertation title:\nWhitebark pine at the northern edge: current constraints and future potential northern distribution under a changing climate."
+    "text": "Introduction\nWe started benchmarking R with a series of low and high level functions. The objective of this experiment is to show some speed comparisons between R and other languages and software, including C++ and GIS software. Clearly this is NOT a comparison between R and, say, C++, because many of the functions in R are written in C++ and are wrapped in R. But, if simple R functions are fast, then we can focus our time on more complex things needed for simulation and science.\nSo, is R fast enough?\nAnswer: R is more than fast enough!\n\n\nBenchmarking posts\n\n{% for post in site.tags.benchmark limit: 20 %}\n\n&lt;li&gt;\n     &lt;a href=\"{{ post.url }}\"&gt;{{ post.title }}&lt;/a&gt;\n     &lt;span&gt;({{ post.date | date:\"%Y-%m-%d\" }})&lt;/span&gt;\n&lt;/li&gt;\n&lt;/div&gt;\n{% endfor %}"
   },
   {
     "objectID": "bios/community/alex.html",
@@ -557,7 +578,7 @@
     "href": "bios/community/celine.html",
     "title": "Dr Céline Boisvenue",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia\nI am a Research Scientist with the Canadian Forest Service, in Victoria BC. All my research is applied to understanding forests, modelling them as well as possible given available data, to support science-based management and policy development. My research activities provide scientific support for Canada’s greenhouse gas (GHG) balance for forests under international reporting obligations, and contribute to the next generation of models for forest GHG estimates. I was a practicing forester and a biometrics consultant prior to becoming a researcher. I am therefore well positioned to provide viable solutions for both management and policy development. My recent focus has been on regional spatio-temporal modelling and the integration of remotely-sensed products into forest dynamics models. My masters from UBC biometrics (http://biometrics.forestry.ubc.ca/ ), and my PhD is from the Numerical Terradynamic Simulation group (NTSG - http://www.ntsg.umt.edu/), a NASA Earth Science Information Partner (http://www.esipfed.org/) at the University of Montana."
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia\nUniversity of Alberta, WISEST profile\nI am a Research Scientist with the Canadian Forest Service, in Victoria BC. All my research is applied to understanding forests, modelling them as well as possible given available data, to support science-based management and policy development. My research activities provide scientific support for Canada’s greenhouse gas (GHG) balance for forests under international reporting obligations, and contribute to the next generation of models for forest GHG estimates. I was a practicing forester and a biometrics consultant prior to becoming a researcher. I am therefore well positioned to provide viable solutions for both management and policy development. My recent focus has been on regional spatio-temporal modelling and the integration of remotely-sensed products into forest dynamics models. My masters from UBC biometrics (http://biometrics.forestry.ubc.ca/ ), and my PhD is from the Numerical Terradynamic Simulation group (NTSG - http://www.ntsg.umt.edu/), a NASA Earth Science Information Partner (http://www.esipfed.org/) at the University of Montana."
   },
   {
     "objectID": "bios/community/frances.html",
@@ -588,25 +609,46 @@
     "text": "webpage\n  \n\n      \n(PhD Student 2018 - )\nA student at Laval University."
   },
   {
-    "objectID": "bios/jean.html",
-    "href": "bios/jean.html",
+    "objectID": "bios/past/jean.html",
+    "href": "bios/past/jean.html",
     "title": "Dr. Jean Marchal",
     "section": "",
     "text": "webpage\n  \n\n      \n(PhD 2017)"
   },
   {
-    "objectID": "bios/mario.html",
-    "href": "bios/mario.html",
+    "objectID": "bios/past/mario.html",
+    "href": "bios/past/mario.html",
     "title": "Mario van Telgen",
     "section": "",
     "text": "webpage\n  \n\n      \n(PhD)"
   },
   {
-    "objectID": "bios/sebastien.html",
-    "href": "bios/sebastien.html",
+    "objectID": "bios/past/sebastien.html",
+    "href": "bios/past/sebastien.html",
     "title": "Sebastien Renard",
     "section": "",
     "text": "webpage\n  \n\n      \n(PhD)"
+  },
+  {
+    "objectID": "bios/professional/allen.html",
+    "href": "bios/professional/allen.html",
+    "title": "Allen Larocque",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, Natural Resources Canada, Canadian Forest Service, Victoria, BC."
+  },
+  {
+    "objectID": "bios/professional/ian.html",
+    "href": "bios/professional/ian.html",
+    "title": "Ian Eddy",
+    "section": "",
+    "text": "LinkedIn\n  \n\n      \n(Canadian Forest Service – Geospatial Scientist 2018 - )\nIan works part time with our team on various topics related to cumulative effects, GIS, SpaDES, modeling and data analytics."
+  },
+  {
+    "objectID": "bios/professional/susan.html",
+    "href": "bios/professional/susan.html",
+    "title": "Susan Murray",
+    "section": "",
+    "text": "Research Associate, Natural Resources Canada, Canadian Forest Service, Victoria, BC."
   },
   {
     "objectID": "index.html",
@@ -1127,10 +1169,59 @@
     "text": "Dates and format finalized for Workshop Jun 11 - 13, 2024!\nDr. Ceres Barros and I will be leading a 3 day workshop on Robust and nimble scientific workflows, using SpaDES.\nPlease sign up if you are interested\nThank you,\nEliot and Ceres"
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "posts/2024-07-03-SpaDESWS notes in book.html",
+    "href": "posts/2024-07-03-SpaDESWS notes in book.html",
+    "title": "SpaDES Workshop Book Improvements",
     "section": "",
-    "text": "This list is currently only for Eliot McIntire. To see other members’ publications, see AlexChubaty, Yong Luo, AlanaClason, Sarah Bauduin, Jean Marchal, Sébastien Renard, Ceres Barros"
+    "text": "As promised, we have now incorporated many notes from our June workshop into the “training book” Robust and nimble scientific workflows, using SpaDES, and fixed a few examples that needed attention.\nPlease have a look again at the troubleshooting section of the book where many of the package installation issues reported during the workshop are addressed.\nOur work on the book contents is by no means done and the book will continue to be improved.\nIf you spot any issues, please let us know via GitHub Issues.\nCeres and Eliot"
+  },
+  {
+    "objectID": "posts/2024-07-03-terra transition.html",
+    "href": "posts/2024-07-03-terra transition.html",
+    "title": "Our transition to terra from raster",
+    "section": "",
+    "text": "We have been asked multiple times how we are “dealing with the transition from raster to terra”. The answer is, somewhat painfully and more slowly than we had hoped for.\nMuch of what we do involves manipulating spatial objects (raster or vector data) be it for data extraction (e.g., extracting data for statistical modelling), results production (e.g., outputting results spatially) or visualisation (e.g., making maps) and our packages and SpaDES modules were deeply intertwined with the raster and sp packages.\nWe have started the transition more than a year ago and still haven’t finished. Part of the reason why this takes so long is because we are attempting to keep backwards compatibility. Which take us to the purpose of this post.\nOur advice to others in the same transition journey as us:\n\nTry to keep backwards compatibility. Many terra functions allow passing Raster* class objects. Where they don’t, make your own function wrappers to deal with this. We have a few in the reproducible and LandR (on GitHub) packages (see table bellow)\nTest. A LOT.\n\nThat’s all really.\nBelow is a lit of raster to terra (or other packages) function equivalencies that may be useful. Note that these are likely to change as terra and other packages evolve.\nSee also the description of terra methods for more useful information.\n\n\n\n\n\n\nraster package\n\n\n\n\nterra or other packages\n\n\n\n\n\n\nras[]\n\n\n\n\nas.vec t o r(ras[])as.vector(values(ras))\n\n\n\n\n\n\ncompareCRS\n\n\n\n\nFor now, LandR::.compareCRS – only 2 rasters LandR::.compareRas – multiple rasters\n\n\n\n\n\n\nmaxValue, minValue\n\n\n\n\nminmax or reproducible::minFn, reproducible::maxFn\n\n\n\n\n\n\ncompareRaster\n\n\n\n\nterra::compareGeom – more sensitive than st_crs(x) == st_crs(y) and returns false negatives in many situations.  Alternatives are: sf::st_crs(x) == s f::st_crs(y)LandR::.compareRas\n\n\n\n\n\n\ngetValues\n\n\n\n\nSpatRaster[] returns a matrix, even if it is just one layer; RasterLayer[] returns a vector; RasterStack[] returns a matrix  For consistency, use: reproducible::values2 which replicates the old RasterLayer/RasterStack behaviour of vector if 1 layer, matrix if &gt; 1 layer, using internally: terra:: v a lues(ras, mat = nlyr(ras) &gt; 1) if ras is a RasterLayer \n\n\n\n\n\n\nsetValues\n\n\n\n\nras[] &lt;-\n\n\n\n\n\n\nextract, mask, ncell, cover\n\n\n\n\nSame function names in terra, all compatible with RasterLayer and RasterStack\n\n\n\n\n\n\nraster(ras)\n\n\n\n\nUsed to create a template raster.\n\n\nterra equivalent is: rast(ras)\n\n\nreproducible::rasterRead can use either, depending on value of getO p t ion(“reproducible.rasterRead”)\n\n\n\n\n\n\nraster(filepath)\n\n\n\n\nUsed to load a raster from a file.\n\n\nterra equivalent is rast(filepath)\n\n\nreproducible::rasterRead can use either, depending on value of getO p t ion(“reproducible.rasterRead”)\n\n\n\n\n\n\nlayerNames\n\n\n\n\nnames\n\n\n\n\n\n\nextent\n\n\n\n\nterra::ext – compatible with RasterLayer and RasterStack\n\n\n\n\n\n\nres\n\n\n\n\nterra::res – compatible with RasterLayer and RasterStack\n\n\n\n\n\n\nnlayers\n\n\n\n\nlength(names(ras)) or terra::nlyr; new transition function reproducible::nlayers2 works with either RasterLayer or SpatRaster\n\n\n\n\n\n\nas.integer(ras) doesn’t work for SpatRaster … this also doesn’t work: ras[] &lt;- as.integer(ras[])\n\n\n\n\nras &lt;- LandR::asInt(ras) works on RasterLayer or SpatRaster\n\n\nLandR::isInt # the equivalent for is.integer \n\n\n\n\n\n\nsetColors\n\n\n\n\nSee terra::coltab \n\n\n\n\n\n\nsubs\n\n\n\n\nterra::subst – but arguments are different\n\n\n\n\n\n\nfasterize::fasterize\n\n\n\n\nNo equivalent for SpatVector objects yet.\n\n\nUse terra::rasterize but this appears to be slow at the moment. sf objects may need to be converted to a temporary SpatVector\n\n\n\n\n\n\nSpaDES.core::Plots(ras)\n\n\n\n\nUse\n\n\nSpaDES.core::Plo t s (ras, fn = LandR::plotRast, …) available in LandRdevelopment\n\n\n\n\n\n\nquickPlot::Plot(ras)\n\n\n\n\nquickPlot::Plot(ras) – accepts SpatRaster\n\n\n\n\n\n\nraster::dataType\n\n\n\n\nEquivalent in terra is datatype (notice different capitalization)\n\n\nreproducible::dataType2 works on RasterLayer and SpatRaster\n\n\n\n\n\n\nxyFromCell\n\n\n\n\nterra::xyFromCell(…, cell) does not accept (unlike r aster::xyFromCell(…, cell)) Passing as.vector(cell) will work with RasterLayer and SpatRaster\n\n\n\n\n\n\nclump()\n\n\n\n\npatches()\n\n\n\n\n\n\nfilename()\n\n\n\n\nEquivalent in terra is sources() reproducible::Filenames() works on either RasterLayer or SpatRaster"
+  },
+  {
+    "objectID": "presentations.html#invited-talks",
+    "href": "presentations.html#invited-talks",
+    "title": "Presentations",
+    "section": "Invited Talks",
+    "text": "Invited Talks"
+  },
+  {
+    "objectID": "presentations.html#presentations",
+    "href": "presentations.html#presentations",
+    "title": "Presentations",
+    "section": "Presentations",
+    "text": "Presentations"
+  },
+  {
+    "objectID": "workshops/June-2024-SpaDES-workshop.html",
+    "href": "workshops/June-2024-SpaDES-workshop.html",
+    "title": "Robust and nimble scientific workflows, using SpaDES",
+    "section": "",
+    "text": "Registration for this workshop is now closed.\nUpdate: links to presentation files have been added to the agenda.\nIf you missed it, but would like to attend a future workshop, please reach out to Eliot or Ceres so that we can add you to the wait list."
+  },
+  {
+    "objectID": "workshops/June-2024-SpaDES-workshop.html#date-june-11---13-2024",
+    "href": "workshops/June-2024-SpaDES-workshop.html#date-june-11---13-2024",
+    "title": "Robust and nimble scientific workflows, using SpaDES",
+    "section": "Date: June 11 - 13, 2024",
+    "text": "Date: June 11 - 13, 2024"
+  },
+  {
+    "objectID": "workshops/June-2024-SpaDES-workshop.html#location-virtual-with-ms-teams",
+    "href": "workshops/June-2024-SpaDES-workshop.html#location-virtual-with-ms-teams",
+    "title": "Robust and nimble scientific workflows, using SpaDES",
+    "section": "Location: Virtual with MS Teams",
+    "text": "Location: Virtual with MS Teams\nMeeting link will be e-mailed to all workshop participants."
+  },
+  {
+    "objectID": "workshops/June-2024-SpaDES-workshop.html#agenda",
+    "href": "workshops/June-2024-SpaDES-workshop.html#agenda",
+    "title": "Robust and nimble scientific workflows, using SpaDES",
+    "section": "Agenda",
+    "text": "Agenda\n“WOYO”, Work On Your Own + health breaks\nIn each session you will have time to work through the examples and take breaks. We will be monitoring the chat the entire WOYO period, responding to questions. Plus, the last 15min of each WOYO will be with “open video and chat” to ask questions and discuss as a group. Where appropriate, we can jump into video earlier for discussion.\nAll times in Pacific Daylight Time (GMT-7)\nPresentation slides will be added at the end of each day.\n\n\n\nDAY 1\nSpaDES foundations\n\n\n8:30 - 9:20\nIntroduction\n\n\n\nWorkshop logistics\n\n\n\nWhat is SpaDES and why use it?\n\n\n\nDownload presentation\n\n\n9:30 - 10:00\nIntroduction to SpaDES modules\n\n\n10:00 - 11:00\nWOYO\n\n\n11:00 - 11:30\nModule files and metadata\n\n\n\nDownload presentation\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nModule inputs\n\n\n\nDownload presentation\n\n\n2:00 - 3:00\nWOYO\n\n\n3:00 - 3:30\nThe simList\n\n\n\nDownload presentation\n\n\n3:30 - free ending\nor\nnext morning for earlier time zones\nWOYO\n\n\nDAY 2\nContinuous workflows with simple examples\n\n\n8:30 - 9:00\nRevisit previous WOYO and Day 1\n\n\n9:00 - 9:30\nModules & events\n\n\n\nEvent scheduling\n\n\n\nDownload presentation\n\n\n9:30 - 11:00\nWOYO\n\n\n11:00 - 11:30\nContinuous workflows\n\n\n\nCaching\n\n\n\nDownload presentation\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nprepInputs()\n\n\n\nDownload presentation\n\n\n2:00 - 3:00\nWOYO\n\n\n3:00 - 3:30\nSpaDES workflows and projects with setupProject\n\n\n\nA simple workflow for an ecological example\n\n\n\nDownload presentation\n\n\n3:30 - free | WOYO ending  | or\nnext morning | for earlier | time zones |\n\n\n\nDAY 3\nUsing continuous workflows with real challenges\n\n\n8:30 - 9:00\nRevisit previous WOYO and Day 2\n\n\n9:00 - 9:30\nFlexibility comes at a cost, but it’s worth it!\n\n\n\nDownload presentation\n\n\n9:30 - 10:00\nForest landscape modelling - parameterisation, simulation/prediction\n\n\n10:00 - 11:00\nWOYO\n\n\n11:00 - 11:30\nForest landscape modelling - turn plotting on, extend the simulation, scenarios\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nForests and wildfire\n\n\n2:00 - 3:00\nWOYO"
   }
 ]

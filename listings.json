@@ -4,20 +4,6 @@
     "items": []
   },
   {
-    "listing": "/Workshops.html",
-    "items": [
-      "/workshops/June-2024-SpaDES-workshop.html"
-    ]
-  },
-  {
-    "listing": "/Manuals.html",
-    "items": []
-  },
-  {
-    "listing": "/Projects.html",
-    "items": []
-  },
-  {
     "listing": "/about.html",
     "items": [
       "/bios/community/aaaeliot.html",
@@ -29,22 +15,47 @@
       "/bios/community/julie.html",
       "/bios/community/steve.html",
       "/bios/community/tati.html",
+      "/bios/professional/allen.html",
+      "/bios/professional/camille.html",
+      "/bios/professional/ian.html",
+      "/bios/professional/jonathan.html",
+      "/bios/professional/susan.html",
+      "/bios/professional/tyler.html",
       "/bios/current/ana.html",
       "/bios/current/genevieve.html",
       "/bios/current/isolde.html",
-      "/bios/ian.html",
-      "/bios/alana.html",
-      "/bios/jean.html",
-      "/bios/josh.html",
-      "/bios/mario.html",
-      "/bios/sarah.html",
-      "/bios/sebastien.html",
-      "/bios/yong.html"
+      "/bios/past/alana.html",
+      "/bios/past/jean.html",
+      "/bios/past/josh.html",
+      "/bios/past/mario.html",
+      "/bios/past/sarah.html",
+      "/bios/past/sebastien.html",
+      "/bios/past/yong.html"
+    ]
+  },
+  {
+    "listing": "/Manuals.html",
+    "items": []
+  },
+  {
+    "listing": "/Projects.html",
+    "items": []
+  },
+  {
+    "listing": "/Workshops.html",
+    "items": [
+      "/workshops/Nov-2024-SpaDES-workshop.html",
+      "/workshops/June-2024-SpaDES-workshop.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024-06-06-SpaDES Workshop Agenda.html",
+      "/posts/2024-10-29-workshop announcement.html",
+      "/posts/2024-07-03-SpaDESWS notes in book.html",
+      "/posts/2024-07-03-SpaDESWSsurvey.html",
+      "/posts/2024-07-03-terra transition.html",
       "/posts/2024-05-07-SpaDES Workshop Confirmation.html",
       "/posts/2024-04-17-SpaDES Workshop announcement.html",
       "/posts/2023-09-08-phd-announcement.html",
