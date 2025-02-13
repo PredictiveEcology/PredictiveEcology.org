@@ -455,88 +455,46 @@
     "text": "webpage\n  \n\n      \n(PhD Student 2021 - )\nGeneviève is working on questions related to lichen and caribou in Northwest Territories. A student at Laval University. |"
   },
   {
-    "objectID": "bios/community/tati.html",
-    "href": "bios/community/tati.html",
-    "title": "Dr Tati Micheletti",
+    "objectID": "bios/current/ana.html",
+    "href": "bios/current/ana.html",
+    "title": "Ana Raymundo",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, TU Dresden, Germany.\nPreviously, Tati was a postdoc and research associate with at University of British Columbia from 2017-2023.\nTati has been asking questions about managing land in Canada when there are multiple, conflicting management pressures. She has been specializing in SpaDES model development, bird and caribou forecasting, protected areas optimization, and trade-offs/synergies across disciplines."
+    "text": "webpage\n  \n\n      \n(PhD Student 2018 - )\nAna is working on questions related to forestry and birds across Canada. A student at Laval University, she is currently in Victoria learning the SpaDES ecosystem."
   },
   {
-    "objectID": "bios/community/julie.html",
-    "href": "bios/community/julie.html",
-    "title": "Dr Julie Turner",
+    "objectID": "bios/community/steve.html",
+    "href": "bios/community/steve.html",
+    "title": "Dr Steve Cumming",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, Biodiversity Pathways.\nJulie has been collaborating with the Predictive Ecology group on issues related to caribou since 2021."
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nProfessor, Université Laval"
   },
   {
-    "objectID": "bios/community/ceres.html",
-    "href": "bios/community/ceres.html",
-    "title": "Dr Ceres Barros",
+    "objectID": "bios/community/frances.html",
+    "href": "bios/community/frances.html",
+    "title": "Dr Frances Stewart",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAs part of the Predictive Ecology Lab, Ceres worked on mixed severity spatial fire modelling and the associated vegetation changes that go with it, as part of the Landscapes in Motion project. She then worked on on ecological forecasting of permafrost, disturbance, and vegetation in Northwest Territories, in a collaboration with the Forest Ecology Lab at Wilfrid Laurier University, as part of the Northern Water Futures project.\nAfter spending some time as Climate Change Research Ecologist at the BC Ministry of Forests, Ceres took a Research Scientist position at the Pacific Forestry Centre, Canadian Forest Service where she continues to actively collaborate with the Predictive Ecology Community."
+    "text": "webpage\n  \n\n      \nCanada Research Chair, Northern Wildlife, Laurier University.\nFrances initially joined the Predictive Ecology community as a Postdoctoral Fellow with the from 2019-2021. She is now the head of the Wild Lab at Laurier University."
   },
   {
-    "objectID": "bios/community/barry.html",
-    "href": "bios/community/barry.html",
-    "title": "Dr. Barry Cooke",
+    "objectID": "bios/community/celine.html",
+    "href": "bios/community/celine.html",
+    "title": "Dr Céline Boisvenue",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada"
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia\nUniversity of Alberta, WISEST profile\nI am a Research Scientist with the Canadian Forest Service, in Victoria BC. All my research is applied to understanding forests, modelling them as well as possible given available data, to support science-based management and policy development. My research activities provide scientific support for Canada’s greenhouse gas (GHG) balance for forests under international reporting obligations, and contribute to the next generation of models for forest GHG estimates. I was a practicing forester and a biometrics consultant prior to becoming a researcher. I am therefore well positioned to provide viable solutions for both management and policy development. My recent focus has been on regional spatio-temporal modelling and the integration of remotely-sensed products into forest dynamics models. My masters from UBC biometrics (http://biometrics.forestry.ubc.ca/ ), and my PhD is from the Numerical Terradynamic Simulation group (NTSG - http://www.ntsg.umt.edu/), a NASA Earth Science Information Partner (http://www.esipfed.org/) at the University of Montana."
   },
   {
-    "objectID": "bios/community/aaaeliot.html",
-    "href": "bios/community/aaaeliot.html",
-    "title": "Dr Eliot McIntire",
+    "objectID": "bios/community/alex.html",
+    "href": "bios/community/alex.html",
+    "title": "Dr Alex Chubaty",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia & Université Laval\nMy research interests lie in applied ecology, conservation and forecasting of a broad array of ecosystems and species. Specifically, I am interested in using modern quantitative techniques to understand the natural complexity of ecosystems, ultimately, to allow forecasting of organisms and ecosystem processes. I use a variety of quantitative techniques, including Hierarchical Bayes, Spatial Analysis, Landscape Simulation Modeling, Structural Equation Modeling, and Non-Linear Models to achieve the best ecological inference from ecological data. Through each of the systems I study, I strive to understand the ecological processes and to test this understanding by forecasting."
+    "text": "webpage\n  \n\n      \nPresident, FOR-CAST Research & Analytics\nPreviously, Alex was a Postdoctoral Fellow with the Predictive Ecology group from 2015-2017"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Predictive Ecology Community",
+    "objectID": "benchmarking.html",
+    "href": "benchmarking.html",
+    "title": "Benchmarking",
     "section": "",
-    "text": "This site assembles an up to date collection of contributors to Predictive Ecology, primarily through the use of SpaDES. We are connected through the common goal of upholding the principles of PERFICT so that we can create a dynamic network of interconnected science modules. The community has active members in Europe and across Canada.\nThe Predictive Ecology Community began in Victoria, British Columbia, Canada, at the Pacific Forestry Centre and at Laval University, Quebec in 2015. Since then, students and postdocs have been primarily at University of British Columbia and Université Laval.\n\nResearchers\n\n\n\n\n\n\n\n\n\n\nDr Eliot McIntire\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Alex Chubaty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Barry Cooke\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Céline Boisvenue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Ceres Barros\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Frances Stewart\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Julie Turner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Steve Cumming\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Tati Micheletti\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nResearch Professional\n\n\n\n\n\n\n\n\n\n\nAllen Larocque\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCamille Giuliano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIan Eddy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJonathan Van Elslander\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSusan Murray\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTyler Rudolph\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nCurrent students/post docs\n\n\n\n\n\n\n\n\n\n\nAna Raymundo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeneviève Degré-Timmons\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsolde Lane Shaw\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nFormer Personnel\n\n\n\n\n\n\n\n\n\n\nDr Alana Clason\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Jean Marchal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Josh Nowak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMario van Telgen\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Sarah Bauduin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSebastien Renard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Yong Luo\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPrior to 2015\n\nÉmilie Tarroux (Post Doctoral Fellow 2015) Facilitation in the boreal forest.\nJulien Beguin (PhD 2013) Caribou, harvesting and fire in the North Shore of Quebec.\nJulia Chacon Labella (PhD - Visiting 2013) Facilitation in semi-arid ecosystems.\nChristian Roy (PhD - 2011) Continental-scale understanding of duck populations.\nPierre Racine (Research Professional 2013) Review of existing modeling platforms\nGhislain Rompré (Post Doctoral Fellow 2009) Modeling endangered butterflies.\nPamela Garcia-Cournoyer (MSc 2010) Harvesting and conservation in Quebec.\nÉmilie Allard (MSc 2009) Understanding deer movement and habitat use in the Upper Laurentian region.\nMelanie Smith (MSc 2008) Spatial goshawk modeling.\nCéline Macabiau (PhD 2009) Spatial population dynamics of spruce grouse in Quebec.\nFrancesca Marucco (PhD 2009) Modeling wolf recolonization in the European Alps. (University of Montana, Supervisor: Dan Pletscher).\nMotoshi Honda (MSc 2008) Hydrology\nAlex Fajardo (Post Doctoral Fellow 2006) Facilitation in Chilean mountain ecosystems.\n\n\n\nCo-op students\n\nTrevor Schiavone (UVic 2015) SpaDES GUI development.\nBrandon Leech (UVic 2015) SpaDES GUI development.\nGreg Zhang (UBC 2015) SpaDES developer.\nAlexander Tso (UBC 2016)\nGreyson Wang (SFU 2015)\nOlivia Sung (UBC 2015)"
-  },
-  {
-    "objectID": "SpaDES.html",
-    "href": "SpaDES.html",
-    "title": "SpaDES",
-    "section": "",
-    "text": "SpaDES is a metapackage for R that facilitates PERFICT workflows. It began as a tool for spatial simulation for Ecology, but it has evolved over time to the more general Spatial Discrete Event System."
-  },
-  {
-    "objectID": "SpaDES.html#links",
-    "href": "SpaDES.html#links",
-    "title": "SpaDES",
-    "section": "Links",
-    "text": "Links\nSpaDES metapackage: https://SpaDES.PredictiveEcology.org\nSpaDES open discussions/questions: https://github.com/PredictiveEcology/SpaDES/discussions\nSpaDES wiki: https://github.com/PredictiveEcology/SpaDES/wiki\nOther SpaDES ecosystem packages:\n\nquickPlot: https://quickplot.predictiveecology.org/\nRequire: https://Require.predictiveecology.org/\nreproducible: https://reproducible.predictiveecology.org/\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/"
-  },
-  {
-    "objectID": "Packages.html",
-    "href": "Packages.html",
-    "title": "R Packages",
-    "section": "",
-    "text": "This is an all-in-one package manager that is simple and focused around a single function, Require. This is different than other approaches to package management such as packrat, checkpoint, and renv as it focuses on a “script-based” solution to a reproducible work flow. Thus, all packages, version numbering, and sources are contained within an R script.\nView on CRAN; GitHub; Website\n\n\n\n\n\nMetapackage for implementing a variety of event-based models, with a focus on spatially explicit models. These include raster-based, event-based, and agent-based models. The core simulation components (provided by SpaDES.core) are built upon a discrete event simulation (DES) framework that facilitates modularity, and easily enables the user to include additional functionality by running user-built simulation modules (see also SpaDES.tools). Included are numerous tools to visualize rasters and other maps (via quickPlot), and caching methods for reproducible simulations (via reproducible). Additional functionality is provided by the SpaDES.addins and SpaDES.shiny packages.\nView on CRAN; GitHub; Website\nSee also:\n\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/\n\n\n\n\n\n\n\nA high-level plotting system, built using grid graphics, that is optimized for speed and modularity. This has great utility for quick visualizations when testing code, with the key benefit that visualizations are updated independently of one another.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nBuilt on top of git2r and archivist, this package aims at making high-level, robust, machine and OS independent tools for making deeply reproducible and reusable content in R. This extends beyond the package management utilites of packrat and checkpoint by including tools for caching and accessing GitHub repositories.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nComparisons of floating point numbers are problematic due to errors associated with the binary representation of decimal numbers. Despite being aware of these problems, people still use numerical methods that fail to account for these and other rounding errors (this pitfall is the first to be highlighted in Circle 1 of Burns (2012) The R Inferno). This package provides new relational operators useful for performing floating point number comparisons with a set tolerance.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nNetLogoR is an R package which aims to help translating agent-based models built in NetLogo (Wilensky, 1999) into R or help directly with creating new agent-based models in R following the NetLogo framework.\nNetLogoR provides the necessary NetLogo’s primitives as well as complementary functions to build agent-based models. A programming guide derived from the NetLogo’s Programming Guide is available.\nThis package is under construction and therefore function errors and mismatches with the documentation may occur.\nView on CRAN; GitHub; Website"
-  },
-  {
-    "objectID": "Packages.html#r-packages",
-    "href": "Packages.html#r-packages",
-    "title": "R Packages",
-    "section": "",
-    "text": "This is an all-in-one package manager that is simple and focused around a single function, Require. This is different than other approaches to package management such as packrat, checkpoint, and renv as it focuses on a “script-based” solution to a reproducible work flow. Thus, all packages, version numbering, and sources are contained within an R script.\nView on CRAN; GitHub; Website\n\n\n\n\n\nMetapackage for implementing a variety of event-based models, with a focus on spatially explicit models. These include raster-based, event-based, and agent-based models. The core simulation components (provided by SpaDES.core) are built upon a discrete event simulation (DES) framework that facilitates modularity, and easily enables the user to include additional functionality by running user-built simulation modules (see also SpaDES.tools). Included are numerous tools to visualize rasters and other maps (via quickPlot), and caching methods for reproducible simulations (via reproducible). Additional functionality is provided by the SpaDES.addins and SpaDES.shiny packages.\nView on CRAN; GitHub; Website\nSee also:\n\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/\n\n\n\n\n\n\n\nA high-level plotting system, built using grid graphics, that is optimized for speed and modularity. This has great utility for quick visualizations when testing code, with the key benefit that visualizations are updated independently of one another.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nBuilt on top of git2r and archivist, this package aims at making high-level, robust, machine and OS independent tools for making deeply reproducible and reusable content in R. This extends beyond the package management utilites of packrat and checkpoint by including tools for caching and accessing GitHub repositories.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nComparisons of floating point numbers are problematic due to errors associated with the binary representation of decimal numbers. Despite being aware of these problems, people still use numerical methods that fail to account for these and other rounding errors (this pitfall is the first to be highlighted in Circle 1 of Burns (2012) The R Inferno). This package provides new relational operators useful for performing floating point number comparisons with a set tolerance.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nNetLogoR is an R package which aims to help translating agent-based models built in NetLogo (Wilensky, 1999) into R or help directly with creating new agent-based models in R following the NetLogo framework.\nNetLogoR provides the necessary NetLogo’s primitives as well as complementary functions to build agent-based models. A programming guide derived from the NetLogo’s Programming Guide is available.\nThis package is under construction and therefore function errors and mismatches with the documentation may occur.\nView on CRAN; GitHub; Website"
-  },
-  {
-    "objectID": "Manuals.html",
-    "href": "Manuals.html",
-    "title": "Manuals",
-    "section": "",
-    "text": "Title\n\n\nDescription\n\n\n\n\n\n\n\n\n\nLandR Manual\n\n\nManual for using the LandR ecosystem of modules\n\n\n\n\n\n\n\nLandWeb Manual\n\n\nThe LandWeb project\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "Projects.html",
-    "href": "Projects.html",
-    "title": "Projects that use SpaDES",
-    "section": "",
-    "text": "This page is still under construction\nThis table links to a collection of projects that the Predictive Ecology Community, as presented on this web page, is involved in. There may be other SpaDES projects that we are not aware of that are not presented here.\n\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nLast-updated\n\n\n\n\n\n\n\n\n\nWestern Boreal Initiative\n\n\nA large project that is addressing climate and cumulative effects on landscapes of the western boreal forests of Canada\n\n\n2024-04-17\n\n\n\n\n\n\n\nCASTOR\n\n\nCastor - Forest and Land Use Simulator\n\n\n2024-04-17\n\n\n\n\n\n\n\nLANDWEB\n\n\nDefine historical NRV conditions at landscape scales across 140 million ha of the western boreal\n\n\n2024-04-17\n\n\n\n\n\n\n\nLandscapes in Motion\n\n\nA study to inform future management and policy in this important region of Alberta.\n\n\n2022-04-17\n\n\n\n\n\nNo matching items"
+    "text": "Introduction\nWe started benchmarking R with a series of low and high level functions. The objective of this experiment is to show some speed comparisons between R and other languages and software, including C++ and GIS software. Clearly this is NOT a comparison between R and, say, C++, because many of the functions in R are written in C++ and are wrapped in R. But, if simple R functions are fast, then we can focus our time on more complex things needed for simulation and science.\nSo, is R fast enough?\nAnswer: R is more than fast enough!\n\n\nBenchmarking posts\n\n{% for post in site.tags.benchmark limit: 20 %}\n\n&lt;li&gt;\n     &lt;a href=\"{{ post.url }}\"&gt;{{ post.title }}&lt;/a&gt;\n     &lt;span&gt;({{ post.date | date:\"%Y-%m-%d\" }})&lt;/span&gt;\n&lt;/li&gt;\n&lt;/div&gt;\n{% endfor %}"
   },
   {
     "objectID": "Workshops.html#upcoming-workshops",
@@ -560,46 +518,95 @@
     "text": "Pre-COVID workshops\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nDate\n\n\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2021\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nJan 15, 2019\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nSep 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nMay 15, 2018\n\n\n\n\n\n\n\nSpaDES training - Pacific Foresty Centre\n\n\nGeneral SpaDES training focusing on module creation\n\n\nDec 7, 2016\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "benchmarking.html",
-    "href": "benchmarking.html",
-    "title": "Benchmarking",
+    "objectID": "Projects.html",
+    "href": "Projects.html",
+    "title": "Projects that use SpaDES",
     "section": "",
-    "text": "Introduction\nWe started benchmarking R with a series of low and high level functions. The objective of this experiment is to show some speed comparisons between R and other languages and software, including C++ and GIS software. Clearly this is NOT a comparison between R and, say, C++, because many of the functions in R are written in C++ and are wrapped in R. But, if simple R functions are fast, then we can focus our time on more complex things needed for simulation and science.\nSo, is R fast enough?\nAnswer: R is more than fast enough!\n\n\nBenchmarking posts\n\n{% for post in site.tags.benchmark limit: 20 %}\n\n&lt;li&gt;\n     &lt;a href=\"{{ post.url }}\"&gt;{{ post.title }}&lt;/a&gt;\n     &lt;span&gt;({{ post.date | date:\"%Y-%m-%d\" }})&lt;/span&gt;\n&lt;/li&gt;\n&lt;/div&gt;\n{% endfor %}"
+    "text": "This page is still under construction\nThis table links to a collection of projects that the Predictive Ecology Community, as presented on this web page, is involved in. There may be other SpaDES projects that we are not aware of that are not presented here.\n\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\nLast-updated\n\n\n\n\n\n\n\n\n\nWestern Boreal Initiative\n\n\nA large project that is addressing climate and cumulative effects on landscapes of the western boreal forests of Canada\n\n\n2024-04-17\n\n\n\n\n\n\n\nCASTOR\n\n\nCastor - Forest and Land Use Simulator\n\n\n2024-04-17\n\n\n\n\n\n\n\nLANDWEB\n\n\nDefine historical NRV conditions at landscape scales across 140 million ha of the western boreal\n\n\n2024-04-17\n\n\n\n\n\n\n\nLandscapes in Motion\n\n\nA study to inform future management and policy in this important region of Alberta.\n\n\n2022-04-17\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "bios/community/alex.html",
-    "href": "bios/community/alex.html",
-    "title": "Dr Alex Chubaty",
+    "objectID": "Manuals.html",
+    "href": "Manuals.html",
+    "title": "Manuals",
     "section": "",
-    "text": "webpage\n  \n\n      \nPresident, FOR-CAST Research & Analytics\nPreviously, Alex was a Postdoctoral Fellow with the Predictive Ecology group from 2015-2017"
+    "text": "Title\n\n\nDescription\n\n\n\n\n\n\n\n\n\nLandR Manual\n\n\nManual for using the LandR ecosystem of modules\n\n\n\n\n\n\n\nLandWeb Manual\n\n\nThe LandWeb project\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "bios/community/celine.html",
-    "href": "bios/community/celine.html",
-    "title": "Dr Céline Boisvenue",
+    "objectID": "Packages.html",
+    "href": "Packages.html",
+    "title": "R Packages",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia\nUniversity of Alberta, WISEST profile\nI am a Research Scientist with the Canadian Forest Service, in Victoria BC. All my research is applied to understanding forests, modelling them as well as possible given available data, to support science-based management and policy development. My research activities provide scientific support for Canada’s greenhouse gas (GHG) balance for forests under international reporting obligations, and contribute to the next generation of models for forest GHG estimates. I was a practicing forester and a biometrics consultant prior to becoming a researcher. I am therefore well positioned to provide viable solutions for both management and policy development. My recent focus has been on regional spatio-temporal modelling and the integration of remotely-sensed products into forest dynamics models. My masters from UBC biometrics (http://biometrics.forestry.ubc.ca/ ), and my PhD is from the Numerical Terradynamic Simulation group (NTSG - http://www.ntsg.umt.edu/), a NASA Earth Science Information Partner (http://www.esipfed.org/) at the University of Montana."
+    "text": "This is an all-in-one package manager that is simple and focused around a single function, Require. This is different than other approaches to package management such as packrat, checkpoint, and renv as it focuses on a “script-based” solution to a reproducible work flow. Thus, all packages, version numbering, and sources are contained within an R script.\nView on CRAN; GitHub; Website\n\n\n\n\n\nMetapackage for implementing a variety of event-based models, with a focus on spatially explicit models. These include raster-based, event-based, and agent-based models. The core simulation components (provided by SpaDES.core) are built upon a discrete event simulation (DES) framework that facilitates modularity, and easily enables the user to include additional functionality by running user-built simulation modules (see also SpaDES.tools). Included are numerous tools to visualize rasters and other maps (via quickPlot), and caching methods for reproducible simulations (via reproducible). Additional functionality is provided by the SpaDES.addins and SpaDES.shiny packages.\nView on CRAN; GitHub; Website\nSee also:\n\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/\n\n\n\n\n\n\n\nA high-level plotting system, built using grid graphics, that is optimized for speed and modularity. This has great utility for quick visualizations when testing code, with the key benefit that visualizations are updated independently of one another.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nBuilt on top of git2r and archivist, this package aims at making high-level, robust, machine and OS independent tools for making deeply reproducible and reusable content in R. This extends beyond the package management utilites of packrat and checkpoint by including tools for caching and accessing GitHub repositories.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nComparisons of floating point numbers are problematic due to errors associated with the binary representation of decimal numbers. Despite being aware of these problems, people still use numerical methods that fail to account for these and other rounding errors (this pitfall is the first to be highlighted in Circle 1 of Burns (2012) The R Inferno). This package provides new relational operators useful for performing floating point number comparisons with a set tolerance.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nNetLogoR is an R package which aims to help translating agent-based models built in NetLogo (Wilensky, 1999) into R or help directly with creating new agent-based models in R following the NetLogo framework.\nNetLogoR provides the necessary NetLogo’s primitives as well as complementary functions to build agent-based models. A programming guide derived from the NetLogo’s Programming Guide is available.\nThis package is under construction and therefore function errors and mismatches with the documentation may occur.\nView on CRAN; GitHub; Website"
   },
   {
-    "objectID": "bios/community/frances.html",
-    "href": "bios/community/frances.html",
-    "title": "Dr Frances Stewart",
+    "objectID": "Packages.html#r-packages",
+    "href": "Packages.html#r-packages",
+    "title": "R Packages",
     "section": "",
-    "text": "webpage\n  \n\n      \nCanada Research Chair, Northern Wildlife, Laurier University.\nFrances initially joined the Predictive Ecology community as a Postdoctoral Fellow with the from 2019-2021. She is now the head of the Wild Lab at Laurier University."
+    "text": "This is an all-in-one package manager that is simple and focused around a single function, Require. This is different than other approaches to package management such as packrat, checkpoint, and renv as it focuses on a “script-based” solution to a reproducible work flow. Thus, all packages, version numbering, and sources are contained within an R script.\nView on CRAN; GitHub; Website\n\n\n\n\n\nMetapackage for implementing a variety of event-based models, with a focus on spatially explicit models. These include raster-based, event-based, and agent-based models. The core simulation components (provided by SpaDES.core) are built upon a discrete event simulation (DES) framework that facilitates modularity, and easily enables the user to include additional functionality by running user-built simulation modules (see also SpaDES.tools). Included are numerous tools to visualize rasters and other maps (via quickPlot), and caching methods for reproducible simulations (via reproducible). Additional functionality is provided by the SpaDES.addins and SpaDES.shiny packages.\nView on CRAN; GitHub; Website\nSee also:\n\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/\n\n\n\n\n\n\n\nA high-level plotting system, built using grid graphics, that is optimized for speed and modularity. This has great utility for quick visualizations when testing code, with the key benefit that visualizations are updated independently of one another.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nBuilt on top of git2r and archivist, this package aims at making high-level, robust, machine and OS independent tools for making deeply reproducible and reusable content in R. This extends beyond the package management utilites of packrat and checkpoint by including tools for caching and accessing GitHub repositories.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nComparisons of floating point numbers are problematic due to errors associated with the binary representation of decimal numbers. Despite being aware of these problems, people still use numerical methods that fail to account for these and other rounding errors (this pitfall is the first to be highlighted in Circle 1 of Burns (2012) The R Inferno). This package provides new relational operators useful for performing floating point number comparisons with a set tolerance.\nView on CRAN; GitHub; Website\n\n\n\n\n\n\nNetLogoR is an R package which aims to help translating agent-based models built in NetLogo (Wilensky, 1999) into R or help directly with creating new agent-based models in R following the NetLogo framework.\nNetLogoR provides the necessary NetLogo’s primitives as well as complementary functions to build agent-based models. A programming guide derived from the NetLogo’s Programming Guide is available.\nThis package is under construction and therefore function errors and mismatches with the documentation may occur.\nView on CRAN; GitHub; Website"
   },
   {
-    "objectID": "bios/community/steve.html",
-    "href": "bios/community/steve.html",
-    "title": "Dr Steve Cumming",
+    "objectID": "SpaDES.html",
+    "href": "SpaDES.html",
+    "title": "SpaDES",
     "section": "",
-    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nProfessor, Université Laval"
+    "text": "SpaDES is a metapackage for R that facilitates PERFICT workflows. It began as a tool for spatial simulation for Ecology, but it has evolved over time to the more general Spatial Discrete Event System."
   },
   {
-    "objectID": "bios/current/ana.html",
-    "href": "bios/current/ana.html",
-    "title": "Ana Raymundo",
+    "objectID": "SpaDES.html#links",
+    "href": "SpaDES.html#links",
+    "title": "SpaDES",
+    "section": "Links",
+    "text": "Links\nSpaDES metapackage: https://SpaDES.PredictiveEcology.org\nSpaDES open discussions/questions: https://github.com/PredictiveEcology/SpaDES/discussions\nSpaDES wiki: https://github.com/PredictiveEcology/SpaDES/wiki\nOther SpaDES ecosystem packages:\n\nquickPlot: https://quickplot.predictiveecology.org/\nRequire: https://Require.predictiveecology.org/\nreproducible: https://reproducible.predictiveecology.org/\nSpaDES.addins: https://spades-addins.predictiveecology.org\nSpaDES.core: https://spades-core.predictiveecology.org/\nSpaDES.shiny: https://spades-shiny.predictiveecology.org/\nSpaDES.tools: https://spades-tools.predictiveecology.org/"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Predictive Ecology Community",
     "section": "",
-    "text": "webpage\n  \n\n      \n(PhD Student 2018 - )\nAna is working on questions related to forestry and birds across Canada. A student at Laval University, she is currently in Victoria learning the SpaDES ecosystem."
+    "text": "This site assembles an up to date collection of contributors to Predictive Ecology, primarily through the use of SpaDES. We are connected through the common goal of upholding the principles of PERFICT so that we can create a dynamic network of interconnected science modules. The community has active members in Europe and across Canada.\nThe Predictive Ecology Community began in Victoria, British Columbia, Canada, at the Pacific Forestry Centre and at Laval University, Quebec in 2015. Since then, students and postdocs have been primarily at University of British Columbia and Université Laval.\n\nResearchers\n\n\n\n\n\n\n\n\n\n\nDr Eliot McIntire\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Alex Chubaty\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Barry Cooke\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Céline Boisvenue\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Ceres Barros\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Frances Stewart\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Julie Turner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Steve Cumming\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Tati Micheletti\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nResearch Professional\n\n\n\n\n\n\n\n\n\n\nAllen Larocque\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCamille Giuliano\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIan Eddy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJonathan Van Elslander\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSusan Murray\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTyler Rudolph\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nCurrent students/post docs\n\n\n\n\n\n\n\n\n\n\nAna Raymundo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDominique Caron\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeneviève Degré-Timmons\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsolde Lane Shaw\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\nFormer Personnel\n\n\n\n\n\n\n\n\n\n\nDr Alana Clason\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Jean Marchal\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr Josh Nowak\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMario van Telgen\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Sarah Bauduin\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSebastien Renard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDr. Yong Luo\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\nPrior to 2015\n\nÉmilie Tarroux (Post Doctoral Fellow 2015) Facilitation in the boreal forest.\nJulien Beguin (PhD 2013) Caribou, harvesting and fire in the North Shore of Quebec.\nJulia Chacon Labella (PhD - Visiting 2013) Facilitation in semi-arid ecosystems.\nChristian Roy (PhD - 2011) Continental-scale understanding of duck populations.\nPierre Racine (Research Professional 2013) Review of existing modeling platforms\nGhislain Rompré (Post Doctoral Fellow 2009) Modeling endangered butterflies.\nPamela Garcia-Cournoyer (MSc 2010) Harvesting and conservation in Quebec.\nÉmilie Allard (MSc 2009) Understanding deer movement and habitat use in the Upper Laurentian region.\nMelanie Smith (MSc 2008) Spatial goshawk modeling.\nCéline Macabiau (PhD 2009) Spatial population dynamics of spruce grouse in Quebec.\nFrancesca Marucco (PhD 2009) Modeling wolf recolonization in the European Alps. (University of Montana, Supervisor: Dan Pletscher).\nMotoshi Honda (MSc 2008) Hydrology\nAlex Fajardo (Post Doctoral Fellow 2006) Facilitation in Chilean mountain ecosystems.\n\n\n\nCo-op students\n\nTrevor Schiavone (UVic 2015) SpaDES GUI development.\nBrandon Leech (UVic 2015) SpaDES GUI development.\nGreg Zhang (UBC 2015) SpaDES developer.\nAlexander Tso (UBC 2016)\nGreyson Wang (SFU 2015)\nOlivia Sung (UBC 2015)"
+  },
+  {
+    "objectID": "bios/community/aaaeliot.html",
+    "href": "bios/community/aaaeliot.html",
+    "title": "Dr Eliot McIntire",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAdjunct Professor, University of British Columbia & Université Laval\nMy research interests lie in applied ecology, conservation and forecasting of a broad array of ecosystems and species. Specifically, I am interested in using modern quantitative techniques to understand the natural complexity of ecosystems, ultimately, to allow forecasting of organisms and ecosystem processes. I use a variety of quantitative techniques, including Hierarchical Bayes, Spatial Analysis, Landscape Simulation Modeling, Structural Equation Modeling, and Non-Linear Models to achieve the best ecological inference from ecological data. Through each of the systems I study, I strive to understand the ecological processes and to test this understanding by forecasting."
+  },
+  {
+    "objectID": "bios/community/barry.html",
+    "href": "bios/community/barry.html",
+    "title": "Dr. Barry Cooke",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada"
+  },
+  {
+    "objectID": "bios/community/ceres.html",
+    "href": "bios/community/ceres.html",
+    "title": "Dr Ceres Barros",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n  \n    \n     e-mail\n  \n\n      \nResearch Scientist, Natural Resources Canada\nAs part of the Predictive Ecology Lab, Ceres worked on mixed severity spatial fire modelling and the associated vegetation changes that go with it, as part of the Landscapes in Motion project. She then worked on on ecological forecasting of permafrost, disturbance, and vegetation in Northwest Territories, in a collaboration with the Forest Ecology Lab at Wilfrid Laurier University, as part of the Northern Water Futures project.\nAfter spending some time as Climate Change Research Ecologist at the BC Ministry of Forests, Ceres took a Research Scientist position at the Pacific Forestry Centre, Canadian Forest Service where she continues to actively collaborate with the Predictive Ecology Community."
+  },
+  {
+    "objectID": "bios/community/julie.html",
+    "href": "bios/community/julie.html",
+    "title": "Dr Julie Turner",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, Biodiversity Pathways.\nJulie has been collaborating with the Predictive Ecology group on issues related to caribou since 2021."
+  },
+  {
+    "objectID": "bios/community/tati.html",
+    "href": "bios/community/tati.html",
+    "title": "Dr Tati Micheletti",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     GitHub\n  \n\n      \nResearch Associate, TU Dresden, Germany.\nPreviously, Tati was a postdoc and research associate with at University of British Columbia from 2017-2023.\nTati has been asking questions about managing land in Canada when there are multiple, conflicting management pressures. She has been specializing in SpaDES model development, bird and caribou forecasting, protected areas optimization, and trade-offs/synergies across disciplines."
+  },
+  {
+    "objectID": "bios/current/dominique.html",
+    "href": "bios/current/dominique.html",
+    "title": "Dominique Caron",
+    "section": "",
+    "text": "webpage\n  \n  \n    \n     Github\n  \n\n      \n(Postdoc 2024 - )\nPosdoctoral researcher, Natural Resources Canada, Canadian Forest Service, Victoria, BC\nDominique works on integrating vegetation, disturbance, and forest carbon dynamics to improve carbon modelling"
   },
   {
     "objectID": "bios/current/isolde.html",

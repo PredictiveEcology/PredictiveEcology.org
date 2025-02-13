@@ -4,6 +4,21 @@
     "items": []
   },
   {
+    "listing": "/Workshops.html",
+    "items": [
+      "/workshops/Nov-2024-SpaDES-workshop.html",
+      "/workshops/June-2024-SpaDES-workshop.html"
+    ]
+  },
+  {
+    "listing": "/Projects.html",
+    "items": []
+  },
+  {
+    "listing": "/Manuals.html",
+    "items": []
+  },
+  {
     "listing": "/about.html",
     "items": [
       "/bios/community/aaaeliot.html",
@@ -22,6 +37,7 @@
       "/bios/professional/susan.html",
       "/bios/professional/tyler.html",
       "/bios/current/ana.html",
+      "/bios/current/dominique.html",
       "/bios/current/genevieve.html",
       "/bios/current/isolde.html",
       "/bios/past/alana.html",
@@ -31,21 +47,6 @@
       "/bios/past/sarah.html",
       "/bios/past/sebastien.html",
       "/bios/past/yong.html"
-    ]
-  },
-  {
-    "listing": "/Manuals.html",
-    "items": []
-  },
-  {
-    "listing": "/Projects.html",
-    "items": []
-  },
-  {
-    "listing": "/Workshops.html",
-    "items": [
-      "/workshops/Nov-2024-SpaDES-workshop.html",
-      "/workshops/June-2024-SpaDES-workshop.html"
     ]
   },
   {
