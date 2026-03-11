@@ -45,119 +45,153 @@ See also the description of [`terra`
 methods](https://rspatial.github.io/terra/reference/terra-package.html#xxviii-new-method-names-1)
 for more useful information.
 
-+--------------------------------+---------------------------------------------------+
-| **`raster` package**           | **`terra` or other packages**                     |
-+--------------------------------+---------------------------------------------------+
-| `ras[]`                        | `as.vector(ras[])` or `as.vector(values(ras))`    |
-+--------------------------------+---------------------------------------------------+
-| `compareCRS`                   | For now,\                                         |
-|                                | `LandR::.compareCRS` – only 2 rasters\            |
-|                                | `LandR::.compareRas` – multiple rasters           |
-+--------------------------------+---------------------------------------------------+
-| `maxValue`, `minValue`         | `minmax` or\                                      |
-|                                | `reproducible::minFn`, `reproducible::maxFn`      |
-+--------------------------------+---------------------------------------------------+
-| `compareRaster`                | `terra::compareGeom` – more sensitive than        |
-|                                | `st_crs(x) == st_crs(y)` and returns false        |
-|                                | negatives in many situations.\                    |
-|                                | \                                                 |
-|                                | Alternatives are:\                                |
-|                                | `sf::st_crs(x) == sf::st_crs(y)`                  |
-|                                |                                                   |
-|                                | `LandR::.compareRas`                              |
-|                                |                                                   |
-|                                | `LandR::.compareCRS`                              |
-+--------------------------------+---------------------------------------------------+
-| `getValues`                    | `SpatRaster[]` returns a matrix, even if it is    |
-|                                | just one layer; `RasterLayer[]` returns a vector; |
-|                                | `RasterStack[]` returns a matrix\                 |
-|                                | \                                                 |
-|                                | For consistency, use:\                            |
-|                                | `reproducible::values2`\                          |
-|                                | which replicates the old                          |
-|                                | `RasterLayer`/`RasterStack` behaviour of vector   |
-|                                | if 1 layer, matrix if \> 1 layer, using           |
-|                                | internally:\                                      |
-|                                | `terra::values(ras, mat = nlyr(ras) > 1)` if      |
-|                                | `ras` is a `RasterLayer`\                         |
-|                                | \                                                 |
-+--------------------------------+---------------------------------------------------+
-| `setValues`                    | `ras[] <-`                                        |
-+--------------------------------+---------------------------------------------------+
-| `extract`, `mask`, `ncell`,    | Same function names in `terra`, all compatible    |
-| `cover`                        | with `RasterLayer` and `RasterStack`              |
-+--------------------------------+---------------------------------------------------+
-| `raster(ras)`                  | Used to create a template raster.                 |
-|                                |                                                   |
-|                                | `terra` equivalent is:\                           |
-|                                | `rast(ras)`                                       |
-|                                |                                                   |
-|                                | `reproducible::rasterRead` can use either,        |
-|                                | depending on value of                             |
-|                                | `getOption("reproducible.rasterRead")`            |
-+--------------------------------+---------------------------------------------------+
-| `raster(filepath)`             | Used to load a raster from a file.                |
-|                                |                                                   |
-|                                | `terra` equivalent is `rast(filepath)`            |
-|                                |                                                   |
-|                                | `reproducible::rasterRead` can use either,        |
-|                                | depending on value of                             |
-|                                | `getOption("reproducible.rasterRead")`            |
-+--------------------------------+---------------------------------------------------+
-| `layerNames`                   | `names`                                           |
-+--------------------------------+---------------------------------------------------+
-| `extent`                       | `terra::ext` – compatible with `RasterLayer` and  |
-|                                | `RasterStack`                                     |
-+--------------------------------+---------------------------------------------------+
-| `res`                          | `terra::res` – compatible with `RasterLayer` and  |
-|                                | `RasterStack`                                     |
-+--------------------------------+---------------------------------------------------+
-| `nlayers`                      | `length(names(ras))` or `terra::nlyr`; new        |
-|                                | transition function `reproducible::nlayers2`      |
-|                                | works with either `RasterLayer` or `SpatRaster`   |
-+--------------------------------+---------------------------------------------------+
-| `as.integer(ras)`              | Doesn’t work for `SpatRaster`.\                   |
-|                                | This also doesn’t work:                           |
-|                                | `ra                                               |
-|                                | s[] <- as.integer(ras[])ras <- LandR::asInt(ras)` |
-|                                | works on `RasterLayer` or `SpatRaster`            |
-|                                |                                                   |
-|                                | `LandR::isInt` \# the equivalent for              |
-|                                | `is.integer`\                                     |
-|                                | \                                                 |
-+--------------------------------+---------------------------------------------------+
-| `setColors`                    | See `terra::coltab`\                              |
-|                                | \                                                 |
-+--------------------------------+---------------------------------------------------+
-| `subs`                         | `terra::subst` – but arguments are different      |
-+--------------------------------+---------------------------------------------------+
-| `fasterize::fasterize`         | No equivalent for `SpatVector` objects yet.       |
-|                                |                                                   |
-|                                | Use `terra::rasterize` but this appears to be     |
-|                                | slow at the moment. sf objects may need to be     |
-|                                | converted to a temporary `SpatVector`             |
-+--------------------------------+---------------------------------------------------+
-| `SpaDES.core::Plots(ras)`      | Use                                               |
-|                                | `                                                 |
-|                                | SpaDES.core::Plots(ras, fn = LandR::plotRast, …)` |
-|                                | available in `LandR@development`                  |
-+--------------------------------+---------------------------------------------------+
-| `quickPlot::Plot(ras)`         | `quickPlot::Plot(ras)` – accepts `SpatRaster`     |
-+--------------------------------+---------------------------------------------------+
-| `raster::dataType`             | Equivalent in `terra` is `datatype` (notice       |
-|                                | different capitalization)                         |
-|                                |                                                   |
-|                                | `reproducible::dataType2` works on `RasterLayer`  |
-|                                | and `SpatRaster`                                  |
-+--------------------------------+---------------------------------------------------+
-| `xyFromCell`                   | `terra::xyFromCell(..., cell)` does not accept a  |
-|                                | matrix for `cell` (unlike `raster::xyFromCell`).  |
-|                                | But passing `as.vector(cell)` will work with      |
-|                                | `RasterLayer` and `SpatRaster`                    |
-+--------------------------------+---------------------------------------------------+
-| `clump()`                      | `patches()`                                       |
-+--------------------------------+---------------------------------------------------+
-| `filename()`                   | Equivalent in `terra` is `sources()`\             |
-|                                | `reproducible::Filenames()` works on either       |
-|                                | `RasterLayer` or `SpatRaster`                     |
-+--------------------------------+---------------------------------------------------+
++----------------------------------+----------------------------------+
+| **`raster` package**             | **`terra` or other packages**    |
++----------------------------------+----------------------------------+
+| `ras[]`                          | `as.vector(ras[])` or            |
+|                                  | `as.vector(values(ras))`         |
++----------------------------------+----------------------------------+
+| `compareCRS`                     | For now,\                        |
+|                                  | `LandR::.compareCRS` – only 2    |
+|                                  | rasters\                         |
+|                                  | `LandR::.compareRas` – multiple  |
+|                                  | rasters                          |
++----------------------------------+----------------------------------+
+| `maxValue`, `minValue`           | `minmax` or\                     |
+|                                  | `reproducible::minFn`,           |
+|                                  | `reproducible::maxFn`            |
++----------------------------------+----------------------------------+
+| `compareRaster`                  | `terra::compareGeom` – more      |
+|                                  | sensitive than                   |
+|                                  | `st_crs(x) == st_crs(y)` and     |
+|                                  | returns false negatives in many  |
+|                                  | situations.\                     |
+|                                  | \                                |
+|                                  | Alternatives are:\               |
+|                                  | `sf::st_crs(x) == sf::st_crs(y)` |
+|                                  |                                  |
+|                                  | `LandR::.compareRas`             |
+|                                  |                                  |
+|                                  | `LandR::.compareCRS`             |
++----------------------------------+----------------------------------+
+| `getValues`                      | `SpatRaster[]` returns a matrix, |
+|                                  | even if it is just one layer;    |
+|                                  | `RasterLayer[]` returns a        |
+|                                  | vector; `RasterStack[]` returns  |
+|                                  | a matrix\                        |
+|                                  | \                                |
+|                                  | For consistency, use:\           |
+|                                  | `reproducible::values2`\         |
+|                                  | which replicates the old         |
+|                                  | `RasterLayer`/`RasterStack`      |
+|                                  | behaviour of vector if 1 layer,  |
+|                                  | matrix if \> 1 layer, using      |
+|                                  | internally:\                     |
+|                                  | `terra::v                        |
+|                                  | alues(ras, mat = nlyr(ras) > 1)` |
+|                                  | if `ras` is a `RasterLayer`\     |
+|                                  | \                                |
++----------------------------------+----------------------------------+
+| `setValues`                      | `ras[] <-`                       |
++----------------------------------+----------------------------------+
+| `extract`, `mask`, `ncell`,      | Same function names in `terra`,  |
+| `cover`                          | all compatible with              |
+|                                  | `RasterLayer` and `RasterStack`  |
++----------------------------------+----------------------------------+
+| `raster(ras)`                    | Used to create a template        |
+|                                  | raster.                          |
+|                                  |                                  |
+|                                  | `terra` equivalent is:\          |
+|                                  | `rast(ras)`                      |
+|                                  |                                  |
+|                                  | `reproducible::rasterRead` can   |
+|                                  | use either, depending on value   |
+|                                  | of                               |
+|                                  | `getOp                           |
+|                                  | tion("reproducible.rasterRead")` |
++----------------------------------+----------------------------------+
+| `raster(filepath)`               | Used to load a raster from a     |
+|                                  | file.                            |
+|                                  |                                  |
+|                                  | `terra` equivalent is            |
+|                                  | `rast(filepath)`                 |
+|                                  |                                  |
+|                                  | `reproducible::rasterRead` can   |
+|                                  | use either, depending on value   |
+|                                  | of                               |
+|                                  | `getOp                           |
+|                                  | tion("reproducible.rasterRead")` |
++----------------------------------+----------------------------------+
+| `layerNames`                     | `names`                          |
++----------------------------------+----------------------------------+
+| `extent`                         | `terra::ext` – compatible with   |
+|                                  | `RasterLayer` and `RasterStack`  |
++----------------------------------+----------------------------------+
+| `res`                            | `terra::res` – compatible with   |
+|                                  | `RasterLayer` and `RasterStack`  |
++----------------------------------+----------------------------------+
+| `nlayers`                        | `length(names(ras))` or          |
+|                                  | `terra::nlyr`; new transition    |
+|                                  | function                         |
+|                                  | `reproducible::nlayers2` works   |
+|                                  | with either `RasterLayer` or     |
+|                                  | `SpatRaster`                     |
++----------------------------------+----------------------------------+
+| `as.integer(ras)`                | Doesn’t work for `SpatRaster`.\  |
+|                                  | This also doesn’t work:          |
+|                                  | `ra s[] <- as.integer            |
+|                                  | (ras[])ras <- LandR::asInt(ras)` |
+|                                  | works on `RasterLayer` or        |
+|                                  | `SpatRaster`                     |
+|                                  |                                  |
+|                                  | `LandR::isInt` \# the equivalent |
+|                                  | for `is.integer`\                |
+|                                  | \                                |
++----------------------------------+----------------------------------+
+| `setColors`                      | See `terra::coltab`\             |
+|                                  | \                                |
++----------------------------------+----------------------------------+
+| `subs`                           | `terra::subst` – but arguments   |
+|                                  | are different                    |
++----------------------------------+----------------------------------+
+| `fasterize::fasterize`           | No equivalent for `SpatVector`   |
+|                                  | objects yet.                     |
+|                                  |                                  |
+|                                  | Use `terra::rasterize` but this  |
+|                                  | appears to be slow at the        |
+|                                  | moment. sf objects may need to   |
+|                                  | be converted to a temporary      |
+|                                  | `SpatVector`                     |
++----------------------------------+----------------------------------+
+| `SpaDES.core::Plots(ras)`        | Use                              |
+|                                  | `SpaDES.core::Plot               |
+|                                  | s(ras, fn = LandR::plotRast, …)` |
+|                                  | available in `LandR@development` |
++----------------------------------+----------------------------------+
+| `quickPlot::Plot(ras)`           | `quickPlot::Plot(ras)` – accepts |
+|                                  | `SpatRaster`                     |
++----------------------------------+----------------------------------+
+| `raster::dataType`               | Equivalent in `terra` is         |
+|                                  | `datatype` (notice different     |
+|                                  | capitalization)                  |
+|                                  |                                  |
+|                                  | `reproducible::dataType2` works  |
+|                                  | on `RasterLayer` and             |
+|                                  | `SpatRaster`                     |
++----------------------------------+----------------------------------+
+| `xyFromCell`                     | `terra::xyFromCell(..., cell)`   |
+|                                  | does not accept a matrix for     |
+|                                  | `cell` (unlike                   |
+|                                  | `raster::xyFromCell`). But       |
+|                                  | passing `as.vector(cell)` will   |
+|                                  | work with `RasterLayer` and      |
+|                                  | `SpatRaster`                     |
++----------------------------------+----------------------------------+
+| `clump()`                        | `patches()`                      |
++----------------------------------+----------------------------------+
+| `filename()`                     | Equivalent in `terra` is         |
+|                                  | `sources()`\                     |
+|                                  | `reproducible::Filenames()`      |
+|                                  | works on either `RasterLayer` or |
+|                                  | `SpatRaster`                     |
++----------------------------------+----------------------------------+
