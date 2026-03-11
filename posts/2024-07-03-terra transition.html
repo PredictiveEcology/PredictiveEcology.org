@@ -251,323 +251,138 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 <p>That’s all really.</p>
 <p>Below is a lit of <code>raster</code> to <code>terra</code> (or other packages) function equivalencies that may be useful. Note that these are likely to change as <code>terra</code> and other packages evolve.</p>
 <p>See also the description of <a href="https://rspatial.github.io/terra/reference/terra-package.html#xxviii-new-method-names-1"><code>terra</code> methods</a> for more useful information.</p>
-
 <table class="table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
 <tbody>
 <tr class="odd">
-<td>
-<p>
-<strong><code>raster</code> package</strong>
-</p>
-</td>
-<td>
-<p>
-<strong><code>terra</code> or other packages</strong>
-</p>
-</td>
+<td><strong><code>raster</code> package</strong></td>
+<td><strong><code>terra</code> or other packages</strong></td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>ras[]</code>
-</p>
-</td>
-<td>
-<p>
-<code>as.vec t o r(ras[])as.vector(values(ras))</code>
-</p>
+<td><code>ras[]</code></td>
+<td><code>as.vector(ras[])</code> or <code>as.vector(values(ras))</code></td>
+</tr>
+<tr class="odd">
+<td><code>compareCRS</code></td>
+<td>For now,<br>
+<code>LandR::.compareCRS</code> – only 2 rasters<br>
+<code>LandR::.compareRas</code> – multiple rasters</td>
+</tr>
+<tr class="even">
+<td><code>maxValue</code>, <code>minValue</code></td>
+<td><code>minmax</code> or<br>
+<code>reproducible::minFn</code>, <code>reproducible::maxFn</code></td>
+</tr>
+<tr class="odd">
+<td><code>compareRaster</code></td>
+<td><p><code>terra::compareGeom</code> – more sensitive than <code>st_crs(x) == st_crs(y)</code> and returns false negatives in many situations.<br>
+<br>
+Alternatives are:<br>
+<code>sf::st_crs(x) == sf::st_crs(y)</code></p>
+<p><code>LandR::.compareRas</code></p>
+<p><code>LandR::.compareCRS</code></p></td>
+</tr>
+<tr class="even">
+<td><code>getValues</code></td>
+<td><code>SpatRaster[]</code> returns a matrix, even if it is just one layer; <code>RasterLayer[]</code> returns a vector; <code>RasterStack[]</code> returns a matrix<br>
+<br>
+For consistency, use:<br>
+<code>reproducible::values2</code><br>
+which replicates the old <code>RasterLayer</code>/<code>RasterStack</code> behaviour of vector if 1 layer, matrix if &gt; 1 layer, using internally:<br>
+<code>terra::values(ras, mat = nlyr(ras) &gt; 1)</code> if <code>ras</code> is a <code>RasterLayer</code><br>
+<br>
 </td>
 </tr>
 <tr class="odd">
-<td>
-<p>
-<code>compareCRS</code>
-</p>
-</td>
-<td>
-<p>
-For now,<br> <code>LandR::.compareCRS</code> – only 2 rasters<br> <code>LandR::.compareRas</code> – multiple rasters
-</p>
-</td>
+<td><code>setValues</code></td>
+<td><code>ras[] &lt;-</code></td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>maxValue</code>, <code>minValue</code>
-</p>
-</td>
-<td>
-<p>
-<code>minmax</code> or<br> <code>reproducible::minFn</code>, <code>reproducible::maxFn</code>
-</p>
+<td><code>extract</code>, <code>mask</code>, <code>ncell</code>, <code>cover</code></td>
+<td>Same function names in <code>terra</code>, all compatible with <code>RasterLayer</code> and <code>RasterStack</code></td>
+</tr>
+<tr class="odd">
+<td><code>raster(ras)</code></td>
+<td><p>Used to create a template raster.</p>
+<p><code>terra</code> equivalent is:<br>
+<code>rast(ras)</code></p>
+<p><code>reproducible::rasterRead</code> can use either, depending on value of <code>getOption("reproducible.rasterRead")</code></p></td>
+</tr>
+<tr class="even">
+<td><code>raster(filepath)</code></td>
+<td><p>Used to load a raster from a file.</p>
+<p><code>terra</code> equivalent is <code>rast(filepath)</code></p>
+<p><code>reproducible::rasterRead</code> can use either, depending on value of <code>getOption("reproducible.rasterRead")</code></p></td>
+</tr>
+<tr class="odd">
+<td><code>layerNames</code></td>
+<td><code>names</code></td>
+</tr>
+<tr class="even">
+<td><code>extent</code></td>
+<td><code>terra::ext</code> – compatible with <code>RasterLayer</code> and <code>RasterStack</code></td>
+</tr>
+<tr class="odd">
+<td><code>res</code></td>
+<td><code>terra::res</code>&nbsp;– compatible with <code>RasterLayer</code> and <code>RasterStack</code></td>
+</tr>
+<tr class="even">
+<td><code>nlayers</code></td>
+<td><code>length(names(ras))</code> or <code>terra::nlyr</code>; new transition function <code>reproducible::nlayers2</code> works with either <code>RasterLayer</code> or <code>SpatRaster</code></td>
+</tr>
+<tr class="odd">
+<td><code>as.integer(ras)</code></td>
+<td><p>Doesn’t work for <code>SpatRaster</code>.<br>
+This also doesn’t work: <code>ra s[] &lt;- as.integer(ras[])ras &lt;- LandR::asInt(ras)</code> works on <code>RasterLayer</code> or <code>SpatRaster</code></p>
+<p><code>LandR::isInt</code> # the equivalent for <code>is.integer</code><br>
+<br>
+</p></td>
+</tr>
+<tr class="even">
+<td><code>setColors</code></td>
+<td>See <code>terra::coltab</code><br>
+<br>
 </td>
 </tr>
 <tr class="odd">
-<td>
-<p>
-<code>compareRaster</code>
-</p>
-</td>
-<td>
-<p>
-<code>terra::compareGeom</code> – more sensitive than <code>st_crs(x) == st_crs(y)</code> and returns false negatives in many situations.<br> <br> Alternatives are:<br> <code>sf::st_crs(x) == s f::st_crs(y)LandR::.compareRas</code>
-</p>
-</td>
+<td><code>subs</code></td>
+<td><code>terra::subst</code> – but arguments are different</td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>getValues</code>
-</p>
-</td>
-<td>
-<p>
-<code>SpatRaster[]</code> returns a matrix, even if it is just one layer; <code>RasterLayer[]</code> returns a vector; <code>RasterStack[]</code> returns a matrix<br> <br> For consistency, use:<br> <code>reproducible::values2</code><br> which replicates the old <code>RasterLayer</code>/<code>RasterStack</code> behaviour of vector if 1 layer, matrix if &gt; 1 layer, using internally:<br> <code>terra:: v a lues(ras, mat = nlyr(ras) &gt; 1)</code> if <code>ras</code> is a <code>RasterLayer</code><br> <br>
-</p>
-</td>
+<td><code>fasterize::fasterize</code></td>
+<td><p>No equivalent for <code>SpatVector</code> objects yet.</p>
+<p>Use <code>terra::rasterize</code> but this appears to be slow at the moment. sf objects may need to be converted to a temporary <code>SpatVector</code></p></td>
 </tr>
 <tr class="odd">
-<td>
-<p>
-<code>setValues</code>
-</p>
-</td>
-<td>
-<p>
-<code>ras[] &lt;-</code>
-</p>
-</td>
+<td><code>SpaDES.core::Plots(ras)</code></td>
+<td>Use <code>SpaDES.core::Plots(ras, fn = LandR::plotRast, …)</code> available in <code>LandR@development</code></td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>extract</code>, <code>mask</code>, <code>ncell</code>, <code>cover</code>
-</p>
-</td>
-<td>
-<p>
-Same function names in <code>terra</code>, all compatible with <code>RasterLayer</code> and <code>RasterStack</code>
-</p>
-</td>
+<td><code>quickPlot::Plot(ras)</code></td>
+<td><code>quickPlot::Plot(ras)</code> – accepts <code>SpatRaster</code></td>
 </tr>
 <tr class="odd">
-<td>
-<p>
-<code>raster(ras)</code>
-</p>
-</td>
-<td>
-<p>
-Used to create a template raster.
-</p>
-<p>
-<code>terra</code> equivalent is:<br> <code>rast(ras)</code>
-</p>
-<p>
-<code>reproducible::rasterRead</code> can use either, depending on value of <code>getO p t ion(“reproducible.rasterRead”)</code>
-</p>
-</td>
+<td><code>raster::dataType</code></td>
+<td><p>Equivalent in <code>terra</code> is <code>datatype</code> (notice different capitalization)</p>
+<p><code>reproducible::dataType2</code> works on <code>RasterLayer</code> and <code>SpatRaster</code></p></td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>raster(filepath)</code>
-</p>
-</td>
-<td>
-<p>
-Used to load a raster from a file.
-</p>
-<p>
-<code>terra</code> equivalent is <code>rast(filepath)</code>
-</p>
-<p>
-<code>reproducible::rasterRead</code> can use either, depending on value of <code>getO p t ion(“reproducible.rasterRead”)</code>
-</p>
-</td>
+<td><code>xyFromCell</code></td>
+<td><code>terra::xyFromCell(..., cell)</code> does not accept a matrix for <code>cell</code> (unlike <code>raster::xyFromCell</code>). But passing <code>as.vector(cell)</code> will work with <code>RasterLayer</code> and <code>SpatRaster</code></td>
 </tr>
 <tr class="odd">
-<td>
-<p>
-<code>layerNames</code>
-</p>
-</td>
-<td>
-<p>
-<code>names</code>
-</p>
-</td>
+<td><code>clump()</code></td>
+<td><code>patches()</code></td>
 </tr>
 <tr class="even">
-<td>
-<p>
-<code>extent</code>
-</p>
-</td>
-<td>
-<p>
-<code>terra::ext</code> – compatible with <code>RasterLayer</code> and <code>RasterStack</code>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>res</code>
-</p>
-</td>
-<td>
-<p>
-<code>terra::res</code>&nbsp;– compatible with <code>RasterLayer</code> and <code>RasterStack</code>
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>nlayers</code>
-</p>
-</td>
-<td>
-<p>
-<code>length(names(ras))</code> or <code>terra::nlyr</code>; new transition function <code>reproducible::nlayers2</code> works with either <code>RasterLayer</code> or <code>SpatRaster</code>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>as.integer(ras)</code> doesn’t work for <code>SpatRaster</code> … this also doesn’t work:<br> <code>ras[] &lt;- as.integer(ras[])</code>
-</p>
-</td>
-<td>
-<p>
-<code>ras &lt;- LandR::asInt(ras)</code> works on <code>RasterLayer</code> or <code>SpatRaster</code>
-</p>
-<p>
-<code>LandR::isInt</code> # the equivalent for <code>is.integer</code><br> <br>
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>setColors</code>
-</p>
-</td>
-<td>
-<p>
-See <code>terra::coltab</code><br> <br>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>subs</code>
-</p>
-</td>
-<td>
-<p>
-<code>terra::subst</code> – but arguments are different
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>fasterize::fasterize</code>
-</p>
-</td>
-<td>
-<p>
-No equivalent for <code>SpatVector</code> objects yet.
-</p>
-<p>
-Use <code>terra::rasterize</code> but this appears to be slow at the moment. sf objects may need to be converted to a temporary <code>SpatVector</code>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>SpaDES.core::Plots(ras)</code>
-</p>
-</td>
-<td>
-<p>
-Use
-</p>
-<p>
-<code>SpaDES.core::Plo t s (ras, fn = LandR::plotRast, …)</code> available in LandRdevelopment
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>quickPlot::Plot(ras)</code>
-</p>
-</td>
-<td>
-<p>
-<code>quickPlot::Plot(ras)</code> – accepts <code>SpatRaster</code>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>raster::dataType</code>
-</p>
-</td>
-<td>
-<p>
-Equivalent in <code>terra</code> is <code>datatype</code> (notice different capitalization)
-</p>
-<p>
-<code>reproducible::dataType2</code> works on <code>RasterLayer</code> and <code>SpatRaster</code>
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>xyFromCell</code>
-</p>
-</td>
-<td>
-<p>
-<code>terra::xyFromCell(…, cell)</code> does not accept (unlike <code>r aster::xyFromCell(…, cell)</code>)<br> Passing <code>as.vector(cell)</code> will work with <code>RasterLayer</code> and <code>SpatRaster</code>
-</p>
-</td>
-</tr>
-<tr class="odd">
-<td>
-<p>
-<code>clump()</code>
-</p>
-</td>
-<td>
-<p>
-<code>patches()</code>
-</p>
-</td>
-</tr>
-<tr class="even">
-<td>
-<p>
-<code>filename()</code>
-</p>
-</td>
-<td>
-<p>
-Equivalent in <code>terra</code> is <code>sources()</code><br> <code>reproducible::Filenames()</code> works on either <code>RasterLayer</code> or <code>SpatRaster</code>
-</p>
-</td>
+<td><code>filename()</code></td>
+<td>Equivalent in <code>terra</code> is <code>sources()</code><br>
+<code>reproducible::Filenames()</code> works on either <code>RasterLayer</code> or <code>SpatRaster</code></td>
 </tr>
 </tbody>
-
 </table>
 
 
