@@ -663,7 +663,7 @@ doEvent.scheduling = function(sim, eventTime, eventType) {
     predictions = {
       sim <- Prediction(sim)
       scheduleEvent(sim, time(sim) + 1, "predictions")  # re-schedule "predictions"
-    }
+    },
     warning(noEventWarning(sim))
   )
   return(invisible(sim))

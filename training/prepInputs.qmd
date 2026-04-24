@@ -319,7 +319,7 @@ LuxembourgInnerBuffer <- prepInputs(
 ) |> Cache()
 
 terra::plot(LuxembourgInnerBuffer)
-terra::plot(Luxembourg, add = TRUE)
+terra::plot(LuxembourgFull, add = TRUE)
 ```
 
 By rerunning the previous code, the caching will be in effect. This
