@@ -12,6 +12,16 @@ execute:
 
 # SpaDES workflows and projects
 
+```{r setup}
+#| include: false
+#| eval: true
+#| purl: false
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
+```
+
 One of the advantages of `SpaDES` is that we can make simple "linear"
 workflows, but we can also make complex workflows *emerge* from the
 combinations of modules (and of their events) being put together by a
@@ -38,13 +48,32 @@ documentation sources noted in the chapters.
 
 We can see many of the known modules in the SpaDES-verse and how they interact through their shared inputs and outputs in this interactive figure:
 
+```{r pkgs}
+#| eval: true
+
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+library(SpaDES.project)
+out <- setupProject(
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "PredictiveEcology/climateData@modsDuringFireSense3",
+               "igraph", "visNetwork"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/setupProjectDemo")
+)
+```
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| echo: true
 #| eval: true
 #| cache: true
-Require::Install(c("igraph", "visNetwork"))
 
 modPath <- "~/SpaDES_book/listModules/"
 accountsListLong <- c("PredictiveEcology", "ianmseddy", "achubaty",
