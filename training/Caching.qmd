@@ -15,16 +15,13 @@ editor_options:
 ---
 
 ```{r setup}
-#| cache: true
+#| include: false
 #| eval: true
-#| echo: false
 #| purl: false
 
-SuggestedPkgsNeeded <- c("terra")
-hasSuggests <- all(sapply(SuggestedPkgsNeeded, require, character.only = TRUE, quietly = TRUE))
-useSuggests <- !(tolower(Sys.getenv("_R_CHECK_DEPENDS_ONLY_")) == "true")
-
-knitr::opts_chunk$set(eval = hasSuggests && useSuggests)
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
 # Introduction to Cache {#sec-caching}
@@ -60,6 +57,26 @@ The `reproducible::Cache()` function is built to work with many R
 functions, including *some* that are used for their side effects or that
 use pointers (e.g., a `terra` `SpatRaster`) instead of regular R
 objects.
+
+```{r pkgs}
+#| eval: true
+
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+library(SpaDES.project)
+out <- setupProject(
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "PredictiveEcology/climateData@modsDuringFireSense3",
+               "terra"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/Caching")
+)
+```
 
 ## How to use `Cache`
 

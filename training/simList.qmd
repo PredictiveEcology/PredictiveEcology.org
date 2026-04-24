@@ -18,6 +18,16 @@ execute:
 See [Barebones R script] for the code shown in this chapter
 :::
 
+```{r setup}
+#| include: false
+#| eval: true
+#| purl: false
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
+```
+
 In `R`, there is a default environment, called the `.GlobalEnv`. When
 you start typing in R and you create an object, it is "put" in the
 `.GlobalEnv`
@@ -38,13 +48,30 @@ In `SpaDES`, this place is called the `simList`. It is a rich data
 object that acts like a list or an environment, i.e., we can put objects
 into it and use them later.
 
+```{r pkgs}
+#| eval: true
+
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+library(SpaDES.project)
+out <- setupProject(
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "PredictiveEcology/climateData@modsDuringFireSense3"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
+)
+```
+
 ```{r simListCreate}
 #| eval: true
 #| results: false
 
-Require::Require(c("reproducible", "SpaDES.core  (>= 2.1.5)"),
-                 repos = c("https://predictiveecology.r-universe.dev", getOption("repos")))
-
+library(SpaDES.core)
 sim <- simInit()
 sim$a <- 1
 sim$b <- sim$a + 2

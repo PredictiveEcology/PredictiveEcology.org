@@ -21,12 +21,13 @@ See [Barebones R script] for the code shown in this chapter
 
 ```{r setup}
 #| include: false
+#| eval: true
 #| purl: false
 
-knitr::opts_chunk$set(tidy = FALSE, 
+knitr::opts_chunk$set(tidy = FALSE,
                       eval = FALSE,
-                      warning = FALSE, 
-                      message = FALSE, 
+                      warning = FALSE,
+                      message = FALSE,
                       error = FALSE)
 
 # truncate text output
@@ -44,7 +45,9 @@ knitr::knit_hooks$set(output = function(x, options) {
   hook_output(x, options)
 })
 
-Require::Require(c("reproducible"), install = FALSE)
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
 A **module** is a collection of R scripts structured in a particular
