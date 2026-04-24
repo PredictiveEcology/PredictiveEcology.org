@@ -201,7 +201,7 @@ The following will get the national ecozone map, project, crop and mask
 it to the SK dataset.
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan"))
+SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 1$"))
 shpEcozoneSK <- prepInputs(
   url = "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip",
   to = SK, destinationPath = "~/SpaDES_book/data/prepInputs"
@@ -244,7 +244,7 @@ of the downloaded object, change the projection, and resolution.
 mask to
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", epsg = 5070))
+SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 1$", epsg = 5070))
 SKras <- terra::rast(terra::ext(SK), res = 250, val = 1)
 terra::crs(SKras) <- terra::crs(SK)
 
