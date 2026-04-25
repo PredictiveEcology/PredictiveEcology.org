@@ -37,23 +37,31 @@ SpaDES module (*Biomass-core*) which has over 130 package dependencies.
 #| echo: true
 #| eval: false
 
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 install.packages(c("Require", "SpaDES.project"), repos = repos)
 
 library(SpaDES.project)
 
 out <- setupProject(
-  packages = "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R",
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c(
+    "PredictiveEcology/Require@usePak",
+    "PredictiveEcology/reproducible@recovery2",
+    "PredictiveEcology/SpaDES.project@working/combined-prs",
+    "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+    "PredictiveEcology/climateData@modsDuringFireSense3",
+    "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R"
+  ),
   options = list(repos = repos),
-  name = "Introduction",
+  paths = list(projectPath = "~/SpaDES_book/Introduction"),
   modules = "PredictiveEcology/Biomass_core@main"
 )
 ```
 
 Note that `setupProject` will change your working directory to
-`./Introduction`. If that is not where you want to keep working, restart
-R and make sure you set your working directory to where you want it to
-be (if restarting is not sufficient).
+`~/SpaDES_book/Introduction`. If that is not where you want to keep
+working, restart R and make sure you set your working directory to
+where you want it to be (if restarting is not sufficient).
 
 ## Code explained
 

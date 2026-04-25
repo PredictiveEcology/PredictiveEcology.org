@@ -19,6 +19,7 @@ See [Barebones R script] for the code shown in this chapter
 
 ```{r setup}
 #| include: false
+#| eval: true
 #| purl: false
 
 # truncate text output
@@ -35,8 +36,10 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-libPath <- ifelse(dir.exists("packages"), "packages", "training/packages") # if run interactively vs knited
-.libPaths(libPath)
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
 Once we want to run a project that is more sophisticated, we can start
@@ -56,46 +59,34 @@ where a workflow with several modules is setup and run.
 
 https://spades-project.predictiveecology.org/articles/i-getting-started.html
 
-## Installation
-
-```{r setupProject}
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-# if (!require("SpaDES.project"))
-Require::Install(c("SpaDES.project", "SpaDES.core", "reproducible"), repos = repos, dependencies = TRUE)
-
-packagePath = SpaDES.project::.libPathDefault("~/SpaDES_book/integratingSpaDESmodules")
-```
-
-```{r}
-packagePath = SpaDES.project::.libPathDefault("PredictiveEcology.org")
-```
-
 ## Using `setupProject`
 
 `setupProject` does a series of very specific things, in a particular
 order, so that the chances of package conflicts and user errors are
-minimized.
-
-Note how it downloads the listed modules directly from their GitHub
-repositories (e.g.
+minimized. It downloads the listed modules directly from their GitHub
+repositories (e.g.,
 [tati-micheletti/speciesAbundance](https://github.com/tati-micheletti/speciesAbundance))
+and installs the listed packages into a project-specific library.
 
-```{r setupProject2}
-##################### PART II: Download the modules and install the needed packages
-Setup <- SpaDES.project::setupProject(
-  
-  paths = list(projectPath = "~/SpaDES_book/integratingSpaDESmodules",
-               packagePath = packagePath),
-  
+```{r setupProject}
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+library(SpaDES.project)
+Setup <- setupProject(
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "terra"),
   modules = c("tati-micheletti/speciesAbundance@main",
               "tati-micheletti/temperature@main",
               "tati-micheletti/speciesAbundTempLM@main"),
-  
-  times = list(start = 2013,
-               end = 2030),
-  
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/workflowSimple2"),
+  times = list(start = 2013, end = 2030),
   updateRprofile = FALSE
-  
 )
 ```
 
@@ -129,7 +120,7 @@ the forecasted abundances and the difference raster is also possible.
 This is done by calling the object name from the results list.
 
 ```{r objectDiagram}
-terra::plot(rast(results$forecasts))
+terra::plot(terra::rast(results$forecasts))
 ```
 
 ## Examples
