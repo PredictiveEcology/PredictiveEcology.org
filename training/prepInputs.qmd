@@ -311,12 +311,14 @@ GIS operations are needed, e.g. reprojecting large raster datasets.
 ```{r custom}
 LuxPath <- "~/SpaDES_book/prepInputs"
 LuxembourgFull <- prepInputs(
+  destinationPath = LuxPath,
   # preProcess keeps file from this:
   dlFun = geodata::gadm(name = "GADM", country = "LUX",
                         level = 0, path = LuxPath)
 ) |> Cache()
 
 LuxembourgInnerBuffer <- prepInputs(
+  destinationPath = LuxPath,
   dlFun = geodata::gadm(name = "GADM", country = "LUX",
                         level = 0, path = LuxPath),
   fun = {                      # Custom function
