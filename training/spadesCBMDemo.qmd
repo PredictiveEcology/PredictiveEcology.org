@@ -349,22 +349,24 @@ With `simPython2`, you can look at your results and generate plots in the same w
 
 ## Barebones script
 ```{r}
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+library(SpaDES.project)
+
 projectPath <- "~/spadesCBMpython"
-repos <- unique(c("predictiveecology.r-universe.dev", getOption("repos")))
-install.packages("SpaDES.project",
-                 repos = repos)
 
 # start in 1998, and end in 2000
 times <- list(start = 1998, end = 2000)
 
-out <- SpaDES.project::setupProject(
+out <- setupProject(
   Restart = TRUE,
   useGit = "PredictiveEcology", # a developer sets and keeps this = TRUE
   overwrite = TRUE, # a user who wants to get latest modules sets this to TRUE
   paths = list(projectPath = projectPath),
 
-  options = options(
-    repos = c(repos = repos),
+  options = list(
+    repos = unique(repos),
     Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
     reproducible.destinationPath = "inputs",
     ## These are for speed
@@ -377,6 +379,11 @@ out <- SpaDES.project::setupProject(
                "PredictiveEcology/CBM_vol2biomass@training",
                "PredictiveEcology/CBM_core@training"),
   times = times,
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings"),
   require = c("SpaDES.core", "reticulate",
               "PredictiveEcology/libcbmr", "data.table"),
 

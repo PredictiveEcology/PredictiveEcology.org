@@ -80,8 +80,11 @@ available from [predictiveecology.r-universe.dev](predictiveecology.r-universe.d
 #| cache: false 
 
 # install/load necessary packages
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-install.packages(c("SpaDES.project", "Require"), repos = repos, dependencies = TRUE)
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 
 library(SpaDES.project)
 ```
