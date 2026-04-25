@@ -34,51 +34,42 @@ See [Barebones R script] for the code shown in this chapter
 hook_output <- knitr::knit_hooks$get("output")
 
 knitr::knit_hooks$set(output = function(x, options) {
-if (!is.null(n <- options$outlines)) {
-x <- xfun::split_lines(x)
-if (length(x) > n) {
-# truncate the output
-x <- c(head(x, n), "....\n")
-}
-x <- paste(x, collapse = "\n")
-}
-hook_output(x, options)
+  if (!is.null(n <- options$outlines)) {
+    x <- xfun::split_lines(x)
+    if (length(x) > n) {
+      # truncate the output
+      x <- c(head(x, n), "....\n")
+    }
+    x <- paste(x, collapse = "\n")
+  }
+  hook_output(x, options)
 })
 
-options(repos = list(CRAN = "http://cran.r-project.org"))
-
 if (Sys.getenv("USERNAME") == "GHA") {
-googledrive::drive_auth(path = Sys.getenv("GOOGLE_APP_CREDENTIALS"))
+  googledrive::drive_auth(path = Sys.getenv("GOOGLE_APP_CREDENTIALS"))
 }
 
 qmdPath <- normalizePath(getwd(), winslash = "/")
 
-if (!interactive()) {
-dir.create("~/SpaDES_book/Wildfire_demo", recursive = TRUE)
-knitr::opts_knit$set(root.dir = "~/SpaDES_book/Wildfire_demo")
-}
-# This needs to be done because the "automated" run needs googledrive::drive::auth() run
-#   before it is in 
-packagePath <- file.path("packages", gsub(".[[:digit:]]{1,3}$", "", getRversion()))
-dir.create(packagePath, showWarnings = FALSE, recursive = TRUE)
-.libPaths(packagePath)
-
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
-```{google drive}
+```{r googledrive}
 #| include: false
 #| eval: true
 #| cache: false
 #| purl: false
-out1 <- SpaDES.project::setupProject(package = c("googledrive", "httr"),
-                                     paths = list("packagePath" = packagePath),
-                                     projectPath = "~/SpaDES_book/LandRDemo_coreVeg",
-                                     verbose = -2)
+out1 <- SpaDES.project::setupProject(
+  packages = c("googledrive", "httr2"),
+  paths = list(projectPath = "~/SpaDES_book/Wildfire_demo"),
+  options = list(repos = repos),
+  verbose = -2)
 if (!googledrive::drive_has_token() && !interactive()) {
   options(gargle_oauth_email = "ianmseddy@gmail.com",
           gargle_oauth_cache = "C:/users/ieddy/SpaDES_book/googledrive_auth_cache/")
 }
-
 ```
 
 We have developed an R version of LANDIS-II's Biomass Succession
@@ -99,14 +90,11 @@ available" versions:
 **Time to run this** is between 1 and 2 hours.
 
 ```{r scfm}
-# This repository is ours and it has the latest versions of our packages
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-# Need the latest version
-if (tryCatch(packageVersion("SpaDES.project") < "0.1.1", error = function(x) TRUE))
-  install.packages(c("SpaDES.project", "Require"), repos = repos)
-# 
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
+library(SpaDES.project)
 
-out <- SpaDES.project::setupProject(
+out <- setupProject(
   Restart = TRUE,
   updateRprofile = FALSE,
   paths = list(projectPath = "~/SpaDES_book/Wildfire_demo"),
@@ -129,14 +117,21 @@ out <- SpaDES.project::setupProject(
     scfmDriver = list(targetN = 1000, #default is 4000 - higher targetN adds time + precision
                       # targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000
                       .useParallelFireRegimePolys = TRUE) #assumes parallelization is an otpion
-    
+
   ),
   options = list(#spades.allowInitDuringSimInit = TRUE,
     spades.allowSequentialCaching = TRUE,
     spades.moduleCodeChecks = FALSE,
-    spades.recoveryMode = 1
+    spades.recoveryMode = 1,
+    repos = unique(repos)
   ),
-  packages = c('RCurl', 'XML', 'snow', 'googledrive'),
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "PredictiveEcology/climateData@modsDuringFireSense3",
+               'RCurl', 'XML', 'snow', 'googledrive'),
   times = list(start = 2011, end = 2081),
   #70 years of fire should be enough to evaluate MAAB
   studyArea = {
