@@ -126,7 +126,8 @@ into R:
 
 ```{r archive}
 url <- "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip"
-shpEcozone <- prepInputs(url = url, destinationPath = "~/SpaDES_book/data/prepInputs")
+shpEcozone <- prepInputs(url = url,
+                         destinationPath = "~/SpaDES_book/data/prepInputs")
 terra::plot(shpEcozone[1])
 ```
 
@@ -140,7 +141,8 @@ and forget it** option in `reproducible`.
 ```{r inputPaths}
 options(reproducible.inputPaths = "~/data")
 url <- "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip"
-shpEcozone <- prepInputs(url = url, destinationPath = "~/SpaDES_book/data/prepInputs")
+shpEcozone <- prepInputs(url = url,
+                         destinationPath = "~/SpaDES_book/data/prepInputs")
 terra::plot(shpEcozone[1])
 ```
 
@@ -201,7 +203,9 @@ The following will get the national ecozone map, project, crop and mask
 it to the SK dataset.
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 1$"))
+SK <- SpaDES.project::setupStudyArea(
+  list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 9$")
+)
 shpEcozoneSK <- prepInputs(
   url = "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip",
   to = SK, destinationPath = "~/SpaDES_book/data/prepInputs"
@@ -244,7 +248,10 @@ of the downloaded object, change the projection, and resolution.
 mask to
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 1$", epsg = 5070))
+SK <- SpaDES.project::setupStudyArea(
+  list(level = 2, NAME_1 = "Saskatchewan",
+       NAME_2 = "Division No. 9$", epsg = 5070)
+)
 SKras <- terra::rast(terra::ext(SK), res = 250, val = 1)
 terra::crs(SKras) <- terra::crs(SK)
 
@@ -302,15 +309,16 @@ the benefits of caching won't be as apparent as for when more complex
 GIS operations are needed, e.g. reprojecting large raster datasets.
 
 ```{r custom}
+LuxPath <- "~/SpaDES_book/prepInputs"
 LuxembourgFull <- prepInputs(
- dlFun =
-   geodata::gadm(name = "GADM", country = "LUX", level = 0, path = "~/SpaDES_book/prepInputs") # preProcess keeps file from this!
+  # preProcess keeps file from this:
+  dlFun = geodata::gadm(name = "GADM", country = "LUX",
+                        level = 0, path = LuxPath)
 ) |> Cache()
 
 LuxembourgInnerBuffer <- prepInputs(
-  dlFun =
-    geodata::gadm(name = "GADM", country = "LUX", level = 0, path = "~/SpaDES_book/prepInputs") # preProcess keeps file from this!
-  ,
+  dlFun = geodata::gadm(name = "GADM", country = "LUX",
+                        level = 0, path = LuxPath),
   fun = {                      # Custom function
     out <- readRDS(targetFile)
     out <- terra::vect(out)
@@ -354,7 +362,8 @@ used.
 #| purl: false
 #| cache: false
 
-fileName <- file.path("R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+fileName <- file.path("R/Chapter_scripts",
+                      sub("rmarkdown", "R", knitr::current_input()))
 ```
 
 ```{r file = fileName}
