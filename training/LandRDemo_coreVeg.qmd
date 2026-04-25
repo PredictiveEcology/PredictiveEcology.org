@@ -27,9 +27,9 @@ See [Barebones R script] for the code shown in this chapter
 #| cache: false
 #| purl: false
 
-knitr::opts_chunk$set(tidy = FALSE, 
-                      warning = FALSE, 
-                      message = FALSE, 
+knitr::opts_chunk$set(tidy = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
                       error = FALSE)
 
 # truncate text output
@@ -53,23 +53,9 @@ if (Sys.getenv("USERNAME") == "GHA") {
 
 qmdPath <- normalizePath(getwd(), winslash = "/")
 
-if (!interactive()) { 
-  dir.create("~/SpaDES_book/LandRDemo_coreVeg", recursive = TRUE)
-  knitr::opts_knit$set(root.dir = "~/SpaDES_book/LandRDemo_coreVeg")
-}
-
-# This needs to be done because the "automated" run needs googledrive::drive::auth() run
-#   before it is in 
-packagePath <- file.path("packages", gsub(".[[:digit:]]{1,3}$", "", getRversion()))
-dir.create(packagePath, showWarnings = FALSE, recursive = TRUE)
-withr::local_libpaths(packagePath)
-
-# Need this here because packageVersion(... ) fails without explicit lib.loc because SpaDES.project is already in RAM, and it is "OK in RAM", but not OK at lib.loc
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-# Need the latest version
-if (tryCatch(packageVersion("SpaDES.project", lib.loc = packagePath) < "0.1.1.9009", error = function(x) TRUE))
-  install.packages(c("SpaDES.project", "Require"), repos = repos, lib = packagePath)
-
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
 ::: {.callout-note appearance="simple"}
@@ -138,10 +124,9 @@ then, our apologies for any inconvenience.
 #| cache: false
 #| purl: false
 # This repository is ours and it has the latest versions of our packages
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-# Need the latest version
-if (tryCatch(packageVersion("SpaDES.project") < "0.1.1.9009", error = function(x) TRUE))
-  install.packages(c("SpaDES.project", "Require"), repos = repos)
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!requireNamespace("SpaDES.project", quietly = TRUE))
+  install.packages(c("Require", "SpaDES.project"), repos = repos)
 ```
 
 ```{r googledrive}
@@ -149,10 +134,11 @@ if (tryCatch(packageVersion("SpaDES.project") < "0.1.1.9009", error = function(x
 #| eval: true
 #| cache: false
 #| purl: false
-out1 <- SpaDES.project::setupProject(package = c("googledrive", "httr"),
-                                     paths = list("packagePath" = packagePath),
-                                     projectPath = "~/SpaDES_book/LandRDemo_coreVeg", 
-                                     verbose = -2)
+out1 <- SpaDES.project::setupProject(
+  packages = c("googledrive", "httr2"),
+  paths = list(projectPath = "~/SpaDES_book/LandRDemo_coreVeg"),
+  options = list(repos = repos),
+  verbose = -2)
 if (!googledrive::drive_has_token() && !interactive()) {
   options(gargle_oauth_email = "eliotmcintire@gmail.com",
           gargle_oauth_cache = "c:/Eliot/SpaDES_book/googledrive_auth_cache")
@@ -166,6 +152,8 @@ if (!googledrive::drive_has_token() && !interactive()) {
 #| code-fold: true
 #| code-summary: "Show code"
 
+# If SpaDES.project is not installed, see:
+# https://predictiveecology.org/training/_book/PackagesForBook.html
 library(SpaDES.project)
 
 out <- setupProject(
@@ -174,11 +162,10 @@ out <- setupProject(
   #    specifically these are needed for params.R
   sppEquivCol = "Boreal",
   vegLeadingProportion = 0,
-  
+
   # Named arguments for setupProject -- see ?SpaDES.project::setupProject for help
-  paths = list("packagePath" = file.path("packages", Require:::versionMajorMinor()),
-               "projectPath" = "~/SpaDES_book/LandRDemo_coreVeg"),
-  
+  paths = list(projectPath = "~/SpaDES_book/LandRDemo_coreVeg"),
+
   modules = c(
     "PredictiveEcology/Biomass_speciesData@main"
     , "PredictiveEcology/Biomass_borealDataPrep@main"
@@ -186,11 +173,17 @@ out <- setupProject(
     , "PredictiveEcology/Biomass_core@main"
     # , "PredictiveEcology/Biomass_regeneration@main"
   ),
-  
+
   # packages only need to be specified if they are needed within this setupProject
   #   DiagrammeR is for plotting later in this qmd
-  packages = c("DiagrammeR", "googledrive", "httr2", "terra"),
-  
+  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
+  packages = c("PredictiveEcology/Require@usePak",
+               "PredictiveEcology/reproducible@recovery2",
+               "PredictiveEcology/SpaDES.project@working/combined-prs",
+               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
+               "PredictiveEcology/climateData@modsDuringFireSense3",
+               "DiagrammeR", "googledrive", "httr2", "terra"),
+
   options = list(
     "reproducible.destinationPath" = paths$inputPath,
     "spades.moduleCodeChecks" = FALSE,
@@ -548,15 +541,14 @@ are linked to these file paths explicitly.
 #| purl: false
 
 outValid <- setupProject(
-  paths = list("packagePath" = "packages/",
-               "projectPath" = "~/SpaDES_book/LandRDemo_coreVeg",
-               "outputPath" = "validation/"),
+  paths = list(projectPath = "~/SpaDES_book/LandRDemo_coreVeg",
+               outputPath = "validation/"),
   options = list(
     "LandR.assertions" = TRUE,
     "reproducible.destinationPath" = paths$inputPath,
     "spades.inputPath" = paths$inputPath,
     "spades.moduleCodeChecks" = FALSE,
-    "repos" = repos
+    "repos" = unique(repos)
   ),
   modules = c(
     "PredictiveEcology/Biomass_validationKNN@main"
