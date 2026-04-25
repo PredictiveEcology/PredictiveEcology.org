@@ -235,10 +235,10 @@ simPython <- SpaDES.core::simInitAndSpades2(out)
 ### Outputs
 
 In our `setupProject()` call, we defined certain outputs to be saved by specifying `out$outputs`. Look at that table. It defines what is saved in the *output* folder. You can also see a list of these outputs your simulation has created, their name, and where they were saved by using the `outputs()` function like so:
-```{r} 
+```
 > outputs(simPython)
 
-  objectName saveTime                                                                      file     
+  objectName saveTime                                                                      file
 1   cbmPools     1998 ~/spadesCBMpython/outputs/cbmPools_year1998.rds saveRDS    base  TRUE
 2        NPP     1998      ~/spadesCBMpython/outputs/NPP_year1998.rds saveRDS    base  TRUE
 3   cbmPools     1999 ~/spadesCBMpython/outputs/cbmPools_year1999.rds saveRDS    base  TRUE
