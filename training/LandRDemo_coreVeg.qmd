@@ -140,8 +140,12 @@ out1 <- SpaDES.project::setupProject(
   options = list(repos = repos),
   verbose = -2)
 if (!googledrive::drive_has_token() && !interactive()) {
-  options(gargle_oauth_email = "eliotmcintire@gmail.com",
-          gargle_oauth_cache = "c:/Eliot/SpaDES_book/googledrive_auth_cache")
+  # Use gargle's default per-OS cache (~/.cache/gargle on Linux,
+  # ~/Library/Caches/gargle on macOS, %LOCALAPPDATA%/gargle/Cache on
+  # Windows). Setting only the email lets gargle pick the matching
+  # cached token without an explicit (platform-specific) cache path.
+  options(gargle_oauth_email =
+            Sys.getenv("GARGLE_OAUTH_EMAIL", "eliotmcintire@gmail.com"))
 }
 ```
 
@@ -612,7 +616,8 @@ folder, or the previous ones will be overriden.
 ```{r scenarios}
 out2 <- out
 out2$modules <- out2$modules[out2$modules != "Biomass_speciesParameters"]
-out2$paths$outputPath <- normPath(file.path("~/SpaDES_book/LandRDemo_coreVeg", "outputsSim2"))
+out2$paths$outputPath <- reproducible::normPath(
+  file.path("~/SpaDES_book/LandRDemo_coreVeg", "outputsSim2"))
 
 simOut2 <- SpaDES.core::simInitAndSpades2(out2)
 ```
@@ -646,6 +651,7 @@ From there you can press ENTER, F10 or the "Next" button to execute the
 code line-by-line. At some point you will get to this line:
 
 ```{r}
+#| eval: false
 
 sim <- plotSummaryBySpecies(sim)
 ```
@@ -671,15 +677,17 @@ Try re-running the workflow with a different set of study areas. For
 example:
 
 ```{r}
+#| eval: false
+
 # studyArea could be
 studyArea = {
-set.seed(123)
-SpaDES.tools::randomStudyArea(size = 200000000)
+  set.seed(123)
+  SpaDES.tools::randomStudyArea(size = 200000000)
 }
 
 # studyAreaLarge
 studyAreaLarge = {
-terra::buffer(studyArea, width = 10000)
+  terra::buffer(studyArea, width = 10000)
 }
 ```
 
