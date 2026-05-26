@@ -85,6 +85,11 @@ available" versions:
 **Time to run this** is between 1 and 2 hours.
 
 ```{r scfm}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 
 out <- setupProject(

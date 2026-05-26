@@ -139,6 +139,11 @@ if (!googledrive::drive_has_token() && !interactive()) {
 #| code-fold: true
 #| code-summary: "Show code"
 
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 
 out <- setupProject(
