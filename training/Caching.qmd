@@ -66,13 +66,9 @@ objects.
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 out <- setupProject(
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
-  packages = c("PredictiveEcology/Require@usePak",
-               "PredictiveEcology/reproducible@recovery2",
-               "PredictiveEcology/SpaDES.project@working/combined-prs",
-               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
-               "PredictiveEcology/climateData@modsDuringFireSense3",
-               "terra"),
+  packages = c("PredictiveEcology/Require@development",
+               "PredictiveEcology/SpaDES.project@development",
+               "reproducible", "terra"),
   options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Caching")
 )

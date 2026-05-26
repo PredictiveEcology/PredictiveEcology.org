@@ -154,11 +154,9 @@ out <- setupProject(
                "PredictiveEcology/CBM_vol2biomass@training",
                "PredictiveEcology/CBM_core@training"),
   times = times,
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
-  packages = c("PredictiveEcology/Require@usePak",
-               "PredictiveEcology/reproducible@recovery2",
-               "PredictiveEcology/SpaDES.project@working/combined-prs",
-               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings"),
+  packages = c("PredictiveEcology/Require@development",
+               "PredictiveEcology/SpaDES.project@development",
+               "SpaDES.core", "reproducible"),
   require = c("SpaDES.core", "reticulate",
               "PredictiveEcology/libcbmr", "data.table"),
 
@@ -379,11 +377,9 @@ out <- setupProject(
                "PredictiveEcology/CBM_vol2biomass@training",
                "PredictiveEcology/CBM_core@training"),
   times = times,
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
-  packages = c("PredictiveEcology/Require@usePak",
-               "PredictiveEcology/reproducible@recovery2",
-               "PredictiveEcology/SpaDES.project@working/combined-prs",
-               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings"),
+  packages = c("PredictiveEcology/Require@development",
+               "PredictiveEcology/SpaDES.project@development",
+               "SpaDES.core", "reproducible"),
   require = c("SpaDES.core", "reticulate",
               "PredictiveEcology/libcbmr", "data.table"),
 

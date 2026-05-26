@@ -180,12 +180,11 @@ out <- setupProject(
 
   # packages only need to be specified if they are needed within this setupProject
   #   DiagrammeR is for plotting later in this qmd
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
-  packages = c("PredictiveEcology/Require@usePak",
-               "PredictiveEcology/reproducible@recovery2",
-               "PredictiveEcology/SpaDES.project@working/combined-prs",
-               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
-               "PredictiveEcology/climateData@modsDuringFireSense3",
+  packages = c("PredictiveEcology/Require@development",
+               "PredictiveEcology/SpaDES.project@development",
+               "PredictiveEcology/LandR@main",
+               "PredictiveEcology/climateData@main",
+               "SpaDES.core", "reproducible",
                "DiagrammeR", "googledrive", "httr2", "terra"),
 
   options = list(

@@ -43,14 +43,11 @@ install.packages(c("Require", "SpaDES.project"), repos = repos)
 library(SpaDES.project)
 
 out <- setupProject(
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
   packages = c(
-    "PredictiveEcology/Require@usePak",
-    "PredictiveEcology/reproducible@recovery2",
-    "PredictiveEcology/SpaDES.project@working/combined-prs",
-    "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
-    "PredictiveEcology/climateData@modsDuringFireSense3",
-    "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R"
+    "PredictiveEcology/Require@development",
+    "PredictiveEcology/SpaDES.project@development",
+    "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R",
+    "SpaDES.core", "reproducible"
   ),
   options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Introduction"),

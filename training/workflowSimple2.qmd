@@ -74,12 +74,9 @@ and installs the listed packages into a project-specific library.
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 Setup <- setupProject(
-  # TODO: simplify once dev branches are merged and released to CRAN/r-universe
-  packages = c("PredictiveEcology/Require@usePak",
-               "PredictiveEcology/reproducible@recovery2",
-               "PredictiveEcology/SpaDES.project@working/combined-prs",
-               "PredictiveEcology/SpaDES.core@fixRCMDcheckWarnings",
-               "terra"),
+  packages = c("PredictiveEcology/Require@development",
+               "PredictiveEcology/SpaDES.project@development",
+               "SpaDES.core", "terra"),
   modules = c("tati-micheletti/speciesAbundance@main",
               "tati-micheletti/temperature@main",
               "tati-micheletti/speciesAbundTempLM@main"),
