@@ -18,17 +18,6 @@ execute:
 See [Barebones R script] for the code shown in this chapter
 :::
 
-```{r setup}
-#| include: false
-#| eval: true
-#| purl: false
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
-```
-
 In `R`, there is a default environment, called the `.GlobalEnv`. When
 you start typing in R and you create an object, it is "put" in the
 `.GlobalEnv`
@@ -52,9 +41,15 @@ into it and use them later.
 ```{r pkgs}
 #| eval: true
 
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 out <- setupProject(
-  packages = c(               "SpaDES.core"),
+  packages = c("SpaDES.core"),
+  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
 )
 ```

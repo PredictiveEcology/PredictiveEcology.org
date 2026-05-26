@@ -50,11 +50,6 @@ if (Sys.getenv("USERNAME") == "GHA") {
 }
 
 qmdPath <- normalizePath(getwd(), winslash = "/")
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 ```{r googledrive}
@@ -118,6 +113,7 @@ out <- setupProject(
 
   ),
   options = list(#spades.allowInitDuringSimInit = TRUE,
+    repos = repos,
     spades.allowSequentialCaching = TRUE,
     spades.moduleCodeChecks = FALSE,
     spades.recoveryMode = 1

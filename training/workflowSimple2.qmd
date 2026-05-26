@@ -36,11 +36,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 Once we want to run a project that is more sophisticated, we can start
@@ -70,9 +65,15 @@ repositories (e.g.,
 and installs the listed packages into a project-specific library.
 
 ```{r setupProject}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 Setup <- setupProject(
-  packages = c(               "SpaDES.core", "terra"),
+  packages = c("SpaDES.core", "terra"),
+  options = list(repos = repos),
   modules = c("tati-micheletti/speciesAbundance@main",
               "tati-micheletti/temperature@main",
               "tati-micheletti/speciesAbundTempLM@main"),

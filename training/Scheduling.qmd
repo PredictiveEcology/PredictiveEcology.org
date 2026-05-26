@@ -36,11 +36,6 @@ knitr::knit_hooks$set(output = function(x, options) {
   }
   hook_output(x, options)
 })
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 Here, we will talk about **scheduling events** in a SpaDES module using
@@ -79,9 +74,15 @@ year into the future" and that our `y` will slowly get bigger.
 ```{r pkgs}
 #| eval: true
 
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 out <- setupProject(
   packages = c("SpaDES.core", "ggplot2"),
+  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Scheduling")
 )
 ```

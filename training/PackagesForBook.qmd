@@ -46,9 +46,9 @@ library(SpaDES.project)
 
 out <- setupProject(
   packages = c(
-    "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R",
     "SpaDES.core", "reproducible"
   ),
+  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Introduction"),
   modules = "PredictiveEcology/Biomass_core@main"
 )

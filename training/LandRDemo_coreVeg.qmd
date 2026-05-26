@@ -52,11 +52,6 @@ if (Sys.getenv("USERNAME") == "GHA") {
 }
 
 qmdPath <- normalizePath(getwd(), winslash = "/")
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 ::: {.callout-note appearance="simple"}
@@ -172,9 +167,10 @@ out <- setupProject(
                "DiagrammeR", "googledrive", "httr2", "terra"),
 
   options = list(
+    "repos" = repos,
     "reproducible.destinationPath" = paths$inputPath,
-    "spades.moduleCodeChecks" = FALSE,
-    "Require.cloneFrom" = Sys.getenv("R_LIBS_USER") # faster package installs (from personal library)
+    "Require.cloneFrom" = Sys.getenv("R_LIBS_USER"), # faster package installs (from personal library)
+    "spades.moduleCodeChecks" = FALSE
   ),
 
   # DYNAMIC MODEL SETUP ------------------------------------
@@ -531,6 +527,7 @@ outValid <- setupProject(
                outputPath = "validation/"),
   options = list(
     "LandR.assertions" = TRUE,
+    "repos" = repos,
     "reproducible.destinationPath" = paths$inputPath,
     "spades.inputPath" = paths$inputPath,
     "spades.moduleCodeChecks" = FALSE

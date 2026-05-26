@@ -37,11 +37,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 Every project that has data will need to get the data from its original
@@ -88,9 +83,15 @@ processing data.
 ```{r pkgs}
 #| eval: true
 
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 out <- setupProject(
-  packages = c(               "reproducible", "terra", "geodata"),
+  packages = c("reproducible", "terra", "geodata"),
+  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/prepInputs")
 )
 ```

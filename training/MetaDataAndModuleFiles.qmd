@@ -37,11 +37,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 ## Continue example -- a linear model
@@ -115,9 +110,15 @@ coming from *outside* this module.
 ```{r pkgs}
 #| eval: true
 
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
 library(SpaDES.project)
 out <- setupProject(
-  packages = c(               "SpaDES.core"),
+  packages = c("SpaDES.core"),
+  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
 )
 ```
