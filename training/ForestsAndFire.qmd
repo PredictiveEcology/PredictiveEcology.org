@@ -52,8 +52,9 @@ if (Sys.getenv("USERNAME") == "GHA") {
 qmdPath <- normalizePath(getwd(), winslash = "/")
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 ```{r googledrive}
@@ -64,7 +65,6 @@ if (!requireNamespace("SpaDES.project", quietly = TRUE))
 out1 <- SpaDES.project::setupProject(
   packages = c("googledrive", "httr2"),
   paths = list(projectPath = "~/SpaDES_book/Wildfire_demo"),
-  options = list(repos = repos),
   verbose = -2)
 if (!googledrive::drive_has_token() && !interactive()) {
   options(gargle_oauth_email = "ianmseddy@gmail.com",
@@ -90,8 +90,6 @@ available" versions:
 **Time to run this** is between 1 and 2 hours.
 
 ```{r scfm}
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
 library(SpaDES.project)
 
 out <- setupProject(
@@ -122,12 +120,9 @@ out <- setupProject(
   options = list(#spades.allowInitDuringSimInit = TRUE,
     spades.allowSequentialCaching = TRUE,
     spades.moduleCodeChecks = FALSE,
-    spades.recoveryMode = 1,
-    repos = unique(repos)
+    spades.recoveryMode = 1
   ),
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "PredictiveEcology/LandR@main",
+  packages = c("PredictiveEcology/LandR@main",
                "PredictiveEcology/climateData@main",
                "SpaDES.core", "reproducible",
                "RCurl", "XML", "snow", "googledrive"),

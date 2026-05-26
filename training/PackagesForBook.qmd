@@ -38,18 +38,17 @@ SpaDES module (*Biomass-core*) which has over 130 package dependencies.
 #| eval: false
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 
 library(SpaDES.project)
 
 out <- setupProject(
   packages = c(
-    "PredictiveEcology/Require@development",
-    "PredictiveEcology/SpaDES.project@development",
     "PredictiveEcology/PredictiveEcology.org@training-book/training/R/pkgList.R",
     "SpaDES.core", "reproducible"
   ),
-  options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Introduction"),
   modules = "PredictiveEcology/Biomass_core@main"
 )

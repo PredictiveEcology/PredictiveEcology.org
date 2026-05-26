@@ -20,8 +20,9 @@ editor_options:
 #| purl: false
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 # Introduction to Cache {#sec-caching}
@@ -61,15 +62,9 @@ objects.
 ```{r pkgs}
 #| eval: true
 
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 out <- setupProject(
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "reproducible", "terra"),
-  options = list(repos = repos),
+  packages = c(               "reproducible", "terra"),
   paths = list(projectPath = "~/SpaDES_book/Caching")
 )
 ```

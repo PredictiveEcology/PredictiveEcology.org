@@ -54,8 +54,9 @@ if (Sys.getenv("USERNAME") == "GHA") {
 qmdPath <- normalizePath(getwd(), winslash = "/")
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 ::: {.callout-note appearance="simple"}
@@ -117,18 +118,6 @@ then, our apologies for any inconvenience.
 
 ## Workflow setup
 
-```{r SpaDES.project}
-#| eval: true
-#| results: hide
-#| code-fold: false
-#| cache: false
-#| purl: false
-# This repository is ours and it has the latest versions of our packages
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
-```
-
 ```{r googledrive}
 #| include: false
 #| eval: true
@@ -137,7 +126,6 @@ if (!requireNamespace("SpaDES.project", quietly = TRUE))
 out1 <- SpaDES.project::setupProject(
   packages = c("googledrive", "httr2"),
   paths = list(projectPath = "~/SpaDES_book/LandRDemo_coreVeg"),
-  options = list(repos = repos),
   verbose = -2)
 if (!googledrive::drive_has_token() && !interactive()) {
   # Use gargle's default per-OS cache (~/.cache/gargle on Linux,
@@ -156,8 +144,6 @@ if (!googledrive::drive_has_token() && !interactive()) {
 #| code-fold: true
 #| code-summary: "Show code"
 
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
 library(SpaDES.project)
 
 out <- setupProject(
@@ -180,9 +166,7 @@ out <- setupProject(
 
   # packages only need to be specified if they are needed within this setupProject
   #   DiagrammeR is for plotting later in this qmd
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "PredictiveEcology/LandR@main",
+  packages = c("PredictiveEcology/LandR@main",
                "PredictiveEcology/climateData@main",
                "SpaDES.core", "reproducible",
                "DiagrammeR", "googledrive", "httr2", "terra"),
@@ -190,8 +174,7 @@ out <- setupProject(
   options = list(
     "reproducible.destinationPath" = paths$inputPath,
     "spades.moduleCodeChecks" = FALSE,
-    "Require.cloneFrom" = Sys.getenv("R_LIBS_USER"), # faster package installs (from personal library)
-    "repos" = unique(repos)
+    "Require.cloneFrom" = Sys.getenv("R_LIBS_USER") # faster package installs (from personal library)
   ),
 
   # DYNAMIC MODEL SETUP ------------------------------------
@@ -550,8 +533,7 @@ outValid <- setupProject(
     "LandR.assertions" = TRUE,
     "reproducible.destinationPath" = paths$inputPath,
     "spades.inputPath" = paths$inputPath,
-    "spades.moduleCodeChecks" = FALSE,
-    "repos" = unique(repos)
+    "spades.moduleCodeChecks" = FALSE
   ),
   modules = c(
     "PredictiveEcology/Biomass_validationKNN@main"

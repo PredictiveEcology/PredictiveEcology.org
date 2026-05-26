@@ -38,8 +38,9 @@ knitr::knit_hooks$set(output = function(y, options) {
 })
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 SpaDES modules are comprised of R code that has metadata and that gets
@@ -71,15 +72,9 @@ We use the `SpaDES.core` function `newModule()` to make a new module.
 ```{r pkgs}
 #| eval: true
 
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 out <- setupProject(
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "SpaDES.core"),
-  options = list(repos = repos),
+  packages = c(               "SpaDES.core"),
   paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
 )
 ```

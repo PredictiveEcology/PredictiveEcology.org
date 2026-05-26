@@ -56,8 +56,9 @@ if (Sys.getenv("USERNAME") == "GHA") {
 qmdPath <- normalizePath(getwd(), winslash = "/")
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
-if (!requireNamespace("SpaDES.project", quietly = TRUE))
-  install.packages(c("Require", "SpaDES.project"), repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
 ```
 
 spadesCBM is a modular, transparent, and spatially explicit implementation of the logic, pools structure, equations, and default assumptions of the Carbon Budget Model of the Canadian Forest Sector [CBM](https://natural-resources.canada.ca/climate-change/climate-change-impacts-forests/carbon-accounting/carbon-budget-model/13107).
@@ -124,9 +125,6 @@ If the Python installation process fails or you would prefer to manually install
 
 
 ```{r}
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 
 projectPath <- "~/spadesCBMpython"
@@ -141,7 +139,6 @@ out <- setupProject(
   paths = list(projectPath = projectPath),
 
   options = list(
-    repos = unique(repos),
     Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
     reproducible.destinationPath = "inputs",
     ## These are for speed
@@ -154,9 +151,7 @@ out <- setupProject(
                "PredictiveEcology/CBM_vol2biomass@training",
                "PredictiveEcology/CBM_core@training"),
   times = times,
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "SpaDES.core", "reproducible"),
+  packages = c(               "SpaDES.core", "reproducible"),
   require = c("SpaDES.core", "reticulate",
               "PredictiveEcology/libcbmr", "data.table"),
 
@@ -347,9 +342,6 @@ With `simPython2`, you can look at your results and generate plots in the same w
 
 ## Barebones script
 ```{r}
-# If SpaDES.project is not installed, see:
-# https://predictiveecology.org/training/_book/PackagesForBook.html
-repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 library(SpaDES.project)
 
 projectPath <- "~/spadesCBMpython"
@@ -364,7 +356,6 @@ out <- setupProject(
   paths = list(projectPath = projectPath),
 
   options = list(
-    repos = unique(repos),
     Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
     reproducible.destinationPath = "inputs",
     ## These are for speed
@@ -377,9 +368,7 @@ out <- setupProject(
                "PredictiveEcology/CBM_vol2biomass@training",
                "PredictiveEcology/CBM_core@training"),
   times = times,
-  packages = c("PredictiveEcology/Require@development",
-               "PredictiveEcology/SpaDES.project@development",
-               "SpaDES.core", "reproducible"),
+  packages = c(               "SpaDES.core", "reproducible"),
   require = c("SpaDES.core", "reticulate",
               "PredictiveEcology/libcbmr", "data.table"),
 
