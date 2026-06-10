@@ -36,9 +36,6 @@ knitr::knit_hooks$set(output = function(x, options) {
   }
   hook_output(x, options)
 })
-
-# Require::Require(c("ggplot2", "SpaDES.core"), install = FALSE)
-library("ggplot2")
 ```
 
 Here, we will talk about **scheduling events** in a SpaDES module using
@@ -74,8 +71,26 @@ a *predict* step from the linear model, with updated values of the `y`.
 In this simple example, we will pretend that each prediction is "one
 year into the future" and that our `y` will slowly get bigger.
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  packages = c("ggplot2"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/Scheduling")
+)
+```
+
 ```{r}
 #| eval: true
+
+library(ggplot2)
 
 # .inputObjects  #####
 x <- rnorm(10)
@@ -640,7 +655,7 @@ doEvent.scheduling = function(sim, eventTime, eventType) {
     predictions = {
       sim <- Prediction(sim)
       scheduleEvent(sim, time(sim) + 1, "predictions")  # re-schedule "predictions"
-    }
+    },
     warning(noEventWarning(sim))
   )
   return(invisible(sim))

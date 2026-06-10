@@ -1,0 +1,30 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  tidy: false
+  warning: false
+  message: false
+  error: false
+---
+
+# Fire under climate change {#sec-fire-under-climate-change}
+
+::: {.callout-note}
+This chapter is in progress. The narrative draws on the
+fire-under-climate-change experiment infrastructure in
+[`FireSenseTesting`](https://github.com/PredictiveEcology/FireSenseTesting),
+which uses `experimentTmux()` (interactive) and `experimentSBATCH()`
+(HPC) to run combinations of empirical land regions (`.ELFind`),
+sampling ranges (`.samplingRange`, e.g. `1991:2020` for NRV vs.
+`2071:2100` for future climate), GCMs, SSPs, and replicates.
+
+A full draft is forthcoming. The mechanics from
+@sec-experiments apply directly -- the chapter will fill in the
+domain-specific `global.R` (pulling in LandR, FireSense, and
+climateData modules via `setupProject()`), the FireSense status
+calculator, and the upload-anti-join pipeline used to ship outputs
+to Google Drive.
+:::

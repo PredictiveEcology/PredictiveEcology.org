@@ -37,7 +37,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
 ```
 
 Every project that has data will need to get the data from its original
@@ -81,14 +80,29 @@ sources. The object of this function is to provide a reproducible
 version of a series of commonly used steps for getting, loading, and
 processing data.
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  packages = c("reproducible", "terra", "geodata"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/prepInputs")
+)
+```
+
 ## Simplest case: a `url`
 
 If we can point directly to a file on a cloud location, `prepInputs`
 does its thing, getting the local file.
 
 ```{r simplest}
-Require::Require(c("terra", "reproducible"), 
-                 repos = c(getOption("predictiveecology.r-universe.dev", getOption("repos"))))
+library(reproducible)
 url <- "https://github.com/tati-micheletti/host/raw/master/data/rasterTest.tif"
 ras <- prepInputs(url = url, destinationPath = "~/SpaDES_book/data/prepInputs")
 
@@ -104,7 +118,8 @@ into R:
 
 ```{r archive}
 url <- "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip"
-shpEcozone <- prepInputs(url = url, destinationPath = "~/SpaDES_book/data/prepInputs")
+shpEcozone <- prepInputs(url = url,
+                         destinationPath = "~/SpaDES_book/data/prepInputs")
 terra::plot(shpEcozone[1])
 ```
 
@@ -118,7 +133,8 @@ and forget it** option in `reproducible`.
 ```{r inputPaths}
 options(reproducible.inputPaths = "~/data")
 url <- "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip"
-shpEcozone <- prepInputs(url = url, destinationPath = "~/SpaDES_book/data/prepInputs")
+shpEcozone <- prepInputs(url = url,
+                         destinationPath = "~/SpaDES_book/data/prepInputs")
 terra::plot(shpEcozone[1])
 ```
 
@@ -179,7 +195,9 @@ The following will get the national ecozone map, project, crop and mask
 it to the SK dataset.
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan"))
+SK <- SpaDES.project::setupStudyArea(
+  list(level = 2, NAME_1 = "Saskatchewan", NAME_2 = "Division No. 9$")
+)
 shpEcozoneSK <- prepInputs(
   url = "http://sis.agr.gc.ca/cansis/nsdb/ecostrat/zone/ecozone_shp.zip",
   to = SK, destinationPath = "~/SpaDES_book/data/prepInputs"
@@ -222,7 +240,10 @@ of the downloaded object, change the projection, and resolution.
 mask to
 
 ```{r}
-SK <- SpaDES.project::setupStudyArea(list(level = 2, NAME_1 = "Saskatchewan", epsg = 5070))
+SK <- SpaDES.project::setupStudyArea(
+  list(level = 2, NAME_1 = "Saskatchewan",
+       NAME_2 = "Division No. 9$", epsg = 5070)
+)
 SKras <- terra::rast(terra::ext(SK), res = 250, val = 1)
 terra::crs(SKras) <- terra::crs(SK)
 
@@ -280,15 +301,18 @@ the benefits of caching won't be as apparent as for when more complex
 GIS operations are needed, e.g. reprojecting large raster datasets.
 
 ```{r custom}
+LuxPath <- "~/SpaDES_book/prepInputs"
 LuxembourgFull <- prepInputs(
- dlFun =
-   geodata::gadm(name = "GADM", country = "LUX", level = 0, path = "~/SpaDES_book/prepInputs") # preProcess keeps file from this!
+  destinationPath = LuxPath,
+  # preProcess keeps file from this:
+  dlFun = geodata::gadm(name = "GADM", country = "LUX",
+                        level = 0, path = LuxPath)
 ) |> Cache()
 
 LuxembourgInnerBuffer <- prepInputs(
-  dlFun =
-    geodata::gadm(name = "GADM", country = "LUX", level = 0, path = "~/SpaDES_book/prepInputs") # preProcess keeps file from this!
-  ,
+  destinationPath = LuxPath,
+  dlFun = geodata::gadm(name = "GADM", country = "LUX",
+                        level = 0, path = LuxPath),
   fun = {                      # Custom function
     out <- readRDS(targetFile)
     out <- terra::vect(out)
@@ -297,7 +321,7 @@ LuxembourgInnerBuffer <- prepInputs(
 ) |> Cache()
 
 terra::plot(LuxembourgInnerBuffer)
-terra::plot(Luxembourg, add = TRUE)
+terra::plot(LuxembourgFull, add = TRUE)
 ```
 
 By rerunning the previous code, the caching will be in effect. This
@@ -332,7 +356,8 @@ used.
 #| purl: false
 #| cache: false
 
-fileName <- file.path("R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+fileName <- file.path("R/Chapter_scripts",
+                      sub("rmarkdown", "R", knitr::current_input()))
 ```
 
 ```{r file = fileName}

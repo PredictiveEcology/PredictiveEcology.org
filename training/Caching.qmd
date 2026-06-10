@@ -14,19 +14,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup}
-#| cache: true
-#| eval: true
-#| echo: false
-#| purl: false
-
-SuggestedPkgsNeeded <- c("terra")
-hasSuggests <- all(sapply(SuggestedPkgsNeeded, require, character.only = TRUE, quietly = TRUE))
-useSuggests <- !(tolower(Sys.getenv("_R_CHECK_DEPENDS_ONLY_")) == "true")
-
-knitr::opts_chunk$set(eval = hasSuggests && useSuggests)
-```
-
 # Introduction to Cache {#sec-caching}
 
 ::: {.callout-tip appearance="simple"}
@@ -60,6 +47,22 @@ The `reproducible::Cache()` function is built to work with many R
 functions, including *some* that are used for their side effects or that
 use pointers (e.g., a `terra` `SpatRaster`) instead of regular R
 objects.
+
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  packages = c("reproducible", "terra"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/Caching")
+)
+```
 
 ## How to use `Cache`
 

@@ -103,9 +103,9 @@ with reference to a module. "Global" parameters are the exception to
 this rule:
 
 ```{r duringSimInit3}
-c <- 1
-sim <- SpaDES.core::simInit(params = list(.globals = list(c = c)))
-SpaDES.core::params(sim)$.globals$c
+d <- 1
+sim <- SpaDES.core::simInit(params = list(.globals = list(d = d)))
+SpaDES.core::params(sim)$.globals$d
 ```
 
 To pass parameters to a module, we go back to out simple module and make

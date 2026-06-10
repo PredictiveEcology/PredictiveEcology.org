@@ -38,13 +38,29 @@ documentation sources noted in the chapters.
 
 We can see many of the known modules in the SpaDES-verse and how they interact through their shared inputs and outputs in this interactive figure:
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  packages = c("SpaDES.core",
+               "igraph", "visNetwork"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/setupProjectDemo")
+)
+```
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
 #| echo: true
 #| eval: true
 #| cache: true
-Require::Install(c("igraph", "visNetwork"))
 
 modPath <- "~/SpaDES_book/listModules/"
 accountsListLong <- c("PredictiveEcology", "ianmseddy", "achubaty",

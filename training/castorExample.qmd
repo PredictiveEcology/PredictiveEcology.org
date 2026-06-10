@@ -80,8 +80,10 @@ available from [predictiveecology.r-universe.dev](predictiveecology.r-universe.d
 #| cache: false 
 
 # install/load necessary packages
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-install.packages(c("SpaDES.project", "Require"), repos = repos, dependencies = TRUE)
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 library(SpaDES.project)
 ```
@@ -356,15 +358,16 @@ out <- setupProject(
                "cachePath" = "modules/forestryCastor",
                "projectPath" = "~/SpaDES_book/castorExample/"),
   modules = modules,
+  options = list(repos = repos),
   functions = "bcgov/castor@main/R/functions/R_Postgres.R",
   # install and load
   require = "dplyr",
   # install but don't load these:
   packages = c(
-    "DBI", 
+    "DBI",
     "keyring",
-    "rgdal", 
-    "RPostgreSQL", 
+    "rgdal",
+    "RPostgreSQL",
     "sp",
     "terra"
   ),
