@@ -48,7 +48,6 @@ pak::pak(c("PredictiveEcology/Require@development",
 
 library(SpaDES.project)
 out <- setupProject(
-  packages = c("SpaDES.core"),
   options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
 )
@@ -270,7 +269,9 @@ outputPath(mySim)
 Now run the simulation
 
 ```{r run-sim}
-mySimOut <- reproducible::Copy(mySim) # make a deep copy of the simList
+# make a deep copy of the simList (data.table; R6; environments;
+#   plus some other object classes are pass by reference)
+mySimOut <- reproducible::Copy(mySim) 
 mySimOut <- spades(mySimOut)
 ```
 

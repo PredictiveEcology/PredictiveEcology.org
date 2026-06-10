@@ -1,20 +1,17 @@
 /.quarto/
 _book/
 _freeze/
-
 *_files/
 *_cache/
 *.tif
 *.html
 site_libs/*
 *.knit.md
-
 packages/
-
 R/Chapter_scripts
-
 ## files from chapters
 integratingSpaDESmodules/
 Introduction/
 pkgList.csv
 CHECKSUMS.txt
+.secret

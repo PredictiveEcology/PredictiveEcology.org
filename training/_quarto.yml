@@ -6,8 +6,8 @@ project:
   pre-render:
   # - R/installpkgs.R
   - R/makeChapterRscripts.R
-  post-render:
-  - R/makePkgList.R
+  # post-render:
+  # - R/makePkgList.R
 
 book:
   title: "Robust and nimble scientific workflows, using SpaDES"
@@ -84,6 +84,10 @@ book:
       - ForestsAndFire.qmd
       #- castorExample.qmd
       - spadesCBMDemo.qmd
+    - part: ExperimentsAndScenarios.qmd
+      chapters:
+      - Experiments.qmd
+      - FireUnderClimateChange.qmd
     - bestPractices.qmd
     - references.qmd
 

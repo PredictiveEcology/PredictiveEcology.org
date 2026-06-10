@@ -92,7 +92,7 @@ library(SpaDES.core) # was installed with setupProject automatically
 modulePath <- "~/SpaDES_book/NewModuleIntro/NewModule"
 SpaDES.core::newModule(name = "My_linear_model",
                        path = modulePath, 
-                       open = FALSE,
+                       # open = TRUE,
                        events = list(
                          init = {
                            x <- rnorm(10)
@@ -118,7 +118,7 @@ assign the `model` to `sim`.
 
 # make a module
 SpaDES.core::newModule(name = "My_linear_model", 
-                       path = modulePath, open = FALSE,
+                       path = modulePath, # open = TRUE,
                        events = list(
                          init = {
                            x <- rnorm(10)
@@ -174,7 +174,7 @@ Our next step is to divide the pieces into conceptual chunks. Let's now
 create a new module for the `plot` ... a "visualization module".
 
 ```{r newModule2}
-SpaDES.core::newModule("visualize", path = modulePath, open = FALSE,
+SpaDES.core::newModule("visualize", path = modulePath, # open = TRUE,
                        events = list(
                          init = {
                            plot(sim$model, ask = FALSE)

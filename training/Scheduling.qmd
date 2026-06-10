@@ -81,7 +81,7 @@ pak::pak(c("PredictiveEcology/Require@development",
 
 library(SpaDES.project)
 out <- setupProject(
-  packages = c("SpaDES.core", "ggplot2"),
+  packages = c("ggplot2"),
   options = list(repos = repos),
   paths = list(projectPath = "~/SpaDES_book/Scheduling")
 )
