@@ -81,6 +81,7 @@ available from [predictiveecology.r-universe.dev](predictiveecology.r-universe.d
 
 # install/load necessary packages
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
 pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 

@@ -42,6 +42,7 @@ We can see many of the known modules in the SpaDES-verse and how they interact t
 #| eval: true
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
 pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 

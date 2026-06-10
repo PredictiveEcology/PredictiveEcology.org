@@ -68,6 +68,7 @@ We use the `SpaDES.core` function `newModule()` to make a new module.
 #| eval: true
 
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
 pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
