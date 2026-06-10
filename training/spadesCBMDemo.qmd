@@ -122,8 +122,7 @@ If the Python installation process fails or you would prefer to manually install
 ```{r}
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 library(SpaDES.project)
 
@@ -345,8 +344,7 @@ With `simPython2`, you can look at your results and generate plots in the same w
 ```{r}
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 library(SpaDES.project)
 
