@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eliot McIntire">
-<meta name="dcterms.date" content="2026-05-26">
+<meta name="dcterms.date" content="2026-06-10">
 
 <title>13&nbsp; Workflows with setupProject – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
@@ -624,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2026</p>
+      <p class="date">June 10, 2026</p>
     </div>
   </div>
   
@@ -659,9 +659,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Setup <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
@@ -786,76 +786,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>    eventTime         moduleName            eventType eventPriority         ._clockTime ._prevEventTimeFinish
         &lt;num&gt;             &lt;char&gt;               &lt;char&gt;         &lt;num&gt;              &lt;POSc&gt;                &lt;POSc&gt;
- 1:      2013   speciesAbundance        .inputObjects             0 2026-05-26 16:54:55   2026-05-26 16:54:55
- 2:      2013        temperature        .inputObjects             0 2026-05-26 16:54:56   2026-05-26 16:54:55
- 3:      2013 speciesAbundTempLM        .inputObjects             0 2026-05-26 16:54:56   2026-05-26 16:54:56
- 4:      2013         checkpoint                 init             0 2026-05-26 16:54:56   2026-05-26 16:54:56
- 5:      2013               save                 init             0 2026-05-26 16:54:56   2026-05-26 16:54:56
- 6:      2013           progress                 init             0 2026-05-26 16:54:56   2026-05-26 16:54:56
- 7:      2013               load                 init             0 2026-05-26 16:54:56   2026-05-26 16:54:56
- 8:      2013   speciesAbundance                 init             1 2026-05-26 16:54:56   2026-05-26 16:54:56
- 9:      2013        temperature                 init             1 2026-05-26 16:54:56   2026-05-26 16:54:56
-10:      2013 speciesAbundTempLM                 init             1 2026-05-26 16:54:56   2026-05-26 16:54:56
-11:      2013   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:56
-12:      2013   speciesAbundance                 plot             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-13:      2013        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-14:      2013        temperature             plotting             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-15:      2013 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-16:      2014   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-17:      2014        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-18:      2014 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-19:      2015   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-20:      2015        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-21:      2015 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-22:      2016   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-23:      2016        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-24:      2016 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-25:      2017   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-26:      2017        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-27:      2017 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-28:      2018   speciesAbundance                 plot             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-29:      2018   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-30:      2018        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-31:      2018 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-32:      2019   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-33:      2019        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-34:      2019 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-35:      2020   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-36:      2020        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-37:      2020 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-38:      2021   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-39:      2021        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-40:      2021 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-41:      2022   speciesAbundance       tableToRasters             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-42:      2022        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-43:      2022 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-44:      2023        temperature             plotting             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-45:      2023        temperature         dataToRaster             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-46:      2023 speciesAbundTempLM        tableBuilding             5 2026-05-26 16:54:57   2026-05-26 16:54:57
-47:      2023 speciesAbundTempLM        modelBuilding             5 2026-05-26 16:54:58   2026-05-26 16:54:57
-48:      2023 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:58   2026-05-26 16:54:58
-49:      2023 speciesAbundTempLM                 plot             5 2026-05-26 16:54:59   2026-05-26 16:54:58
-50:      2024        temperature         dataToRaster             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-51:      2024 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-52:      2024 speciesAbundTempLM                 plot             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-53:      2025        temperature         dataToRaster             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-54:      2025 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-55:      2025 speciesAbundTempLM                 plot             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-56:      2026        temperature         dataToRaster             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-57:      2026 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-58:      2026 speciesAbundTempLM                 plot             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-59:      2027        temperature         dataToRaster             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-60:      2027 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-61:      2027 speciesAbundTempLM                 plot             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-62:      2028        temperature         dataToRaster             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-63:      2028 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:54:59   2026-05-26 16:54:59
-64:      2028 speciesAbundTempLM                 plot             5 2026-05-26 16:55:00   2026-05-26 16:54:59
-65:      2029        temperature         dataToRaster             5 2026-05-26 16:55:00   2026-05-26 16:55:00
-66:      2029 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:55:00   2026-05-26 16:55:00
-67:      2029 speciesAbundTempLM                 plot             5 2026-05-26 16:55:00   2026-05-26 16:55:00
-68:      2030        temperature         dataToRaster             5 2026-05-26 16:55:00   2026-05-26 16:55:00
-69:      2030 speciesAbundTempLM abundanceForecasting             5 2026-05-26 16:55:00   2026-05-26 16:55:00
-70:      2030 speciesAbundTempLM                 plot             5 2026-05-26 16:55:00   2026-05-26 16:55:00
+ 1:      2013   speciesAbundance        .inputObjects             0 2026-06-10 14:00:06   2026-06-10 14:00:06
+ 2:      2013        temperature        .inputObjects             0 2026-06-10 14:00:08   2026-06-10 14:00:06
+ 3:      2013 speciesAbundTempLM        .inputObjects             0 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 4:      2013         checkpoint                 init             0 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 5:      2013               save                 init             0 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 6:      2013           progress                 init             0 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 7:      2013               load                 init             0 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 8:      2013   speciesAbundance                 init             1 2026-06-10 14:00:08   2026-06-10 14:00:08
+ 9:      2013        temperature                 init             1 2026-06-10 14:00:08   2026-06-10 14:00:08
+10:      2013 speciesAbundTempLM                 init             1 2026-06-10 14:00:08   2026-06-10 14:00:08
+11:      2013   speciesAbundance       tableToRasters             5 2026-06-10 14:00:08   2026-06-10 14:00:08
+12:      2013   speciesAbundance                 plot             5 2026-06-10 14:00:09   2026-06-10 14:00:08
+13:      2013        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+14:      2013        temperature             plotting             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+15:      2013 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+16:      2014   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+17:      2014        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+18:      2014 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+19:      2015   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+20:      2015        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+21:      2015 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+22:      2016   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+23:      2016        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+24:      2016 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+25:      2017   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+26:      2017        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+27:      2017 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+28:      2018   speciesAbundance                 plot             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+29:      2018   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+30:      2018        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+31:      2018 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+32:      2019   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+33:      2019        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+34:      2019 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+35:      2020   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+36:      2020        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+37:      2020 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+38:      2021   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+39:      2021        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+40:      2021 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+41:      2022   speciesAbundance       tableToRasters             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+42:      2022        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+43:      2022 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+44:      2023        temperature             plotting             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+45:      2023        temperature         dataToRaster             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+46:      2023 speciesAbundTempLM        tableBuilding             5 2026-06-10 14:00:09   2026-06-10 14:00:09
+47:      2023 speciesAbundTempLM        modelBuilding             5 2026-06-10 14:00:10   2026-06-10 14:00:09
+48:      2023 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+49:      2023 speciesAbundTempLM                 plot             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+50:      2024        temperature         dataToRaster             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+51:      2024 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+52:      2024 speciesAbundTempLM                 plot             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+53:      2025        temperature         dataToRaster             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+54:      2025 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:10   2026-06-10 14:00:10
+55:      2025 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:10
+56:      2026        temperature         dataToRaster             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+57:      2026 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+58:      2026 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+59:      2027        temperature         dataToRaster             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+60:      2027 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+61:      2027 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+62:      2028        temperature         dataToRaster             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+63:      2028 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+64:      2028 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+65:      2029        temperature         dataToRaster             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+66:      2029 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+67:      2029 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+68:      2030        temperature         dataToRaster             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+69:      2030 speciesAbundTempLM abundanceForecasting             5 2026-06-10 14:00:11   2026-06-10 14:00:11
+70:      2030 speciesAbundTempLM                 plot             5 2026-06-10 14:00:11   2026-06-10 14:00:11
     eventTime         moduleName            eventType eventPriority         ._clockTime ._prevEventTimeFinish
         &lt;num&gt;             &lt;char&gt;               &lt;char&gt;         &lt;num&gt;              &lt;POSc&gt;                &lt;POSc&gt;</code></pre>
 </div>
@@ -905,9 +905,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>Setup <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>

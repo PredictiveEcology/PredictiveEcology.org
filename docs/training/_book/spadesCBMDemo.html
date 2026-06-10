@@ -8,7 +8,7 @@
 
 <meta name="author" content="Céline Boisvenue">
 <meta name="author" content="Camille Giuliano">
-<meta name="dcterms.date" content="2026-05-26">
+<meta name="dcterms.date" content="2026-06-10">
 
 <title>16&nbsp; Forest Carbon Modelling in SpaDES with setupProject – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
@@ -679,7 +679,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2026</p>
+      <p class="date">June 10, 2026</p>
     </div>
   </div>
   
@@ -757,9 +757,9 @@ Python is required for this example
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -987,9 +987,9 @@ Python is required for this example
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>

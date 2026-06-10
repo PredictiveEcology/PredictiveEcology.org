@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eliot J. B. McIntire">
-<meta name="dcterms.date" content="2026-05-26">
+<meta name="dcterms.date" content="2026-06-10">
 
 <title>10&nbsp; Introduction to Cache – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
@@ -634,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 26, 2026</p>
+      <p class="date">June 10, 2026</p>
     </div>
   </div>
   
@@ -668,9 +668,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
@@ -759,7 +759,7 @@ attr(,"callInCache")
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  0.825   0.024   0.849 </code></pre>
+  0.789   0.014   0.805 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -768,7 +768,7 @@ attr(,"callInCache")
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  6.080   0.186   6.266 </code></pre>
+  5.973   0.150   6.129 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -777,7 +777,7 @@ attr(,"callInCache")
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  0.517   0.018   0.564 </code></pre>
+  0.346   0.005   0.362 </code></pre>
 </div>
 </div>
 <p>In this example, the object <code>map3</code> gets cached, along with the <em>evaluation</em> of the function <code>terra::project</code> and its arguments (<code>ras</code> and <code>newCRS</code>). If either the function or supplied arguments change, <code>Cache</code> repeats the operation and re-caches the output in a new cache entry.</p>
@@ -793,7 +793,7 @@ attr(,"callInCache")
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  0.503   0.033   0.542 </code></pre>
+  0.489   0.030   0.527 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -801,7 +801,7 @@ attr(,"callInCache")
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
-  0.292   0.052   0.351 </code></pre>
+  0.284   0.042   0.334 </code></pre>
 </div>
 <details open="" class="code-fold">
 <summary>Code</summary>
@@ -882,6 +882,9 @@ attr(,"callInCache")
 17: adf21923cd1e50d0            accessed 2026-05-26 15:43:55.72938
 18: adf21923cd1e50d0            accessed 2026-05-26 16:29:38.38299
 19: adf21923cd1e50d0            accessed 2026-05-26 16:54:02.87339
+20: adf21923cd1e50d0            accessed 2026-06-10 13:58:57.45605
+             cacheId              tagKey                  tagValue
+              &lt;char&gt;              &lt;char&gt;                    &lt;char&gt;
                    createdDate
                         &lt;char&gt;
  1: 2026-05-26 14:23:33.996704
@@ -902,7 +905,10 @@ attr(,"callInCache")
 16: 2026-05-26 15:14:20.181741
 17: 2026-05-26 15:43:55.729499
 18: 2026-05-26 16:29:38.383091
-19: 2026-05-26 16:54:02.873481</code></pre>
+19: 2026-05-26 16:54:02.873481
+20: 2026-06-10 13:58:57.456166
+                   createdDate
+                        &lt;char&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1038,9 +1044,9 @@ attr(,"callInCache")
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"PredictiveEcology/Require@development"</span>,</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>           <span class="st">"PredictiveEcology/SpaDES.project@development"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
