@@ -42,4 +42,4 @@ function name swapped to work under another.
 (no `setupProject`, no SpaDES modules -- just an R script that prints a
 few lines). @sec-fire-under-climate-change picks up a real fire-under-
 climate-change experiment built on top of the modules introduced in
-@sec-LandRExample and @sec-FireExample.
+@sec-LandRExample and @sec-scfmEg.

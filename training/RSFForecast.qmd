@@ -19,7 +19,7 @@ See [Barebones R script] for the code shown in this chapter
 :::
 
 ::: {.callout-note appearance="simple"}
-*Several hours -- estimated time for 1st time executing*
+*Several minutes (<10 minutes) -- estimated time for 1st time executing*
 
 *16 GB RAM (or more) -- estimated peak RAM for executing*
 :::
