@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eliot McIntire">
+<meta name="author" content="Julie Turner">
+<meta name="dcterms.date" content="2026-06-11">
+<meta name="description" content="A 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting">
 
-<title>Predictive Ecology Community - Dominique Caron</title>
+<title>Predictive Ecology Community - Robust and Nimble Caribou and Landscape Modelling Using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +27,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../assets/logo/favicon-32x32.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo/favicon-32x32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,7 +78,7 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../../assets/css/main.scss">
+<link rel="stylesheet" href="../assets/css/main.scss">
 </head>
 
 <body class="nav-sidebar floating nav-fixed fullcontent">
@@ -83,10 +88,10 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Predictive Ecology Community</span>
     </a>
   </div>
@@ -97,19 +102,19 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../index.html" rel="" target="" aria-current="page">
  <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../Projects.html" rel="" target="">
+    <a class="nav-link" href="../Projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../SpaDES.html" rel="" target="">
+    <a class="nav-link" href="../SpaDES.html" rel="" target="">
  <span class="menu-text">SpaDES</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -118,19 +123,19 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
         <li>
-    <a class="dropdown-item" href="../../Workshops.html" rel="" target="">
+    <a class="dropdown-item" href="../Workshops.html" rel="" target="">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../workshops/June-2026-NACW-Caribou-SpaDES-workshop.html" rel="" target="">
+    <a class="dropdown-item" href="../workshops/June-2026-NACW-Caribou-SpaDES-workshop.html" rel="" target="">
  <span class="dropdown-text">June 2026 Workshop Agenda</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../workshops/June-2024-SpaDES-workshop.html" rel="" target="">
+    <a class="dropdown-item" href="../workshops/June-2024-SpaDES-workshop.html" rel="" target="">
  <span class="dropdown-text">June 2024 Workshop Agenda</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../workshops/Nov-2024-SpaDES-workshop.html" rel="" target="">
+    <a class="dropdown-item" href="../workshops/Nov-2024-SpaDES-workshop.html" rel="" target="">
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
@@ -141,25 +146,25 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
         <li>
-    <a class="dropdown-item" href="../../training/_book/index.html" rel="" target="">
+    <a class="dropdown-item" href="../training/_book/index.html" rel="" target="">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../otherTraining.html" rel="" target="">
+    <a class="dropdown-item" href="../otherTraining.html" rel="" target="">
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../Manuals.html" rel="" target="">
+    <a class="nav-link" href="../Manuals.html" rel="" target="">
  <span class="menu-text">Manuals</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../publications.html" rel="" target="">
+    <a class="nav-link" href="../publications.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../presentations.html" rel="" target="">
+    <a class="nav-link" href="../presentations.html" rel="" target="">
  <span class="menu-text">Presentations</span></a>
   </li>  
   <li class="nav-item compact">
@@ -184,7 +189,7 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Dominique Caron</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Robust and Nimble Caribou and Landscape Modelling Using SpaDES</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -195,8 +200,8 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../assets/logo/favicon-196x196.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/logo/favicon-196x196.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
 </nav>
@@ -204,43 +209,76 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dominique Caron</h1>
+<h1 class="title">Robust and Nimble Caribou and Landscape Modelling Using SpaDES</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">SpaDES Workshops</div>
+    <div class="quarto-category">Training</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting
+  </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eliot McIntire </p>
+             <p>Julie Turner </p>
+          </div>
   </div>
-</header> <div class="about-links">
-  <a href="https://dominiquecaron.github.io/" class="about-link" rel="" target="">
-    <i class="bi bi-globe"></i>
-     <span class="about-link-text">webpage</span>
-  </a>
-  <a href="https://github.com/DominiqueCaron/" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-      <div class="about-contents"><div id="dominique">
-<p>(Postdoc 2024 - )</p>
-<p>Posdoctoral researcher, Natural Resources Canada, Canadian Forest Service, Victoria, BC</p>
-<p>Dominique works on integrating vegetation, disturbance, and forest carbon dynamics to improve carbon modelling</p>
-</div></div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 11, 2026</p>
     </div>
-    <img src="https://avatars.githubusercontent.com/u/23227281?v=4" class="about-image
-  rounded " style="width: 15em;">
   </div>
-</div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p><em>Registration for this workshop is now closed</em>.</p>
+<p><strong>Update</strong>: links to presentation files have been added to the agenda.</p>
+<p>If you missed it, but would like to attend a future workshop, please reach out to <a href="../bios/community/aaaeliot.html">Eliot</a> or <a href="../bios/community/aaaeliot.html">Ceres</a> so that we can add you to the wait list.</p>
+<section id="date-june-14-2026" class="level2">
+<h2 class="anchored" data-anchor-id="date-june-14-2026">Date: June 14, 2026</h2>
+</section>
+<section id="location-north-american-caribou-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="location-north-american-caribou-workshop">Location: <a href="https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576">North American Caribou Workshop</a></h2>
+<p>Meeting link will be e-mailed to all workshop participants.</p>
+</section>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
+<p>Presentation slides will be added at the end of each day.</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>2:30 - 3:30</td>
+<td><a href="https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB">Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation</a> | Background publication to the nimble approach: <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994">The PERFICT approach (McIntire et al 2022)</a> |</td>
+</tr>
+<tr class="even">
+<td>2:30 - 3:30</td>
+<td><a href="https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB">Project with caribou RSF forecasting</a> |</td>
+</tr>
+</tbody>
+</table>
 
 
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -378,6 +416,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -619,5 +664,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
