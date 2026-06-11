@@ -1230,5 +1230,33 @@
     "title": "Robust and nimble scientific workflows, using SpaDES",
     "section": "Agenda",
     "text": "Agenda\n“WOYO”, Work On Your Own + health breaks\nIn each session you will have time to work through the examples and take breaks. We will be monitoring the chat the entire WOYO period, responding to questions. Plus, the last 15min of each WOYO will be with “open video and chat” to ask questions and discuss as a group. Where appropriate, we can jump into video earlier for discussion.\nAll times in Pacific Daylight Time (GMT-7)\nPresentation slides will be added at the end of each day.\n\n\n\nDAY 1\nSpaDES foundations\n\n\n8:30 - 9:20\nIntroduction\n\n\n\nWorkshop logistics\n\n\n\nWhat is SpaDES and why use it?\n\n\n\nDownload presentation\n\n\n9:30 - 10:00\nIntroduction to SpaDES modules\n\n\n10:00 - 11:00\nWOYO\n\n\n11:00 - 11:30\nModule files and metadata\n\n\n\nDownload presentation\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nModule inputs\n\n\n\nDownload presentation\n\n\n2:00 - 3:00\nWOYO\n\n\n3:00 - 3:30\nThe simList\n\n\n\nDownload presentation\n\n\n3:30 - free ending\nor\nnext morning for earlier time zones\nWOYO\n\n\nDAY 2\nContinuous workflows with simple examples\n\n\n8:30 - 9:00\nRevisit previous WOYO and Day 1\n\n\n9:00 - 9:30\nModules & events\n\n\n\nEvent scheduling\n\n\n\nDownload presentation\n\n\n9:30 - 11:00\nWOYO\n\n\n11:00 - 11:30\nContinuous workflows\n\n\n\nCaching\n\n\n\nDownload presentation\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nprepInputs()\n\n\n\nDownload presentation\n\n\n2:00 - 3:00\nWOYO\n\n\n3:00 - 3:30\nSpaDES workflows and projects with setupProject\n\n\n\nA simple workflow for an ecological example\n\n\n\nDownload presentation\n\n\n3:30 - free | WOYO ending  | or\nnext morning | for earlier | time zones |\n\n\n\nDAY 3\nUsing continuous workflows with real challenges\n\n\n8:30 - 9:00\nRevisit previous WOYO and Day 2\n\n\n9:00 - 9:30\nFlexibility comes at a cost, but it’s worth it!\n\n\n\nDownload presentation\n\n\n9:30 - 10:00\nForest landscape modelling - parameterisation, simulation/prediction\n\n\n10:00 - 11:00\nWOYO\n\n\n11:00 - 11:30\nForest landscape modelling - turn plotting on, extend the simulation, scenarios\n\n\n11:30 - 12:30\nWOYO\n\n\n12:30 - 1:30\nLUNCH BREAK\n\n\n1:30 - 2:00\nForests and wildfire\n\n\n2:00 - 3:00\nWOYO"
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "",
+    "text": "Registration for this workshop is now closed.\nUpdate: links to presentation files have been added to the agenda.\nIf you missed it, but would like to attend a future workshop, please reach out to Eliot or Ceres so that we can add you to the wait list."
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#date-june-14-2026",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#date-june-14-2026",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "Date: June 14, 2026",
+    "text": "Date: June 14, 2026"
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#location-north-american-caribou-workshop",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#location-north-american-caribou-workshop",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "Location: North American Caribou Workshop",
+    "text": "Location: North American Caribou Workshop\nMeeting link will be e-mailed to all workshop participants."
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#agenda",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#agenda",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "Agenda",
+    "text": "Agenda\nPresentation slides will be added at the end of each day.\n\n\n\n2:30 - 3:30\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:30 - 3:30\nProject with caribou RSF forecasting | | Training book chapter: Forecasting wildlife habitat (an RSF)"
   }
 ]

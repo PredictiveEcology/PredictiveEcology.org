@@ -40,4 +40,6 @@ Presentation slides will be added at the end of each day.
 |                         | Background publication to the nimble approach: [The PERFICT approach (McIntire et al 2022)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)  |
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | 2:30 - 3:30             | [Project with caribou RSF forecasting](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
+|                         |                                                                 |
+|                         | Training book chapter: [Forecasting wildlife habitat (an RSF)]({{< var book.rsfForecast >}})  |
 +-------------------------+--------------------------------------------------------------------------------------------------------
