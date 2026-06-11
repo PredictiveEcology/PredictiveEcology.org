@@ -199,7 +199,6 @@ out <- setupProject(
   }
 )
 
-options(reproducible.showSimilar = TRUE)
 results <- SpaDES.core::simInitAndSpades2(out)
 ```
 
