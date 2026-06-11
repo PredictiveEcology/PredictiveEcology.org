@@ -15,3 +15,9 @@ Introduction/
 pkgList.csv
 CHECKSUMS.txt
 .secret
+
+## artifacts from running chapter code interactively
+.vscode/
+Rplot*.png
+gadm/
+SpeciesPresentInCanadianForests_SCANFI_2020.*
