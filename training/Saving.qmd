@@ -1,0 +1,301 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  tidy: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+---
+
+# Saving in SpaDES {#sec-saving}
+
+::: {.callout-tip appearance="simple"}
+See [Barebones R script] for the code shown in this chapter
+:::
+
+A reproducible workflow eventually needs to put things *on disk*: maps,
+tables, fitted models, or the entire state of a simulation so that it
+can be revisited, shared, or post-processed. Like inputs (see [Providing
+Module Inputs @sec-moduleinputs]), `SpaDES` treats saving as a
+first-class, declarative concept: instead of scattering `saveRDS()`
+calls through your code, you describe *what* to save and *when*, and
+`SpaDES` schedules the saving for you.
+
+There are three levels at which saving can be controlled, from most to
+least modular:
+
+| Level | Mechanism | Who usually sets it |
+|-------|-----------|---------------------|
+| **Model** | the `outputs` argument / `outputs(sim)` | the *user* of a set of modules |
+| **Module** | `.saveObjects` parameter + `saveFiles()` | the module *developer* |
+| **Custom** | `saveRDS()`, `qs2::qs_save()`, `terra::writeRaster()`, etc. | the module *developer* |
+
+A fourth, distinct mechanism saves the *whole* `simList` (see
+[Saving and reloading a whole `simList`]).
+
+::: {.callout-note appearance="simple"}
+Most of the machinery below already exists and is documented in
+`SpaDES.core`. This chapter is a practical orientation; for the
+authoritative reference see the `SpaDES.core` *modules* vignette
+([`vignette("ii-modules", package = "SpaDES.core")`](https://rdrr.io/cran/SpaDES.core/f/vignettes/ii-modules.Rmd))
+and `?SpaDES.core::saveFiles`.
+:::
+
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  packages = c("SpaDES.core", "terra"),
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/Saving")
+)
+```
+
+## Model-level saving: the `outputs` argument
+
+The most common way to save is to hand `simInit()` (or
+`simInitAndSpades()`) an `outputs` `data.frame`. It is the saving
+counterpart of the `inputs` argument: each row names an object in the
+`simList` and, optionally, when and how to save it.
+
+The `data.frame` needs, minimally, a column named `objectName`. The
+other columns are filled in with sensible defaults if absent:
+
+| Column | Description |
+|--------|-------------|
+| **`objectName`** | Name of the object in the `simList` to save. |
+| **`file`** | Base name for the saved file. Defaults to `objectName`. |
+| **`fun`** | Function used to save. Defaults to `saveRDS`. |
+| **`package`** | Package providing `fun`. |
+| **`saveTime`** | Simulation time at which to save. Defaults to `end(sim)`. |
+| **`arguments`** | A (list of) list(s) of extra arguments passed to `fun`. |
+
+`SpaDES` adds a seventh column, `saved` (logical), which flips to `TRUE`
+once the save has happened, so `outputs(sim)` doubles as a record of
+what has already been written to disk.
+
+In the simplest case, we just name the object. The file lands in the
+simulation's `outputPath`, as an `.rds`, at the end of the run:
+
+```{r outputs-simple}
+outputDir <- "~/SpaDES_book/Saving/outputs"
+
+mySim <- simInit(
+  times = list(start = 0, end = 5),
+  modules = "randomLandscapes",
+  params = list(.globals = list(stackName = "landscape")),
+  paths = list(modulePath = getSampleModules(tempdir()),
+               outputPath = outputDir),
+  outputs = data.frame(objectName = "landscape")
+)
+
+outputs(mySim)        # one row, saved = NA (not yet saved)
+
+mySim <- spades(mySim)
+
+outputs(mySim)        # saved is now TRUE; note the file path
+```
+
+To save the *same* object several times, give it several rows with
+different `saveTime`s. To control the format, set `fun`, `package`, and
+`arguments`. Here we write a `SpatRaster` as a GeoTIFF at times 3 and 6.
+Note that we can set `outputs()` on an existing `simList` with the
+replacement function, rather than only at `simInit()`:
+
+```{r outputs-fun}
+outputs(mySim) <- data.frame(
+  objectName = "landscape",
+  fun        = "writeRaster",
+  package    = "terra",
+  saveTime   = c(3, 6),
+  arguments  = I(lapply(c(3, 6), function(x) {
+    list(datatype = "FLT4S", filetype = "GTiff", overwrite = TRUE)
+  }))
+)
+
+mySim <- spades(mySim)
+outputs(mySim)
+```
+
+::: {.callout-tip appearance="simple"}
+Because `outputs` is "model-level", a *user* can decide what to save
+without editing any module code. This is the recommended starting point.
+:::
+
+## Module-level saving: `.saveObjects` and `saveFiles()`
+
+A module *developer* can build saving into a module so that future users
+only need to toggle a few parameters. This relies on a set of `.save*`
+parameters and the `saveFiles()` helper. When a module is created with
+`newModule()`, a `save` event already exists; it just needs to be
+scheduled.
+
+| Parameter | Description |
+|-----------|-------------|
+| **`.saveInitialTime`** | Time of the first save (between `start` and `end`). `NA` means no saving. |
+| **`.saveInterval`** | Interval between repeated saves. |
+| **`.saveObjects`** | Character vector of object names to save. |
+| **`.savePath`** | Where to save (defaults to the `outputPath`). |
+
+```{r save-objects}
+mySim <- simInit(
+  times = list(start = 0, end = 5),
+  modules = "randomLandscapes",
+  params = list(
+    .globals = list(stackName = "landscape"),
+    randomLandscapes = list(
+      .saveInitialTime = 0, .saveInterval = 2,
+      .saveObjects = "landscape",
+      .savePath = file.path(outputDir, "randomLandscapes")
+    )
+  ),
+  paths = list(modulePath = getSampleModules(tempdir()),
+               outputPath = outputDir)
+)
+
+mySim <- spades(mySim)
+```
+
+Inside a module, the save itself is performed by `saveFiles(sim)`, and a
+recurring save is kept going by re-scheduling the event:
+
+```{r save-events}
+### WITHIN A MODULE event:
+sim <- saveFiles(sim)
+
+# reschedule the next save
+nextSave <- time(sim) + P(sim)$.saveInterval
+sim <- scheduleEvent(sim, nextSave, currentModule(sim), "save")
+```
+
+See [Scheduling Events @sec-schedulingEvents] for more on
+`scheduleEvent()`.
+
+## Custom saving inside a module
+
+Sometimes the cleanest thing is to save directly with a normal R
+function -- `saveRDS()`, `qs2::qs_save()`, `terra::writeRaster()`,
+`data.table::fwrite()`, and so on -- from inside an event. This is the
+*least* modular approach (it happens whether the user wants it or not),
+but it is sometimes the most practical.
+
+When you save this way, it is good practice to *register* the file with
+the `simList` using `registerOutputs()`, so that the file is tracked in
+`outputs(sim)` and is picked up by `saveSimList()` (below):
+
+```{r custom-save}
+### WITHIN A MODULE event:
+fname <- file.path(outputPath(sim), paste0("predictions_", time(sim), ".rds"))
+saveRDS(sim$predictions, fname)
+
+# record that we saved it
+sim <- registerOutputs(fname, sim)
+```
+
+## Saving and reloading a whole `simList`
+
+Saving individual objects is not the same as saving the *simulation*. A
+`simList` cannot be reliably saved with `save()` or `saveRDS()` for two
+reasons:
+
+1.  modules rely on **active bindings** (these are what make `mod` and
+    `P(sim)`/`Par` work); and
+2.  file-backed objects such as `terra` `SpatRaster`s live partly on
+    disk, not in the R object.
+
+`SpaDES.core` provides `saveSimList()` and `loadSimList()` to handle
+both correctly:
+
+```{r saveSimList}
+simFile <- "~/SpaDES_book/Saving/mySim.qs2"
+
+saveSimList(mySim, filename = simFile)
+
+# later, possibly on another machine
+mySim2 <- loadSimList(simFile)
+```
+
+If there are file-backed objects (or you ask to include the `outputs`
+and `inputs` files), `saveSimList()` transparently writes an *archive*
+(`.tar.gz`, or `.zip` on Windows) so everything travels together:
+
+```{r saveSimList-archive}
+saveSimList(mySim, filename = simFile, outputs = TRUE, inputs = TRUE)
+
+# reload an archived simList
+mySim2 <- unzipSimList(sub("\\.qs2$", ".tar.gz", simFile))
+```
+
+::: {.callout-note appearance="simple"}
+`saveSimList()` is the right tool for *checkpointing*, *sharing*, or
+*archiving* a run. To merely speed up re-running, prefer caching instead
+-- see [Introduction to Cache @sec-caching].
+:::
+
+## Where do saved files go?
+
+Unless a `file` or `.savePath` says otherwise, saved objects land in the
+simulation's `outputPath`:
+
+```{r outputPath}
+outputPath(mySim)
+```
+
+The output path is set via the `paths` argument to `setupProject()`,
+`simInit()`, or `simInitAndSpades()` (the `outputPath` element), in the
+same way the cache path is set (see [Caching @sec-caching]).
+
+## Best practices
+
+1.  Prefer **model-level** `outputs` for things a *user* chooses to
+    save; it requires no module edits.
+2.  Build **module-level** saving (`.saveObjects`) into modules whose
+    users will predictably want certain objects.
+3.  When you save with a custom function, **`registerOutputs()`** the
+    file so it is tracked.
+4.  Use **`saveSimList()`/`loadSimList()`** to checkpoint or share an
+    entire run -- not `saveRDS()`.
+5.  Save only what you need: large file-backed objects can make archives
+    very large.
+
+## See also
+
+[`vignette("ii-modules", package = "SpaDES.core")`](https://rdrr.io/cran/SpaDES.core/f/vignettes/ii-modules.Rmd)
+
+[`?SpaDES.core::saveFiles`](https://rdrr.io/cran/SpaDES.core/man/saveFiles.html)
+
+[`?SpaDES.core::outputs`](https://rdrr.io/cran/SpaDES.core/man/simList-accessors-outputs.html)
+
+[`?SpaDES.core::saveSimList`](https://rdrr.io/cran/SpaDES.core/man/saveSimList.html)
+
+[`?SpaDES.core::loadSimList`](https://rdrr.io/cran/SpaDES.core/man/loadSimList.html)
+
+## Barebones R script
+
+```{r}
+#| eval: true
+#| echo: false
+#| purl: false
+#| cache: false
+
+fileName <- file.path("R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+```
+
+```{r file = fileName}
+#| eval: false
+#| echo: true
+#| purl: false
+#| cache: false
+
+```

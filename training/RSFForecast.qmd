@@ -1,0 +1,353 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  tidy: false
+  warning: true
+  message: true
+  error: true
+  cache: true
+---
+
+# Forecasting wildlife habitat (an RSF) with `setupProject` {#sec-rsfForecast}
+
+::: {.callout-tip appearance="simple"}
+See [Barebones R script] for the code shown in this chapter
+:::
+
+::: {.callout-note appearance="simple"}
+*Several hours -- estimated time for 1st time executing*
+
+*16 GB RAM (or more) -- estimated peak RAM for executing*
+:::
+
+```{r setup}
+#| include: false
+#| eval: true
+#| cache: false
+#| purl: false
+
+## truncate text output
+hook_output <- knitr::knit_hooks$get("output")
+
+knitr::knit_hooks$set(output = function(x, options) {
+  if (!is.null(n <- options$outlines)) {
+    x <- xfun::split_lines(x)
+    if (length(x) > n) {
+      # truncate the output
+      x <- c(head(x, n), "....\n")
+    }
+    x <- paste(x, collapse = "\n")
+  }
+  hook_output(x, options)
+})
+
+qmdPath <- normalizePath(getwd(), winslash = "/")
+```
+
+So far we have combined forest succession (`Biomass_core`,
+`Biomass_regeneration`) with wildfire (`scfm`) in [Forest Succession and
+Wildfire @sec-scfmEg]. A common next question is *ecological*: as the
+forest grows and burns over the coming decades, **how does wildlife
+habitat change?**
+
+In this chapter we answer that for a caribou Resource Selection Function
+(RSF). An RSF is a fitted statistical model that relates the relative
+probability of an animal *using* a location to the covariates at that
+location (land cover, forest age/biomass, time since fire, etc.). The
+`RSFpredict` module takes a *previously fitted* RSF `model` and, at each
+time step, re-evaluates it against the *simulated* landscape produced by
+the forest and fire modules. The result is a forecast of habitat
+selection that responds dynamically to succession and disturbance.
+
+This is a real, three-family project:
+
+-   **forest** -- `Biomass_borealDataPrep`, `Biomass_core`,
+    `Biomass_regeneration`
+-   **fire** -- the `scfm` family (`scfmDataPrep`, `scfmIgnition`,
+    `scfmEscape`, `scfmSpread`, `scfmDiagnostics`)
+-   **wildlife** -- `RSFpredict`
+
+Notice that these modules live in *different* GitHub accounts. Because
+`SpaDES` modules declare their inputs and outputs in metadata (see
+[Module Files and Metadata @sec-moduleFilesAndMetadata]), `setupProject`
+can weave them into a single coherent workflow even though they were
+written by different people, at different times, for different purposes.
+
+## The project
+
+The whole project is described by a single `setupProject()` call. We
+will show it in full first, then walk through the pieces that are new
+relative to the forest-and-fire example.
+
+::: {.callout-note appearance="simple"}
+This example pulls its fitted RSF `model`, study area, and several input
+layers from Google Drive or other sources.
+:::
+
+```{r rsf}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+
+projPath <- "~/SpaDES_book/RSF_forecast"
+
+out <- setupProject(
+  # Restart = TRUE, # use this to restart your Rstudio session in its own project
+  # useGit = "yourGitHubName",   # optional: clone modules as git repos under your account
+  paths = list(projectPath = projPath),
+  options = list(
+    # We host several files on both GoogleDrive and Compute Canada. This redirects the GoogleDrive
+    #   file requests to Compute Canada so we don't need to log in to GoogleDrive
+    reproducible.urlRemap = 
+      "https://object-arbutus.cloud.computecanada.ca/predictiveecology/SCANFI_v2/SCANFI_v2_files_on_arbutus.csv",
+    # a shared cloud cache folder, so a whole team can re-use cached results
+    reproducible.cloudFolderID =
+      "https://drive.google.com/drive/folders/199oEp-TVaCyacwqS4PPf3XWMbhPe4YBN?usp=share_link"
+  ),
+  modules = c(
+    # forest simulation
+    "PredictiveEcology/Biomass_borealDataPrep@development",
+    "PredictiveEcology/Biomass_core@development",
+    "PredictiveEcology/Biomass_regeneration@master",
+    # fire simulation -- several modules in one git repository
+    file.path("PredictiveEcology/scfm@development/modules",
+              c("scfmDataPrep", "scfmIgnition", "scfmEscape",
+                "scfmSpread", "scfmDiagnostics")),
+    # RSF forecasting
+    "JWTurn/RSFpredict@main"
+  ),
+  params = list(
+    .globals = list(
+      .plots = "png",
+      .studyAreaName = "dehchoN",
+      .useCache = c(".inputObjects", "init"),
+      dataYear = 2020,        # start year for predicted forest growth
+      sppEquivCol = "LandR"
+    ),
+    scfmDataPrep = list(
+      targetN = 2000,         # keep low for a demo; 4000 is better for real estimates
+      .useParallelFireRegimePolys = FALSE,
+      .useCloud = TRUE
+    ),
+    Biomass_borealDataPrep = list(
+      .useCloud = TRUE
+    ),
+    RSFpredict = list(
+      simulationProcess = "dynamic"
+    )
+  ),
+  packages = c("RCurl", "XML", "snow", "googledrive", "httr2", "terra",
+               "gert", "remotes", # "glmmTMB",
+               "PredictiveEcology/reproducible@development",
+               "PredictiveEcology/LandR@development (>=1.2.0.9002)",
+               "PredictiveEcology/SpaDES.core@development"),
+  times = list(start = 2020, end = 2075),
+
+  # ----- Spatial Templates for our Study -----
+
+  studyArea = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1ma5qRk2NNidLhrQoiLIzd7W5ogeTaH5-/view?usp=share_link",
+    fun = "terra::vect",
+    destinationPath = "inputs"),
+
+  # buffer the study area to avoid edge effects in the simulation
+  studyArea_biomassParam = terra::buffer(studyArea, 10000),  # -- used in Biomass_borealDataPrep
+  studyAreaCalibration = studyArea_biomassParam,             # -- used in scfmDataPrep
+
+  # ----- raster templates derived from the inputs -----
+
+  # finer than the final RSF resolution, so we can later compute proportions
+  rasterToMatch_biomassParam = {
+    rtml <- terra::disagg(modelLand[[1]], fact = 2)
+    rtml[] <- 1
+    terra::mask(rtml, studyArea_biomassParam)
+  },
+  rasterToMatchCalibration = rasterToMatch_biomassParam,
+  rasterToMatch = {
+    reproducible::postProcess(rasterToMatch_biomassParam, cropTo = studyArea, maskTo = studyArea)
+  },
+
+  ### Other objects
+  # the previously-fitted RSF model object -- used in RSFpredict.R
+  model = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view?usp=share_link",
+    fun = "readRDS",
+    destinationPath = "inputs"),
+
+  # the land cover the RSF covariates were originally extracted from -- used in RSFpredict.R
+  modelLand = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1LeYrZBKrEPq6jSIP1SWM-grfINTeQjvn/view?usp=share_link",
+    fun = "terra::rast",
+    destinationPath = "inputs"),
+
+  # start with the historic fire history so scfm has a realistic time-since-fire
+  timeSinceFire = {
+    rsts <- reproducible::prepInputs(
+      url = "https://drive.google.com/file/d/1D6_Zc-xOttWzTOqasXh6KpGTaXYZ5OMA/view?usp=share_link",
+      fun = "terra::rast",
+      destinationPath = "inputs")
+    tsf <- reproducible::postProcess(rsts$timeSinceFire, to = rasterToMatch)
+    tsf <- terra::subst(tsf, 122, NA)   # scfm needs non-forest as NA
+    tsf
+  }
+)
+
+options(reproducible.showSimilar = TRUE)
+results <- SpaDES.core::simInitAndSpades2(out)
+```
+
+## Walking through the new pieces
+
+The structure is the same `setupProject()` we have used throughout
+([SpaDES workflows and projects](setupProject.qmd)): `modules`,
+`params`, `packages`, `times`, and a set of named objects. A few aspects
+are worth highlighting because they are typical of a *real* project.
+
+### Composing three model families
+
+The `modules` argument lists modules from two different GitHub accounts
+(`PredictiveEcology`, and `JWTurn` for `RSFpredict`). The `scfm` fire
+model is a *family of modules within a single repository*, so we build
+those paths with `file.path()`. We do not have to tell `SpaDES` how
+these fit together -- the metadata does that. The forest modules
+*create* the initial biomass and age layers from data (currently SCANFI V2.0 for all
+age, species, biomass layers), `scfm` *creates* the initial disturbance layers from
+SCANFI, and `RSFpredict` *consumes* both as its initial inputs. These 3 
+module families than alternate back and forth through time, feeding each other
+derived values of these same layers. They are thus, *dynamically* interacting 
+through forecasted conditions.
+
+### `model`: a fitted statistical object as an input
+
+The `model` object is a previously-fitted RSF (here loaded from an
+`.rds` with `prepInputs(fun = "readRDS")`). This is a good reminder that
+a SpaDES **input** can be *any* R object -- not just a map -- including a
+fitted model that a module will apply at every time step. The
+`RSFpredict` parameter `simulationProcess = "dynamic"` tells the module
+to re-predict against the changing landscape rather than once.
+
+#### Why not fit this RSF here?
+
+To fit an RSF, we need the raw data. For this chapter, we do not have permission
+to share these data. However, we do have permission to share any RSF models
+that came from these data (as long as the model doesn't carry those raw data!). 
+With SpaDES, we can use this approach for now, then replace the `model` object
+with a SpaDES module that does the fitting. In fact this is a common approach
+that we take so that we can refit the statistical model with new data.
+
+### Study areas and raster templates
+
+Real projects almost always carry *several* spatial templates. Here, these are:
+
+-   `studyArea` -- the area we care about. Here it is a
+    *specific, fixed* polygon, loaded from a known file and labelled
+    `.studyAreaName = "dehchoN"`. That specificity is what makes cloud
+    caching pay off (see [Cloud caching for a team] below);
+-   `studyArea_biomassParam` -- a buffered version (here 10 km) so that
+    neighbourhood processes (like fire spread) are not distorted at the
+    edges of the `studyArea`;
+-   `studyAreaCalibration` -- the area used to calibrate the fire
+    regime (here the same as `studyArea_biomassParam`).
+
+Each comes with a matching raster template (`rasterToMatch`,
+`rasterToMatch_biomassParam`, `rasterToMatchCalibration`). Note how these are
+*derived* from one another inside the `setupProject()` call: `studyArea`
+is fetched, `studyArea_biomassParam` is `terra::buffer()`ed from it, and
+`rasterToMatch` is `postProcess()`ed down from `rasterToMatch_biomassParam`.
+Objects defined earlier in the call are available to later ones, so the
+project description stays in one place.
+
+::: {.callout-tip appearance="simple"}
+Building `rasterToMatch_biomassParam` at a *finer* resolution
+(`terra::disagg(..., fact = 2)`) than the final RSF grid lets the
+workflow aggregate fine-grained results into proportions later -- a
+common pattern when the response variable is a proportion of a coarser
+cell.
+:::
+
+### Cloud caching for a team
+
+Two things here make the cache *shareable*:
+`options(reproducible.cloudFolderID = ...)` points at a Google Drive
+folder, and the per-module `.useCloud = TRUE` parameters
+(`scfmDataPrep`, `Biomass_borealDataPrep`) opt those expensive
+data-preparation and fitting steps into it. We don't *need* this: the important
+part of a re-runnable, reproducible, re-usable workflow is that the workflow
+changes very little or not at all to get these nice behaviours (refit with new
+data AND use somebody else's fit if it is already done).
+
+The reason this works is the **specific `studyArea`**. `Cache` decides
+whether a result can be reused by digesting a function's inputs (see
+[Introduction to Cache @sec-caching]); because the study area here is a
+*fixed* polygon rather than something randomly generated, every user who
+runs this project feeds those slow modules the *identical* inputs, and
+therefore computes the *identical* cache key. So once **one** team member
+has run the slow `scfmDataPrep` and `Biomass_borealDataPrep` fitting and
+written the result to the shared cloud folder, everyone else *downloads*
+that cached result instead of re-running it.
+
+Contrast this with the forest-and-fire example, which builds its study
+area with `LandR::randomStudyArea()`: a randomly-drawn area would change
+the inputs (and the cache key) from user to user, so the cloud cache
+could not be re-used. Pinning a specific study area is what turns the
+cloud cache into a genuine team -- or workshop or beyond -- resource.
+
+### `simInitAndSpades2()`
+
+We launch the run with `SpaDES.core::simInitAndSpades2(out)`. The `2`
+variants of `simInit2()` / `simInitAndSpades2()` simply take the *list*
+returned by `setupProject()` directly, instead of having to
+`do.call()` it. If the run is interrupted, `SpaDES.core::restartSpades()`
+can resume it.
+
+## Examining the forecast
+
+Once the run finishes, the same accessors used elsewhere apply. Because
+we set `.plots = "png"`, every module that plots with the `Plots`
+function will have written figures into the `outputs/figures` folder --
+including the forecasted RSF surface through time.
+
+```{r examine}
+completed(results)                       # the events that ran
+elapsedTime(results, units = "mins")     # time per event
+
+# the forecasted RSF prediction(s) created by RSFpredict
+# (object name depends on the module's metadata)
+moduleMetadata(results)$RSFpredict$outputObjects
+```
+
+## See also
+
+[Forest Succession and Wildfire @sec-scfmEg]
+
+[SpaDES workflows and projects](setupProject.qmd)
+
+[`reproducible::prepInputs` for Data @sec-prepInputs]
+
+[Introduction to Cache @sec-caching]
+
+## Barebones R script
+
+```{r}
+#| eval: true
+#| echo: false
+#| purl: false
+#| cache: false
+
+fileName <- file.path(qmdPath, "R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+```
+
+```{r file = fileName}
+#| eval: false
+#| echo: true
+#| purl: false
+#| cache: false
+
+```

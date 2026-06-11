@@ -75,6 +75,7 @@ book:
     - part: ContinuousWorkflows.qmd
       chapters:
       - Caching.qmd
+      - Saving.qmd
       - prepInputs.qmd
       - debugging.qmd
     - part: setupProject.qmd
@@ -82,6 +83,7 @@ book:
       - workflowSimple2.qmd
       - LandRDemo_coreVeg.qmd
       - ForestsAndFire.qmd
+      - RSFForecast.qmd
       #- castorExample.qmd
       - spadesCBMDemo.qmd
     - part: ExperimentsAndScenarios.qmd
