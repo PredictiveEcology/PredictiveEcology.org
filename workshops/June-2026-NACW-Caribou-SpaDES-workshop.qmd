@@ -1,0 +1,49 @@
+---
+title: "Robust and Nimble Caribou and Landscape Modelling Using SpaDES"
+author: 
+  - "Eliot McIntire"
+  - "Julie Turner"
+description: "A 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting"
+date: last-modified
+image: https://besjournals.onlinelibrary.wiley.com/cms/asset/db13319c-88b4-4821-9eaa-a2e62364b399/mee314034-fig-0004-m.jpg
+categories:
+  - R
+  - SpaDES Workshops
+  - Training
+comments: false
+editor:
+  markdown:
+    wrap: 150
+---
+
+*Registration for this workshop is now closed*.
+
+**Update**: links to presentation files have been added to the agenda.
+
+If you missed it, but would like to attend a future workshop, please reach out to [Eliot](../bios/community/aaaeliot.qmd) or
+[Ceres](../bios/community/aaaeliot.qmd) so that we can add you to the wait list.
+
+## Date: June 14, 2026
+
+## Location: [North American Caribou Workshop](https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576)
+
+•	Workshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES
+•	Workshop leads: Eliot McIntire and Julie Turner. Please direct any questions related to the workshop subject and materials to the workshop lead(s). 
+•	Venue: Explorer Hotel, Katimavik B
+•	Date/Time: Monday, June 15, 13:30-15:30 or until finished
+
+
+## Agenda
+
+
+Presentation slides will be added at the end of each day.
+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| 2:30 - 3:30             | [Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
+|                         |                                                                 |
+|                         | Background publication to the nimble approach: [The PERFICT approach (McIntire et al 2022)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)  |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| 2:30 - 3:30             | [Project with caribou RSF forecasting](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
+|                         |                                                                 |
+|                         | Training book chapter: [Forecasting wildlife habitat (an RSF)]({{< var book.rsfForecast >}})  |
++-------------------------+--------------------------------------------------------------------------------------------------------

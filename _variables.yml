@@ -1,0 +1,39 @@
+# Central map of training-book chapter URLs (project-root-relative).
+# Link to a chapter from any website page with, e.g.:
+#   [Module inputs]({{< var book.moduleInputs >}})
+# If a chapter's .qmd (and thus .html) is renamed, update it here ONCE.
+book:
+  # Top level
+  index: training/_book/index.html
+  intro: training/_book/intro.html
+  bestPractices: training/_book/bestPractices.html
+
+  # Setting up
+  installRSpatial: training/_book/installRandSpatialPkgs.html
+  packages: training/_book/PackagesForBook.html
+  troubleshooting: training/_book/TroubleshootingPackageInstallation.html
+
+  # SpaDES basics
+  newModuleIntro: training/_book/NewModuleIntro.html
+  metadata: training/_book/MetaDataAndModuleFiles.html
+  moduleInputs: training/_book/ModuleInputs.html
+  simList: training/_book/simList.html
+  modulesAndEvents: training/_book/ModulesAndEvents.html
+  scheduling: training/_book/Scheduling.html
+
+  # Continuous workflows
+  caching: training/_book/Caching.html
+  saving: training/_book/Saving.html
+  prepInputs: training/_book/prepInputs.html
+  debugging: training/_book/debugging.html
+
+  # Workflows and projects
+  workflowSimple: training/_book/workflowSimple2.html
+  landRDemo: training/_book/LandRDemo_coreVeg.html
+  forestsAndFire: training/_book/ForestsAndFire.html
+  rsfForecast: training/_book/RSFForecast.html
+  spadesCBM: training/_book/spadesCBMDemo.html
+
+  # Experiments and scenarios
+  experiments: training/_book/Experiments.html
+  fireUnderClimateChange: training/_book/FireUnderClimateChange.html
