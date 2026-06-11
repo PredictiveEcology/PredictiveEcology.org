@@ -1,0 +1,8 @@
+---
+---
+
+@import "type-theme";
+
+.chapter-number::before {
+  content: "Chapter ";
+}
