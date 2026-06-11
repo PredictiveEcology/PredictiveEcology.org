@@ -1,0 +1,45 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  tidy: false
+  warning: false
+  message: false
+  error: false
+---
+
+# Experiments, replication, and scenarios
+
+Up to this point we have been running a single configuration of a SpaDES
+project at a time -- one set of parameters, one study area, one
+realisation. Most real research questions need many runs: replicates of
+the same configuration to characterise stochasticity, scans across
+parameter values, comparisons between scenarios (e.g. climate
+projections), or all of the above combined.
+
+This section is about running *many* SpaDES jobs in a structured,
+resumable way. The unifying concept is the **scenario record** -- a
+single named tuple of field values that identifies one run uniquely --
+and the unifying tool is one of three "experiment runners" that all
+consume the same `data.frame` of scenarios but differ in *how* they
+spawn parallel workers:
+
+* `experimentTmux()` -- one tmux pane per worker, optionally across
+  ssh-reachable machines. Best for interactive use where you want to
+  watch workers live.
+* `experimentFuture()` -- background R processes via `callr`, no tmux.
+  Best for non-interactive driver scripts on a single workstation.
+* `experimentSBATCH()` -- one Slurm batch job per worker. Best for HPC
+  clusters with `sbatch`/`squeue`/`scancel`.
+
+All three share the same queue / `runNameLabel` / `statusCalculate`
+semantics, so a script that works under one runner needs only the
+function name swapped to work under another.
+
+@sec-experiments introduces the runners on a deliberately tiny example
+(no `setupProject`, no SpaDES modules -- just an R script that prints a
+few lines). @sec-fire-under-climate-change picks up a real fire-under-
+climate-change experiment built on top of the modules introduced in
+@sec-LandRExample and @sec-FireExample.

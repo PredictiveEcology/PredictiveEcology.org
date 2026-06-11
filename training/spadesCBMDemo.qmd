@@ -54,11 +54,6 @@ if (Sys.getenv("USERNAME") == "GHA") {
 }
 
 qmdPath <- normalizePath(getwd(), winslash = "/")
-
-if (!interactive()) { 
-  dir.create("~/SpaDES_book/spadesCBMDemo", recursive = TRUE)
-  knitr::opts_knit$set(root.dir = "~/SpaDES_book/spadesCBMDemo")
-}
 ```
 
 spadesCBM is a modular, transparent, and spatially explicit implementation of the logic, pools structure, equations, and default assumptions of the Carbon Budget Model of the Canadian Forest Sector [CBM](https://natural-resources.canada.ca/climate-change/climate-change-impacts-forests/carbon-accounting/carbon-budget-model/13107).
@@ -124,27 +119,28 @@ If the Python installation process fails or you would prefer to manually install
 :::
 
 
-``` {r}        
-projectPath <- "~/GitHub/spadesCBM"
-repos <- unique(c("predictiveecology.r-universe.dev", getOption("repos")))
-install.packages("SpaDES.project",
-                 repos = repos)
+```{r}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+projectPath <- "~/spadesCBMpython"
 
 # start in 1998, and end in 2000
 times <- list(start = 1998, end = 2000)
 
-out <- SpaDES.project::setupProject(
+out <- setupProject(
   Restart = TRUE,
   # useGit = "PredictiveEcology", # a developer sets and keeps this = TRUE
   overwrite = TRUE, # a user who wants to get latest modules sets this to TRUE
   paths = list(projectPath = projectPath),
 
-  options = options(
-    repos = c(repos = repos),
-    Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
+  options = list(
+    repos = repos,
     reproducible.destinationPath = "inputs",
     ## These are for speed
     reproducible.useMemoise = TRUE,
+    Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
     # Require.offlineMode = TRUE,
     spades.moduleCodeChecks = FALSE
   ),
@@ -207,7 +203,7 @@ In our `setupProject()` call, we defined certain outputs to be saved by specifyi
 ```{r} 
 > outputs(simCarbon)
 
-  objectName saveTime                                                                      file     
+  objectName saveTime                                                                      file
 1   cbmPools     1998 ~/spadesCBMpython/outputs/cbmPools_year1998.rds saveRDS    base  TRUE
 2        NPP     1998      ~/spadesCBMpython/outputs/NPP_year1998.rds saveRDS    base  TRUE
 3   cbmPools     1999 ~/spadesCBMpython/outputs/cbmPools_year1999.rds saveRDS    base  TRUE
@@ -316,27 +312,28 @@ With `simCarbon2`, you can look at your results and generate plots in the same w
 
 ## Barebones script
 ```{r}
-# Setup
-projectPath <- "~/GitHub/spadesCBM"
-repos <- unique(c("predictiveecology.r-universe.dev", getOption("repos")))
-install.packages("SpaDES.project",
-                 repos = repos)
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+library(SpaDES.project)
+projectPath <- "~/spadesCBMpython"
 
 # start in 1998, and end in 2000
 times <- list(start = 1998, end = 2000)
 
-out <- SpaDES.project::setupProject(
+out <- setupProject(
   Restart = TRUE,
   # useGit = "PredictiveEcology", # a developer sets and keeps this = TRUE
   overwrite = TRUE, # a user who wants to get latest modules sets this to TRUE
   paths = list(projectPath = projectPath),
 
-  options = options(
-    repos = c(repos = repos),
-    Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
+  options = list(
+    repos = repos,
     reproducible.destinationPath = "inputs",
     ## These are for speed
     reproducible.useMemoise = TRUE,
+    Require.cloneFrom = Sys.getenv("R_LIBS_USER"),
     # Require.offlineMode = TRUE,
     spades.moduleCodeChecks = FALSE
   ),

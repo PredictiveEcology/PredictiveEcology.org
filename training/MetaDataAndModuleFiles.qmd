@@ -37,12 +37,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
-# if (Sys.getenv("USERNAME") != "GHA") {
-  libPath <- ifelse(dir.exists("packages"), "packages", "training/packages") # if run interactively vs knited
-  .libPaths(libPath)
-# }
-
 ```
 
 ## Continue example -- a linear model
@@ -113,11 +107,25 @@ Make the module again (see @sec-moduleintro). This time we will add
 `sim$` for the `x` as we are now interested in the fact that it might be
 coming from *outside* this module.
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
+)
+```
+
 ```{r}
 #| eval: true
 
-Require::Require(c("reproducible", "SpaDES.core"), 
-                 repos = c("https://predictiveecology.r-universe.dev", getOption("repos")))
+library(SpaDES.core)
 
 # make a module
 modulePath <- "~/SpaDES_book/NewModuleIntro/NewModule"

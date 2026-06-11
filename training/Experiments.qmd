@@ -1,0 +1,431 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  tidy: false
+  warning: false
+  message: false
+  error: false
+---
+
+# Experiments {#sec-experiments}
+
+::: {.callout-tip appearance="simple"}
+The examples in this chapter use a deliberately tiny `global.R` -- a
+few lines of plain R, no `setupProject()`, no SpaDES modules. The goal
+is to expose the mechanics of running many jobs in parallel without the
+domain-specific noise of a full simulation. Once you understand the
+runners on this toy schema, swap in a real `global.R` and the whole
+machinery still works.
+:::
+
+## What is an "experiment"?
+
+An *experiment* in this package is a `data.frame` (or `data.table`)
+where each row is one job to run. Column names become R variable names
+that get assigned in each worker's `.GlobalEnv` before the worker
+sources `global.R` and produces an output. Conceptually:
+
+```r
+# Conceptual kernel -- not what you'd actually call. Read for intuition.
+for (i in seq_len(nrow(df))) {
+  list2env(as.list(df[i, ]), envir = .GlobalEnv)   # set .scenario, .rep, ...
+  source("global.R")                                # produce output for row i
+}
+```
+
+That serial loop is the *kernel*. Everything in the rest of this
+chapter is operational sophistication on top: parallelism, log
+capture, queue persistence (so an interrupted run can resume),
+status-aware reclaim of stuck rows, optional Google Sheets mirroring
+for cross-machine visibility, and helpers to track which scenarios
+have already produced their archive on cloud storage.
+
+If you really only need parallelism over a tiny in-memory list with no
+checkpointing, two lines of `furrr` are enough:
+
+```r
+future::plan(future::multisession, workers = 4L)
+furrr::future_pmap(df, function(...) {
+  list2env(list(...), envir = .GlobalEnv)
+  source("global.R")
+})
+```
+
+That kernel does *not* survive an interrupted R session, can't be
+resumed, doesn't share state across machines, and gives you no
+introspection while jobs are running. The runners introduced below
+add exactly those features.
+
+## The running example
+
+Every section of this chapter uses the same pair: a four-row
+parameter grid `df` and a one-line `global.R`.
+
+```r
+# global.R -- a worker sources this for every job. The variables
+# `.scenario` and `.rep` are assigned to .GlobalEnv before this runs.
+out_path <- file.path("outputs", paste0(.scenario, "_rep", .rep, ".rds"))
+dir.create(dirname(out_path), recursive = TRUE, showWarnings = FALSE)
+Sys.sleep(2)  # pretend this is a long simulation
+saveRDS(list(scenario = .scenario, rep = .rep, when = Sys.time()),
+        file = out_path)
+message("Wrote ", out_path)
+```
+
+```r
+# In your driver script:
+df <- expand.grid(
+  .scenario = c("A", "B"),
+  .rep      = 1:2,
+  stringsAsFactors = FALSE
+)
+df
+#>   .scenario .rep
+#> 1         A    1
+#> 2         B    1
+#> 3         A    2
+#> 4         B    2
+```
+
+Four jobs. Two scenarios crossed with two replicates. `global.R` writes
+one `.rds` per row. We will run this four-row experiment three times --
+once with each runner -- and confirm the output is identical.
+
+## Three runners, one queue model
+
+### `experimentTmux()`: live monitoring
+
+```r
+library(SpaDES.project)
+
+ex <- experimentTmux(
+  df           = df,
+  global_path  = "global.R",
+  cores        = rep("localhost", 2L),     # two parallel workers
+  queue_path   = "tmux_queue.rds",
+  runNameLabel = quote(paste(.scenario, .rep, sep = "_"))
+)
+```
+
+This:
+
+1. Writes `df` to `tmux_queue.rds` (a `data.table` with `status`,
+   `claimed_by`, `started_at`, ... meta columns appended).
+2. Starts a tmux session if one isn't already running, splits two
+   panes, and in each runs `Rscript -e "...tmuxRunWorkerLoop(...)"`.
+3. Each pane's worker locks the queue, claims the next `PENDING` row,
+   sets the row's data columns into `.GlobalEnv`, sources
+   `global.R`, marks the row `DONE`, and loops.
+4. You can watch the panes live (`tmux attach`) and see each job's
+   output as it runs.
+
+When all rows are `DONE` the worker loops exit. Read the resulting
+queue back to confirm:
+
+```r
+q <- readRDS("tmux_queue.rds")
+table(q$status)
+#>
+#>  DONE
+#>     4
+```
+
+Killing your terminal mid-run leaves the queue intact; rerun
+`experimentTmux()` against the same `queue_path` and the surviving
+workers pick up where the dead ones left off. `runNameLabel` is the
+quoted expression each worker evaluates against its claimed row to
+build a human-readable identifier for log messages.
+
+### `experimentFuture()`: same thing, no tmux
+
+```r
+ef <- experimentFuture(
+  df           = df,
+  global_path  = "global.R",
+  n_workers    = 2L,
+  queue_path   = "future_queue.rds",
+  log_dir      = "logs",
+  runNameLabel = quote(paste(.scenario, .rep, sep = "_"))
+)
+```
+
+Same `df`, same `global.R`, same queue model -- but workers are
+`callr::r_bg()` background R processes instead of tmux panes. The call
+returns immediately with a non-blocking handle:
+
+```r
+print(ef)
+#> experimentFuture  --  2 worker(s)
+#>   Queue  : .../future_queue.rds
+#>   Log dir: .../logs
+#>   [running] worker 1  .../logs/worker_01.log
+#>   [running] worker 2  .../logs/worker_02.log
+
+awaitExperimentFuture(ef)        # blocks until both workers exit
+#> Final queue status:
+#>
+#>  DONE
+#>     4
+```
+
+`tail -f logs/worker_01.log` from another shell shows live output --
+no tmux required, scriptable end-to-end. `killExperimentFuture(ef)`
+creates a stop file each worker checks between jobs (graceful), or
+`killExperimentFuture(ef, force = TRUE)` SIGKILLs them.
+
+### `experimentSBATCH()`: same thing, on Slurm
+
+```r
+es <- experimentSBATCH(
+  df           = df,
+  global_path  = "/scratch/projectX/global.R",   # absolute, on shared FS
+  n_workers    = 2L,
+  queue_path   = "/scratch/projectX/sbatch_queue.rds",
+  log_dir      = "/scratch/projectX/logs",
+  sbatch_opts  = list(
+    partition     = "compute",
+    time          = "01:00:00",
+    mem           = "4G",
+    cpus_per_task = 1
+  ),
+  runNameLabel = quote(paste(.scenario, .rep, sep = "_"))
+)
+```
+
+`experimentSBATCH()` writes a small shell script per worker
+(`logs/worker_01.sh`, ...) wrapping a single `Rscript -e
+'SpaDES.project::tmuxRunWorkerLoop(...)'` invocation, decorates it
+with `#SBATCH --partition=compute --time=01:00:00 ...`, and submits
+each via `sbatch`. The Slurm job IDs land on the returned handle:
+
+```r
+print(es)
+#> experimentSBATCH  --  2 worker(s)
+#>   Queue  : /scratch/projectX/sbatch_queue.rds
+#>   Log dir: /scratch/projectX/logs
+#>   [in-queue] worker 1  job 18472913  /scratch/projectX/logs/worker_01.log
+#>   [in-queue] worker 2  job 18472914  /scratch/projectX/logs/worker_02.log
+
+awaitExperimentSBATCH(es)            # polls squeue every 30 s by default
+killExperimentSBATCH(es)             # graceful (stop files)
+killExperimentSBATCH(es, force = TRUE)  # scancel
+```
+
+Two important constraints:
+
+* **`global_path`, `queue_path`, and `log_dir` must be on a filesystem
+  visible to all compute nodes** (NFS, Lustre, BeeGFS). Each Slurm
+  worker reads/writes the same RDS queue, so a node-local `/tmp` won't
+  work.
+* `sbatch_opts` accepts arbitrary key/value pairs that map to
+  `#SBATCH --<key>=<value>` directives, with underscores in names
+  rewritten to hyphens (so `cpus_per_task = 4` becomes
+  `--cpus-per-task=4`). Pass `dry_run = TRUE` to inspect the generated
+  scripts without submitting them.
+
+The point of these three sections is the *same* four-line driver
+script. Replace `experimentTmux` with `experimentFuture` or
+`experimentSBATCH`, adjust the `cores` / `n_workers` / `sbatch_opts`
+arguments, and you have a tmux-free or HPC-native experiment without
+rewriting `global.R`, `df`, or any of the post-processing.
+
+## Scenario records: one tuple, multiple representations
+
+A "scenario" is one row of `df` -- one named tuple of field values
+that uniquely identifies a run. Once an experiment has been running
+for a while, you'll want to refer to those scenarios in three other
+forms:
+
+* the canonical record (named values),
+* an output directory path under `outputs/`,
+* an upload tarball filename like `A_rep1.tar.gz`.
+
+The `scenario` family converts losslessly between all three.
+
+```r
+# Canonical record from the queue row
+s <- scenario(.scenario = "A", .rep = 1L)
+s
+#> <scenario> .scenario=A | .rep=1
+#>   path:    outputs/A/1
+#>   tarname: A_1.tar.gz
+
+# Vectorised over all rows of df
+ss <- as_scenario(df)
+length(ss)
+#> [1] 4
+as_path(ss[[1L]])
+#> [1] "outputs/A/1"
+as_tarname(ss[[1L]])
+#> [1] "A_1.tar.gz"
+
+# Round-trip: parse a path or tarname back to fields
+as_scenario("outputs/B/2")
+#> <scenario> .scenario=B | .rep=2
+```
+
+By default each non-empty field value becomes one path segment, joined
+by `/`, in the order the fields appear in `df`. Two knobs let you
+match a project-specific layout without writing any custom code:
+
+```r
+# Per-field labels: prefix the .rep segment with "rep" so it parses
+# back unambiguously even when other fields might be NA.
+register_scenario_format(withFieldLabel = c(.rep = "rep"))
+as_path(ss[[1L]])
+#> [1] "outputs/A/rep1"
+as_tarname(ss[[1L]])
+#> [1] "A_rep1.tar.gz"
+```
+
+For genuinely irregular formats (e.g. two fields joined into one
+segment), pass `build` and `parse` functions to
+`register_scenario_format()`. Lookup precedence is: registered slot
+-> `pathBuild`/`pathParse` defined in the global env -> the package
+default.
+
+`scenarioFields()` is the cached list of "data" column names (i.e.
+non-meta columns of the queue). `queueRead()` sets it as a side effect
+when you read the queue from a Google Sheet; for a `data.frame` queue
+you've built yourself, the runners (`experimentTmux()`,
+`experimentFuture()`, `experimentSBATCH()`) set it for you. You only
+need to call `scenarioFieldsSet()` directly if you're using the
+`scenario` family before any runner has fired.
+
+## Output and upload helpers
+
+If your experiment finishes and writes one tarball per scenario to a
+shared Google Drive folder, the queue-vs-uploads anti-join is a
+one-liner:
+
+```r
+.uploadGSdir <- "https://drive.google.com/drive/folders/..."
+ss_id        <- "https://drive.google.com/drive/folders/..."
+
+missing <- queueUploadMissing(
+  folder       = ss_id,                 # folder containing the queue sheet
+  name         = "longRuns",            # the sheet's name
+  uploadFolder = .uploadGSdir
+)
+nrow(missing)
+#> [1] 7   # queue rows whose A_rep1.tar.gz hasn't appeared in Drive yet
+```
+
+Under the hood:
+
+```r
+# Equivalent, expanded form:
+allOnGS <- outList(.uploadGSdir)        # dribble of *.tar.gz on Drive
+queue   <- queueRead(folder = ss_id, name = "longRuns")
+qScens  <- as_scenario(queue)
+missing <- queue[!(as_tarname(qScens) %in% allOnGS$name), ]
+```
+
+The companion `outScenarios()` returns the uploaded files coerced to
+scenario records, useful when you want to operate on field values
+rather than tarname strings.
+
+## Operational helpers
+
+These tools work the same regardless of which runner you used --
+they read the queue file directly.
+
+```r
+tmuxListPanes()                       # which workers are alive (Tmux)
+tmuxFindDuplicates()                  # workers running the same row
+tmuxRefreshQueueStatus("queue.rds")   # reset stale RUNNING -> INTERRUPTED
+tmuxKillPanes(panes = ...)            # kill specific tmux panes
+```
+
+Two pre-built `statusCalculate` blocks ship with the package and slot
+into `experimentTmux/Future/SBATCH(...)` via the `statusCalculate`
+argument:
+
+* `statusCalculate_LandR` -- declares a row "done" once the LandR
+  cohort `cohortData_year<XXXX>.rds` checkpoint reaches the
+  configured end year.
+* `statusCalculate_FireSenseFit` -- declares a row "done" once the
+  FireSense `burnMap_year<XXXX>.tif` for the end year exists.
+
+Both use a positional `pathBuild(.ELFind, .samplingRange, .GCM, .SSP,
+.rep)` call to derive the row's output directory from the row's
+field values; see @sec-fire-under-climate-change for a real-world
+configuration.
+
+## Troubleshooting
+
+::: {.callout-warning}
+**`pathBuild()` complains about cached fields.** Most of the time,
+positional `pathBuild(.ELFind, .samplingRange, ...)` infers the
+field set from the bare-symbol arguments and caches it as
+`scenarioFields()` automatically. If you call `pathBuild()` with
+*literals* (`pathBuild("foo", 1L)`) before any runner has fired, the
+inference can't kick in -- prime the cache by hand:
+
+```r
+scenarioFieldsSet(c(".scenario", ".rep"))
+```
+:::
+
+::: {.callout-warning}
+**Tarballs on Drive don't match the queue's `as_tarname()`.** Check
+the segment-prefix style. `as_tarname(s)` produces `A_rep1.tar.gz` if
+you've registered `withFieldLabel = c(.rep = "rep")`, or `A_1.tar.gz`
+if you haven't. Whatever the previous-generation upload script wrote
+is what `outList()$name` will compare against; pick a registration
+that matches.
+:::
+
+::: {.callout-warning}
+**Google Sheets column names lost their leading dot.** Sheets forbids
+header names that start with `.`, so `SpaDES.project` writes columns
+named `dotELFind`, `dotrep`, ... and reverts on read via
+`revertDotNames()`. If a sheet was written by something else and the
+columns are stored as bare `ELFind`, `rep`, the pre-flight check in
+`experimentTmux/Future/SBATCH()` will refuse to merge the sheet's
+state with your local `df`. Either fix the sheet header row, or pass
+`forceLocalQueueToGS = TRUE` to overwrite the sheet from the local
+`df`.
+:::
+
+::: {.callout-warning}
+**`experimentTmux()` warns about a missing systemd scope.** On Linux,
+remote workers spawned by an interactive tmux session can be killed
+when your local desktop session ends (the tmux server gets a SIGHUP).
+Start tmux under a user scope so the server outlives your login:
+
+```sh
+alias tmuxs='systemd-run --user --scope tmux'
+```
+:::
+
+::: {.callout-warning}
+**SBATCH workers fail with `cannot open queue` on compute nodes.**
+The queue and `global.R` paths must be on a shared filesystem. A
+common slip is leaving `queue_path = "future_queue.rds"` (relative,
+resolves to the master node's `cwd`) when launching from a head node
+that mounts `/scratch` differently from compute nodes. Use absolute
+paths under a known-shared root.
+:::
+
+## Summary
+
+* All three runners (`experimentTmux`, `experimentFuture`,
+  `experimentSBATCH`) consume the same `df` and `global.R` and offer
+  the same queue / `runNameLabel` / `statusCalculate` API.
+* The differences are operational: tmux pane vs. background process
+  vs. Slurm batch job. Pick by environment.
+* The `scenario` family (`as_scenario()`, `as_path()`, `as_tarname()`,
+  `pathBuild()`, `register_scenario_format()`) is the canonical way to
+  refer to one run across the queue, the output directory, and the
+  upload folder -- always reversibly.
+* Resumable queues, anti-joins against an upload folder, and the
+  status calculators are the three tools that make a long-running
+  experiment manageable in practice.
+
+@sec-fire-under-climate-change applies all of this to a real
+fire-under-climate-change experiment with the LandR and FireSense
+modules.

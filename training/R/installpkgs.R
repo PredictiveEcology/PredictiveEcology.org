@@ -20,7 +20,6 @@ out <- setupProject(
   options = list("repos" = unique(repos)),
   paths = list(projectPath = tempDir,
                packagePath = pkgPath),
-  # packages = "PredictiveEcology/PredictiveEcology.org@main/training/R/pkgList.R",
   modules = "PredictiveEcology/Biomass_core@main",
   # Restart = TRUE,
   setLinuxBinaryRepo = FALSE

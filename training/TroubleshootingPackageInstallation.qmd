@@ -179,26 +179,30 @@ get by default with a normal R installation) can cause problems.
     package library. The default place for a personal library in R
     depends on operating system. For windows, it is something like:
 
-```{r}
-> Sys.getenv("R_LIBS_USER") [1] "C:\\Users\\emcintir\\AppData\\Local/R/win-library/4.4"}
+```
+> Sys.getenv("R_LIBS_USER")
+[1] "C:\\Users\\emcintir\\AppData\\Local/R/win-library/4.4"
 ```
 
 For Linux, it is something like:
 
-```{r}
-> Sys.getenv("R_LIBS_USER") [1] "/home/emcintir/R/x86_64-pc-linux-gnu-library/4.3"}
+```
+> Sys.getenv("R_LIBS_USER")
+[1] "/home/emcintir/R/x86_64-pc-linux-gnu-library/4.3"
 ```
 
 If you have a project-specific library, including if you use
 `SpaDES.project` or `renv`, `.libPaths()` will point to somewhere else.
 For `SpaDES.project` it will be something like:
 
-```{r}
-# Windows 
-> .libPaths() [1] "C:/Users/emcintir/AppData/Roaming/R/data/R/SpaDES.project/packages/x86_64-w64-mingw32/4.4"  
+```
+# Windows
+> .libPaths()
+[1] "C:/Users/emcintir/AppData/Roaming/R/data/R/SpaDES.project/packages/x86_64-w64-mingw32/4.4"
 
-# Linux 
-> .libPaths() [1] "/home/emcintir/.local/share/R/SpaDES.project/packages/x86_64-pc-linux-gnu/4.3"}
+# Linux
+> .libPaths()
+[1] "/home/emcintir/.local/share/R/SpaDES.project/packages/x86_64-pc-linux-gnu/4.3"
 ```
 
 When you install a package, ensure it was installed in the correct

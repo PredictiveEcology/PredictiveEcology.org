@@ -36,13 +36,6 @@ knitr::knit_hooks$set(output = function(y, options) {
   }
   hook_output(y, options)
 })
-
-options(repos = list(CRAN = "http://cran.r-project.org"))
-
-if (!require("Require")) {
-  install.packages("Require", repos = c("https://predictiveecology.r-universe.dev", getOption("repos")),
-                   dependencies = TRUE)
-}
 ```
 
 SpaDES modules are comprised of R code that has metadata and that gets
@@ -59,7 +52,7 @@ y <- x + rnorm(10)
 model <- lm(y ~ x)
 
 # plot the fit
-plot(model)
+plot(model, ask = FALSE)
 ```
 
 Looking at this code above, we can imagine that the first 3 lines are
@@ -71,6 +64,21 @@ sequence.
 
 We use the `SpaDES.core` function `newModule()` to make a new module.
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
+)
+```
+
 Step 1 -- move the code to an "init" event. This "init" event is a
 convention that SpaDES uses. A module must always have an "init" event.
 This is the only code that is "definitely run" in a module.
@@ -78,14 +86,13 @@ This is the only code that is "definitely run" in a module.
 ```{r newModule}
 #| eval: true
 
-Require::Require(c("reproducible", "SpaDES.core (>= 2.1.5)"), 
-                 repos = c("https://predictiveecology.r-universe.dev", getOption("repos")))
+library(SpaDES.core) # was installed with setupProject automatically
 
 # make a module
 modulePath <- "~/SpaDES_book/NewModuleIntro/NewModule"
-SpaDES.core::newModule(name = "My_linear_model", 
+SpaDES.core::newModule(name = "My_linear_model",
                        path = modulePath, 
-                       open = FALSE,
+                       # open = TRUE,
                        events = list(
                          init = {
                            x <- rnorm(10)
@@ -111,7 +118,7 @@ assign the `model` to `sim`.
 
 # make a module
 SpaDES.core::newModule(name = "My_linear_model", 
-                       path = modulePath, open = FALSE,
+                       path = modulePath, # open = TRUE,
                        events = list(
                          init = {
                            x <- rnorm(10)
@@ -167,10 +174,10 @@ Our next step is to divide the pieces into conceptual chunks. Let's now
 create a new module for the `plot` ... a "visualization module".
 
 ```{r newModule2}
-SpaDES.core::newModule("visualize", path = modulePath, open = FALSE,
+SpaDES.core::newModule("visualize", path = modulePath, # open = TRUE,
                        events = list(
                          init = {
-                           plot(sim$model)
+                           plot(sim$model, ask = FALSE)
                          }
                        )
 )

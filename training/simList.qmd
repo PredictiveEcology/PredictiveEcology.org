@@ -38,13 +38,26 @@ In `SpaDES`, this place is called the `simList`. It is a rich data
 object that acts like a list or an environment, i.e., we can put objects
 into it and use them later.
 
+```{r pkgs}
+#| eval: true
+
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+out <- setupProject(
+  options = list(repos = repos),
+  paths = list(projectPath = "~/SpaDES_book/NewModuleIntro")
+)
+```
+
 ```{r simListCreate}
 #| eval: true
 #| results: false
 
-Require::Require(c("reproducible", "SpaDES.core  (>= 2.1.5)"),
-                 repos = c("https://predictiveecology.r-universe.dev", getOption("repos")))
-
+library(SpaDES.core)
 sim <- simInit()
 sim$a <- 1
 sim$b <- sim$a + 2
@@ -256,7 +269,9 @@ outputPath(mySim)
 Now run the simulation
 
 ```{r run-sim}
-mySimOut <- reproducible::Copy(mySim) # make a deep copy of the simList
+# make a deep copy of the simList (data.table; R6; environments;
+#   plus some other object classes are pass by reference)
+mySimOut <- reproducible::Copy(mySim) 
 mySimOut <- spades(mySimOut)
 ```
 
