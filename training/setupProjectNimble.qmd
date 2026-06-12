@@ -41,6 +41,13 @@ hand, and most of that bookkeeping is exactly what breaks elsewhere.
 
 ```{r before}
 ## 1) Packages -------------------------------------------------------
+## to be portable, we must INSTALL what is missing ...
+if (!requireNamespace("SpaDES.core",    quietly = TRUE)) install.packages("SpaDES.core")
+if (!requireNamespace("SpaDES.project", quietly = TRUE)) install.packages("SpaDES.project")
+if (!requireNamespace("terra",          quietly = TRUE)) install.packages("terra")
+if (!requireNamespace("sf",             quietly = TRUE)) install.packages("sf")
+
+## ... and then still LOAD it (installing does not attach a package)
 library(SpaDES.core)
 library(SpaDES.project)
 library(terra)
@@ -140,22 +147,68 @@ its own sake -- it is *what each line now does*.
 
 ## What changed, step by step
 
-### Packages: from `library()` to a managed library
+### Packages: installing what's missing, not just loading
 
-The hand-rolled version `library()`s a fixed set of packages and assumes
-they are already installed at compatible versions. The nimble version
-hands a `packages` argument to `setupProject()`, which **installs and
-loads** them into a project-specific library.
+A bare `library(SpaDES.core)` is not portable: it fails on any machine
+where the package isn't already installed. So for the hand-rolled script
+to actually run for *someone else*, it cannot simply `library()` -- it
+has to **install what is missing** *and then load it*:
 
-The important part is *where* this happens. Because `setupProject()`
-also knows the `modules`, it can read each module's own package
-requirements (declared in their metadata) and reconcile them **together
-with the packages you ask for** -- in one resolution step, before
-anything runs. So a module that needs a particular version of `LandR`
-and your own analysis needs are satisfied at the same time, rather than
-discovered one failed `library()` call at a time. Note we only list
-`LandR` explicitly here; `SpaDES.core`, `terra` and the rest arrive as
-dependencies of the modules and packages requested.
+```{r install-guard}
+## install if missing ...
+if (!requireNamespace("SpaDES.core",    quietly = TRUE)) install.packages("SpaDES.core")
+if (!requireNamespace("SpaDES.project", quietly = TRUE)) install.packages("SpaDES.project")
+if (!requireNamespace("terra",          quietly = TRUE)) install.packages("terra")
+if (!requireNamespace("sf",             quietly = TRUE)) install.packages("sf")
+## ... and still load, because installing does not attach
+library(SpaDES.core)
+library(SpaDES.project)
+library(terra)
+library(sf)
+```
+
+Note that the install and the load are *separate* steps: installing a
+package does not attach it. This is why the popular one-liner
+`if (!require(x)) install.packages(x)` is subtly broken on a fresh
+machine -- `require()` only loads `x` when it is *already* installed, so
+on the very run where it installs `x`, it never loads it. Getting even
+this small dance right, for every package, is its own little chore.
+
+That aside, the guard-and-load approach has three deeper weaknesses, and
+they grow with the project:
+
+1.  **Repetitive** -- two lines per package, by hand, kept in sync
+    forever.
+2.  **Wrong source** -- `install.packages()` uses whatever repositories
+    happen to be configured, so the PredictiveEcology packages (which
+    live on the `r-universe` repo) and any GitHub-only or
+    version-pinned packages won't be found without extra setup.
+3.  **Incomplete** -- it only installs *your* packages. It has no idea
+    which packages the **modules** need, or at what versions, so those
+    failures surface one at a time, deep into a run.
+
+The nimble version replaces all of this with the `packages` argument to
+`setupProject()`, which **installs and loads** the requested packages
+into a project-specific library. It still needs a tiny bootstrap -- the
+same `if (!require(...))` idiom -- but only to install the *one* tool
+that does the installing:
+
+```{r pak-bootstrap}
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+```
+
+After that, everything is declarative. And the important part is *where*
+the resolution happens: because `setupProject()` also knows the
+`modules`, it reads each module's own package requirements (declared in
+their metadata) and reconciles them **together with the packages you ask
+for** -- in one step, before anything runs. So a module that needs a
+particular version of `LandR` (note the `@development (>= 1.2.0.9002)`
+pin) and your own analysis needs are satisfied at once, rather than
+discovered one failed `library()` call at a time. We only list `LandR`
+explicitly; `SpaDES.core`, `terra` and the rest arrive as dependencies
+of the requested modules and packages.
 
 ### Paths: from `setPaths()` + manual cache cleanup to defaults
 
@@ -222,6 +275,35 @@ Two smaller things worth noticing:
 variant of `simInitAndSpades()` accepts that list directly, so the
 two-step `simInit()` then `spades()` becomes a single
 `simInitAndSpades2(out)`.
+
+### Why not just put everything in the `.GlobalEnv`?
+
+The hand-rolled script creates `studyArea`, `times`, `objects` and the
+rest as ordinary variables in your global workspace, the `.GlobalEnv`.
+For a single, short script that is harmless. But the `.GlobalEnv` is
+special in R: it sits at the top of the search path, so **everything can
+see it** -- any function, any module, anywhere, can reach an object that
+lives there.
+
+That sounds convenient, and that is exactly the problem. When a module
+goes looking for an object and *doesn't* find it where it should -- in
+the `simList` -- R does not stop with an error. It keeps searching
+outward and, if a variable of the same name happens to be sitting in the
+`.GlobalEnv`, it quietly uses that one instead and carries on. The run
+appears to "work", but for the wrong reason: a genuinely missing or
+misnamed input has been silently papered over by a leftover global.
+
+This has bitten us so many times that we treat it as a rule of thumb:
+the `.GlobalEnv` is fine for small, simple projects, but as soon as a
+project grows past a single script it becomes a common source of
+confusing, hard-to-reproduce bugs.
+
+`setupProject()` sidesteps the trap by design. The objects you pass
+(`studyArea`, `studyAreaLarge`, ...) are routed into the `simList`
+rather than scattered across the global workspace, so a module that asks
+for an input it wasn't given fails **loudly**, where you can see and fix
+it, instead of silently borrowing whatever the `.GlobalEnv` happened to
+contain.
 
 ## Why "nimble"?
 
