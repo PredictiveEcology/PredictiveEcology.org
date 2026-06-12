@@ -1,5 +1,5 @@
 ---
-author: "Eliot McIntire"
+author: "Eliot McIntire and Julie Turner"
 date: last-modified
 editor_options:
   chunk_output_type: console
@@ -23,7 +23,8 @@ See [Barebones R script] for the code shown in this chapter
 :::
 
 ::: {.callout-note appearance="simple"}
-*Several minutes (<10 minutes) -- estimated time for 1st time executing*
+*Several minutes (\<10 minutes) -- estimated time for 1st time
+executing*
 
 *16 GB RAM (or more) -- estimated peak RAM for executing*
 :::
@@ -69,11 +70,11 @@ selection that responds dynamically to succession and disturbance.
 
 This is a real, three-family project:
 
--   **forest** -- `Biomass_borealDataPrep`, `Biomass_core`,
-    `Biomass_regeneration`
--   **fire** -- the `scfm` family (`scfmDataPrep`, `scfmIgnition`,
-    `scfmEscape`, `scfmSpread`, `scfmDiagnostics`)
--   **wildlife** -- `RSFpredict`
+- **forest** -- `Biomass_borealDataPrep`, `Biomass_core`,
+  `Biomass_regeneration`
+- **fire** -- the `scfm` family (`scfmDataPrep`, `scfmIgnition`,
+  `scfmEscape`, `scfmSpread`, `scfmDiagnostics`)
+- **wildlife** -- `RSFpredict`
 
 Notice that these modules live in *different* GitHub accounts. Because
 `SpaDES` modules declare their inputs and outputs in metadata (see
@@ -93,6 +94,10 @@ layers from Google Drive or other sources.
 :::
 
 ```{r rsf}
+#| eval: true
+#| results: hide
+#| code-fold: true
+#| code-summary: "Show code"
 # get the latest versions of the predictive ecology R packages
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 options(repos = repos)
@@ -110,7 +115,7 @@ out <- setupProject(
   options = list(
     # We host several files on both GoogleDrive and Compute Canada. This redirects the GoogleDrive
     #   file requests to Compute Canada so we don't need to log in to GoogleDrive
-    reproducible.urlRemap = 
+    reproducible.urlRemap =
       "https://object-arbutus.cloud.computecanada.ca/predictiveecology/SCANFI_v2/SCANFI_v2_files_on_arbutus.csv",
     # a shared cloud cache folder, so a whole team can re-use cached results
     reproducible.cloudFolderID =
@@ -131,7 +136,7 @@ out <- setupProject(
   params = list(
     .globals = list(
       .plots = "png",
-      .studyAreaName = "dehchoN",
+      .studyAreaName = "dehchoN", # Dehcho North in this example
       .useCache = c(".inputObjects", "init"),
       dataYear = 2020,        # start year for predicted forest growth
       sppEquivCol = "LandR"
@@ -148,16 +153,11 @@ out <- setupProject(
       simulationProcess = "dynamic"
     )
   ),
-  packages = c(#"RCurl", "XML", 
-               # "snow", 
-               # "googledrive", 
-               "httr2", 
-               "terra",
-               "gert", "remotes" # "glmmTMB",
-               # "PredictiveEcology/reproducible@development",
-               # "PredictiveEcology/LandR@development (>=1.2.0.9002)",
-               # "PredictiveEcology/SpaDES.core@development"
-               ),
+  packages = c(
+    "httr2",
+    "terra",
+    "gert", "remotes"
+  ),
   times = list(start = 2020, end = 2075),
 
   # ----- Spatial Templates for our Study -----
@@ -170,6 +170,19 @@ out <- setupProject(
   # buffer the study area to avoid edge effects in the simulation
   studyArea_biomassParam = terra::buffer(studyArea, 10000),  # -- used in Biomass_borealDataPrep
   studyAreaCalibration = studyArea_biomassParam,             # -- used in scfmDataPrep
+
+  # ----- RSF objects  -----
+  # the previously-fitted RSF model object -- used in RSFpredict.R
+  model = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view?usp=share_link",
+    fun = "readRDS",
+    destinationPath = "inputs"),
+
+  # the land cover the RSF covariates were originally extracted from -- used in RSFpredict.R
+  modelLand = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1LeYrZBKrEPq6jSIP1SWM-grfINTeQjvn/view?usp=share_link",
+    fun = "terra::rast",
+    destinationPath = "inputs"),
 
   # ----- raster templates derived from the inputs -----
 
@@ -184,19 +197,6 @@ out <- setupProject(
     reproducible::postProcess(rasterToMatch_biomassParam, cropTo = studyArea, maskTo = studyArea)
   },
 
-  ### Other objects
-  # the previously-fitted RSF model object -- used in RSFpredict.R
-  model = reproducible::prepInputs(
-    url = "https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view?usp=share_link",
-    fun = "readRDS",
-    destinationPath = "inputs"),
-
-  # the land cover the RSF covariates were originally extracted from -- used in RSFpredict.R
-  modelLand = reproducible::prepInputs(
-    url = "https://drive.google.com/file/d/1LeYrZBKrEPq6jSIP1SWM-grfINTeQjvn/view?usp=share_link",
-    fun = "terra::rast",
-    destinationPath = "inputs"),
-
   # start with the historic fire history so scfm has a realistic time-since-fire
   timeSinceFire = {
     rsts <- reproducible::prepInputs(
@@ -210,6 +210,7 @@ out <- setupProject(
 )
 
 results <- SpaDES.core::simInitAndSpades2(out)
+
 ```
 
 ## Walking through the new pieces
@@ -226,52 +227,54 @@ The `modules` argument lists modules from two different GitHub accounts
 model is a *family of modules within a single repository*, so we build
 those paths with `file.path()`. We do not have to tell `SpaDES` how
 these fit together -- the metadata does that. The forest modules
-*create* the initial biomass and age layers from data (currently SCANFI V2.0 for all
-age, species, biomass layers), `scfm` *creates* the initial disturbance layers from
-SCANFI, and `RSFpredict` *consumes* both as its initial inputs. These 3 
-module families than alternate back and forth through time, feeding each other
-derived values of these same layers. They are thus, *dynamically* interacting 
-through forecasted conditions.
+*create* the initial biomass and age layers from data (currently SCANFI
+V2.0 for all age, species, biomass layers), `scfm` *creates* the initial
+disturbance layers from SCANFI, and `RSFpredict` *consumes* both as its
+initial inputs. These 3 module families then alternate back and forth
+through time, feeding each other derived values of these same layers.
+They are thus, *dynamically* interacting through forecasted conditions.
 
 ### `model`: a fitted statistical object as an input
 
 The `model` object is a previously-fitted RSF (here loaded from an
 `.rds` with `prepInputs(fun = "readRDS")`). This is a good reminder that
-a SpaDES **input** can be *any* R object -- not just a map -- including a
-fitted model that a module will apply at every time step. The
+a SpaDES **input** can be *any* R object -- not just a map -- including
+a fitted model that a module will apply at every time step. The
 `RSFpredict` parameter `simulationProcess = "dynamic"` tells the module
 to re-predict against the changing landscape rather than once.
 
 #### Why not fit this RSF here?
 
-To fit an RSF, we need the raw data. For this chapter, we do not have permission
-to share these data. However, we do have permission to share any RSF models
-that came from these data (as long as the model doesn't carry those raw data!). 
-With SpaDES, we can use this approach for now, then replace the `model` object
-with a SpaDES module that does the fitting. In fact this is a common approach
-that we take so that we can refit the statistical model with new data.
+To fit an RSF, we need the raw data. For this chapter, we do not have
+permission to share these data. However, we do have permission to share
+any RSF models that came from these data (as long as the model doesn't
+carry those raw data!). With SpaDES, we can use this approach for now,
+then replace the `model` object with a SpaDES module that does the
+fitting. In fact this is a common approach that we take so that we can
+refit the statistical model with new data.
 
 ### Study areas and raster templates
 
-Real projects almost always carry *several* spatial templates. Here, these are:
+Real projects almost always carry *several* spatial templates. Here,
+these are:
 
--   `studyArea` -- the area we care about. Here it is a
-    *specific, fixed* polygon, loaded from a known file and labelled
-    `.studyAreaName = "dehchoN"`. That specificity is what makes cloud
-    caching pay off (see [Cloud caching for a team] below);
--   `studyArea_biomassParam` -- a buffered version (here 10 km) so that
-    neighbourhood processes (like fire spread) are not distorted at the
-    edges of the `studyArea`;
--   `studyAreaCalibration` -- the area used to calibrate the fire
-    regime (here the same as `studyArea_biomassParam`).
+- `studyArea` -- the area we care about. Here it is a *specific, fixed*
+  polygon, loaded from a known file and labelled
+  `.studyAreaName = "dehchoN"`. That specificity is what makes cloud
+  caching pay off (see [Cloud caching for a team] below);
+- `studyArea_biomassParam` -- a buffered version (here 10 km) so that
+  neighbourhood processes (like fire spread) are not distorted at the
+  edges of the `studyArea`;
+- `studyAreaCalibration` -- the area used to calibrate the fire regime
+  (here the same as `studyArea_biomassParam`).
 
 Each comes with a matching raster template (`rasterToMatch`,
-`rasterToMatch_biomassParam`, `rasterToMatchCalibration`). Note how these are
-*derived* from one another inside the `setupProject()` call: `studyArea`
-is fetched, `studyArea_biomassParam` is `terra::buffer()`ed from it, and
-`rasterToMatch` is `postProcess()`ed down from `rasterToMatch_biomassParam`.
-Objects defined earlier in the call are available to later ones, so the
-project description stays in one place.
+`rasterToMatch_biomassParam`, `rasterToMatchCalibration`). Note how
+these are *derived* from one another inside the `setupProject()` call:
+`studyArea` is fetched, `studyArea_biomassParam` is `terra::buffer()`ed
+from it, and `rasterToMatch` is `postProcess()`ed down from
+`rasterToMatch_biomassParam`. Objects defined earlier in the call are
+available to later ones, so the project description stays in one place.
 
 ::: {.callout-tip appearance="simple"}
 Building `rasterToMatch_biomassParam` at a *finer* resolution
@@ -283,24 +286,25 @@ cell.
 
 ### Cloud caching for a team
 
-Two things here make the cache *shareable*:
+Two options here make the cache for expensive data-preparation and
+fitting steps *shareable* with:
 `options(reproducible.cloudFolderID = ...)` points at a Google Drive
 folder, and the per-module `.useCloud = TRUE` parameters
-(`scfmDataPrep`, `Biomass_borealDataPrep`) opt those expensive
-data-preparation and fitting steps into it. We don't *need* this: the important
-part of a re-runnable, reproducible, re-usable workflow is that the workflow
-changes very little or not at all to get these nice behaviours (refit with new
-data AND use somebody else's fit if it is already done).
+(`scfmDataPrep`, `Biomass_borealDataPrep`). We don't *need* this: the
+important part of a re-runnable, reproducible, re-usable workflow is
+that the workflow changes very little or not at all to get these nice
+behaviours (refit with new data AND use somebody else's fit if it is
+already done).
 
 The reason this works is the **specific `studyArea`**. `Cache` decides
 whether a result can be reused by digesting a function's inputs (see
 [Introduction to Cache @sec-caching]); because the study area here is a
 *fixed* polygon rather than something randomly generated, every user who
 runs this project feeds those slow modules the *identical* inputs, and
-therefore computes the *identical* cache key. So once **one** team member
-has run the slow `scfmDataPrep` and `Biomass_borealDataPrep` fitting and
-written the result to the shared cloud folder, everyone else *downloads*
-that cached result instead of re-running it.
+therefore computes the *identical* cache key. So once **one** team
+member has run the slow `scfmDataPrep` and `Biomass_borealDataPrep`
+fitting and written the result to the shared cloud folder, everyone else
+*downloads* that cached result instead of re-running it.
 
 Contrast this with the forest-and-fire example, which builds its study
 area with `LandR::randomStudyArea()`: a randomly-drawn area would change
@@ -312,18 +316,16 @@ cloud cache into a genuine team -- or workshop or beyond -- resource.
 
 We launch the run with `SpaDES.core::simInitAndSpades2(out)`. The `2`
 variants of `simInit2()` / `simInitAndSpades2()` simply take the *list*
-returned by `setupProject()` directly, instead of having to
-`do.call()` it. If the run is interrupted, `SpaDES.core::restartSpades()`
-can resume it.
+returned by `setupProject()` directly, instead of having to `do.call()`
+it. If the run is interrupted, `SpaDES.core::restartSpades()` can resume
+it.
 
-## Examining the forecast
+## Examining the finished simulation
 
-Once the run finishes, the same accessors used elsewhere apply. Because
-we set `.plots = "png"`, every module that plots with the `Plots`
-function will have written figures into the `outputs/figures` folder --
-including the forecasted RSF surface through time.
+Once the run finishes, the same accessors used elsewhere apply.
 
-```{r examine}
+```{r examineSim}
+# generally check out the run
 completed(results)                       # the events that ran
 elapsedTime(results, units = "mins")     # time per event
 
@@ -342,12 +344,12 @@ year. Clicking through those one at a time is tedious. The
 viewer: it recursively scans the output folder, groups files that share
 a base name but differ by an embedded timestamp into time-series
 "objects", and launches a Shiny app where you can step (or animate)
-through time. Maps (`.tif`) are drawn on a choosable web basemap with
 `leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
-figures (`.png`) are shown as images; two extra tabs show the
-`last - first` change and a user-defined difference between any two
-snapshots. You can point it at a `simList` (it uses that object's
-`outputPath()`), a folder path, or nothing at all (it falls back to
+through time. Maps (`.tif`) are drawn on a choosable web basemap with
+figures (`.png`) are shown as images; two extra tabs show the snapshots.
+You can point it at a `simList` (it uses that object's `last - first`
+change and a user-defined difference between any two `outputPath()`), a
+folder path, or nothing at all (it falls back to
 `getOption("spades.outputPath")`).
 
 ```{r shine}
@@ -360,6 +362,29 @@ SpaDES.shiny::shine("outputs")     # a folder path
 # SpaDES.shiny::shine(results)     # or a simList -> uses outputPath(results)
 ```
 
+Keeping in mind this is one simulation of a simple, toy RSF, we see in
+general that habitat is worsening between 2025 and 2075 from the
+absolute predictions `simPred`, and caribou are predicted to start using
+the remaining "good" areas more intensely based on the binned maps
+`simBinMap` that are relativized yearly. To get at these answers more
+thoroughly, we would run the simulation many times.
+
+We can look at if the simulated use maps are tending toward better (positive) or
+worse (negative) habitats for the animals by looking at the differences between the
+future and current predicted use.
+
+```{r RSFsummary}
+diffMap <-results$simPred$year2075 - results$simPred$year2025
+global(diffMap, fun = 'mean', na.rm = T)[[1]]
+
+diffBinMap <-results$simBinMap$year2075 - results$simBinMap$year2025
+global(diffBinMap, fun = 'mean', na.rm = T)[[1]]
+
+```
+
+## How is this useful?
+Good question! Once we forecast with many iterations, we can estimate habitat change with a level of certainty/uncertainty over all the iterations. The binned maps show where the animals are relatively more or less likely to use than the past, which can help with planning. When linking these modules with others such as `fireSense` and the `LandR.CS` suite, we can forecast under different climate change scenarios. More complex models, including human footprint, can be used to predict how cumulative effects may influence space use, aiding in environmental assessments and conservation planning. Current modules in development include `simpleHarvest` for forest harvests and [`anthroDistubance`](https://github.com/tati-micheletti/anthropogenicDisturbance_Demo) in NWT. The possibilities are endless.
+
 ## See also
 
 [Forest Succession and Wildfire @sec-scfmEg]
@@ -370,7 +395,8 @@ SpaDES.shiny::shine("outputs")     # a folder path
 
 [Introduction to Cache @sec-caching]
 
-[`SpaDES.shiny::shine` (interactive output viewer)](https://github.com/PredictiveEcology/SpaDES.shiny)
+[`SpaDES.shiny::shine` (interactive output
+viewer)](https://github.com/PredictiveEcology/SpaDES.shiny)
 
 ## Barebones R script
 
