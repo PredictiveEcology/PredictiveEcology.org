@@ -45,5 +45,5 @@ We will be discussing ideas around reproducibility and reusability in the first 
 |                         |                                                                 |
 |                         | Background publication to the nimble approach: [The PERFICT approach (McIntire et al 2022)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)  |
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| 2:30 - 3:30             | [Project with caribou RSF forecasting]({{< var book.rsfForecast >}})  |
+| 2:30 - 3:30             | We will work through the example in the training manual: [Project with caribou RSF forecasting]({{< var book.rsfForecast >}})  |
 +-------------------------+--------------------------------------------------------------------------------------------------------
