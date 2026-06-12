@@ -16,13 +16,6 @@ editor:
     wrap: 150
 ---
 
-*Registration for this workshop is now closed*.
-
-**Update**: links to presentation files have been added to the agenda.
-
-If you missed it, but would like to attend a future workshop, please reach out to [Eliot](../bios/community/aaaeliot.qmd) or
-[Julie](../bios/community/julie.qmd) so that we can add you to the wait list.
-
 ## Date: June 14, 2026
 
 ## Location: [North American Caribou Workshop](https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576)
@@ -50,3 +43,10 @@ We will be discussing ideas around reproducibility and reusability in the first 
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | 2:30 - 3:30             | We will work through the example in the training manual: [Project with caribou RSF forecasting]({{< var book.rsfForecast >}})  |
 +-------------------------+--------------------------------------------------------------------------------------------------------
+
+
+## Next workshop
+
+If you missed it, but would like to attend a future workshop, please reach out to [Eliot](../bios/community/aaaeliot.qmd) or
+[Julie](../bios/community/julie.qmd) so that we can add you to the wait list.
+

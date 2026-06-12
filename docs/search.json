@@ -1232,20 +1232,6 @@
     "text": "This list is currently only for Eliot McIntire. To see other members’ publications, see AlexChubaty, Yong Luo, AlanaClason, Sarah Bauduin, Jean Marchal, Sébastien Renard, Ceres Barros"
   },
   {
-    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html",
-    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html",
-    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
-    "section": "",
-    "text": "Registration for this workshop is now closed.\nUpdate: links to presentation files have been added to the agenda.\nIf you missed it, but would like to attend a future workshop, please reach out to Eliot or Julie so that we can add you to the wait list."
-  },
-  {
-    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#date-june-14-2026",
-    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#date-june-14-2026",
-    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
-    "section": "Date: June 14, 2026",
-    "text": "Date: June 14, 2026"
-  },
-  {
     "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#location-north-american-caribou-workshop",
     "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#location-north-american-caribou-workshop",
     "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
@@ -1265,5 +1251,12 @@
     "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
     "section": "Agenda",
     "text": "Agenda\n\n\n\n1:30 - 2:00\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:00 - 2:30\nsetupProject for nimble workflows |\n\n\n\n\n\n\n2:30 - 3:30\nWe will work through the example in the training manual: Project with caribou RSF forecasting"
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#next-workshop",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#next-workshop",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "Next workshop",
+    "text": "Next workshop\nIf you missed it, but would like to attend a future workshop, please reach out to Eliot or Julie so that we can add you to the wait list."
   }
 ]
