@@ -89,6 +89,7 @@ layers from Google Drive or other sources.
 :::
 
 ```{r rsf}
+# get the latest versions of the predictive ecology R packages
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 options(repos = repos)
 if (!require("pak")) install.packages("pak")
@@ -143,11 +144,16 @@ out <- setupProject(
       simulationProcess = "dynamic"
     )
   ),
-  packages = c("RCurl", "XML", "snow", "googledrive", "httr2", "terra",
-               "gert", "remotes", # "glmmTMB",
-               "PredictiveEcology/reproducible@development",
-               "PredictiveEcology/LandR@development (>=1.2.0.9002)",
-               "PredictiveEcology/SpaDES.core@development"),
+  packages = c(#"RCurl", "XML", 
+               # "snow", 
+               # "googledrive", 
+               "httr2", 
+               "terra",
+               "gert", "remotes" # "glmmTMB",
+               # "PredictiveEcology/reproducible@development",
+               # "PredictiveEcology/LandR@development (>=1.2.0.9002)",
+               # "PredictiveEcology/SpaDES.core@development"
+               ),
   times = list(start = 2020, end = 2075),
 
   # ----- Spatial Templates for our Study -----
