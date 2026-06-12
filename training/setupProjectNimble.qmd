@@ -1,0 +1,271 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  tidy: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+---
+
+# `setupProject` for nimble workflows {#sec-setupProjectNimble}
+
+::: {.callout-tip appearance="simple"}
+See [Barebones R script] for the code shown in this chapter
+:::
+
+Most SpaDES workflows begin life as an ordinary R script: load some
+packages, set some paths, download a few things, read a shapefile,
+initialize a simulation, run it. That script *works* -- on the machine
+where it was written. Moving it to another computer (a colleague's, a
+cluster, the version of your own machine six months from now) is where
+the trouble starts: a missing package, a hard-coded path that doesn't
+exist, a data file that was never in the repository.
+
+This chapter takes one such script and translates it, step by step, into
+the equivalent `SpaDES.project::setupProject()` call. The simulation it
+runs is identical. What changes is that the *nimble* version is
+reproducible and portable by construction: everything it needs is
+described declaratively, packages are reconciled in one place, and every
+input **starts from a URL, not a local file path**.
+
+## The starting point: a hand-rolled script
+
+Here is a typical "works on my machine" setup for a small `LandR`
+Biomass run. It is not wrong -- it is just doing a lot of bookkeeping by
+hand, and most of that bookkeeping is exactly what breaks elsewhere.
+
+```{r before}
+## 1) Packages -------------------------------------------------------
+library(SpaDES.core)
+library(SpaDES.project)
+library(terra)
+library(sf)
+
+## 2) Paths ----------------------------------------------------------
+setPaths(
+  modulePath  = "~",
+  inputPath   = "~",
+  outputPath  = "~",
+  cachePath   = "~",
+  scratchPath = "~"
+)
+
+## clean cache to avoid previous mismatches
+unlink(getPaths()$cachePath, recursive = TRUE)
+dir.create(getPaths()$cachePath, showWarnings = FALSE)
+
+## 3) Download modules ----------------------------------------------
+SpaDES.project::getModule(
+  modules = c(
+    "PredictiveEcology/Biomass_borealDataPrep",
+    "PredictiveEcology/Biomass_speciesData",
+    "PredictiveEcology/Biomass_core"
+  ),
+  modulePath = getPaths()$modulePath,
+  overwrite  = TRUE
+)
+
+## 4) Download study area from Google Drive -------------------------
+shapeZipID <- "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik"
+shapeDir   <- file.path(getPaths()$inputPath, "studyArea")
+dir.create(shapeDir, recursive = TRUE, showWarnings = FALSE)
+shapeZip   <- file.path(shapeDir, "studyArea.zip")
+
+if (!file.exists(shapeZip)) {
+  download.file(
+    url      = paste0("https://drive.google.com/uc?export=download&id=", shapeZipID),
+    destfile = shapeZip,
+    mode     = "wb"
+  )
+}
+
+## unzip ------------------------------------------------------------
+if (length(list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE)) == 0) {
+  unzip(shapeZip, exdir = shapeDir)
+}
+
+## read shapefile ---------------------------------------------------
+shpFile <- list.files(shapeDir, pattern = "\\.shp$",
+                      recursive = TRUE, full.names = TRUE)
+stopifnot(length(shpFile) == 1)
+
+studyArea <- terra::vect(shpFile)
+studyArea <- terra::project(studyArea, "EPSG:3978")
+
+## 5) Simulation settings -------------------------------------------
+times   <- list(start = 1, end = 1)
+modules <- c("Biomass_borealDataPrep", "Biomass_speciesData", "Biomass_core")
+objects <- list(studyArea = studyArea, studyAreaLarge = studyArea)
+
+## 6) Initialize and run --------------------------------------------
+sim <- simInit(times = times, modules = modules,
+               objects = objects, paths = getPaths())
+sim <- spades(sim)
+```
+
+## The same workflow with `setupProject`
+
+The same run, expressed declaratively:
+
+```{r after}
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+
+out <- SpaDES.project::setupProject(
+  modules = c(
+    "PredictiveEcology/Biomass_borealDataPrep",
+    "PredictiveEcology/Biomass_speciesData",
+    "PredictiveEcology/Biomass_core"
+  ),
+  overwrite = TRUE,
+  times = list(start = 1, end = 1),
+  packages = c("PredictiveEcology/LandR@development (>= 1.2.0.9002)"),
+  shapeZipID = "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik",
+  studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
+    terra::project("EPSG:3978"),
+  studyAreaLarge = studyArea
+)
+
+finalOut <- SpaDES.core::simInitAndSpades2(out)
+```
+
+Roughly ninety lines become fifteen, but the point is not brevity for
+its own sake -- it is *what each line now does*.
+
+## What changed, step by step
+
+### Packages: from `library()` to a managed library
+
+The hand-rolled version `library()`s a fixed set of packages and assumes
+they are already installed at compatible versions. The nimble version
+hands a `packages` argument to `setupProject()`, which **installs and
+loads** them into a project-specific library.
+
+The important part is *where* this happens. Because `setupProject()`
+also knows the `modules`, it can read each module's own package
+requirements (declared in their metadata) and reconcile them **together
+with the packages you ask for** -- in one resolution step, before
+anything runs. So a module that needs a particular version of `LandR`
+and your own analysis needs are satisfied at the same time, rather than
+discovered one failed `library()` call at a time. Note we only list
+`LandR` explicitly here; `SpaDES.core`, `terra` and the rest arrive as
+dependencies of the modules and packages requested.
+
+### Paths: from `setPaths()` + manual cache cleanup to defaults
+
+The script sets five paths by hand and then deletes and recreates the
+cache to "avoid previous mismatches". `setupProject()` establishes a
+sensible project directory layout for you (override it with a `paths`
+argument when you need to). And deleting the cache to avoid mismatches
+is treating a symptom: `Cache` keys on its inputs, so a correct cache
+*doesn't* go stale (see [Introduction to Cache @sec-caching]) -- there is
+nothing to clear.
+
+### Getting the modules
+
+`getModule()` becomes the `modules` argument. `setupProject()` downloads
+the listed modules from their repositories as part of setup. (How
+modules let you *compose* a workflow is the subject of the other
+chapters in this section; here we are only moving the download step.)
+
+### Data: from `download.file()` + `unzip()` + `vect()` to `prepInputs()`
+
+This is the heart of the translation. The manual version spends some
+forty lines turning a Google Drive id into an R object: build a URL,
+create a directory, conditionally download, conditionally unzip, glob
+for the `.shp`, assert there is exactly one, read it, reproject it.
+Every one of those steps is a place to special-case, to forget, or to
+get subtly wrong on a different machine.
+
+`reproducible::prepInputs()` collapses all of it:
+
+```{r prepinputs-spotlight}
+studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
+  terra::project("EPSG:3978")
+```
+
+`prepInputs()` downloads from the `url`, unzips if needed, locates and
+reads the file with `fun`, and -- because it is built on `Cache` -- does
+the download and processing **once**, reusing the result on every
+subsequent run (see [`prepInputs` @sec-prepInputs]). The decisive shift
+is that the study area now **starts from a URL, not a local file path**.
+Nothing in the workflow assumes a file already exists on disk, so it
+runs the same way on any machine, for anyone, the first time.
+
+Two smaller things worth noticing:
+
+-   `shapeZipID` is passed as an argument to `setupProject()` and then
+    *referenced* by `studyArea`. Arguments are evaluated in order, and
+    each becomes available to those after it -- which is also why
+    `studyAreaLarge = studyArea` works. The whole project description
+    stays in one self-contained call.
+-   The reprojection (`terra::project(..., "EPSG:3978")`) is piped
+    directly onto the loaded object, so "the study area" is *defined* as
+    "this remote file, read and reprojected" -- a recipe, not a file.
+
+### Settings and objects
+
+`times` is passed straight through. The `objects` list disappears:
+`studyArea` and `studyAreaLarge` are simply named arguments now, and
+`setupProject()` routes named objects, `times`, `paths`, `params`,
+`modules` and `packages` to the right place for you.
+
+### Running: `simInit()` + `spades()` → `simInitAndSpades2()`
+
+`setupProject()` returns a list of fully-prepared arguments. The `2`
+variant of `simInitAndSpades()` accepts that list directly, so the
+two-step `simInit()` then `spades()` becomes a single
+`simInitAndSpades2(out)`.
+
+## Why "nimble"?
+
+The translated script is *nimble* because it can move:
+
+-   **Portable** -- every input starts from a URL or repository, so
+    there are no machine-specific file paths to fix up.
+-   **Self-installing** -- packages (yours and the modules') are
+    resolved and installed together, up front.
+-   **Reproducible and fast on re-run** -- `prepInputs()` and `Cache`
+    avoid re-downloading and re-computing unchanged steps.
+-   **Declarative** -- the entire project is one call describing *what*
+    is needed, not a sequence of imperative bookkeeping that must
+    succeed in order.
+
+These same properties are what let the richer projects in the following
+chapters chain many modules together without the setup collapsing under
+its own weight.
+
+## See also
+
+[Workflows with `setupProject`](workflowSimple2.qmd)
+
+[`reproducible::prepInputs` for Data @sec-prepInputs]
+
+[Introduction to Cache @sec-caching]
+
+[`?SpaDES.project::setupProject`](https://spades-project.predictiveecology.org/reference/setupProject.html)
+
+## Barebones R script
+
+```{r}
+#| eval: true
+#| echo: false
+#| purl: false
+#| cache: false
+
+fileName <- file.path("R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+```
+
+```{r file = fileName}
+#| eval: false
+#| echo: true
+#| purl: false
+#| cache: false
+
+```
