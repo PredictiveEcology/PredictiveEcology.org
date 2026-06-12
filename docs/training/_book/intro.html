@@ -638,7 +638,7 @@ div.csl-indent {
 <p>SpaDES is a set of R packages that facilitate implementing nimble <em>workflows</em> that follow in the principles of repeatability, reproducibility, reusability and transparency (<strong>R<sup>3</sup>T</strong>), via the creation and use of highly <strong>modular</strong> code that has <strong>metadata</strong> attached.</p>
 <section id="modularity" class="level3">
 <h3 class="anchored" data-anchor-id="modularity">Modularity</h3>
-<p>Modular code for ecological analyses has been long proposed <span class="citation" data-cites="reynolds1997">(<a href="#ref-reynolds1997" role="doc-biblioref">Reynolds and Acock 1997</a>)</span>. Modularity means that scripts can be broken up into themes that bundled into meaningful chunks that can be easily moved, swapped, replaced or scrapped easily. A nice example of this is <span class="citation" data-cites="barros2023">Barros et al. (<a href="#ref-barros2023" role="doc-biblioref">2023</a>)</span> where a module was included or removed to identify the value of “adding more complexity”. One simple conclusion followed Occam’s Razor: simpler data and models predicted simpler characteristics of the forest more accurately than the complex data and models. In other words, adding complexity to a model made the model perform worse for some characteristics.</p>
+<p>Modular code for ecological analyses has been long proposed <span class="citation" data-cites="reynolds1997">(<a href="references.html#ref-reynolds1997" role="doc-biblioref">Reynolds and Acock 1997</a>)</span>. Modularity means that scripts can be broken up into themes that bundled into meaningful chunks that can be easily moved, swapped, replaced or scrapped easily. A nice example of this is <span class="citation" data-cites="barros2023">Barros et al. (<a href="references.html#ref-barros2023" role="doc-biblioref">2023</a>)</span> where a module was included or removed to identify the value of “adding more complexity”. One simple conclusion followed Occam’s Razor: simpler data and models predicted simpler characteristics of the forest more accurately than the complex data and models. In other words, adding complexity to a model made the model perform worse for some characteristics.</p>
 </section>
 <section id="metadata" class="level3">
 <h3 class="anchored" data-anchor-id="metadata">Metadata</h3>
@@ -654,7 +654,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://onlinelibrary.wiley.com/doi/10.1111/ele.13994"><img src="assets/img/PERFICTfig1.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>Functions and modules as key tools to achieve workflow nimbleness. From <span class="citation" data-cites="mcintire2022">McIntire et al. (<a href="#ref-mcintire2022" role="doc-biblioref">2022</a>)</span>.</figcaption>
+<figcaption>Functions and modules as key tools to achieve workflow nimbleness. From <span class="citation" data-cites="mcintire2022">McIntire et al. (<a href="references.html#ref-mcintire2022" role="doc-biblioref">2022</a>)</span>.</figcaption>
 </figure>
 </div>
 </section>
@@ -668,7 +668,7 @@ div.csl-indent {
 <p>SpaDES is meant to enable mixing-and-matching different modules that share the same inputs/outputs easily – i.e.&nbsp;without having to have deep knowledge of the module code. SpaDES will read each module’s metadata and from it deduce the sequence in which modules need to be chained. SpaDES will also iterate module code when necessary, following the developer’s “scheduling” instructions. The workflow sequence, therefore, <em>arises</em> from the set of modules that is being used<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p></li>
 <li><p><strong>SpaDES has “embedded” metadata</strong> – or at least it makes the developer think about it<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Each module is defined by listing not only the inputs and outputs, but also their descriptions and types of object class, the module’s description, its operating time scale, package and module dependencies, and much more. Some of the metadata is essential to chain modules (lists of inputs and outputs), some is not but can greatly facilitate workflow setup (e.g.&nbsp;declaring module dependencies), while other metadata is simply good to have (e.g.&nbsp;a description of the module).</p></li>
 </ul>
-<p>Finally, both <code>targets</code> and SpaDES have embedded caching mechanisms, which in SpaDES can be controlled at several levels (by the user, inside the module code, etc.) – see <a href="#sec-caching" class="quarto-xref"><span class="quarto-unresolved-ref">sec-caching</span></a> on SpaDES caching mechanisms.</p>
+<p>Finally, both <code>targets</code> and SpaDES have embedded caching mechanisms, which in SpaDES can be controlled at several levels (by the user, inside the module code, etc.) – see <a href="Caching.html" class="quarto-xref"><span>10&nbsp; Introduction to Cache</span></a> on SpaDES caching mechanisms.</p>
 </section>
 </section>
 <section id="spades-applied-ecology" class="level2">
@@ -712,7 +712,7 @@ The three big problems in applied ecology
 <li><p><strong>open-data</strong>/<strong>open-models</strong> – raw data, parameters, model algorithms have to be (freely) accessible as much as possible;</p></li>
 <li><p><strong>testing</strong> – models and predictions should be continuously tested.</p></li>
 </ol>
-<p>Together these 10 requirements (and a little more) are encompassed by the PERFICT principles for applied ecological modelling <span class="citation" data-cites="mcintire2022">(<a href="#ref-mcintire2022" role="doc-biblioref">McIntire et al. 2022</a>)</span>.</p>
+<p>Together these 10 requirements (and a little more) are encompassed by the PERFICT principles for applied ecological modelling <span class="citation" data-cites="mcintire2022">(<a href="references.html#ref-mcintire2022" role="doc-biblioref">McIntire et al. 2022</a>)</span>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -763,7 +763,7 @@ Tip&nbsp;1: <code>reproducible::prepInputs</code> a tool that will make your lif
 <p>This can save hours of learning to master caching and GIS algorithms (or avoid using flawed approaches) for many ecologists!</p>
 </div>
 </div>
-<p>The SpaDES set of R packages is full of tools like <code>prepInputs</code> (<a href="#tip-prepInputs" class="quarto-xref">Tip&nbsp;<span class="quarto-unresolved-ref">tip-prepInputs</span></a>).</p>
+<p>The SpaDES set of R packages is full of tools like <code>prepInputs</code> (<a href="#tip-prepInputs" class="quarto-xref">Tip&nbsp;<span>1</span></a>).</p>
 <p>This book is intended to show applied ecologists (and whoever else!) the approaches that we use to bring our work closer to the PERFICT principles, better meet the expectations, and better address the problems.</p>
 </section>
 </section>
@@ -772,7 +772,7 @@ Tip&nbsp;1: <code>reproducible::prepInputs</code> a tool that will make your lif
 <p>With the limited training provided in this book, applied ecologists can work towards creating PERFICT workflows. Embracing the transparency and nimbleness it provides, we can pivot more rapidly to the current management needs. When we are asked at the end of a 3-year project, <em>“can we redo everything because we have a new stakeholder who feels that our assumptions are wrong?”</em>, <strong><em>our answer should be “yes”</em></strong>.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-barros2023" class="csl-entry" role="listitem">
 Barros, Ceres, Yong Luo, Alex M. Chubaty, Ian M. S. Eddy, Tatiane Micheletti, Céline Boisvenue, David W. Andison, Steven G. Cumming, and Eliot J. B. McIntire. 2023. <span>“Empowering Ecological Modellers with a PERFICT Workflow: Seamlessly Linking Data, Parameterisation, Prediction, Validation and Visualisation.”</span> <em>Methods in Ecology and Evolution</em> 14 (1): 173–88. <a href="https://doi.org/10.1111/2041-210X.14034">https://doi.org/10.1111/2041-210X.14034</a>.
 </div>

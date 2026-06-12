@@ -27,19 +27,21 @@ If you missed it, but would like to attend a future workshop, please reach out t
 
 ## Location: [North American Caribou Workshop](https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576)
 
-•	Workshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES
-•	Workshop leads: Eliot McIntire and Julie Turner. Please direct any questions related to the workshop subject and materials to the workshop lead(s). 
-•	Venue: Explorer Hotel, Katimavik B
-•	Date/Time: Monday, June 15, 13:30-15:30 or until finished
+-	Workshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES
+-	Workshop leads: [Eliot McIntire](../bios/community/aaaeliot.qmd) and [Julie Turner](../bios/community/julie.qmd) (with on-site assistance from [Genèvieve Degré-Timmons](../bios/current/genevieve.qmd)). Please direct any questions related to the workshop subject and materials to the workshop lead(s). 
+-	Venue: Explorer Hotel, Katimavik B
+-	Date/Time: Monday, June 15, 13:30-15:30 or until finished
 
+
+## Preparation
+
+We will be discussing ideas around reproducibility and reusability in the first part. In the second part, we will have an opportunity to see and run an example using R. If you would like to run code on your laptop, you should have a recent [Rstudio](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads), or [Positron](https://positron.posit.co/install.html) installed, and at least [R 4.5.3 downloaded](https://cran.r-project.org/).
 
 ## Agenda
 
 
-Presentation slides will be added at the end of each day.
-
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| 2:30 - 3:30             | [Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
+| 1:30 - 2:30             | [Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
 |                         |                                                                 |
 |                         | Background publication to the nimble approach: [The PERFICT approach (McIntire et al 2022)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)  |
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+

@@ -746,14 +746,14 @@
     "href": "Workshops.html#upcoming-workshops",
     "title": "Workshops",
     "section": "Upcoming workshops",
-    "text": "Upcoming workshops\n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Forest Degradation\n\n\nApr 17, 2026\n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for ecological applications\n\n\nApr 17, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Upcoming workshops\n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\n\n\n\n\n\n\n\n\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES\n\n\nA 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting\n\n\nJun 12, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "Workshops.html#past-workshops",
     "href": "Workshops.html#past-workshops",
     "title": "Workshops",
     "section": "Past workshops",
-    "text": "Past workshops\n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\nvideo\n\n\n\n\n\n\n\n\n\n\n\nSpaDES Workshop at EFI\n\n\nSpades Workshop at EFI\n\n\nApr 15, 2024\n\n\n \n\n\n\n\n\n\nNo matching items\n\n\nVideos"
+    "text": "Past workshops\n\n\n\n\n\n\n \n\n\n\nTitle\n\n\n\nDescription\n\n\n\nDate\n\n\n\nvideo\n\n\n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Forest Degradation\n\n\nApr 17, 2026\n\n\n \n\n\n\n\n\n\n\n\n\nRobust and nimble scientific workflows, using SpaDES\n\n\nA multi-day workshop focusing on learning robust approaches to building reuseable, reproducible workflows for ecological applications\n\n\nApr 17, 2026\n\n\n \n\n\n\n\n\n\n\n\n\nSpaDES Workshop at EFI\n\n\nSpades Workshop at EFI\n\n\nApr 15, 2024\n\n\n \n\n\n\n\n\n\nNo matching items\n\n\nVideos"
   },
   {
     "objectID": "Workshops.html#pre-covid-workshops",
@@ -1250,13 +1250,20 @@
     "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#location-north-american-caribou-workshop",
     "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
     "section": "Location: North American Caribou Workshop",
-    "text": "Location: North American Caribou Workshop\n• Workshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES • Workshop leads: Eliot McIntire and Julie Turner. Please direct any questions related to the workshop subject and materials to the workshop lead(s). • Venue: Explorer Hotel, Katimavik B • Date/Time: Monday, June 15, 13:30-15:30 or until finished"
+    "text": "Location: North American Caribou Workshop\n\nWorkshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES\nWorkshop leads: Eliot McIntire and Julie Turner (with on-site assistance from Genèvieve Degré-Timmons). Please direct any questions related to the workshop subject and materials to the workshop lead(s).\nVenue: Explorer Hotel, Katimavik B\nDate/Time: Monday, June 15, 13:30-15:30 or until finished"
+  },
+  {
+    "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#preparation",
+    "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#preparation",
+    "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
+    "section": "Preparation",
+    "text": "Preparation\nWe will be discussing ideas around reproducibility and reusability in the first part. In the second part, we will have an opportunity to see and run an example using R. If you would like to run code on your laptop, you should have a recent Rstudio, or Positron installed, and at least R 4.5.3 downloaded."
   },
   {
     "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#agenda",
     "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#agenda",
     "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
     "section": "Agenda",
-    "text": "Agenda\nPresentation slides will be added at the end of each day.\n\n\n\n2:30 - 3:30\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:30 - 3:30\nProject with caribou RSF forecasting"
+    "text": "Agenda\n\n\n\n1:30 - 2:30\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:30 - 3:30\nProject with caribou RSF forecasting"
   }
 ]

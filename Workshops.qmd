@@ -9,8 +9,7 @@ listing:
   - id: workshops
     type: table
     contents: 
-      - workshops/Nov-2024-SpaDES-workshop.qmd
-      - workshops/June-2024-SpaDES-workshop.qmd
+      - workshops/June-2026-NACW-Caribou-SpaDES-workshop.qmd
     sort: "date desc"
     fields: [image, title, description, date]
     max-description-length: 1000000
@@ -24,6 +23,8 @@ listing:
   - id: past-workshops
     type: table
     contents: 
+      - workshops/Nov-2024-SpaDES-workshop.qmd
+      - workshops/June-2024-SpaDES-workshop.qmd
       - path: https://github.com/tati-micheletti/Micheletti_SpaDES?tab=readme-ov-file#creating-and-integrating-simple-models-in-spades
         image: https://github.com/tati-micheletti/Micheletti_SpaDES/blob/main/figures/forecastedAbundance.png?raw=true
         title: "SpaDES Workshop at EFI"
