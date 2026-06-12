@@ -310,7 +310,7 @@ for an input it wasn't given fails **loudly**, where you can see and fix
 it, instead of silently borrowing whatever the `.GlobalEnv` happened to
 contain.
 
-## Why "nimble"?
+## Why is this considered "nimble"?
 
 The translated script is *nimble* because it can move:
 
@@ -323,6 +323,8 @@ The translated script is *nimble* because it can move:
 -   **Declarative** -- the entire project is one call describing *what*
     is needed, not a sequence of imperative bookkeeping that must
     succeed in order.
+-   **Idempotent** or **Rerun tolerant** -- if you run the same code again
+    you will get the same answer, but faster
 
 These same properties are what let the richer projects in the following
 chapters chain many modules together without the setup collapsing under

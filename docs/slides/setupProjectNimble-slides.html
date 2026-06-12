@@ -1127,50 +1127,75 @@ Eliot McIntire
 <section id="before-a-hand-rolled-script" class="slide level2 smaller scrollable">
 <h2>Before: a hand-rolled script</h2>
 <div class="tiny-code">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href></a><span class="do">## 1) Packages -- install what&#39;s missing, THEN load</span></span>
-<span id="cb1-2"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;SpaDES.core&quot;</span>,    <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;SpaDES.core&quot;</span>)</span>
-<span id="cb1-3"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;SpaDES.project&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;SpaDES.project&quot;</span>)</span>
-<span id="cb1-4"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;terra&quot;</span>,          <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;terra&quot;</span>)</span>
-<span id="cb1-5"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;sf&quot;</span>,             <span class="at">quietly =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span>
-<span id="cb1-6"><a href></a><span class="fu">library</span>(SpaDES.core); <span class="fu">library</span>(SpaDES.project); <span class="fu">library</span>(terra); <span class="fu">library</span>(sf)</span>
-<span id="cb1-7"><a href></a></span>
-<span id="cb1-8"><a href></a><span class="do">## 2) Paths</span></span>
-<span id="cb1-9"><a href></a><span class="fu">setPaths</span>(<span class="at">modulePath =</span> <span class="st">&quot;~&quot;</span>, <span class="at">inputPath =</span> <span class="st">&quot;~&quot;</span>, <span class="at">outputPath =</span> <span class="st">&quot;~&quot;</span>,</span>
-<span id="cb1-10"><a href></a>         <span class="at">cachePath =</span> <span class="st">&quot;~&quot;</span>, <span class="at">scratchPath =</span> <span class="st">&quot;~&quot;</span>)</span>
-<span id="cb1-11"><a href></a><span class="fu">unlink</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">recursive =</span> <span class="cn">TRUE</span>)          <span class="co"># clean cache to avoid mismatches</span></span>
-<span id="cb1-12"><a href></a><span class="fu">dir.create</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-13"><a href></a></span>
-<span id="cb1-14"><a href></a><span class="do">## 3) Download modules</span></span>
-<span id="cb1-15"><a href></a>SpaDES.project<span class="sc">::</span><span class="fu">getModule</span>(</span>
-<span id="cb1-16"><a href></a>  <span class="at">modules =</span> <span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/Biomass_borealDataPrep&quot;</span>,</span>
-<span id="cb1-17"><a href></a>              <span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>,</span>
-<span id="cb1-18"><a href></a>              <span class="st">&quot;PredictiveEcology/Biomass_core&quot;</span>),</span>
-<span id="cb1-19"><a href></a>  <span class="at">modulePath =</span> <span class="fu">getPaths</span>()<span class="sc">$</span>modulePath, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-20"><a href></a></span>
-<span id="cb1-21"><a href></a><span class="do">## 4) Download study area from Google Drive</span></span>
-<span id="cb1-22"><a href></a>shapeZipID <span class="ot">&lt;-</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span></span>
-<span id="cb1-23"><a href></a>shapeDir   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>inputPath, <span class="st">&quot;studyArea&quot;</span>)</span>
-<span id="cb1-24"><a href></a><span class="fu">dir.create</span>(shapeDir, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-25"><a href></a>shapeZip   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(shapeDir, <span class="st">&quot;studyArea.zip&quot;</span>)</span>
-<span id="cb1-26"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(shapeZip))</span>
-<span id="cb1-27"><a href></a>  <span class="fu">download.file</span>(<span class="fu">paste0</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=&quot;</span>, shapeZipID),</span>
-<span id="cb1-28"><a href></a>                <span class="at">destfile =</span> shapeZip, <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
-<span id="cb1-29"><a href></a><span class="cf">if</span> (<span class="fu">length</span>(<span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)) <span class="sc">==</span> <span class="dv">0</span>)</span>
-<span id="cb1-30"><a href></a>  <span class="fu">unzip</span>(shapeZip, <span class="at">exdir =</span> shapeDir)</span>
-<span id="cb1-31"><a href></a>shpFile <span class="ot">&lt;-</span> <span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-32"><a href></a><span class="fu">stopifnot</span>(<span class="fu">length</span>(shpFile) <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb1-33"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(shpFile)</span>
-<span id="cb1-34"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(studyArea, <span class="st">&quot;EPSG:3978&quot;</span>)</span>
-<span id="cb1-35"><a href></a></span>
-<span id="cb1-36"><a href></a><span class="do">## 5) Settings + 6) run</span></span>
-<span id="cb1-37"><a href></a>times   <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>)</span>
-<span id="cb1-38"><a href></a>modules <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Biomass_borealDataPrep&quot;</span>, <span class="st">&quot;Biomass_speciesData&quot;</span>, <span class="st">&quot;Biomass_core&quot;</span>)</span>
-<span id="cb1-39"><a href></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">studyArea =</span> studyArea, <span class="at">studyAreaLarge =</span> studyArea)</span>
-<span id="cb1-40"><a href></a>sim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(<span class="at">times =</span> times, <span class="at">modules =</span> modules, <span class="at">objects =</span> objects, <span class="at">paths =</span> <span class="fu">getPaths</span>())</span>
-<span id="cb1-41"><a href></a>sim <span class="ot">&lt;-</span> <span class="fu">spades</span>(sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href></a><span class="do">## 1) Packages -- load</span></span>
+<span id="cb1-2"><a href></a><span class="fu">library</span>(SpaDES.core)</span>
+<span id="cb1-3"><a href></a><span class="fu">library</span>(SpaDES.project)</span>
+<span id="cb1-4"><a href></a><span class="fu">library</span>(terra)</span>
+<span id="cb1-5"><a href></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-6"><a href></a></span>
+<span id="cb1-7"><a href></a><span class="do">## 2) Paths ----------------------------------------------------------</span></span>
+<span id="cb1-8"><a href></a><span class="fu">setPaths</span>(</span>
+<span id="cb1-9"><a href></a>  <span class="at">modulePath  =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb1-10"><a href></a>  <span class="at">inputPath   =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb1-11"><a href></a>  <span class="at">outputPath  =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb1-12"><a href></a>  <span class="at">cachePath   =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb1-13"><a href></a>  <span class="at">scratchPath =</span> <span class="st">&quot;~&quot;</span></span>
+<span id="cb1-14"><a href></a>)</span>
+<span id="cb1-15"><a href></a></span>
+<span id="cb1-16"><a href></a><span class="do">## clean cache to avoid previous mismatches</span></span>
+<span id="cb1-17"><a href></a><span class="fu">unlink</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-18"><a href></a><span class="fu">dir.create</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-19"><a href></a></span>
+<span id="cb1-20"><a href></a><span class="do">## 3) Download modules ----------------------------------------------</span></span>
+<span id="cb1-21"><a href></a>SpaDES.project<span class="sc">::</span><span class="fu">getModule</span>(</span>
+<span id="cb1-22"><a href></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
+<span id="cb1-23"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_borealDataPrep&quot;</span>,</span>
+<span id="cb1-24"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>,</span>
+<span id="cb1-25"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_core&quot;</span></span>
+<span id="cb1-26"><a href></a>  ),</span>
+<span id="cb1-27"><a href></a>  <span class="at">modulePath =</span> <span class="fu">getPaths</span>()<span class="sc">$</span>modulePath,</span>
+<span id="cb1-28"><a href></a>  <span class="at">overwrite  =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-29"><a href></a>)</span>
+<span id="cb1-30"><a href></a></span>
+<span id="cb1-31"><a href></a><span class="do">## 4) Download study area from Google Drive -------------------------</span></span>
+<span id="cb1-32"><a href></a>shapeZipID <span class="ot">&lt;-</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span></span>
+<span id="cb1-33"><a href></a>shapeDir   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>inputPath, <span class="st">&quot;studyArea&quot;</span>)</span>
+<span id="cb1-34"><a href></a><span class="fu">dir.create</span>(shapeDir, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-35"><a href></a>shapeZip   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(shapeDir, <span class="st">&quot;studyArea.zip&quot;</span>)</span>
+<span id="cb1-36"><a href></a></span>
+<span id="cb1-37"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(shapeZip)) {</span>
+<span id="cb1-38"><a href></a>  <span class="fu">download.file</span>(</span>
+<span id="cb1-39"><a href></a>    <span class="at">url      =</span> <span class="fu">paste0</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=&quot;</span>, shapeZipID),</span>
+<span id="cb1-40"><a href></a>    <span class="at">destfile =</span> shapeZip,</span>
+<span id="cb1-41"><a href></a>    <span class="at">mode     =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb1-42"><a href></a>  )</span>
+<span id="cb1-43"><a href></a>}</span>
+<span id="cb1-44"><a href></a></span>
+<span id="cb1-45"><a href></a><span class="do">## unzip ------------------------------------------------------------</span></span>
+<span id="cb1-46"><a href></a><span class="cf">if</span> (<span class="fu">length</span>(<span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1-47"><a href></a>  <span class="fu">unzip</span>(shapeZip, <span class="at">exdir =</span> shapeDir)</span>
+<span id="cb1-48"><a href></a>}</span>
+<span id="cb1-49"><a href></a></span>
+<span id="cb1-50"><a href></a><span class="do">## read shapefile ---------------------------------------------------</span></span>
+<span id="cb1-51"><a href></a>shpFile <span class="ot">&lt;-</span> <span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>,</span>
+<span id="cb1-52"><a href></a>                      <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-53"><a href></a><span class="fu">stopifnot</span>(<span class="fu">length</span>(shpFile) <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb1-54"><a href></a></span>
+<span id="cb1-55"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(shpFile)</span>
+<span id="cb1-56"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(studyArea, <span class="st">&quot;EPSG:3978&quot;</span>)</span>
+<span id="cb1-57"><a href></a></span>
+<span id="cb1-58"><a href></a><span class="do">## 5) Simulation settings -------------------------------------------</span></span>
+<span id="cb1-59"><a href></a>times   <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>)</span>
+<span id="cb1-60"><a href></a>modules <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Biomass_borealDataPrep&quot;</span>, <span class="st">&quot;Biomass_speciesData&quot;</span>, <span class="st">&quot;Biomass_core&quot;</span>)</span>
+<span id="cb1-61"><a href></a>objects <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">studyArea =</span> studyArea, <span class="at">studyAreaLarge =</span> studyArea)</span>
+<span id="cb1-62"><a href></a></span>
+<span id="cb1-63"><a href></a><span class="do">## 6) Initialize and run --------------------------------------------</span></span>
+<span id="cb1-64"><a href></a>sim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(<span class="at">times =</span> times, <span class="at">modules =</span> modules,</span>
+<span id="cb1-65"><a href></a>               <span class="at">objects =</span> objects, <span class="at">paths =</span> <span class="fu">getPaths</span>())</span>
+<span id="cb1-66"><a href></a>sim <span class="ot">&lt;-</span> <span class="fu">spades</span>(sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li class="fragment">~90 lines of bookkeeping done by hand</li>
+<li class="fragment">~65 lines of bookkeeping done by hand</li>
 </ul>
 </section>
 <section id="after-setupproject" class="slide level2 smaller">
@@ -1178,10 +1203,14 @@ Eliot McIntire
 <div class="columns">
 <div class="column" style="width:48%;">
 <ul>
-<li class="fragment">~15 lines</li>
-<li class="fragment"><strong>declarative</strong>: <em>what</em> is needed</li>
-<li class="fragment">packages reconciled in one place</li>
-<li class="fragment">every input starts from a <strong>URL</strong></li>
+<li class="fragment"><p>~18 lines (including installing toolkit)</p></li>
+<li class="fragment"><p><strong>declarative</strong>: <em>what</em> is needed</p></li>
+<li class="fragment"><p>packages reconciled in one place</p></li>
+<li class="fragment"><p>packages installed and loaded as needed</p>
+<p><code>if (!require(&quot;SpaDES.core&quot;)) install.packages(&quot;SpaDES.core&quot;); library(&quot;SpaDES.core&quot;)</code></p>
+<p>or</p>
+<p><code>pak::pak(&quot;SpaDES.core&quot;); require(&quot;SpaDES.core&quot;)</code></p></li>
+<li class="fragment"><p>every input starts from a <strong>URL</strong></p></li>
 </ul>
 </div><div class="column" style="width:52%;">
 <div class="small-code">
@@ -1195,16 +1224,14 @@ Eliot McIntire
 <span id="cb2-8"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_borealDataPrep&quot;</span>,</span>
 <span id="cb2-9"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>,</span>
 <span id="cb2-10"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_core&quot;</span>),</span>
-<span id="cb2-11"><a href></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb2-12"><a href></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
-<span id="cb2-13"><a href></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/LandR@development (&gt;= 1.2.0.9002)&quot;</span>),</span>
-<span id="cb2-14"><a href></a>  <span class="at">shapeZipID =</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span>,</span>
-<span id="cb2-15"><a href></a>  <span class="at">studyArea =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb2-16"><a href></a>    <span class="at">url =</span> shapeZipID, <span class="at">fun =</span> terra<span class="sc">::</span>vect) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href></a>    terra<span class="sc">::</span><span class="fu">project</span>(<span class="st">&quot;EPSG:3978&quot;</span>),</span>
-<span id="cb2-18"><a href></a>  <span class="at">studyAreaLarge =</span> studyArea</span>
-<span id="cb2-19"><a href></a>)</span>
-<span id="cb2-20"><a href></a>finalOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-11"><a href></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
+<span id="cb2-12"><a href></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/LandR@development (&gt;= 1.2.0.9002)&quot;</span>),</span>
+<span id="cb2-13"><a href></a>  <span class="at">shapeZipID =</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span>,</span>
+<span id="cb2-14"><a href></a>  <span class="at">studyArea =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(<span class="at">url =</span> shapeZipID, <span class="at">fun =</span> terra<span class="sc">::</span>vect) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href></a>    terra<span class="sc">::</span><span class="fu">project</span>(<span class="st">&quot;EPSG:3978&quot;</span>),</span>
+<span id="cb2-16"><a href></a>  <span class="at">studyAreaLarge =</span> studyArea</span>
+<span id="cb2-17"><a href></a>)</span>
+<span id="cb2-18"><a href></a>finalOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1241,12 +1268,16 @@ Eliot McIntire
 </div><div class="column" style="width:50%;">
 <div class="small-code">
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href></a><span class="co"># before</span></span>
-<span id="cb4-2"><a href></a><span class="fu">setPaths</span>(<span class="at">modulePath =</span> <span class="st">&quot;~&quot;</span>, <span class="at">inputPath =</span> <span class="st">&quot;~&quot;</span>,</span>
-<span id="cb4-3"><a href></a>         <span class="at">outputPath =</span> <span class="st">&quot;~&quot;</span>, <span class="at">cachePath =</span> <span class="st">&quot;~&quot;</span>,</span>
-<span id="cb4-4"><a href></a>         <span class="at">scratchPath =</span> <span class="st">&quot;~&quot;</span>)</span>
-<span id="cb4-5"><a href></a><span class="fu">unlink</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-6"><a href></a></span>
-<span id="cb4-7"><a href></a><span class="co"># after: nothing — handled for you</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href></a><span class="fu">setPaths</span>(</span>
+<span id="cb4-3"><a href></a>  <span class="at">modulePath =</span> <span class="st">&quot;~&quot;</span>, </span>
+<span id="cb4-4"><a href></a>  <span class="at">inputPath =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb4-5"><a href></a>  <span class="at">outputPath =</span> <span class="st">&quot;~&quot;</span>, </span>
+<span id="cb4-6"><a href></a>  <span class="at">cachePath =</span> <span class="st">&quot;~&quot;</span>,</span>
+<span id="cb4-7"><a href></a>  <span class="at">scratchPath =</span> <span class="st">&quot;~&quot;</span></span>
+<span id="cb4-8"><a href></a>)</span>
+<span id="cb4-9"><a href></a><span class="fu">unlink</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>cachePath, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-10"><a href></a></span>
+<span id="cb4-11"><a href></a><span class="co"># after: nothing — handled for you</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1262,11 +1293,36 @@ Eliot McIntire
 </ul>
 </div><div class="column" style="width:56%;">
 <div class="small-code">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href></a>studyArea <span class="ot">=</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb5-2"><a href></a>  <span class="at">url =</span> shapeZipID,</span>
-<span id="cb5-3"><a href></a>  <span class="at">fun =</span> terra<span class="sc">::</span>vect</span>
-<span id="cb5-4"><a href></a>) <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a href></a>  terra<span class="sc">::</span><span class="fu">project</span>(<span class="st">&quot;EPSG:3978&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href></a><span class="co"># before</span></span>
+<span id="cb5-2"><a href></a>shapeZipID <span class="ot">&lt;-</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span></span>
+<span id="cb5-3"><a href></a>shapeDir   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">getPaths</span>()<span class="sc">$</span>inputPath, <span class="st">&quot;studyArea&quot;</span>)</span>
+<span id="cb5-4"><a href></a><span class="fu">dir.create</span>(shapeDir, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-5"><a href></a>shapeZip   <span class="ot">&lt;-</span> <span class="fu">file.path</span>(shapeDir, <span class="st">&quot;studyArea.zip&quot;</span>)</span>
+<span id="cb5-6"><a href></a></span>
+<span id="cb5-7"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(shapeZip)) {</span>
+<span id="cb5-8"><a href></a>  <span class="fu">download.file</span>(</span>
+<span id="cb5-9"><a href></a>    <span class="at">url      =</span> <span class="fu">paste0</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=&quot;</span>, shapeZipID),</span>
+<span id="cb5-10"><a href></a>    <span class="at">destfile =</span> shapeZip,</span>
+<span id="cb5-11"><a href></a>    <span class="at">mode     =</span> <span class="st">&quot;wb&quot;</span></span>
+<span id="cb5-12"><a href></a>  )</span>
+<span id="cb5-13"><a href></a>}</span>
+<span id="cb5-14"><a href></a></span>
+<span id="cb5-15"><a href></a><span class="do">## unzip ------------------------------------------------------------</span></span>
+<span id="cb5-16"><a href></a><span class="cf">if</span> (<span class="fu">length</span>(<span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb5-17"><a href></a>  <span class="fu">unzip</span>(shapeZip, <span class="at">exdir =</span> shapeDir)</span>
+<span id="cb5-18"><a href></a>}</span>
+<span id="cb5-19"><a href></a></span>
+<span id="cb5-20"><a href></a><span class="do">## read shapefile ---------------------------------------------------</span></span>
+<span id="cb5-21"><a href></a>shpFile <span class="ot">&lt;-</span> <span class="fu">list.files</span>(shapeDir, <span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.shp$&quot;</span>,</span>
+<span id="cb5-22"><a href></a>                      <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-23"><a href></a><span class="fu">stopifnot</span>(<span class="fu">length</span>(shpFile) <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb5-24"><a href></a></span>
+<span id="cb5-25"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(shpFile)</span>
+<span id="cb5-26"><a href></a>studyArea <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(studyArea, <span class="st">&quot;EPSG:3978&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href></a><span class="co"># after</span></span>
+<span id="cb6-2"><a href></a>shapeZipID <span class="ot">&lt;-</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span> <span class="co"># reproducible assumes a googledrive id</span></span>
+<span id="cb6-3"><a href></a>studyArea <span class="ot">=</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(<span class="at">url =</span> shapeZipID, <span class="at">fun =</span> terra<span class="sc">::</span>vect) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href></a>  terra<span class="sc">::</span><span class="fu">project</span>(<span class="st">&quot;EPSG:3978&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1281,10 +1337,10 @@ Eliot McIntire
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="small-code">
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href></a>out <span class="ot">&lt;-</span> SpaDES.project<span class="sc">::</span><span class="fu">setupProject</span>(...)</span>
-<span id="cb6-2"><a href></a></span>
-<span id="cb6-3"><a href></a>finalOut <span class="ot">&lt;-</span></span>
-<span id="cb6-4"><a href></a>  SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a>out <span class="ot">&lt;-</span> SpaDES.project<span class="sc">::</span><span class="fu">setupProject</span>(...)</span>
+<span id="cb7-2"><a href></a></span>
+<span id="cb7-3"><a href></a>finalOut <span class="ot">&lt;-</span></span>
+<span id="cb7-4"><a href></a>  SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1298,16 +1354,18 @@ Eliot McIntire
 <li class="fragment"><code>setupProject</code> routes objects into the <code>simList</code> → missing inputs fail <strong>loudly</strong>, where you can fix them</li>
 </ul>
 </section>
-<section id="why-nimble" class="slide level2 smaller">
-<h2>Why “nimble”?</h2>
+<section id="why-is-this-considered-nimble" class="slide level2 smaller">
+<h2>Why is this considered “nimble”?</h2>
 <ul>
 <li class="fragment"><strong>Portable</strong> – inputs start from URLs / repositories</li>
 <li class="fragment"><strong>Self-installing</strong> – packages (yours <em>and</em> the modules’) resolved up front</li>
 <li class="fragment"><strong>Reproducible &amp; fast</strong> – <code>prepInputs()</code> + <code>Cache</code> skip repeated work</li>
 <li class="fragment"><strong>Declarative</strong> – one call describing <em>what</em> is needed</li>
+<li class="fragment"><strong>Idempotent</strong> or <strong>Rerun tolerant</strong> – if you run the same code again you will get the same answer, but faster</li>
 </ul>
 <div class="fragment">
-<p>These are what let bigger projects chain many modules together without the setup collapsing under its own weight.</p>
+<p>These traits allow bigger projects chain many modules together without the setup collapsing under its own weight.</p>
+<p>They also allow rapid initiation of small projects.</p>
 
 </div>
 </section></section>

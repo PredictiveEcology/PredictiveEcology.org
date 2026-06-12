@@ -626,7 +626,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#running-siminit-spades-siminitandspades2" id="toc-running-siminit-spades-siminitandspades2" class="nav-link" data-scroll-target="#running-siminit-spades-siminitandspades2"><span class="header-section-number">14.3.6</span> Running: <code>simInit()</code> + <code>spades()</code> → <code>simInitAndSpades2()</code></a></li>
   <li><a href="#why-not-just-put-everything-in-the-.globalenv" id="toc-why-not-just-put-everything-in-the-.globalenv" class="nav-link" data-scroll-target="#why-not-just-put-everything-in-the-.globalenv"><span class="header-section-number">14.3.7</span> Why not just put everything in the <code>.GlobalEnv</code>?</a></li>
   </ul></li>
-  <li><a href="#why-nimble" id="toc-why-nimble" class="nav-link" data-scroll-target="#why-nimble"><span class="header-section-number">14.4</span> Why “nimble”?</a></li>
+  <li><a href="#why-is-this-considered-nimble" id="toc-why-is-this-considered-nimble" class="nav-link" data-scroll-target="#why-is-this-considered-nimble"><span class="header-section-number">14.4</span> Why is this considered “nimble”?</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">14.5</span> See also</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">14.6</span> Barebones R script</a></li>
   </ul>
@@ -881,14 +881,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>setupProject()</code> sidesteps the trap by design. The objects you pass (<code>studyArea</code>, <code>studyAreaLarge</code>, …) are routed into the <code>simList</code> rather than scattered across the global workspace, so a module that asks for an input it wasn’t given fails <strong>loudly</strong>, where you can see and fix it, instead of silently borrowing whatever the <code>.GlobalEnv</code> happened to contain.</p>
 </section>
 </section>
-<section id="why-nimble" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="why-nimble"><span class="header-section-number">14.4</span> Why “nimble”?</h2>
+<section id="why-is-this-considered-nimble" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="why-is-this-considered-nimble"><span class="header-section-number">14.4</span> Why is this considered “nimble”?</h2>
 <p>The translated script is <em>nimble</em> because it can move:</p>
 <ul>
 <li><strong>Portable</strong> – every input starts from a URL or repository, so there are no machine-specific file paths to fix up.</li>
 <li><strong>Self-installing</strong> – packages (yours and the modules’) are resolved and installed together, up front.</li>
 <li><strong>Reproducible and fast on re-run</strong> – <code>prepInputs()</code> and <code>Cache</code> avoid re-downloading and re-computing unchanged steps.</li>
 <li><strong>Declarative</strong> – the entire project is one call describing <em>what</em> is needed, not a sequence of imperative bookkeeping that must succeed in order.</li>
+<li><strong>Idempotent</strong> or <strong>Rerun tolerant</strong> – if you run the same code again you will get the same answer, but faster</li>
 </ul>
 <p>These same properties are what let the richer projects in the following chapters chain many modules together without the setup collapsing under its own weight.</p>
 </section>

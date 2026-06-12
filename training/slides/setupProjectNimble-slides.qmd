@@ -49,59 +49,93 @@ data file that was never in the repository.
 
 ::: {.tiny-code}
 ```r
-## 1) Packages -- install what's missing, THEN load
-if (!requireNamespace("SpaDES.core",    quietly = TRUE)) install.packages("SpaDES.core")
-if (!requireNamespace("SpaDES.project", quietly = TRUE)) install.packages("SpaDES.project")
-if (!requireNamespace("terra",          quietly = TRUE)) install.packages("terra")
-if (!requireNamespace("sf",             quietly = TRUE)) install.packages("sf")
-library(SpaDES.core); library(SpaDES.project); library(terra); library(sf)
+## 1) Packages -- load
+library(SpaDES.core)
+library(SpaDES.project)
+library(terra)
+library(sf)
 
-## 2) Paths
-setPaths(modulePath = "~", inputPath = "~", outputPath = "~",
-         cachePath = "~", scratchPath = "~")
-unlink(getPaths()$cachePath, recursive = TRUE)          # clean cache to avoid mismatches
+## 2) Paths ----------------------------------------------------------
+setPaths(
+  modulePath  = "~",
+  inputPath   = "~",
+  outputPath  = "~",
+  cachePath   = "~",
+  scratchPath = "~"
+)
+
+## clean cache to avoid previous mismatches
+unlink(getPaths()$cachePath, recursive = TRUE)
 dir.create(getPaths()$cachePath, showWarnings = FALSE)
 
-## 3) Download modules
+## 3) Download modules ----------------------------------------------
 SpaDES.project::getModule(
-  modules = c("PredictiveEcology/Biomass_borealDataPrep",
-              "PredictiveEcology/Biomass_speciesData",
-              "PredictiveEcology/Biomass_core"),
-  modulePath = getPaths()$modulePath, overwrite = TRUE)
+  modules = c(
+    "PredictiveEcology/Biomass_borealDataPrep",
+    "PredictiveEcology/Biomass_speciesData",
+    "PredictiveEcology/Biomass_core"
+  ),
+  modulePath = getPaths()$modulePath,
+  overwrite  = TRUE
+)
 
-## 4) Download study area from Google Drive
+## 4) Download study area from Google Drive -------------------------
 shapeZipID <- "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik"
 shapeDir   <- file.path(getPaths()$inputPath, "studyArea")
 dir.create(shapeDir, recursive = TRUE, showWarnings = FALSE)
 shapeZip   <- file.path(shapeDir, "studyArea.zip")
-if (!file.exists(shapeZip))
-  download.file(paste0("https://drive.google.com/uc?export=download&id=", shapeZipID),
-                destfile = shapeZip, mode = "wb")
-if (length(list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE)) == 0)
+
+if (!file.exists(shapeZip)) {
+  download.file(
+    url      = paste0("https://drive.google.com/uc?export=download&id=", shapeZipID),
+    destfile = shapeZip,
+    mode     = "wb"
+  )
+}
+
+## unzip ------------------------------------------------------------
+if (length(list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE)) == 0) {
   unzip(shapeZip, exdir = shapeDir)
-shpFile <- list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE, full.names = TRUE)
+}
+
+## read shapefile ---------------------------------------------------
+shpFile <- list.files(shapeDir, pattern = "\\.shp$",
+                      recursive = TRUE, full.names = TRUE)
 stopifnot(length(shpFile) == 1)
+
 studyArea <- terra::vect(shpFile)
 studyArea <- terra::project(studyArea, "EPSG:3978")
 
-## 5) Settings + 6) run
+## 5) Simulation settings -------------------------------------------
 times   <- list(start = 1, end = 1)
 modules <- c("Biomass_borealDataPrep", "Biomass_speciesData", "Biomass_core")
 objects <- list(studyArea = studyArea, studyAreaLarge = studyArea)
-sim <- simInit(times = times, modules = modules, objects = objects, paths = getPaths())
+
+## 6) Initialize and run --------------------------------------------
+sim <- simInit(times = times, modules = modules,
+               objects = objects, paths = getPaths())
 sim <- spades(sim)
 ```
 :::
 
-- ~90 lines of bookkeeping done by hand
+- ~65 lines of bookkeeping done by hand
 
 ## After: `setupProject()` {.smaller}
 
 :::: {.columns}
 ::: {.column width="48%"}
-- ~15 lines
+- ~18 lines (including installing toolkit)
 - **declarative**: *what* is needed
 - packages reconciled in one place
+- packages installed and loaded as needed
+
+  
+  `if (!require("SpaDES.core")) install.packages("SpaDES.core"); library("SpaDES.core")`
+  
+  or
+  
+  `pak::pak("SpaDES.core"); require("SpaDES.core")`
+  
 - every input starts from a **URL**
 :::
 ::: {.column width="52%"}
@@ -117,12 +151,10 @@ out <- SpaDES.project::setupProject(
     "PredictiveEcology/Biomass_borealDataPrep",
     "PredictiveEcology/Biomass_speciesData",
     "PredictiveEcology/Biomass_core"),
-  overwrite = TRUE,
   times = list(start = 1, end = 1),
   packages = c("PredictiveEcology/LandR@development (>= 1.2.0.9002)"),
   shapeZipID = "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik",
-  studyArea = reproducible::prepInputs(
-    url = shapeZipID, fun = terra::vect) |>
+  studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
     terra::project("EPSG:3978"),
   studyAreaLarge = studyArea
 )
@@ -167,9 +199,13 @@ packages = c(
 ::: {.small-code}
 ```r
 # before
-setPaths(modulePath = "~", inputPath = "~",
-         outputPath = "~", cachePath = "~",
-         scratchPath = "~")
+setPaths(
+  modulePath = "~", 
+  inputPath = "~",
+  outputPath = "~", 
+  cachePath = "~",
+  scratchPath = "~"
+)
 unlink(getPaths()$cachePath, recursive = TRUE)
 
 # after: nothing — handled for you
@@ -190,10 +226,39 @@ unlink(getPaths()$cachePath, recursive = TRUE)
 ::: {.column width="56%"}
 ::: {.small-code}
 ```r
-studyArea = reproducible::prepInputs(
-  url = shapeZipID,
-  fun = terra::vect
-) |>
+# before
+shapeZipID <- "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik"
+shapeDir   <- file.path(getPaths()$inputPath, "studyArea")
+dir.create(shapeDir, recursive = TRUE, showWarnings = FALSE)
+shapeZip   <- file.path(shapeDir, "studyArea.zip")
+
+if (!file.exists(shapeZip)) {
+  download.file(
+    url      = paste0("https://drive.google.com/uc?export=download&id=", shapeZipID),
+    destfile = shapeZip,
+    mode     = "wb"
+  )
+}
+
+## unzip ------------------------------------------------------------
+if (length(list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE)) == 0) {
+  unzip(shapeZip, exdir = shapeDir)
+}
+
+## read shapefile ---------------------------------------------------
+shpFile <- list.files(shapeDir, pattern = "\\.shp$",
+                      recursive = TRUE, full.names = TRUE)
+stopifnot(length(shpFile) == 1)
+
+studyArea <- terra::vect(shpFile)
+studyArea <- terra::project(studyArea, "EPSG:3978")
+```
+
+
+```r
+# after
+shapeZipID <- "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik" # reproducible assumes a googledrive id
+studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
   terra::project("EPSG:3978")
 ```
 :::
@@ -230,14 +295,18 @@ finalOut <-
 - `setupProject` routes objects into the `simList` → missing inputs fail
   **loudly**, where you can fix them
 
-## Why "nimble"? {.smaller}
+## Why is this considered "nimble"? {.smaller}
 
 - **Portable** -- inputs start from URLs / repositories
 - **Self-installing** -- packages (yours *and* the modules') resolved up front
 - **Reproducible & fast** -- `prepInputs()` + `Cache` skip repeated work
 - **Declarative** -- one call describing *what* is needed
+- **Idempotent** or **Rerun tolerant** -- if you run the same code again
+    you will get the same answer, but faster
 
 . . .
 
-These are what let bigger projects chain many modules together without
+These traits allow bigger projects chain many modules together without
 the setup collapsing under its own weight.
+
+They also allow rapid initiation of small projects.
