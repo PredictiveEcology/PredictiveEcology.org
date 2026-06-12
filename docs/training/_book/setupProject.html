@@ -67,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workflowSimple2.html" rel="next">
+<link href="./setupProjectNimble.html" rel="next">
 <link href="./debugging.html" rel="prev">
 <link href="./assets/logo/favicon-16x16.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -537,32 +537,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./workflowSimple2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./LandRDemo_coreVeg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ForestsAndFire.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./RSFForecast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -579,13 +585,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
   </div>
 </li>
       </ul>
@@ -653,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>One of the advantages of <code>SpaDES</code> is that we can make simple “linear” workflows, but we can also make complex workflows <em>emerge</em> from the combinations of modules (and of their events) being put together by a user. SpaDES modules provide their own needed schedules, and the metadata tells SpaDES how different modules fit together. Then when executed, events within and across modules go in the correct order. If the group of modules changes later on, the workflow steps may also change.</p>
 <p>In this section, we will start with the simplest case of two code chunks in sequence, and we will advance to chain together many modules and rich project workflows using <code>SpaDES.project</code>. We assume that readers are already familiar with SpaDES, namely creating and using SpaDES modules. If not, we encourage going through the chapters in Section <a href="./SpaDESbasics.html">SpaDES 101</a>.</p>
-<p>From <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>15&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a> onwards, we show project flows with SpaDES modules that have been developed and used in ecological modelling and forecasting, to answer both research or applied questions. We encourage readers to learn more about these models (and <em>modules</em>) from the documentation sources noted in the chapters.</p>
+<p>From <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>16&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a> onwards, we show project flows with SpaDES modules that have been developed and used in ecological modelling and forecasting, to answer both research or applied questions. We encourage readers to learn more about these models (and <em>modules</em>) from the documentation sources noted in the chapters.</p>
 <section id="some-of-the-spades-verse" class="level2">
 <h2 class="anchored" data-anchor-id="some-of-the-spades-verse">Some of the SpaDES-verse</h2>
 <p>We can see many of the known modules in the SpaDES-verse and how they interact through their shared inputs and outputs in this interactive figure:</p>
@@ -1132,8 +1138,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflowSimple2.html" class="pagination-link" aria-label="Workflows with `setupProject`">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./setupProjectNimble.html" class="pagination-link" aria-label="`setupProject` for nimble workflows">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

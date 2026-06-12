@@ -583,32 +583,38 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./workflowSimple2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./LandRDemo_coreVeg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ForestsAndFire.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./RSFForecast.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -625,13 +631,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
   </div>
 </li>
       </ul>
@@ -764,7 +770,7 @@ window.Quarto = {
 <section id="best-practices-for-spades-workflows" class="level2">
 <h2 class="anchored" data-anchor-id="best-practices-for-spades-workflows">Best practices for SpaDES workflows</h2>
 <ul>
-<li><p><strong>Limit the number of objects in <code>.GlobalEnv</code></strong> – instead, put them in functions or inside a module. When objects are in modules, you can add default object values (e.g.&nbsp;via <code>.inputObjects()</code>), or save them into files that are loaded by <code>setupProject</code> or <code>simInit</code>. Alternatively, you can pass objects or code to make them directly to <code>setupProject()</code> as <code>...</code> arguments, or to the <code>simInit</code> <code>objects</code> arguments. See <a href="ModuleInputs.html" class="quarto-xref"><span>6&nbsp; Providing Module Inputs</span></a> and, for an example with <code>setupProject</code>, <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>15&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a>.</p>
+<li><p><strong>Limit the number of objects in <code>.GlobalEnv</code></strong> – instead, put them in functions or inside a module. When objects are in modules, you can add default object values (e.g.&nbsp;via <code>.inputObjects()</code>), or save them into files that are loaded by <code>setupProject</code> or <code>simInit</code>. Alternatively, you can pass objects or code to make them directly to <code>setupProject()</code> as <code>...</code> arguments, or to the <code>simInit</code> <code>objects</code> arguments. See <a href="ModuleInputs.html" class="quarto-xref"><span>6&nbsp; Providing Module Inputs</span></a> and, for an example with <code>setupProject</code>, <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>16&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a>.</p>
 <ul>
 <li>Why? Because modules might then find/use objects in/from the <code>.GlobalEnv</code> when they shouldn’t (they should use them from the <code>simList</code>). <code>SpaDES.project::setupProject</code> and <code>simInit</code> deal with these issues by loading and objects directly into a separate environment (the <code>simList</code>).</li>
 </ul></li>
@@ -1223,7 +1229,7 @@ Sarma, Gopal P., Travis W. Jacobs, Mark D. Watts, S. Vahid Ghayoomie, Stephen D.
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./FireUnderClimateChange.html" class="pagination-link" aria-label="Fire under climate change">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

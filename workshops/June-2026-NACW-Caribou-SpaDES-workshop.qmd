@@ -41,9 +41,12 @@ We will be discussing ideas around reproducibility and reusability in the first 
 
 
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| 1:30 - 2:30             | [Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
+| 1:30 - 2:00             | [Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation](https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB)     |
 |                         |                                                                 |
 |                         | Background publication to the nimble approach: [The PERFICT approach (McIntire et al 2022)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)  |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| 2:00 - 2:30             | [`setupProject` for nimble workflows]({{< var book.setupProjectNimble >}})  |
++-------------------------+--------------------------------------------------------------------------------------------------------
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | 2:30 - 3:30             | We will work through the example in the training manual: [Project with caribou RSF forecasting]({{< var book.rsfForecast >}})  |
 +-------------------------+--------------------------------------------------------------------------------------------------------

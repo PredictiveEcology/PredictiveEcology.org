@@ -28,6 +28,7 @@ book:
   debugging: training/_book/debugging.html
 
   # Workflows and projects
+  setupProjectNimble: training/_book/setupProjectNimble.html
   workflowSimple: training/_book/workflowSimple2.html
   landRDemo: training/_book/LandRDemo_coreVeg.html
   forestsAndFire: training/_book/ForestsAndFire.html

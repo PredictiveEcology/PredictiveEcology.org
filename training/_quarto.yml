@@ -82,6 +82,7 @@ book:
       - debugging.qmd
     - part: setupProject.qmd
       chapters:
+      - setupProjectNimble.qmd
       - workflowSimple2.qmd
       - LandRDemo_coreVeg.qmd
       - ForestsAndFire.qmd
