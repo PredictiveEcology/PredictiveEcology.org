@@ -15,6 +15,10 @@ execute:
 # Forecasting wildlife habitat (an RSF) with `setupProject` {#sec-rsfForecast}
 
 ::: {.callout-tip appearance="simple"}
+🖥️ [Slide deck for this chapter](../../slides/RSFForecast-slides.html){target="_blank"}
+:::
+
+::: {.callout-tip appearance="simple"}
 See [Barebones R script] for the code shown in this chapter
 :::
 
@@ -328,6 +332,34 @@ elapsedTime(results, units = "mins")     # time per event
 moduleMetadata(results)$RSFpredict$outputObjects
 ```
 
+## Using shiny and leaflet to explore outputs
+
+Because we set `.plots = "png"` and saved maps to the `outputPath`, the
+run leaves behind a folder full of time-stamped `.tif` and `.png` files
+-- the forecasted forest, fire, and RSF surfaces, one per simulation
+year. Clicking through those one at a time is tedious. The
+`SpaDES.shiny::shine()` function turns that folder into an interactive
+viewer: it recursively scans the output folder, groups files that share
+a base name but differ by an embedded timestamp into time-series
+"objects", and launches a Shiny app where you can step (or animate)
+through time. Maps (`.tif`) are drawn on a choosable web basemap with
+`leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
+figures (`.png`) are shown as images; two extra tabs show the
+`last - first` change and a user-defined difference between any two
+snapshots. You can point it at a `simList` (it uses that object's
+`outputPath()`), a folder path, or nothing at all (it falls back to
+`getOption("spades.outputPath")`).
+
+```{r shine}
+#| eval: false
+if (!require("pak")) install.packages("pak")
+pak::pak("PredictiveEcology/SpaDES.shiny")
+
+# explore the saved outputs interactively
+SpaDES.shiny::shine("outputs")     # a folder path
+# SpaDES.shiny::shine(results)     # or a simList -> uses outputPath(results)
+```
+
 ## See also
 
 [Forest Succession and Wildfire @sec-scfmEg]
@@ -337,6 +369,8 @@ moduleMetadata(results)$RSFpredict$outputObjects
 [`reproducible::prepInputs` for Data @sec-prepInputs]
 
 [Introduction to Cache @sec-caching]
+
+[`SpaDES.shiny::shine` (interactive output viewer)](https://github.com/PredictiveEcology/SpaDES.shiny)
 
 ## Barebones R script
 

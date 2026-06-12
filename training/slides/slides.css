@@ -1,0 +1,29 @@
+/* ---- code sizing -------------------------------------------------------
+   Shrink code so even long chunks fit. Wrap a block in
+   ::: {.small-code} or ::: {.tiny-code}. */
+.reveal .small-code pre code { font-size: 0.70em; line-height: 1.30; }
+.reveal .tiny-code  pre code { font-size: 0.50em; line-height: 1.22; }
+
+/* ---- code block look --------------------------------------------------- */
+.reveal pre {
+  box-shadow: none;
+  margin: 0.2em 0;
+  width: 100%;
+}
+.reveal pre code {
+  max-height: none;
+  padding: 0.5em 0.7em;
+  border: 1px solid #e3e3e3;
+  border-left: 4px solid #b0b0b0;   /* subtle accent so code reads as a panel */
+  border-radius: 4px;
+  background: #fbfbfb;
+}
+
+/* ---- two-column slides ------------------------------------------------- */
+.reveal .columns { gap: 1.2em; align-items: start; }   /* align tops, not centers */
+
+/* a touch more room: bullets a hair smaller than default body */
+.reveal .columns .column ul { font-size: 0.92em; }
+
+/* keep highlighted (incremental) code-line emphasis subtle */
+.reveal .smaller { font-size: 0.78em; }

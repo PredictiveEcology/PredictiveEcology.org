@@ -30,3 +30,10 @@ bookFilesDirs <- dirname(bookFilesCopy)
 
 sapply(bookFilesDirs, dir.create, recursive = TRUE, showWarnings = FALSE)
 file.copy(bookFiles, bookFilesCopy, overwrite = TRUE)
+
+## render the chapter slide decks into docs/slides (after the site render,
+## so the site render's cleanup cannot orphan them). Each deck's project
+## (training/slides/_quarto.yml) sends its output to docs/slides.
+message("Rendering slide decks")
+slideDecks <- list.files("training/slides", pattern = "-slides\\.qmd$", full.names = TRUE)
+for (deck in slideDecks) quarto::quarto_render(deck, as_job = FALSE)

@@ -1,0 +1,195 @@
+---
+title: "Forecasting wildlife habitat (an RSF)"
+subtitle: "Forest + fire + wildlife, woven together with `setupProject`"
+author: "Eliot McIntire"
+date: last-modified
+format:
+  revealjs:
+    incremental: true
+    slide-number: true
+    width: 1280
+    height: 720
+    css: slides.css
+    code-overflow: wrap
+    highlight-style: github
+    theme: default
+    embed-resources: true   # single self-contained .html (easy to deploy/share)
+---
+
+## The question {.smaller}
+
+As the forest **grows** and **burns** over the coming decades, how does
+**wildlife habitat** change?
+
+. . .
+
+- a **Resource Selection Function (RSF)** is a *fitted* model relating
+  the probability an animal *uses* a place to that place's covariates
+  (land cover, forest age/biomass, time since fire, ...)
+- `RSFpredict` takes a **previously fitted** RSF and re-evaluates it
+  against the **simulated** landscape -- every year
+- the result responds dynamically to succession and disturbance
+
+## Three model families {.smaller}
+
+:::: {.columns}
+::: {.column width="46%"}
+- **forest** -- `Biomass_*`
+- **fire** -- the `scfm` family
+- **wildlife** -- `RSFpredict`
+
+. . .
+
+- modules live in **different** GitHub accounts
+- their **metadata** declares inputs/outputs, so `setupProject` weaves
+  them into one workflow
+:::
+::: {.column width="54%"}
+::: {.small-code}
+```r
+modules = c(
+  # forest
+  "PredictiveEcology/Biomass_borealDataPrep@development",
+  "PredictiveEcology/Biomass_core@development",
+  "PredictiveEcology/Biomass_regeneration@master",
+  # fire (several modules in one repo)
+  file.path("PredictiveEcology/scfm@development/modules",
+            c("scfmDataPrep", "scfmIgnition", "scfmEscape",
+              "scfmSpread", "scfmDiagnostics")),
+  # wildlife
+  "JWTurn/RSFpredict@main"
+)
+```
+:::
+:::
+::::
+
+## A fitted model *is* an input {.smaller}
+
+:::: {.columns}
+::: {.column width="46%"}
+- a SpaDES **input** can be *any* R object -- not just a map
+- here: a previously-fitted RSF, loaded from `.rds`
+- `simulationProcess = "dynamic"` → re-predict against the changing
+  landscape each step
+- we don't have the raw data to *refit* here -- so we ship the **model**,
+  and could later swap in a fitting module
+:::
+::: {.column width="54%"}
+::: {.small-code}
+```r
+model = reproducible::prepInputs(
+  url = "https://drive.google.com/file/d/1ILE.../view",
+  fun = "readRDS",
+  destinationPath = "inputs"),
+
+params = list(
+  RSFpredict = list(simulationProcess = "dynamic")
+)
+```
+:::
+:::
+::::
+
+## Study areas & raster templates {.smaller}
+
+:::: {.columns}
+::: {.column width="46%"}
+- `studyArea` -- a **fixed** polygon we report on
+- `studyAreaLarge` -- buffered, to avoid edge effects
+- matching `rasterToMatch*` templates, **derived** from one another
+- objects defined earlier are available to later ones
+:::
+::: {.column width="54%"}
+::: {.small-code}
+```r
+studyArea = prepInputs(url = saURL, fun = "terra::vect"),
+studyAreaLarge = terra::buffer(studyArea, 10000),
+rasterToMatchLarge = {
+  rtml <- terra::disagg(modelLand[[1]], fact = 2)
+  rtml[] <- 1
+  terra::mask(rtml, studyAreaLarge)
+},
+rasterToMatch = postProcess(rasterToMatchLarge,
+                  cropTo = studyArea, maskTo = studyArea)
+```
+:::
+:::
+::::
+
+## Cloud caching for a team {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+- slow `*DataPrep` / fitting steps opt into a **shared** Google Drive cache
+- it works **because** the `studyArea` is *fixed*:
+  - same inputs → same `Cache` key → same result
+- **one** person runs the slow fit; everyone else **downloads** it
+- a *random* study area would defeat this
+:::
+::: {.column width="52%"}
+::: {.small-code}
+```r
+options = list(
+  reproducible.cloudFolderID = "https://drive.google.com/.../folders/199o..."
+),
+params = list(
+  .globals = list(.studyAreaName = "dehchoN"),
+  scfmDataPrep           = list(.useCloud = TRUE),
+  Biomass_borealDataPrep = list(.useCloud = TRUE)
+)
+```
+:::
+:::
+::::
+
+## Run it {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+- `setupProject()` assembles the whole project
+- `simInitAndSpades2()` runs it from the returned list
+- `restartSpades()` resumes if interrupted
+:::
+::: {.column width="50%"}
+::: {.small-code}
+```r
+out <- SpaDES.project::setupProject( ... )
+
+options(reproducible.showSimilar = TRUE)
+results <- SpaDES.core::simInitAndSpades2(out)
+```
+:::
+:::
+::::
+
+## Explore the outputs interactively {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+- `.plots = "png"` + saved maps → a folder of time-stamped outputs
+- `SpaDES.shiny::shine()` scans it and builds a **Shiny + leaflet** viewer
+- step or animate through time; maps on a web basemap, figures as images
+- `last - first` and custom-difference tabs
+:::
+::: {.column width="52%"}
+::: {.small-code}
+```r
+if (!require("pak")) install.packages("pak")
+pak::pak("PredictiveEcology/SpaDES.shiny")
+
+SpaDES.shiny::shine("outputs")   # a folder
+# shine(results)                 # or a simList
+```
+:::
+:::
+::::
+
+## Takeaway {.smaller}
+
+- one `setupProject()` call composes **three model families** from
+  different authors
+- a **fitted model**, a **fixed study area**, and **cloud caching** make
+  it both reproducible *and* cheap to re-run as a team
+- the same nimble properties scale from a one-module demo to a
+  multi-family forecast

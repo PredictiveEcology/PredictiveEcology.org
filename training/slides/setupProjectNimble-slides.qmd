@@ -1,0 +1,243 @@
+---
+title: "`setupProject` for nimble workflows"
+subtitle: "From a 'works on my machine' script to a portable one"
+author: "Eliot McIntire"
+date: last-modified
+format:
+  revealjs:
+    incremental: true
+    slide-number: true
+    width: 1280
+    height: 720
+    css: slides.css
+    code-overflow: wrap
+    highlight-style: github
+    theme: default
+    embed-resources: true   # single self-contained .html (easy to deploy/share)
+---
+
+## The problem {.smaller}
+
+A typical SpaDES workflow starts as an ordinary script:
+
+- load packages
+- set paths
+- download data, read a shapefile
+- `simInit()` then `spades()`
+
+. . .
+
+It **works** -- on the machine where it was written.
+
+. . .
+
+Move it elsewhere and it breaks: a missing package, a hard-coded path, a
+data file that was never in the repository.
+
+## Two scripts, one model {.smaller}
+
+- The simulation is **identical**.
+- What changes is *robustness*.
+- The nimble version is reproducible and portable **by construction**:
+  - everything described declaratively
+  - packages reconciled in one place
+  - every input **starts from a URL, not a file path**
+
+# The translation
+
+## Before: a hand-rolled script {.smaller .scrollable}
+
+::: {.tiny-code}
+```r
+## 1) Packages -- install what's missing, THEN load
+if (!requireNamespace("SpaDES.core",    quietly = TRUE)) install.packages("SpaDES.core")
+if (!requireNamespace("SpaDES.project", quietly = TRUE)) install.packages("SpaDES.project")
+if (!requireNamespace("terra",          quietly = TRUE)) install.packages("terra")
+if (!requireNamespace("sf",             quietly = TRUE)) install.packages("sf")
+library(SpaDES.core); library(SpaDES.project); library(terra); library(sf)
+
+## 2) Paths
+setPaths(modulePath = "~", inputPath = "~", outputPath = "~",
+         cachePath = "~", scratchPath = "~")
+unlink(getPaths()$cachePath, recursive = TRUE)          # clean cache to avoid mismatches
+dir.create(getPaths()$cachePath, showWarnings = FALSE)
+
+## 3) Download modules
+SpaDES.project::getModule(
+  modules = c("PredictiveEcology/Biomass_borealDataPrep",
+              "PredictiveEcology/Biomass_speciesData",
+              "PredictiveEcology/Biomass_core"),
+  modulePath = getPaths()$modulePath, overwrite = TRUE)
+
+## 4) Download study area from Google Drive
+shapeZipID <- "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik"
+shapeDir   <- file.path(getPaths()$inputPath, "studyArea")
+dir.create(shapeDir, recursive = TRUE, showWarnings = FALSE)
+shapeZip   <- file.path(shapeDir, "studyArea.zip")
+if (!file.exists(shapeZip))
+  download.file(paste0("https://drive.google.com/uc?export=download&id=", shapeZipID),
+                destfile = shapeZip, mode = "wb")
+if (length(list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE)) == 0)
+  unzip(shapeZip, exdir = shapeDir)
+shpFile <- list.files(shapeDir, pattern = "\\.shp$", recursive = TRUE, full.names = TRUE)
+stopifnot(length(shpFile) == 1)
+studyArea <- terra::vect(shpFile)
+studyArea <- terra::project(studyArea, "EPSG:3978")
+
+## 5) Settings + 6) run
+times   <- list(start = 1, end = 1)
+modules <- c("Biomass_borealDataPrep", "Biomass_speciesData", "Biomass_core")
+objects <- list(studyArea = studyArea, studyAreaLarge = studyArea)
+sim <- simInit(times = times, modules = modules, objects = objects, paths = getPaths())
+sim <- spades(sim)
+```
+:::
+
+- ~90 lines of bookkeeping done by hand
+
+## After: `setupProject()` {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+- ~15 lines
+- **declarative**: *what* is needed
+- packages reconciled in one place
+- every input starts from a **URL**
+:::
+::: {.column width="52%"}
+::: {.small-code}
+```r
+if (!require("pak")) install.packages("pak")
+pak::pak(c("PredictiveEcology/Require@development",
+           "PredictiveEcology/SpaDES.project@development"),
+         ask = FALSE)
+
+out <- SpaDES.project::setupProject(
+  modules = c(
+    "PredictiveEcology/Biomass_borealDataPrep",
+    "PredictiveEcology/Biomass_speciesData",
+    "PredictiveEcology/Biomass_core"),
+  overwrite = TRUE,
+  times = list(start = 1, end = 1),
+  packages = c("PredictiveEcology/LandR@development (>= 1.2.0.9002)"),
+  shapeZipID = "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik",
+  studyArea = reproducible::prepInputs(
+    url = shapeZipID, fun = terra::vect) |>
+    terra::project("EPSG:3978"),
+  studyAreaLarge = studyArea
+)
+finalOut <- SpaDES.core::simInitAndSpades2(out)
+```
+:::
+:::
+::::
+
+## Packages: install, don't assume {.smaller}
+
+:::: {.columns}
+::: {.column width="46%"}
+- a bare `library()` isn't portable
+- must **install what's missing**, then load
+- `setupProject(packages=)` installs **and** loads into a project library
+- and reconciles with each **module's** own needs -- in one step
+:::
+::: {.column width="54%"}
+::: {.small-code}
+```r
+packages = c(
+  "PredictiveEcology/LandR@development (>= 1.2.0.9002)"
+)
+# SpaDES.core, terra, ... arrive as
+# dependencies of the modules + packages
+```
+:::
+:::
+::::
+
+## Paths: defaults, not bookkeeping {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+- no hand-set `setPaths()`
+- no "delete the cache to be safe"
+- `setupProject()` sets a sane layout (override with `paths =`)
+- a correct `Cache` doesn't go stale -- nothing to clear
+:::
+::: {.column width="50%"}
+::: {.small-code}
+```r
+# before
+setPaths(modulePath = "~", inputPath = "~",
+         outputPath = "~", cachePath = "~",
+         scratchPath = "~")
+unlink(getPaths()$cachePath, recursive = TRUE)
+
+# after: nothing — handled for you
+```
+:::
+:::
+::::
+
+## Data: from a URL, not a file path {.smaller}
+
+:::: {.columns}
+::: {.column width="44%"}
+- 40 lines of download / unzip / find / read / project ...
+- ... become **one** `prepInputs()`
+- starts from a **URL**, not a local file
+- built on `Cache`: downloads & processes **once**
+:::
+::: {.column width="56%"}
+::: {.small-code}
+```r
+studyArea = reproducible::prepInputs(
+  url = shapeZipID,
+  fun = terra::vect
+) |>
+  terra::project("EPSG:3978")
+```
+:::
+:::
+::::
+
+## Run it {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+- `setupProject()` returns a ready-to-run list of arguments
+- `simInitAndSpades2()` takes that list **directly**
+- two steps collapse to one
+:::
+::: {.column width="50%"}
+::: {.small-code}
+```r
+out <- SpaDES.project::setupProject(...)
+
+finalOut <-
+  SpaDES.core::simInitAndSpades2(out)
+```
+:::
+:::
+::::
+
+## Why not just use the `.GlobalEnv`? {.smaller}
+
+- the `.GlobalEnv` sits atop R's search path -- **everything can see it**
+- a module missing an input doesn't error: it **silently** grabs a
+  same-named global and carries on
+- the run "works", but for the wrong reason
+- fine for a one-off script; a bug factory past one script
+- `setupProject` routes objects into the `simList` → missing inputs fail
+  **loudly**, where you can fix them
+
+## Why "nimble"? {.smaller}
+
+- **Portable** -- inputs start from URLs / repositories
+- **Self-installing** -- packages (yours *and* the modules') resolved up front
+- **Reproducible & fast** -- `prepInputs()` + `Cache` skip repeated work
+- **Declarative** -- one call describing *what* is needed
+
+. . .
+
+These are what let bigger projects chain many modules together without
+the setup collapsing under its own weight.

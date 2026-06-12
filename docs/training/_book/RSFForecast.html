@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eliot McIntire">
-<meta name="dcterms.date" content="2026-06-11">
+<meta name="dcterms.date" content="2026-06-12">
 
 <title>18&nbsp; Forecasting wildlife habitat (an RSF) with setupProject – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
@@ -624,8 +624,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#siminitandspades2" id="toc-siminitandspades2" class="nav-link" data-scroll-target="#siminitandspades2"><span class="header-section-number">18.2.5</span> <code>simInitAndSpades2()</code></a></li>
   </ul></li>
   <li><a href="#examining-the-forecast" id="toc-examining-the-forecast" class="nav-link" data-scroll-target="#examining-the-forecast"><span class="header-section-number">18.3</span> Examining the forecast</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">18.4</span> See also</a></li>
-  <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">18.5</span> Barebones R script</a></li>
+  <li><a href="#using-shiny-and-leaflet-to-explore-outputs" id="toc-using-shiny-and-leaflet-to-explore-outputs" class="nav-link" data-scroll-target="#using-shiny-and-leaflet-to-explore-outputs"><span class="header-section-number">18.4</span> Using shiny and leaflet to explore outputs</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">18.5</span> See also</a></li>
+  <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">18.6</span> Barebones R script</a></li>
   </ul>
 </nav>
     </div>
@@ -652,7 +653,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2026</p>
+      <p class="date">June 12, 2026</p>
     </div>
   </div>
   
@@ -664,6 +665,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>🖥️ <a href="../../slides/RSFForecast-slides.html" target="_blank">Slide deck for this chapter</a></p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -891,142 +902,165 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 </section>
-<section id="see-also" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="see-also"><span class="header-section-number">18.4</span> See also</h2>
+<section id="using-shiny-and-leaflet-to-explore-outputs" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="using-shiny-and-leaflet-to-explore-outputs"><span class="header-section-number">18.4</span> Using shiny and leaflet to explore outputs</h2>
+<p>Because we set <code>.plots = "png"</code> and saved maps to the <code>outputPath</code>, the run leaves behind a folder full of time-stamped <code>.tif</code> and <code>.png</code> files – the forecasted forest, fire, and RSF surfaces, one per simulation year. Clicking through those one at a time is tedious. The <code>SpaDES.shiny::shine()</code> function turns that folder into an interactive viewer: it recursively scans the output folder, groups files that share a base name but differ by an embedded timestamp into time-series “objects”, and launches a Shiny app where you can step (or animate) through time. Maps (<code>.tif</code>) are drawn on a choosable web basemap with <code>leaflet</code>/<code>leafem</code> (reprojected and tiled so pan/zoom stay fast), while figures (<code>.png</code>) are shown as images; two extra tabs show the <code>last - first</code> change and a user-defined difference between any two snapshots. You can point it at a <code>simList</code> (it uses that object’s <code>outputPath()</code>), a folder path, or nothing at all (it falls back to <code>getOption("spades.outputPath")</code>).</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">"PredictiveEcology/SpaDES.shiny"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># explore the saved outputs interactively</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>SpaDES.shiny<span class="sc">::</span><span class="fu">shine</span>(<span class="st">"outputs"</span>)     <span class="co"># a folder path</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># SpaDES.shiny::shine(results)     # or a simList -&gt; uses outputPath(results)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="see-also" class="level2" data-number="18.5">
+<h2 data-number="18.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">18.5</span> See also</h2>
 <p><a href="ForestsAndFire.html" class="quarto-xref">Forest Succession and Wildfire&nbsp;<span>17</span></a></p>
 <p><a href="./setupProject.html">SpaDES workflows and projects</a></p>
 <p><a href="prepInputs.html" class="quarto-xref"><code>reproducible::prepInputs</code> for Data&nbsp;<span>12</span></a></p>
 <p><a href="Caching.html" class="quarto-xref">Introduction to Cache&nbsp;<span>10</span></a></p>
+<p><a href="https://github.com/PredictiveEcology/SpaDES.shiny"><code>SpaDES.shiny::shine</code> (interactive output viewer)</a></p>
 </section>
-<section id="barebones-r-script" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">18.5</span> Barebones R script</h2>
+<section id="barebones-r-script" class="level2" data-number="18.6">
+<h2 data-number="18.6" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">18.6</span> Barebones R script</h2>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the latest versions of the predictive ecology R packages</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>projPath <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/RSF_forecast"</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Restart = TRUE, # use this to restart your Rstudio session in its own project</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># useGit = "yourGitHubName",   # optional: clone modules as git repos under your account</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> projPath),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We host several files on both GoogleDrive and Compute Canada. This redirects the GoogleDrive</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   file requests to Compute Canada so we don't need to log in to GoogleDrive</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">reproducible.urlRemap =</span> </span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"https://object-arbutus.cloud.computecanada.ca/predictiveecology/SCANFI_v2/SCANFI_v2_files_on_arbutus.csv"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># a shared cloud cache folder, so a whole team can re-use cached results</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">reproducible.cloudFolderID =</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"https://drive.google.com/drive/folders/199oEp-TVaCyacwqS4PPf3XWMbhPe4YBN?usp=share_link"</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># forest simulation</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@development"</span>,</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_core@development"</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_regeneration@master"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fire simulation -- several modules in one git repository</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"scfmDataPrep"</span>, <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>,</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>                <span class="st">"scfmSpread"</span>, <span class="st">"scfmDiagnostics"</span>)),</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># RSF forecasting</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">"JWTurn/RSFpredict@main"</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">.plots =</span> <span class="st">"png"</span>,</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">.studyAreaName =</span> <span class="st">"dehchoN"</span>,</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCache =</span> <span class="fu">c</span>(<span class="st">".inputObjects"</span>, <span class="st">"init"</span>),</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataYear =</span> <span class="dv">2020</span>,        <span class="co"># start year for predicted forest growth</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">scfmDataPrep =</span> <span class="fu">list</span>(</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">targetN =</span> <span class="dv">2000</span>,         <span class="co"># keep low for a demo; 4000 is better for real estimates</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useParallelFireRegimePolys =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCloud =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">Biomass_borealDataPrep =</span> <span class="fu">list</span>(</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCloud =</span> <span class="cn">TRUE</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSFpredict =</span> <span class="fu">list</span>(</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">simulationProcess =</span> <span class="st">"dynamic"</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="co">#"RCurl", "XML", </span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "snow", </span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "googledrive", </span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>               <span class="st">"httr2"</span>, </span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>               <span class="st">"terra"</span>,</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>               <span class="st">"gert"</span>, <span class="st">"remotes"</span> <span class="co"># "glmmTMB",</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/reproducible@development",</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/LandR@development (&gt;=1.2.0.9002)",</span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/SpaDES.core@development"</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>               ),</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2020</span>, <span class="at">end =</span> <span class="dv">2075</span>),</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----- Spatial Templates for our Study -----</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1ma5qRk2NNidLhrQoiLIzd7W5ogeTaH5-/view?usp=share_link"</span>,</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"terra::vect"</span>,</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>  <span class="co"># buffer the study area to avoid edge effects in the simulation</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea_biomassParam =</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="dv">10000</span>),  <span class="co"># -- used in Biomass_borealDataPrep</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaCalibration =</span> studyArea_biomassParam,             <span class="co"># -- used in scfmDataPrep</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----- raster templates derived from the inputs -----</span></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>  <span class="co"># finer than the final RSF resolution, so we can later compute proportions</span></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch_biomassParam =</span> {</span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>    rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">disagg</span>(modelLand[[<span class="dv">1</span>]], <span class="at">fact =</span> <span class="dv">2</span>)</span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>    rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyArea_biomassParam)</span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatchCalibration =</span> rasterToMatch_biomassParam,</span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch =</span> {</span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>    reproducible<span class="sc">::</span><span class="fu">postProcess</span>(rasterToMatch_biomassParam, <span class="at">cropTo =</span> studyArea, <span class="at">maskTo =</span> studyArea)</span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Other objects</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the previously-fitted RSF model object -- used in RSFpredict.R</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view?usp=share_link"</span>,</span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"readRDS"</span>,</span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the land cover the RSF covariates were originally extracted from -- used in RSFpredict.R</span></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">modelLand =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1LeYrZBKrEPq6jSIP1SWM-grfINTeQjvn/view?usp=share_link"</span>,</span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"terra::rast"</span>,</span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>  <span class="co"># start with the historic fire history so scfm has a realistic time-since-fire</span></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">timeSinceFire =</span> {</span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    rsts <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>      <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1D6_Zc-xOttWzTOqasXh6KpGTaXYZ5OMA/view?usp=share_link"</span>,</span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>      <span class="at">fun =</span> <span class="st">"terra::rast"</span>,</span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">destinationPath =</span> <span class="st">"inputs"</span>)</span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>    tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(rsts<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> rasterToMatch)</span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>    tsf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">subst</span>(tsf, <span class="dv">122</span>, <span class="cn">NA</span>)   <span class="co"># scfm needs non-forest as NA</span></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>    tsf</span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="fu">completed</span>(results)                       <span class="co"># the events that ran</span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="fu">elapsedTime</span>(results, <span class="at">units =</span> <span class="st">"mins"</span>)     <span class="co"># time per event</span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="co"># the forecasted RSF prediction(s) created by RSFpredict</span></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="co"># (object name depends on the module's metadata)</span></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="fu">moduleMetadata</span>(results)<span class="sc">$</span>RSFpredict<span class="sc">$</span>outputObjects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the latest versions of the predictive ecology R packages</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>projPath <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/RSF_forecast"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Restart = TRUE, # use this to restart your Rstudio session in its own project</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># useGit = "yourGitHubName",   # optional: clone modules as git repos under your account</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> projPath),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># We host several files on both GoogleDrive and Compute Canada. This redirects the GoogleDrive</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   file requests to Compute Canada so we don't need to log in to GoogleDrive</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">reproducible.urlRemap =</span> </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"https://object-arbutus.cloud.computecanada.ca/predictiveecology/SCANFI_v2/SCANFI_v2_files_on_arbutus.csv"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># a shared cloud cache folder, so a whole team can re-use cached results</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">reproducible.cloudFolderID =</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"https://drive.google.com/drive/folders/199oEp-TVaCyacwqS4PPf3XWMbhPe4YBN?usp=share_link"</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># forest simulation</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@development"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_core@development"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_regeneration@master"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fire simulation -- several modules in one git repository</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"scfmDataPrep"</span>, <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>,</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>                <span class="st">"scfmSpread"</span>, <span class="st">"scfmDiagnostics"</span>)),</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># RSF forecasting</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">"JWTurn/RSFpredict@main"</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">.plots =</span> <span class="st">"png"</span>,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">.studyAreaName =</span> <span class="st">"dehchoN"</span>,</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCache =</span> <span class="fu">c</span>(<span class="st">".inputObjects"</span>, <span class="st">"init"</span>),</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataYear =</span> <span class="dv">2020</span>,        <span class="co"># start year for predicted forest growth</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">scfmDataPrep =</span> <span class="fu">list</span>(</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">targetN =</span> <span class="dv">2000</span>,         <span class="co"># keep low for a demo; 4000 is better for real estimates</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useParallelFireRegimePolys =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCloud =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">Biomass_borealDataPrep =</span> <span class="fu">list</span>(</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCloud =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSFpredict =</span> <span class="fu">list</span>(</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">simulationProcess =</span> <span class="st">"dynamic"</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="co">#"RCurl", "XML", </span></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "snow", </span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "googledrive", </span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>               <span class="st">"httr2"</span>, </span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>               <span class="st">"terra"</span>,</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>               <span class="st">"gert"</span>, <span class="st">"remotes"</span> <span class="co"># "glmmTMB",</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/reproducible@development",</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/LandR@development (&gt;=1.2.0.9002)",</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>               <span class="co"># "PredictiveEcology/SpaDES.core@development"</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>               ),</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2020</span>, <span class="at">end =</span> <span class="dv">2075</span>),</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----- Spatial Templates for our Study -----</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1ma5qRk2NNidLhrQoiLIzd7W5ogeTaH5-/view?usp=share_link"</span>,</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"terra::vect"</span>,</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="co"># buffer the study area to avoid edge effects in the simulation</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea_biomassParam =</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="dv">10000</span>),  <span class="co"># -- used in Biomass_borealDataPrep</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaCalibration =</span> studyArea_biomassParam,             <span class="co"># -- used in scfmDataPrep</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----- raster templates derived from the inputs -----</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>  <span class="co"># finer than the final RSF resolution, so we can later compute proportions</span></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch_biomassParam =</span> {</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>    rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">disagg</span>(modelLand[[<span class="dv">1</span>]], <span class="at">fact =</span> <span class="dv">2</span>)</span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>    rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyArea_biomassParam)</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatchCalibration =</span> rasterToMatch_biomassParam,</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch =</span> {</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>    reproducible<span class="sc">::</span><span class="fu">postProcess</span>(rasterToMatch_biomassParam, <span class="at">cropTo =</span> studyArea, <span class="at">maskTo =</span> studyArea)</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  <span class="do">### Other objects</span></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the previously-fitted RSF model object -- used in RSFpredict.R</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view?usp=share_link"</span>,</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"readRDS"</span>,</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  <span class="co"># the land cover the RSF covariates were originally extracted from -- used in RSFpredict.R</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">modelLand =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1LeYrZBKrEPq6jSIP1SWM-grfINTeQjvn/view?usp=share_link"</span>,</span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">fun =</span> <span class="st">"terra::rast"</span>,</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">destinationPath =</span> <span class="st">"inputs"</span>),</span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>  <span class="co"># start with the historic fire history so scfm has a realistic time-since-fire</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">timeSinceFire =</span> {</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>    rsts <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(</span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>      <span class="at">url =</span> <span class="st">"https://drive.google.com/file/d/1D6_Zc-xOttWzTOqasXh6KpGTaXYZ5OMA/view?usp=share_link"</span>,</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>      <span class="at">fun =</span> <span class="st">"terra::rast"</span>,</span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>      <span class="at">destinationPath =</span> <span class="st">"inputs"</span>)</span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a>    tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(rsts<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> rasterToMatch)</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>    tsf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">subst</span>(tsf, <span class="dv">122</span>, <span class="cn">NA</span>)   <span class="co"># scfm needs non-forest as NA</span></span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>    tsf</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a><span class="fu">completed</span>(results)                       <span class="co"># the events that ran</span></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="fu">elapsedTime</span>(results, <span class="at">units =</span> <span class="st">"mins"</span>)     <span class="co"># time per event</span></span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="co"># the forecasted RSF prediction(s) created by RSFpredict</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a><span class="co"># (object name depends on the module's metadata)</span></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a><span class="fu">moduleMetadata</span>(results)<span class="sc">$</span>RSFpredict<span class="sc">$</span>outputObjects</span>
+<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="co"># if (!require("pak")) install.packages("pak")</span></span>
+<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pak("PredictiveEcology/SpaDES.shiny")</span></span>
+<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a><span class="co"># # explore the saved outputs interactively</span></span>
+<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a><span class="co"># SpaDES.shiny::shine("outputs")     # a folder path</span></span>
+<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="co"># # SpaDES.shiny::shine(results)     # or a simList -&gt; uses outputPath(results)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

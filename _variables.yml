@@ -33,6 +33,7 @@ book:
   landRDemo: training/_book/LandRDemo_coreVeg.html
   forestsAndFire: training/_book/ForestsAndFire.html
   rsfForecast: training/_book/RSFForecast.html
+  shine: training/_book/RSFForecast.html#using-shiny-and-leaflet-to-explore-outputs
   spadesCBM: training/_book/spadesCBMDemo.html
 
   # Experiments and scenarios

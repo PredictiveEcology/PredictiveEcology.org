@@ -15,6 +15,10 @@ execute:
 # `setupProject` for nimble workflows {#sec-setupProjectNimble}
 
 ::: {.callout-tip appearance="simple"}
+🖥️ [Slide deck for this chapter](../../slides/setupProjectNimble-slides.html){target="_blank"}
+:::
+
+::: {.callout-tip appearance="simple"}
 See [Barebones R script] for the code shown in this chapter
 :::
 

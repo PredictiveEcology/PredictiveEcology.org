@@ -1,0 +1,6 @@
+# Isolated project for the chapter slide decks.
+# Having its own _quarto.yml means rendering a deck here uses THIS project,
+# not the parent training/ book project — so the book is never affected.
+project:
+  type: default
+  output-dir: ../../docs/slides   # deploy alongside the site (docs/ is served by Pages)
