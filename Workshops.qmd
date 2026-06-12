@@ -92,14 +92,13 @@ editor:
 :::
 
 ::: {layout="[[60,40], [100]]"}
-After an extended COVID hiatus, we will be holding workshops around
-[PERFICT](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)
+This is a page highlighting upcoming, current and past workshops that have been given around the 
+[PERFICT](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994) approach 
 and the SpaDES metapackage for R as a means of achieving a PERFICT
 approach.
 
 [![](https://onlinelibrary.wiley.com/cms/asset/680b22bc-1a97-4ab6-8f90-6fd1557e9e27/ele13994-fig-0001-m.jpg)](https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994)
 
-**We will be adding content here over the next weeks.**
 :::
 
 ## Upcoming workshops
