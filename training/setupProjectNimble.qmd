@@ -35,7 +35,8 @@ input **starts from a URL, not a local file path**.
 
 ## The starting point: a hand-rolled script
 
-Here is a typical "works on my machine" setup for a small `LandR`
+Here is an actual example that was written by a student. It is a 
+"works on my machine" setup for a small `LandR`
 Biomass run. It is not wrong -- it is just doing a lot of bookkeeping by
 hand, and most of that bookkeeping is exactly what breaks elsewhere.
 

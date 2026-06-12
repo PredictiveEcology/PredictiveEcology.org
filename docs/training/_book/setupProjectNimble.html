@@ -681,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This chapter takes one such script and translates it, step by step, into the equivalent <code>SpaDES.project::setupProject()</code> call. The simulation it runs is identical. What changes is that the <em>nimble</em> version is reproducible and portable by construction: everything it needs is described declaratively, packages are reconciled in one place, and every input <strong>starts from a URL, not a local file path</strong>.</p>
 <section id="the-starting-point-a-hand-rolled-script" class="level2" data-number="14.1">
 <h2 data-number="14.1" class="anchored" data-anchor-id="the-starting-point-a-hand-rolled-script"><span class="header-section-number">14.1</span> The starting point: a hand-rolled script</h2>
-<p>Here is a typical “works on my machine” setup for a small <code>LandR</code> Biomass run. It is not wrong – it is just doing a lot of bookkeeping by hand, and most of that bookkeeping is exactly what breaks elsewhere.</p>
+<p>Here is an actual example that was written by a student. It is a “works on my machine” setup for a small <code>LandR</code> Biomass run. It is not wrong – it is just doing a lot of bookkeeping by hand, and most of that bookkeeping is exactly what breaks elsewhere.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Code</summary>
