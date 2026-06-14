@@ -22,6 +22,11 @@ execute:
 See [Barebones R script] for the code shown in this chapter
 :::
 
+::: {.callout-tip appearance="simple"}
+See the [Glossary](glossary.qmd) for definitions of recurring terms
+(e.g. *nimble*, *continuous workflow*, *PERFICT*, *SpaDES module*).
+:::
+
 Most SpaDES workflows begin life as an ordinary R script: load some
 packages, set some paths, download a few things, read a shapefile,
 initialize a simulation, run it. That script *works* -- on the machine

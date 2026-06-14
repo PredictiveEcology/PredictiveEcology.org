@@ -9,7 +9,7 @@ execute:
   warning: true
   message: true
   error: true
-  cache: true
+  cache: false
 ---
 
 # Forecasting wildlife habitat (an RSF) with `setupProject` {#sec-rsfForecast}
@@ -20,6 +20,12 @@ execute:
 
 ::: {.callout-tip appearance="simple"}
 See [Barebones R script] for the code shown in this chapter
+:::
+
+::: {.callout-tip appearance="simple"}
+See the [Glossary](glossary.qmd) for definitions of recurring terms
+(e.g. *SpaDES module*, *dynamic vs. static models*, *continuous
+workflow*, *modular workflow*).
 :::
 
 ::: {.callout-note appearance="simple"}
@@ -93,9 +99,20 @@ This example pulls its fitted RSF `model`, study area, and several input
 layers from Google Drive or other sources.
 :::
 
-```{r rsf}
+```{r setLibPaths}
+#| eval: true
+#| include: false
+# during render, just use the developer's package path; otherwise we can get "can't unload package" errors
+options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.verbose = 0)
+```
+
+```{r setupProject}
 #| eval: true
 #| results: hide
+#| cache: false
+#| outputs: false
+#| message: false
+#| warning: false
 #| code-fold: true
 #| code-summary: "Show code"
 # get the latest versions of the predictive ecology R packages
@@ -155,7 +172,7 @@ out <- setupProject(
   ),
   packages = c(
     "httr2",
-    "terra",
+    "terra", "PredictiveEcology/SpaDES.core@development (>=3.1.2.9016)",
     "gert", "remotes"
   ),
   times = list(start = 2020, end = 2075),
@@ -208,10 +225,30 @@ out <- setupProject(
     tsf
   }
 )
-
-results <- SpaDES.core::simInitAndSpades2(out)
-
 ```
+
+
+```{r rsf-shown}
+#| eval: false
+results <- SpaDES.core::simInitAndSpades2(out)
+```
+
+```{r rsf-run-with-Cache}
+#| include: false
+#| eval: true
+#| cache: false
+cacheDig <- reproducible::CacheDigest(out)$preDigest 
+cacheDig <- reproducible::CacheDigest(cacheDig[!names(cacheDig) %in% "paths"])$outputHash
+
+cacheFile <- file.path(out$paths$cachePath, paste0("rsf_results_", substr(cacheDig, 1, 8), ".qs2"))
+if (file.exists(cacheFile)) {
+  results <- SpaDES.core::loadSimList(cacheFile)
+} else {
+  results <- SpaDES.core::simInitAndSpades2(out)
+  SpaDES.core::saveSimList(results, filename = cacheFile)
+}
+```
+
 
 ## Walking through the new pieces
 
@@ -326,12 +363,13 @@ Once the run finishes, the same accessors used elsewhere apply.
 
 ```{r examineSim}
 # generally check out the run
-completed(results)                       # the events that ran
-elapsedTime(results, units = "mins")     # time per event
+
+SpaDES.core::completed(results)                       # the events that ran
+SpaDES.core::elapsedTime(results, units = "mins")     # time per event
 
 # the forecasted RSF prediction(s) created by RSFpredict
 # (object name depends on the module's metadata)
-moduleMetadata(results)$RSFpredict$outputObjects
+SpaDES.core::moduleMetadata(results)$RSFpredict$outputObjects
 ```
 
 ## Using shiny and leaflet to explore outputs
@@ -374,11 +412,12 @@ worse (negative) habitats for the animals by looking at the differences between 
 future and current predicted use.
 
 ```{r RSFsummary}
-diffMap <-results$simPred$year2075 - results$simPred$year2025
-global(diffMap, fun = 'mean', na.rm = T)[[1]]
+#| eval: true
+diffMap <- results$simPred$year2075 - results$simPred$year2025
+terra::global(diffMap, fun = 'mean', na.rm = T)[[1]]
 
-diffBinMap <-results$simBinMap$year2075 - results$simBinMap$year2025
-global(diffBinMap, fun = 'mean', na.rm = T)[[1]]
+diffBinMap <- results$simBinMap$year2075 - results$simBinMap$year2025
+terra::global(diffBinMap, fun = 'mean', na.rm = T)[[1]]
 
 ```
 
