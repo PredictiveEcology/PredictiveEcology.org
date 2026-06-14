@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ceres Barros">
 <meta name="dcterms.date" content="2026-04-17">
-
 <title>Working with Continuous Workflows – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -45,7 +42,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -69,8 +65,7 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -96,13 +91,9 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -268,13 +259,10 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -285,7 +273,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -305,8 +293,8 @@ div.csl-indent {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -323,13 +311,13 @@ div.csl-indent {
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -338,7 +326,7 @@ div.csl-indent {
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -362,14 +350,12 @@ div.csl-indent {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -377,15 +363,11 @@ div.csl-indent {
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -411,8 +393,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -431,7 +413,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -440,8 +422,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -478,7 +460,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link active">
@@ -487,8 +469,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -503,7 +485,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -513,7 +495,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -522,8 +504,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -560,7 +542,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -569,8 +551,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -583,7 +565,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -597,26 +579,19 @@ div.csl-indent {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#spades-and-continuous-workflows" id="toc-spades-and-continuous-workflows" class="nav-link active" data-scroll-target="#spades-and-continuous-workflows">SpaDES and Continuous Workflows</a></li>
+<li><a href="#spades-and-continuous-workflows" id="toc-spades-and-continuous-workflows" class="nav-link active" data-scroll-target="#spades-and-continuous-workflows">SpaDES and Continuous Workflows</a></li>
   <li><a href="#module-types-revisited" id="toc-module-types-revisited" class="nav-link" data-scroll-target="#module-types-revisited">Module Types (Revisited)</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title"><span id="sec-contWorkflows" class="quarto-section-identifier">Working with Continuous Workflows</span></h1>
 </div>
 
@@ -644,10 +619,7 @@ div.csl-indent {
   
 
 
-</header>
-
-
-<p>As many have tried, it is not easy to create a project that <em>does all steps, from start to finish, without failing</em>. Numerous studies (ecology hasn’t done it yet) are finding very low success in this area <span class="citation" data-cites="janssen2020">(<a href="references.html#ref-janssen2020" role="doc-biblioref">Janssen, Pritchard, and Lee 2020</a>)</span>. Indeed, one paper out of 453 published studies were the authors able to run code without error <span class="citation" data-cites="sharma2023">(<a href="references.html#ref-sharma2023" role="doc-biblioref">Sharma et al. 2023</a>)</span>. Where does that leave us? <strong>We face a large challenge</strong>.</p>
+</header><p>As many have tried, it is not easy to create a project that <em>does all steps, from start to finish, without failing</em>. Numerous studies (ecology hasn’t done it yet) are finding very low success in this area <span class="citation" data-cites="janssen2020">(<a href="references.html#ref-janssen2020" role="doc-biblioref">Janssen, Pritchard, and Lee 2020</a>)</span>. Indeed, one paper out of 453 published studies were the authors able to run code without error <span class="citation" data-cites="sharma2023">(<a href="references.html#ref-sharma2023" role="doc-biblioref">Sharma et al. 2023</a>)</span>. Where does that leave us? <strong>We face a large challenge</strong>.</p>
 <p>The reality is that it is not enough to script an analysis. It must be scripted and tested regularly, but multiple actors (computers, servers, people), on multiple systems. By <em>regularly</em>, we mean <strong><em>from start-to-finish</em></strong> over and over. In our experience this is impossible without a few tools because <em>it takes too long to rerun code from start to finish</em>, so we don’t.</p>
 <p>The most important indicator that a workflow is broken is that there are lines of code that are <strong>selectively run or skipped</strong> by a user.</p>
 <div id="tip-RerunTolerance" class="callout callout-style-default callout-tip callout-titled">
@@ -667,24 +639,25 @@ Tip&nbsp;1: Rerun-tolerance
 </ol>
 <p>A <strong>rerun-tolerant workflow</strong> has a further feature:</p>
 <ol start="3" type="1">
-<li><em>rerun-tolerance</em> is used hierarchically, i.e., used at many levels inside code, outer functions, inner functions, middle functions.</li>
+<li>
+<em>rerun-tolerance</em> is used hierarchically, i.e., used at many levels inside code, outer functions, inner functions, middle functions.</li>
 </ol>
 <p>If all 3 of these are used, then it will be unnecessary to manually break a workflow, so it will be regularly run.</p>
 </div>
 </div>
 <p>The key to getting our code into shape is to use approaches that are <a href="#tip-RerunTolerance" class="quarto-xref">Tip&nbsp;<span>1</span></a>. We will introduce 3 important tools to achieve this:</p>
 <ul>
-<li><a href="@sec-caching">Caching</a> – This is a general tool that many people will be somewhat familiar with.</li>
-<li><a href="@sec-prepInputs"><code>reproducible::prepInputs</code></a> – a “do-it-all” function for <em>getting data into shape</em>.</li>
-<li><a href="@sec-debugging">Debugging</a> – for general R and specific SpaDES situations.</li>
+<li>
+<a href="@sec-caching">Caching</a> – This is a general tool that many people will be somewhat familiar with.</li>
+<li>
+<a href="@sec-prepInputs"><code>reproducible::prepInputs</code></a> – a “do-it-all” function for <em>getting data into shape</em>.</li>
+<li>
+<a href="@sec-debugging">Debugging</a> – for general R and specific SpaDES situations.</li>
 </ul>
-<section id="spades-and-continuous-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="spades-and-continuous-workflows">SpaDES and Continuous Workflows</h2>
+<section id="spades-and-continuous-workflows" class="level2"><h2 class="anchored" data-anchor-id="spades-and-continuous-workflows">SpaDES and Continuous Workflows</h2>
 <p>SpaDES allows us to implement feature 3 (hierarchical caching) of <a href="#tip-RerunTolerance" class="quarto-xref">Tip&nbsp;<span>1</span></a> because we can Cache at many levels: functions, events, modules, meta-modules, or entire projects. As we are developing inside a project, we can be working on a step inside a module that relies on previous “upstream” modules, but those modules can run very fast, so we can be quickly where we need to be, without breaking the workflow.</p>
 <p>Thinking about this situation, we can now re-visit the idea of “Module Types” (introduced in <a href="ModulesAndEvents.html#sec-moduletypes" class="quarto-xref"><span>Module types</span></a>) in terms of how they might depend on each other and certain types of inputs, and the types of outputs they produce.</p>
-</section>
-<section id="module-types-revisited" class="level2">
-<h2 class="anchored" data-anchor-id="module-types-revisited">Module Types (Revisited)</h2>
+</section><section id="module-types-revisited" class="level2"><h2 class="anchored" data-anchor-id="module-types-revisited">Module Types (Revisited)</h2>
 <p>SpaDES doesn’t have an explicit module types. Rather, by convention, we associate different modules with generic things they do. A fairly comprehensive list of modules types that we create are:</p>
 <ul>
 <li><p><strong>Data Munging</strong> – uses <code>prepInputs</code> and outputs clean, usable data for a project, mostly specifies <code>createsOutputs</code></p></li>
@@ -708,10 +681,7 @@ Janssen, Marco A., Calvin Pritchard, and Allen Lee. 2020. <span>“On Code Shari
 Sharma, Nitesh Kumar, Ram Ayyala, Dhrithi Deshpande, Yesha M Patel, Viorel Munteanu, Dumitru Ciorba, Andrada Fiscutean, et al. 2023. <span>“Analytical Code Sharing Practices in Biomedical Research.”</span> <em>bioRxiv</em>, August, 2023.07.31.551384. <a href="https://doi.org/10.1101/2023.07.31.551384">https://doi.org/10.1101/2023.07.31.551384</a>.
 </div>
 </div>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1127,9 +1097,7 @@ Sharma, Nitesh Kumar, Ram Ayyala, Dhrithi Deshpande, Yesha M Patel, Viorel Munte
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./Scheduling.html" class="pagination-link" aria-label="Scheduling Events">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scheduling Events</span></span>
       </a>          
@@ -1141,7 +1109,6 @@ Sharma, Nitesh Kumar, Ram Ayyala, Dhrithi Deshpande, Yesha M Patel, Viorel Munte
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

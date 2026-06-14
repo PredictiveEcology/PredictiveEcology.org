@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>7&nbsp; The simList - What is it? – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -59,7 +56,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -83,8 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,13 +105,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -282,13 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -299,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -319,8 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -337,13 +325,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -352,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -376,14 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -391,15 +377,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -425,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -445,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -454,8 +436,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -492,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -501,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -517,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -527,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -536,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -574,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -583,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -597,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -611,34 +593,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#where-does-simlist-come-from" id="toc-where-does-simlist-come-from" class="nav-link active" data-scroll-target="#where-does-simlist-come-from"><span class="header-section-number">7.1</span> Where does <code>simList</code> come from?</a></li>
+<li><a href="#where-does-simlist-come-from" id="toc-where-does-simlist-come-from" class="nav-link active" data-scroll-target="#where-does-simlist-come-from"><span class="header-section-number">7.1</span> Where does <code>simList</code> come from?</a></li>
   <li><a href="#how-can-we-specify-a-simlist" id="toc-how-can-we-specify-a-simlist" class="nav-link" data-scroll-target="#how-can-we-specify-a-simlist"><span class="header-section-number">7.2</span> How can we specify a <code>simList</code>?</a></li>
-  <li><a href="#accessing-the-parts-of-a-simlist" id="toc-accessing-the-parts-of-a-simlist" class="nav-link" data-scroll-target="#accessing-the-parts-of-a-simlist"><span class="header-section-number">7.3</span> Accessing the parts of a <code>simList</code></a>
+  <li>
+<a href="#accessing-the-parts-of-a-simlist" id="toc-accessing-the-parts-of-a-simlist" class="nav-link" data-scroll-target="#accessing-the-parts-of-a-simlist"><span class="header-section-number">7.3</span> Accessing the parts of a <code>simList</code></a>
   <ul class="collapse">
-  <li><a href="#initializecreate-and-inspect-an-empty-simlist-object" id="toc-initializecreate-and-inspect-an-empty-simlist-object" class="nav-link" data-scroll-target="#initializecreate-and-inspect-an-empty-simlist-object"><span class="header-section-number">7.3.1</span> Initialize/create and inspect an empty <code>simList</code> object</a></li>
+<li><a href="#initializecreate-and-inspect-an-empty-simlist-object" id="toc-initializecreate-and-inspect-an-empty-simlist-object" class="nav-link" data-scroll-target="#initializecreate-and-inspect-an-empty-simlist-object"><span class="header-section-number">7.3.1</span> Initialize/create and inspect an empty <code>simList</code> object</a></li>
   <li><a href="#compare-the-simlist-before-and-after-spades" id="toc-compare-the-simlist-before-and-after-spades" class="nav-link" data-scroll-target="#compare-the-simlist-before-and-after-spades"><span class="header-section-number">7.3.2</span> Compare the <code>simList</code> before and after <code>spades()</code></a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#try-on-your-own" id="toc-try-on-your-own" class="nav-link" data-scroll-target="#try-on-your-own"><span class="header-section-number">7.4</span> Try on your own</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">7.5</span> See also</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">7.6</span> Barebones R script</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SpaDESbasics.html">SpaDES 101</a></li><li class="breadcrumb-item"><a href="./simList.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The <code>simList</code> - What is it?</span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SpaDESbasics.html">SpaDES 101</a></li><li class="breadcrumb-item"><a href="./simList.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The <code>simList</code> - What is it?</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-simlist" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The <code>simList</code> - What is it?</span></span></h1>
 </div>
 
@@ -665,10 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-simple callout-tip">
+</header><div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -680,41 +654,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>In <code>R</code>, there is a default environment, called the <code>.GlobalEnv</code>. When you start typing in R and you create an object, it is “put” in the <code>.GlobalEnv</code></p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is in the .GlobalEnv</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>()  <span class="do">## the current environment is .GlobalEnv</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">globalenv</span>()  <span class="do">## the same</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="at">envir =</span> <span class="fu">environment</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># this is in the .GlobalEnv</span></span>
+<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span>  <span class="co">## the current environment is .GlobalEnv</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/environment.html">globalenv</a></span><span class="op">(</span><span class="op">)</span>  <span class="co">## the same</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>envir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/environment.html">environment</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The <code>.GlobalEnv</code> is convenient to begin in R, but it quickly becomes limiting. We need more places to put objects, and we need a way to be more in control of the things that we want to keep, share, modify etc. In <code>SpaDES</code>, this place is called the <code>simList</code>. It is a rich data object that acts like a list or an environment, i.e., we can put objects into it and use them later.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">repos =</span> repos),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/NewModuleIntro"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/NewModuleIntro"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.core)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">simInit</span>()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sim<span class="sc">$</span>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sim<span class="sc">$</span>b <span class="ot">&lt;-</span> sim<span class="sc">$</span>a <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sim<span class="sc">$</span>b</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">envir</span>(sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-core.predictiveecology.org/">SpaDES.core</a></span><span class="op">)</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">b</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">$</span><span class="va">a</span> <span class="op">+</span> <span class="fl">2</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">b</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-envir.html">envir</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
@@ -729,26 +697,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>The name <code>simList</code> has the word “list” in it, but it is actually an <code>environment</code>. The “sim” part of the name is historically inherited from “simulation” modelling, although you may want to do nothing of the sort with your SpaDES modules.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">simInit</span>()</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is</span>(sim, <span class="st">"environment"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">is</span><span class="op">(</span><span class="va">sim</span>, <span class="st">"environment"</span><span class="op">)</span></span>
+<span><span class="co"># [1] TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Accessing objects in the <code>simList</code> can be done with <code>$</code> or <code>[["object_name"]]</code> and objects are manipulated as they would normally – e.g.&nbsp;if <code>DF</code> is a <code>data.frame</code> one would use <code>sim$DF[1, 3]</code> to extract the value on the first row and third column.</p>
 <p>There is no limit to the number of objects you can add to a <code>simList</code> – the limit is, of course, your machine’s RAM.</p>
 </div>
 </div>
-<section id="where-does-simlist-come-from" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="where-does-simlist-come-from"><span class="header-section-number">7.1</span> Where does <code>simList</code> come from?</h2>
+<section id="where-does-simlist-come-from" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="where-does-simlist-come-from">
+<span class="header-section-number">7.1</span> Where does <code>simList</code> come from?</h2>
 <p>There is only one way in <code>SpaDES.core</code> to create a <code>simList</code>:</p>
 <ul>
-<li>using <a href="https://rdrr.io/cran/SpaDES.core/man/simInit.html"><code>simInit()</code></a> creates a <code>simList</code> object.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-</ul>
-</section>
-<section id="how-can-we-specify-a-simlist" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="how-can-we-specify-a-simlist"><span class="header-section-number">7.2</span> How can we specify a <code>simList</code>?</h2>
+<li>using <a href="https://rdrr.io/cran/SpaDES.core/man/simInit.html"><code>simInit()</code></a> creates a <code>simList</code> object.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</li>
+</ul></section><section id="how-can-we-specify-a-simlist" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="how-can-we-specify-a-simlist">
+<span class="header-section-number">7.2</span> How can we specify a <code>simList</code>?</h2>
 <p>A <code>simList</code> object is simply a structured data type containing various elements.</p>
 <p>The main components of a <code>simList</code> are:</p>
 <ol type="1">
@@ -756,13 +721,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>The event queue;</p></li>
 <li><p>A description of the data (object) dependencies.</p></li>
 </ol>
-<p>We can examine the <code>simList</code> object structure in the usual R fashion by printing (<code>show</code>ing) it, or by using <code>str()</code>:</p>
+<p>We can examine the <code>simList</code> object structure in the usual R fashion by printing (<code>show</code>ing) it, or by using <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>emptySim <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInit</span>()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>emptySim  <span class="co"># same as show(emptySim)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(emptySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">emptySim</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">emptySim</span>  <span class="co"># same as show(emptySim)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">emptySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-note">
@@ -776,9 +739,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="accessing-the-parts-of-a-simlist" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="accessing-the-parts-of-a-simlist"><span class="header-section-number">7.3</span> Accessing the parts of a <code>simList</code></h2>
+</section><section id="accessing-the-parts-of-a-simlist" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="accessing-the-parts-of-a-simlist">
+<span class="header-section-number">7.3</span> Accessing the parts of a <code>simList</code>
+</h2>
 <div class="columns-2">
 
 </div>
@@ -801,30 +764,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="initializecreate-and-inspect-an-empty-simlist-object" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="initializecreate-and-inspect-an-empty-simlist-object"><span class="header-section-number">7.3.1</span> Initialize/create and inspect an empty <code>simList</code> object</h3>
+<section id="initializecreate-and-inspect-an-empty-simlist-object" class="level3" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="initializecreate-and-inspect-an-empty-simlist-object">
+<span class="header-section-number">7.3.1</span> Initialize/create and inspect an empty <code>simList</code> object</h3>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>emptySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">emptySim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol type="1">
 <li><p>What are the names of each of the slots in the simList?</p></li>
-<li><p>What do each of these slots contain?</p>
-<p>Hint: see <a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/simList-class"><code>?'simList-class'</code></a></p></li>
+<li>
+<p>What do each of these slots contain?</p>
+<p>Hint: see <a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/simList-class"><code>?'simList-class'</code></a></p>
+</li>
 </ol>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(emptySim)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slotNames</span>(emptySim)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">getSlots</span>(<span class="st">'simList'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>?<span class="st">`</span><span class="at">simList-class</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">emptySim</span><span class="op">)</span></span>
+<span><span class="fu">slotNames</span><span class="op">(</span><span class="va">emptySim</span><span class="op">)</span></span>
+<span><span class="fu">getSlots</span><span class="op">(</span><span class="st">'simList'</span><span class="op">)</span></span>
+<span><span class="op">?</span><span class="va">`simList-class`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="simlist-accessor-functions" class="level4" data-number="7.3.1.1">
-<h4 data-number="7.3.1.1" class="anchored" data-anchor-id="simlist-accessor-functions"><span class="header-section-number">7.3.1.1</span> <code>simList</code> accessor functions</h4>
+<section id="simlist-accessor-functions" class="level4" data-number="7.3.1.1"><h4 data-number="7.3.1.1" class="anchored" data-anchor-id="simlist-accessor-functions">
+<span class="header-section-number">7.3.1.1</span> <code>simList</code> accessor functions</h4>
 <p><code>simList</code> accessor functions are used to determine the following:</p>
 <ol type="1">
 <li><p>the modules included in the simulation and their package dependencies;</p></li>
@@ -838,66 +799,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>We will try this with the simple linear module first, for which we’ve already defined default values for the input object <code>x</code> (see <a href="MetaDataAndModuleFiles.html" class="quarto-xref"><span>Chapter 5</span></a>).</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the sample modules that come with SpaDES.core</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>modulePath <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/NewModuleIntro/NewModule"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(<span class="at">params =</span> <span class="fu">list</span>(<span class="st">"My_linear_model"</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">length =</span> <span class="dv">20</span>)),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">modules =</span> <span class="st">"My_linear_model"</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> modulePath))</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the initial event Queue</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">events</span>(mySim)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># x is in the .xData slot -- this came from `.inputObjects`</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>mySim<span class="sc">$</span>x</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>mySim<span class="sc">@</span>.xData<span class="sc">$</span>x</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># all functions below come from SpaDES.core::</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># list modules used in the simulation</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">modules</span>(mySim)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># list module dependencies and packages used</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">depends</span>(mySim)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">packages</span>(mySim)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co"># list global and module-specific param values</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span>(mySim)</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(mySim)       <span class="co"># bonus: how do params() and P() differ?</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="co"># list start and end times</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="fu">times</span>(mySim)</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="fu">start</span>(mySim)</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">end</span>(mySim)</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="do">## and the 'current' time</span></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">time</span>(mySim)</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># get the simulation and module timeunits</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu">timeunit</span>(mySim)</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="fu">timeunits</span>(mySim)</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># get the scheduled and completed event queues</span></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">events</span>(mySim)</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="fu">completed</span>(mySim)</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="co"># list the objects (functions, data, etc.) stored in the simList</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="fu">objects</span>(mySim)</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="co"># list the file paths used in the simulation</span></span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="fu">paths</span>(mySim)</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="fu">inputPath</span>(mySim)</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="fu">outputPath</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Get the sample modules that come with SpaDES.core</span></span>
+<span></span>
+<span><span class="va">modulePath</span> <span class="op">&lt;-</span> <span class="st">"~/SpaDES_book/NewModuleIntro/NewModule"</span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span>params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"My_linear_model"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>length <span class="op">=</span> <span class="fl">20</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>                 modules <span class="op">=</span> <span class="st">"My_linear_model"</span>,</span>
+<span>                 paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">modulePath</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Look at the initial event Queue</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># x is in the .xData slot -- this came from `.inputObjects`</span></span>
+<span><span class="va">mySim</span><span class="op">$</span><span class="va">x</span></span>
+<span><span class="va">mySim</span><span class="op">@</span><span class="va">.xData</span><span class="op">$</span><span class="va">x</span></span>
+<span></span>
+<span><span class="co"># all functions below come from SpaDES.core::</span></span>
+<span><span class="co"># list modules used in the simulation</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-modules.html">modules</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># list module dependencies and packages used</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-modules.html">depends</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/packages.html">packages</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># list global and module-specific param values</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">P</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span>       <span class="co"># bonus: how do params() and P() differ?</span></span>
+<span></span>
+<span><span class="co"># list start and end times</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-times.html">times</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu">start</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu">end</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="co">## and the 'current' time</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/time.html">time</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># get the simulation and module timeunits</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-times.html">timeunit</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-times.html">timeunits</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># get the scheduled and completed event queues</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># list the objects (functions, data, etc.) stored in the simList</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">objects</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># list the file paths used in the simulation</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-paths.html">paths</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-paths.html">inputPath</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-paths.html">outputPath</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Now run the simulation</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a deep copy of the simList (data.table; R6; environments;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   plus some other object classes are pass by reference)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mySimOut <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">Copy</span>(mySim) </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>mySimOut <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySimOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># make a deep copy of the simList (data.table; R6; environments;</span></span>
+<span><span class="co">#   plus some other object classes are pass by reference)</span></span>
+<span><span class="va">mySimOut</span> <span class="op">&lt;-</span> <span class="fu">reproducible</span><span class="fu">::</span><span class="fu"><a href="https://reproducible.predictiveecology.org/reference/Copy.html">Copy</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span> </span>
+<span><span class="va">mySimOut</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">mySimOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
@@ -912,66 +869,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>If you don’t know what an <code>environment</code> is in <code>R</code>, it is OK. The most important feature of an <code>environment</code> is that it employs <code>pass-by-reference</code>, which means it is <strong>not copied</strong> when it is “assigned” somewhere. This makes <code>SpaDES</code> fast enough to use for huge workflows.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">simInit</span>()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sim<span class="sc">$</span>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>simNew <span class="ot">&lt;-</span> sim</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>simNew<span class="sc">$</span>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># what value will this have?</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>sim<span class="sc">$</span>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span><span class="va">simNew</span> <span class="op">&lt;-</span> <span class="va">sim</span></span>
+<span><span class="va">simNew</span><span class="op">$</span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
+<span></span>
+<span><span class="co"># what value will this have?</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="compare-the-simlist-before-and-after-spades" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="compare-the-simlist-before-and-after-spades"><span class="header-section-number">7.3.2</span> Compare the <code>simList</code> before and after <code>spades()</code></h3>
+</section></section><section id="compare-the-simlist-before-and-after-spades" class="level3" data-number="7.3.2"><h3 data-number="7.3.2" class="anchored" data-anchor-id="compare-the-simlist-before-and-after-spades">
+<span class="header-section-number">7.3.2</span> Compare the <code>simList</code> before and after <code>spades()</code>
+</h3>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">times</span>(mySim)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">times</span>(mySimOut)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">objects</span>(mySim)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">objects</span>(mySimOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-times.html">times</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-times.html">times</a></span><span class="op">(</span><span class="va">mySimOut</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">objects</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">objects</a></span><span class="op">(</span><span class="va">mySimOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-</section>
-<section id="try-on-your-own" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="try-on-your-own"><span class="header-section-number">7.4</span> Try on your own</h2>
+</section></section><section id="try-on-your-own" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="try-on-your-own">
+<span class="header-section-number">7.4</span> Try on your own</h2>
 <ul>
-<li><p>Repeat the above with more complex modules. Use the accessor functions to look at what inside the <code>simList</code> and try passing different parameter values or inputs.</p>
+<li>
+<p>Repeat the above with more complex modules. Use the accessor functions to look at what inside the <code>simList</code> and try passing different parameter values or inputs.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>modulePath <span class="ot">&lt;-</span> <span class="fu">getSampleModules</span>(<span class="fu">tempdir</span>())</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># options(spades.loadReqdPkgs = FALSE) # we don't need to check for packages in this example</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(<span class="at">modules =</span> <span class="fu">dir</span>(modulePath[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> modulePath),</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">objects =</span> <span class="fu">list</span>(<span class="at">b =</span> <span class="dv">1</span>))</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">modulePath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/getSampleFiles.html">getSampleModules</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># options(spades.loadReqdPkgs = FALSE) # we don't need to check for packages in this example</span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span>modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="va">modulePath</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="va">modulePath</span><span class="op">)</span>,</span>
+<span>objects <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>b <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div></li>
-</ul>
-</section>
-<section id="see-also" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="see-also"><span class="header-section-number">7.5</span> See also</h2>
+</div>
+</li>
+</ul></section><section id="see-also" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">7.5</span> See also</h2>
 <p><a href="http://adv-r.had.co.nz/Environments.html">Environments - Advanced R</a></p>
 <p><a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/simList-class"><code>?'simList-class'</code></a></p>
 <p><a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/envir"><code>?SpaDES.core::envir</code></a></p>
 <p><a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/simInit"><code>?SpaDES.core::simInit</code></a></p>
 <p><a href="https://rdocumentation.org/packages/SpaDES.core/versions/2.0.5/topics/spades"><code>?SpaDES.core::spades</code></a></p>
-</section>
-<section id="barebones-r-script" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">7.6</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">7.6</span> Barebones R script</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is in the .GlobalEnv</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is in the .GlobalEnv</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">environment</span>()  <span class="do">## the current environment is .GlobalEnv</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">globalenv</span>()  <span class="do">## the same</span></span>
@@ -1093,16 +1038,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p>Note that <code>simInitAndSpades</code> calls <code>simInit</code> internally<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1518,9 +1457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./ModuleInputs.html" class="pagination-link" aria-label="Providing Module Inputs">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Providing Module Inputs</span></span>
       </a>          
@@ -1532,7 +1469,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

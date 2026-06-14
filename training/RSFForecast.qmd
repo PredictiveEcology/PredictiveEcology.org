@@ -102,6 +102,7 @@ layers from Google Drive or other sources.
 ```{r setLibPaths}
 #| eval: true
 #| include: false
+#| purl: false
 # during render, just use the developer's package path; otherwise we can get "can't unload package" errors
 options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.verbose = 0)
 ```
@@ -113,7 +114,7 @@ options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.v
 #| outputs: false
 #| message: false
 #| warning: false
-#| code-fold: true
+#| code-fold: false
 #| code-summary: "Show code"
 # get the latest versions of the predictive ecology R packages
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
@@ -227,8 +228,10 @@ out <- setupProject(
 )
 ```
 
+Now run the modules with `simInitAndSpades2`
 
 ```{r rsf-shown}
+#| code-fold: false
 #| eval: false
 results <- SpaDES.core::simInitAndSpades2(out)
 ```
@@ -237,7 +240,8 @@ results <- SpaDES.core::simInitAndSpades2(out)
 #| include: false
 #| eval: true
 #| cache: false
-cacheDig <- reproducible::CacheDigest(out)$preDigest 
+#| purl: false
+cacheDig <- reproducible::CacheDigest(out)$preDigest
 cacheDig <- reproducible::CacheDigest(cacheDig[!names(cacheDig) %in% "paths"])$outputHash
 
 cacheFile <- file.path(out$paths$cachePath, paste0("rsf_results_", substr(cacheDig, 1, 8), ".qs2"))
@@ -413,12 +417,20 @@ future and current predicted use.
 
 ```{r RSFsummary}
 #| eval: true
+#| outputs: true
 diffMap <- results$simPred$year2075 - results$simPred$year2025
 terra::global(diffMap, fun = 'mean', na.rm = T)[[1]]
 
 diffBinMap <- results$simBinMap$year2075 - results$simBinMap$year2025
 terra::global(diffBinMap, fun = 'mean', na.rm = T)[[1]]
+```
 
+```{r plot}
+#| eval: true
+#| fig.width: 7
+#| fig.height: 5
+#| fig.cap: "Difference in RSF predicted bins, 2075 minus 2025"
+terra::plot(diffBinMap, col = rev(terra::map.pal("differences")))
 ```
 
 ## How is this useful?

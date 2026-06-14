@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Ceres Barros">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>16&nbsp; Forest Landscape Modelling with LandR and setupProject – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -79,7 +76,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -103,8 +99,7 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -130,13 +125,9 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -302,13 +293,10 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -319,7 +307,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -339,8 +327,8 @@ div.csl-indent {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -357,13 +345,13 @@ div.csl-indent {
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -372,7 +360,7 @@ div.csl-indent {
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -396,14 +384,12 @@ div.csl-indent {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -411,15 +397,11 @@ div.csl-indent {
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -445,8 +427,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -465,7 +447,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -474,8 +456,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -512,7 +494,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -521,8 +503,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -537,7 +519,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -547,7 +529,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -556,8 +538,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -594,7 +576,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -603,8 +585,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -617,7 +599,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -631,39 +613,34 @@ div.csl-indent {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" id="toc-all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" class="nav-link active" data-scroll-target="#all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow"><span class="header-section-number">16.1</span> All the steps of an ecological modelling project in a continuous workflow</a></li>
+<li><a href="#all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" id="toc-all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" class="nav-link active" data-scroll-target="#all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow"><span class="header-section-number">16.1</span> All the steps of an ecological modelling project in a continuous workflow</a></li>
   <li><a href="#workflow-setup" id="toc-workflow-setup" class="nav-link" data-scroll-target="#workflow-setup"><span class="header-section-number">16.2</span> Workflow setup</a></li>
-  <li><a href="#run-simulation" id="toc-run-simulation" class="nav-link" data-scroll-target="#run-simulation"><span class="header-section-number">16.3</span> Run simulation</a>
+  <li>
+<a href="#run-simulation" id="toc-run-simulation" class="nav-link" data-scroll-target="#run-simulation"><span class="header-section-number">16.3</span> Run simulation</a>
   <ul class="collapse">
-  <li><a href="#inspect-the-workflow-its-inputs-outputs-and-parameters" id="toc-inspect-the-workflow-its-inputs-outputs-and-parameters" class="nav-link" data-scroll-target="#inspect-the-workflow-its-inputs-outputs-and-parameters"><span class="header-section-number">16.3.1</span> Inspect the workflow, its inputs, outputs and parameters</a></li>
+<li><a href="#inspect-the-workflow-its-inputs-outputs-and-parameters" id="toc-inspect-the-workflow-its-inputs-outputs-and-parameters" class="nav-link" data-scroll-target="#inspect-the-workflow-its-inputs-outputs-and-parameters"><span class="header-section-number">16.3.1</span> Inspect the workflow, its inputs, outputs and parameters</a></li>
   <li><a href="#turn-plotting-on-after-setting-up-the-workflow" id="toc-turn-plotting-on-after-setting-up-the-workflow" class="nav-link" data-scroll-target="#turn-plotting-on-after-setting-up-the-workflow"><span class="header-section-number">16.3.2</span> Turn plotting on <em>after</em> setting up the workflow</a></li>
   <li><a href="#extend-the-simulation" id="toc-extend-the-simulation" class="nav-link" data-scroll-target="#extend-the-simulation"><span class="header-section-number">16.3.3</span> Extend the simulation</a></li>
   <li><a href="#sec-LandRReplication" id="toc-sec-LandRReplication" class="nav-link" data-scroll-target="#sec-LandRReplication"><span class="header-section-number">16.3.4</span> Many replicates (somewhat <strong>experimental</strong>; actively developing)</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#sec-LandRValidation" id="toc-sec-LandRValidation" class="nav-link" data-scroll-target="#sec-LandRValidation"><span class="header-section-number">16.4</span> Validation (very experimental)</a></li>
   <li><a href="#sec-LandRScenarios" id="toc-sec-LandRScenarios" class="nav-link" data-scroll-target="#sec-LandRScenarios"><span class="header-section-number">16.5</span> Different scenarios and model selection</a></li>
   <li><a href="#sec-LandRdebug" id="toc-sec-LandRdebug" class="nav-link" data-scroll-target="#sec-LandRdebug"><span class="header-section-number">16.6</span> Debugging</a></li>
   <li><a href="#try-on-your-own" id="toc-try-on-your-own" class="nav-link" data-scroll-target="#try-on-your-own"><span class="header-section-number">16.7</span> Try on your own</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">16.8</span> See also</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">16.9</span> Barebones R script</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./LandRDemo_coreVeg.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./LandRDemo_coreVeg.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-LandRExample" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></h1>
 </div>
 
@@ -690,10 +667,7 @@ div.csl-indent {
   
 
 
-</header>
-
-
-<div class="callout callout-style-simple callout-tip">
+</header><div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -733,236 +707,206 @@ Important&nbsp;16.1: Google account needed for this example
 <p>During the <code>simInit()</code> (or <code>simInitAndSpades()</code>) call R will prompt you to either choose a previously authenticated account (if you have previously used <code>googledrive</code>) or to open a browser window and authenticate.</p>
 <p>Make sure you give <code>tidyverse</code> read/write access to your files:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/gdriveauth.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="467"></p>
+<figure class="figure"><p><img src="assets/img/gdriveauth.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="467"></p>
 </figure>
 </div>
 <p>We will eventually transition to <em>not</em> hosting data on Google. Until then, our apologies for any inconvenience.</p>
 </div>
 </div>
-<section id="all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow"><span class="header-section-number">16.1</span> All the steps of an ecological modelling project in a continuous workflow</h2>
-</section>
-<section id="workflow-setup" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="workflow-setup"><span class="header-section-number">16.2</span> Workflow setup</h2>
+<section id="all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow" class="level2" data-number="16.1"><h2 data-number="16.1" class="anchored" data-anchor-id="all-the-steps-of-an-ecological-modelling-project-in-a-continuous-workflow">
+<span class="header-section-number">16.1</span> All the steps of an ecological modelling project in a continuous workflow</h2>
+</section><section id="workflow-setup" class="level2" data-number="16.2"><h2 data-number="16.2" class="anchored" data-anchor-id="workflow-setup">
+<span class="header-section-number">16.2</span> Workflow setup</h2>
 <div class="cell">
-<details class="code-fold">
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OBJECTS needed within this function -----------------------------------</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    these need to come *before* any formal arguments</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    specifically these are needed for params.R</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquivCol =</span> <span class="st">"Boreal"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">vegLeadingProportion =</span> <span class="dv">0</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Named arguments for setupProject -- see ?SpaDES.project::setupProject for help</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>),</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_speciesData@main"</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_speciesParameters@main"</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_core@main"</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># , "PredictiveEcology/Biomass_regeneration@main"</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># packages only need to be specified if they are needed within this setupProject</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   DiagrammeR is for plotting later in this qmd</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/LandR@main"</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>               <span class="st">"DiagrammeR"</span>, <span class="st">"googledrive"</span>, <span class="st">"httr2"</span>, <span class="st">"terra"</span>),</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">"repos"</span> <span class="ot">=</span> repos,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reproducible.destinationPath"</span> <span class="ot">=</span> paths<span class="sc">$</span>inputPath,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Require.cloneFrom"</span> <span class="ot">=</span> <span class="fu">Sys.getenv</span>(<span class="st">"R_LIBS_USER"</span>), <span class="co"># faster package installs (from personal library)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spades.moduleCodeChecks"</span> <span class="ot">=</span> <span class="cn">FALSE</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># DYNAMIC MODEL SETUP ------------------------------------</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2001</span>, <span class="at">end =</span> <span class="dv">2031</span>),</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # Module optional parameters</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">#params = "PredictiveEcology/PredictiveEcology.org@training-book/tutos/LandRDemo_coreVeg/params.R",</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">sppEquivCol =</span> <span class="st">"Boreal"</span>, </span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">PSPdataTypes =</span> <span class="st">"dummy"</span>)), </span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # (more) INPUT OBJECTS -----------------------------------</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # these come after, so that we don't need to pre-install/load LandR</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # species lists/traits</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> {</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create and use a random study area</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lambert Conformal Conic for Canada: this is used in NRCan's "KNN" products</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    Biomass_corecrs <span class="ot">&lt;-</span> <span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    centre <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(<span class="fu">cbind</span>(<span class="sc">-</span><span class="fl">104.757</span>, <span class="fl">55.68663</span>), <span class="at">crs =</span> <span class="st">"epsg:4326"</span>) <span class="co"># Lat Long</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    centre <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(centre, Biomass_corecrs)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    studyArea <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">randomStudyArea</span>(centre, <span class="at">size =</span> <span class="fl">2e8</span>, <span class="at">seed =</span> <span class="dv">1234</span>)</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create a "larger" study area that can be used for parameter estimation, using</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   more datasets that will fall into this larger area</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaLarge =</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="at">width =</span> <span class="fl">3e4</span>),</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sppEquiv is a table that defines equivalent names for species </span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    e.g., Pice_mar and Pice_Mar are identical</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquiv =</span> {</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    speciesInStudy <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">speciesInStudyArea</span>(studyAreaLarge)</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    species <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">equivalentName</span>(speciesInStudy<span class="sc">$</span>speciesList,</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">df =</span> LandR<span class="sc">::</span>sppEquivalencies_CA, sppEquivCol)</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    LandR<span class="sc">::</span>sppEquivalencies_CA[Boreal <span class="sc">%in%</span> species]</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">speciesParams =</span> {</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      <span class="st">"shadetolerance"</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">Lari_Lar =</span> <span class="dv">1</span>, </span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>                              <span class="at">Pice_Gla =</span> <span class="dv">2</span>, <span class="at">Pice_Mar =</span> <span class="dv">3</span>, </span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>                              <span class="at">Pinu_Ban =</span> <span class="fl">1.5</span>, <span class="at">Popu_Tre =</span> <span class="dv">1</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>                              )</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OUTPUTS TO SAVE -----------------------</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputs =</span> {</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="co"># save to disk 2 objects, every year</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expand.grid</span>(<span class="at">objectName =</span> <span class="fu">c</span>(<span class="st">"cohortData"</span>, <span class="st">"pixelGroupMap"</span>),</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>                <span class="at">saveTime =</span> <span class="fu">seq</span>(times<span class="sc">$</span>start, times<span class="sc">$</span>end))</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Show code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  <span class="co"># OBJECTS needed within this function -----------------------------------</span></span>
+<span>  <span class="co">#    these need to come *before* any formal arguments</span></span>
+<span>  <span class="co">#    specifically these are needed for params.R</span></span>
+<span>  sppEquivCol <span class="op">=</span> <span class="st">"Boreal"</span>,</span>
+<span>  vegLeadingProportion <span class="op">=</span> <span class="fl">0</span>,</span>
+<span></span>
+<span>  <span class="co"># Named arguments for setupProject -- see ?SpaDES.project::setupProject for help</span></span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span><span class="op">)</span>,</span>
+<span></span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"PredictiveEcology/Biomass_speciesData@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_speciesParameters@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_core@main"</span></span>
+<span>    <span class="co"># , "PredictiveEcology/Biomass_regeneration@main"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="co"># packages only need to be specified if they are needed within this setupProject</span></span>
+<span>  <span class="co">#   DiagrammeR is for plotting later in this qmd</span></span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/LandR@main"</span>,</span>
+<span>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
+<span>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
+<span>               <span class="st">"DiagrammeR"</span>, <span class="st">"googledrive"</span>, <span class="st">"httr2"</span>, <span class="st">"terra"</span><span class="op">)</span>,</span>
+<span></span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    <span class="st">"repos"</span> <span class="op">=</span> <span class="va">repos</span>,</span>
+<span>    <span class="st">"reproducible.destinationPath"</span> <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span>,</span>
+<span>    <span class="st">"Require.cloneFrom"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"R_LIBS_USER"</span><span class="op">)</span>, <span class="co"># faster package installs (from personal library)</span></span>
+<span>    <span class="st">"spades.moduleCodeChecks"</span> <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="co"># DYNAMIC MODEL SETUP ------------------------------------</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2031</span><span class="op">)</span>,</span>
+<span>  <span class="co"># </span></span>
+<span>  <span class="co"># # Module optional parameters</span></span>
+<span>  <span class="co">#params = "PredictiveEcology/PredictiveEcology.org@training-book/tutos/LandRDemo_coreVeg/params.R",</span></span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="st">"Boreal"</span>, </span>
+<span>  PSPdataTypes <span class="op">=</span> <span class="st">"dummy"</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>  <span class="co"># </span></span>
+<span>  <span class="co"># # (more) INPUT OBJECTS -----------------------------------</span></span>
+<span>  <span class="co"># # these come after, so that we don't need to pre-install/load LandR</span></span>
+<span>  <span class="co"># # species lists/traits</span></span>
+<span>  studyArea <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="co"># create and use a random study area</span></span>
+<span>    <span class="co"># Lambert Conformal Conic for Canada: this is used in NRCan's "KNN" products</span></span>
+<span>    <span class="va">Biomass_corecrs</span> <span class="op">&lt;-</span> <span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span></span>
+<span>    <span class="va">centre</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/vect.html">vect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="op">-</span><span class="fl">104.757</span>, <span class="fl">55.68663</span><span class="op">)</span>, crs <span class="op">=</span> <span class="st">"epsg:4326"</span><span class="op">)</span> <span class="co"># Lat Long</span></span>
+<span>    <span class="va">centre</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/project.html">project</a></span><span class="op">(</span><span class="va">centre</span>, <span class="va">Biomass_corecrs</span><span class="op">)</span></span>
+<span>    <span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/randomStudyArea.html">randomStudyArea</a></span><span class="op">(</span><span class="va">centre</span>, size <span class="op">=</span> <span class="fl">2e8</span>, seed <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  <span class="co"># create a "larger" study area that can be used for parameter estimation, using</span></span>
+<span>  <span class="co">#   more datasets that will fall into this larger area</span></span>
+<span>  studyAreaLarge <span class="op">=</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/buffer.html">buffer</a></span><span class="op">(</span><span class="va">studyArea</span>, width <span class="op">=</span> <span class="fl">3e4</span><span class="op">)</span>,</span>
+<span>  </span>
+<span>  <span class="co"># sppEquiv is a table that defines equivalent names for species </span></span>
+<span>  <span class="co">#    e.g., Pice_mar and Pice_Mar are identical</span></span>
+<span>  sppEquiv <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">speciesInStudy</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/speciesInStudyArea.html">speciesInStudyArea</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/equivalentName.html">equivalentName</a></span><span class="op">(</span><span class="va">speciesInStudy</span><span class="op">$</span><span class="va">speciesList</span>,</span>
+<span>                                     df <span class="op">=</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span>, <span class="va">sppEquivCol</span><span class="op">)</span></span>
+<span>    <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="va">Boreal</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">species</span><span class="op">]</span></span>
+<span>  <span class="op">}</span>,</span>
+<span></span>
+<span>  speciesParams <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      <span class="st">"shadetolerance"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Lari_Lar <span class="op">=</span> <span class="fl">1</span>, </span>
+<span>                              Pice_Gla <span class="op">=</span> <span class="fl">2</span>, Pice_Mar <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                              Pinu_Ban <span class="op">=</span> <span class="fl">1.5</span>, Popu_Tre <span class="op">=</span> <span class="fl">1</span></span>
+<span>                              <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span></span>
+<span>  <span class="co"># OUTPUTS TO SAVE -----------------------</span></span>
+<span>  outputs <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="co"># save to disk 2 objects, every year</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cohortData"</span>, <span class="st">"pixelGroupMap"</span><span class="op">)</span>,</span>
+<span>                saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>If you have a look at other chapters in this section about <code>setupProject</code>, you will see some variation in the way we setup the workflows:</p>
 <ul>
 <li><p><code>paths</code>. Here we left the defaults for all paths (see <a href="https://spades-project.predictiveecology.org/reference/setup.html"><code>?setupPaths()</code></a> for the list of path options) except for the project location (<code>projectPath</code>) and the location of the package library (<code>packagePath</code>, which will be placed inside <code>projectPath</code>).</p></li>
 <li><p><code>options</code>. We also set a couple of “global options” that determine the where data will be downloaded to (“reproducible.destinationPath”). This will be the same as the default directory to look for inputs (“spades.inputPath”). Notice how we used <code>paths$</code> to get these directory paths from the <code>paths</code> object that <code>setupProject</code> creates (based on the <code>paths</code> argument above) prior to setting the options.</p></li>
-<li><p>other arguments (<code>...</code>). Almost all other arguments in the call above were part of the <code>...</code> (in the <code>setupProject</code> function). These are objects that are objects that are used by modules. Because modules have defaults for most objects, these tend to be “optionaly”; but the more a user understands a module, the more clearly the defaults can be evaluated as to whether they are sufficient or not. To avoid creating objects in the <code>.GlobalEnv</code> first, we take advantage of <code>setupProject</code>‘s ability to run the code in <code>{ }</code> and make these polygons. Note that these arguments are passed prior to any ’formal arguments’ (see <a href="https://www.rdocumentation.org/packages/methods/versions/3.6.2/topics/methodUtilities"><code>?formalArgs()</code></a>)</p></li>
+<li><p>other arguments (<code>...</code>). Almost all other arguments in the call above were part of the <code>...</code> (in the <code>setupProject</code> function). These are objects that are objects that are used by modules. Because modules have defaults for most objects, these tend to be “optionaly”; but the more a user understands a module, the more clearly the defaults can be evaluated as to whether they are sufficient or not. To avoid creating objects in the <code>.GlobalEnv</code> first, we take advantage of <code>setupProject</code>‘s ability to run the code in <code><a href="https://rdrr.io/r/base/Paren.html">{ }</a></code> and make these polygons. Note that these arguments are passed prior to any ’formal arguments’ (see <a href="https://www.rdocumentation.org/packages/methods/versions/3.6.2/topics/methodUtilities"><code>?formalArgs()</code></a>)</p></li>
 <li><p>There are 4 objects that tend to be “required” in the modules that have emerged from the Predictive Ecology group. These are about the spatial area to be covered by the project: e.g.&nbsp;<code>studyArea</code>, <code>studyAreaLarge</code>, <code>rasterToMatch</code> and <code>rasterToMatchLarge</code>. or whose defaults we want to override (e.g., the species table, <code>sppEquiv</code>, and trait values, <code>speciesParams</code>).</p></li>
-</ul>
-</section>
-<section id="run-simulation" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="run-simulation"><span class="header-section-number">16.3</span> Run simulation</h2>
+</ul></section><section id="run-simulation" class="level2" data-number="16.3"><h2 data-number="16.3" class="anchored" data-anchor-id="run-simulation">
+<span class="header-section-number">16.3</span> Run simulation</h2>
 <!--
 ### One replicate
 -->
 <p>You can initialise the and run the workflow in two separate steps…</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initialise then run simulation </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># simInitOut &lt;- SpaDES.core::simInit2(out)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>simInitOut <span class="ot">&lt;-</span> <span class="fu">do.call</span>(SpaDES.core<span class="sc">::</span>simInit, out)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># initialise then run simulation </span></span>
+<span><span class="co"># simInitOut &lt;- SpaDES.core::simInit2(out)</span></span>
+<span><span class="va">simInitOut</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="va"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span>, <span class="va">out</span><span class="op">)</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>… or together, using <code>simInitAndSpades2()</code></p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="inspect-the-workflow-its-inputs-outputs-and-parameters" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="inspect-the-workflow-its-inputs-outputs-and-parameters"><span class="header-section-number">16.3.1</span> Inspect the workflow, its inputs, outputs and parameters</h3>
+<section id="inspect-the-workflow-its-inputs-outputs-and-parameters" class="level3" data-number="16.3.1"><h3 data-number="16.3.1" class="anchored" data-anchor-id="inspect-the-workflow-its-inputs-outputs-and-parameters">
+<span class="header-section-number">16.3.1</span> Inspect the workflow, its inputs, outputs and parameters</h3>
 <p>Now that we have a simulation we can inspect it. Let’s assume you initialised and ran your simulation with two separate <code>simInit2()</code> and <code>spades()</code> calls.</p>
 <p>Inspect module connections and between-module object flows:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">moduleDiagram</span>(simInitOut)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">objectDiagram</span>(simInitOut)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/moduleDiagram.html">moduleDiagram</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/objectDiagram.html">objectDiagram</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/LandRDemo_modDiagram.png" class="img-fluid figure-img"></p>
-<figcaption>LandR vegetation module ‘connections’.</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/LandRDemo_modDiagram.png" class="img-fluid figure-img"></p>
+<figcaption>LandR vegetation module ‘connections’.</figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/LandRDemo_objDiagram.png" class="img-fluid figure-img"></p>
-<figcaption>Object flows between modules (truncated).</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/LandRDemo_objDiagram.png" class="img-fluid figure-img"></p>
+<figcaption>Object flows between modules (truncated).</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 <p>Note the scheduling of the <code>init</code> events in <code>simInitOut</code> and how <code>simOut</code> has <em>future</em> events scheduled too – thanks to this, we can extend the simulation beyond the original <code>SpaDES.core::end(sim)</code> of 2031 (<a href="#extend-the-simulation">Extend the simulation</a>).</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">events</span>(simInitOut)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">events</span>(simOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We can also have a look at the completed events:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">completed</span>(simInitOut)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">completed</span>(simOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Finally, the following accessor functions will show a list of model inputs, outputs and parameters:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">inputs</span>(simOut)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">outputs</span>(simOut)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">parameters</span>(simOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-inputs.html">inputs</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-outputs.html">outputs</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">parameters</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We could even plot some of the input and output rasters to check that they are as we expected – no need to look for these objects files, they are all in the <code>simList</code>.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># spatial inputs from list above</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>studyAreaLarge, <span class="at">col =</span> <span class="st">"navyblue"</span>, <span class="at">main =</span> <span class="st">"studyArea &amp; studyAreaLarge"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>studyArea, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># spatial outputs from list above</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>vegTypeMap, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">col =</span> <span class="fu">hcl.colors</span>(<span class="at">palette =</span> <span class="st">"Dynamic"</span>, <span class="at">n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(simOut<span class="sc">$</span>vegTypeMap[]))), </span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">""</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>speciesLayers)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># spatial inputs from list above</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">studyAreaLarge</span>, col <span class="op">=</span> <span class="st">"navyblue"</span>, main <span class="op">=</span> <span class="st">"studyArea &amp; studyAreaLarge"</span><span class="op">)</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">studyArea</span>, col <span class="op">=</span> <span class="st">"lightblue"</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># spatial outputs from list above</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">vegTypeMap</span>, </span>
+<span>            col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">hcl.colors</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dynamic"</span>, n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">vegTypeMap</span><span class="op">[</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>            main <span class="op">=</span> <span class="st">""</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">speciesLayers</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="3">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/LandRDemo_SASAL.png" class="img-fluid figure-img"></p>
-<figcaption>Study areas used for parameterisation (dark blue) and simulation (light blue).</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/LandRDemo_SASAL.png" class="img-fluid figure-img"></p>
+<figcaption>Study areas used for parameterisation (dark blue) and simulation (light blue).</figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/LandRDemo_vegTypeMap.png" class="img-fluid figure-img"></p>
-<figcaption>Last year’s vegetation type map (leading species).</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/LandRDemo_vegTypeMap.png" class="img-fluid figure-img"></p>
+<figcaption>Last year’s vegetation type map (leading species).</figcaption></figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/LandRDemo_sppLayers.png" class="img-fluid figure-img"></p>
-<figcaption>Percent cover of species retained for simulation.</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/LandRDemo_sppLayers.png" class="img-fluid figure-img"></p>
+<figcaption>Percent cover of species retained for simulation.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -975,19 +919,16 @@ Important&nbsp;16.1: Google account needed for this example
 <p>More importantly in our view, is the ability to inspect statistical models used to fit model parameters. This is possible because the developers have declared the fitted statistical model objects as module outputs. Often, this type of information is buried in supplementary materials of papers and incomplete (e.g.&nbsp;coefficients and goodness-of-fit statistics are presented, but the entire model object, with its fitted values, residuals, etc., are not).</p>
 <p>By exporting entire model objects, and making them available via repeatable code or data repositories, model transparency and potential scrutiny are massively increased.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model used to estimate species establishment probabilities</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(simOut<span class="sc">$</span>modelBiomass<span class="sc">$</span>mod)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simOut<span class="sc">$</span>modelBiomass<span class="sc">$</span>mod)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model used to calibrate Picea glauca's growth parameters</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(simOut<span class="sc">$</span>speciesGrowthCurves<span class="sc">$</span>Pice_Gla<span class="sc">$</span>NonLinearModel<span class="sc">$</span>Pice_Gla)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># model used to estimate species establishment probabilities</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">modelBiomass</span><span class="op">$</span><span class="va">mod</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">modelBiomass</span><span class="op">$</span><span class="va">mod</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># model used to calibrate Picea glauca's growth parameters</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">speciesGrowthCurves</span><span class="op">$</span><span class="va">Pice_Gla</span><span class="op">$</span><span class="va">NonLinearModel</span><span class="op">$</span><span class="va">Pice_Gla</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="turn-plotting-on-after-setting-up-the-workflow" class="level3" data-number="16.3.2">
-<h3 data-number="16.3.2" class="anchored" data-anchor-id="turn-plotting-on-after-setting-up-the-workflow"><span class="header-section-number">16.3.2</span> Turn plotting on <em>after</em> setting up the workflow</h3>
+</section><section id="turn-plotting-on-after-setting-up-the-workflow" class="level3" data-number="16.3.2"><h3 data-number="16.3.2" class="anchored" data-anchor-id="turn-plotting-on-after-setting-up-the-workflow">
+<span class="header-section-number">16.3.2</span> Turn plotting on <em>after</em> setting up the workflow</h3>
 <p>We can change parameters and re-run the simulation to, e.g., activate live plotting in <em>Biomass_core</em>, without having to</p>
 <ul>
 <li><p>change the parameter provided to <code>setupProject</code></p></li>
@@ -996,28 +937,22 @@ Important&nbsp;16.1: Google account needed for this example
 <p>Note that because <code>simOut</code> has some objects that have “pointers”, like <code>SpatRaster</code> objects that come from <code>tif</code> files, we may not be able to start from the previous <code>simInitOut</code>. In other words, even though it looks like it is the object that emerges from the <code>simInit</code> function and therefore, we should be able to pass it to <code>spades</code>, it may not work as desired (can test this, if desired). This means that <code>simInitOut</code> may need to re-generated, otherwise <code>spades</code> would inherit some objects that were changed during the previous <code>spades</code>.</p>
 <p>Thanks to internal caching, it will only take seconds to “redo” <code>simInitOut</code>. You will also notice that <code>init</code> events are retrieved from cache, this time around<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>simInitOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInit2</span>(out)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">P</span>(simInitOut, <span class="at">param =</span> <span class="st">".plots"</span>, <span class="at">module =</span> <span class="st">"Biomass_core"</span>) <span class="ot">&lt;-</span> <span class="st">"screen"</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">P</span>(simInitOut, <span class="at">param =</span> <span class="st">".plotMaps"</span>, <span class="at">module =</span> <span class="st">"Biomass_core"</span>) <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simInitOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">P</a></span><span class="op">(</span><span class="va">simInitOut</span>, param <span class="op">=</span> <span class="st">".plots"</span>, module <span class="op">=</span> <span class="st">"Biomass_core"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"screen"</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">P</a></span><span class="op">(</span><span class="va">simInitOut</span>, param <span class="op">=</span> <span class="st">".plotMaps"</span>, module <span class="op">=</span> <span class="st">"Biomass_core"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="extend-the-simulation" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="extend-the-simulation"><span class="header-section-number">16.3.3</span> Extend the simulation</h3>
-<p>We can also keep it going for a few more years. Use <code>SpaDES.core::end()</code> to extend the simulation another 20 years and then call <code>SpaDES.core::spades()</code> on the <em>changed</em> <code>simList</code> (not the one output by `<code>SpaDES.core::simInit2()</code>) to <em>resume</em> the simulation from 2031.</p>
+</section><section id="extend-the-simulation" class="level3" data-number="16.3.3"><h3 data-number="16.3.3" class="anchored" data-anchor-id="extend-the-simulation">
+<span class="header-section-number">16.3.3</span> Extend the simulation</h3>
+<p>We can also keep it going for a few more years. Use <code>SpaDES.core::end()</code> to extend the simulation another 20 years and then call <code><a href="https://spades-core.predictiveecology.org/reference/spades.html">SpaDES.core::spades()</a></code> on the <em>changed</em> <code>simList</code> (not the one output by `<code><a href="https://spades-core.predictiveecology.org/reference/simInit.html">SpaDES.core::simInit2()</a></code>) to <em>resume</em> the simulation from 2031.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">end</span>(simOut) <span class="ot">&lt;-</span> <span class="dv">2061</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu">end</span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">2061</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="sec-LandRReplication" class="level3" data-number="16.3.4">
-<h3 data-number="16.3.4" class="anchored" data-anchor-id="sec-LandRReplication"><span class="header-section-number">16.3.4</span> Many replicates (somewhat <strong>experimental</strong>; actively developing)</h3>
+</section><section id="sec-LandRReplication" class="level3" data-number="16.3.4"><h3 data-number="16.3.4" class="anchored" data-anchor-id="sec-LandRReplication">
+<span class="header-section-number">16.3.4</span> Many replicates (somewhat <strong>experimental</strong>; actively developing)</h3>
 <p>Dynamic ecological models like LandR often simulate stochastic ecological processes, like dispersal, probability of germination, or fire spread (see <a href="ForestsAndFire.html" class="quarto-xref"><span>Chapter 17</span></a>), which requires replicating simulations. The number of replicates will largely depend on the variability generated by the model. The more variability, the more replicates needed.</p>
 <p>The set of LandR modules used here generates little variation in tree species dynamics and 10 replicates are sufficient.</p>
 <p>We use <a href="https://spades-experiment.predictiveecology.org/reference/experiment2.html"><code>SpaDES.experiment::experiment2()</code></a> to do two things:</p>
@@ -1027,38 +962,30 @@ Important&nbsp;16.1: Google account needed for this example
 </ul>
 <div class="cell">
 <div id="lst-exp" class="r cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-lst figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;16.1: Sequential replication
-</figcaption>
-<div aria-describedby="lst-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>Require<span class="sc">::</span><span class="fu">Install</span>(<span class="st">"SpaDES.experiment (HEAD)"</span>, <span class="at">repos =</span> <span class="fu">unique</span>(repos))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>simInitOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInit2</span>(out)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>future<span class="sc">::</span><span class="fu">plan</span>(<span class="st">"sequential"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>simOutExperiment <span class="ot">&lt;-</span> SpaDES.experiment<span class="sc">::</span><span class="fu">experiment2</span>(simInitOut, <span class="at">replicates =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</figcaption><div aria-describedby="lst-exp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">Require</span><span class="fu">::</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/Require.html">Install</a></span><span class="op">(</span><span class="st">"SpaDES.experiment (HEAD)"</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">repos</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">simInitOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">future</span><span class="fu">::</span><span class="fu"><a href="https://future.futureverse.org/reference/plan.html">plan</a></span><span class="op">(</span><span class="st">"sequential"</span><span class="op">)</span></span>
+<span><span class="va">simOutExperiment</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.experiment</span><span class="fu">::</span><span class="fu">experiment2</span><span class="op">(</span><span class="va">simInitOut</span>, replicates <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </figure>
 </div>
 </div>
-<section id="parallel" class="level4" data-number="16.3.4.1">
-<h4 data-number="16.3.4.1" class="anchored" data-anchor-id="parallel"><span class="header-section-number">16.3.4.1</span> Parallel</h4>
+<section id="parallel" class="level4" data-number="16.3.4.1"><h4 data-number="16.3.4.1" class="anchored" data-anchor-id="parallel">
+<span class="header-section-number">16.3.4.1</span> Parallel</h4>
 <p>This works, in theory, on Windows, Linux and MacOS, but in practice seems to be less problematic on Linux.</p>
 <div class="cell">
 <div id="lst-expparall" class="r cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
-<figure class="quarto-float quarto-float-lst figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-expparall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-lst figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-expparall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Listing&nbsp;16.2: Parallel replication
-</figcaption>
-<div aria-describedby="lst-expparall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>future<span class="sc">::</span><span class="fu">plan</span>(<span class="st">"multisession"</span>, <span class="at">workers =</span> <span class="dv">2</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>simOutExperiment <span class="ot">&lt;-</span> SpaDES.experiment<span class="sc">::</span><span class="fu">experiment2</span>(simInitOut, <span class="at">replicates =</span> <span class="dv">2</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>future<span class="sc">:::</span><span class="fu">ClusterRegistry</span>(<span class="st">"stop"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</figcaption><div aria-describedby="lst-expparall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">future</span><span class="fu">::</span><span class="fu"><a href="https://future.futureverse.org/reference/plan.html">plan</a></span><span class="op">(</span><span class="st">"multisession"</span>, workers <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">simOutExperiment</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.experiment</span><span class="fu">::</span><span class="fu">experiment2</span><span class="op">(</span><span class="va">simInitOut</span>, replicates <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu">future</span><span class="fu">:::</span><span class="fu">ClusterRegistry</span><span class="op">(</span><span class="st">"stop"</span><span class="op">)</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </figure>
@@ -1080,99 +1007,88 @@ Independence between replicates
 <li><p>replicates may <em>share the parameterisation and initialisation</em> but have independent ecological process simulation.</p></li>
 </ul>
 <p>Neither is better than the other and the one to chose depends on the questions and hypotheses being asked.</p>
-<p>In the example above, replicates share the same parameters/initial conditions because they all access the same cached objects from the <code>init</code> events – scroll up to see printed outputs from <code>experiment2()</code>.</p>
+<p>In the example above, replicates share the same parameters/initial conditions because they all access the same cached objects from the <code>init</code> events – scroll up to see printed outputs from <code><a href="http://spades-project.predictiveecology.org/reference/experiment2.html">experiment2()</a></code>.</p>
 <p>To have fully independent replication we can use <code>experiment2(..., useCache = FALSE)</code></p>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="sec-LandRValidation" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="sec-LandRValidation"><span class="header-section-number">16.4</span> Validation (very experimental)</h2>
+</section></section></section><section id="sec-LandRValidation" class="level2" data-number="16.4"><h2 data-number="16.4" class="anchored" data-anchor-id="sec-LandRValidation">
+<span class="header-section-number">16.4</span> Validation (very experimental)</h2>
 <p>Now that we have several replicates, we can use <em>Biomass_validationKNN</em> to run some validation statistics.</p>
 <p>Integrating model validation as part of an ecological modelling workflow ensures that when model predictions are repeated under the same or different conditions, or new data arrives for validation, they can be readily (re-evaluated).</p>
 <p>Note that, for convenience, we use <code>simOut</code> to access many of the necessary inputs for <em>Biomass_validationKNN</em>, but we could have used one of the <code>simLists</code> in <code>simOutExperiment</code> instead.</p>
 <p>We pass all raster objects from the saved files directly, to ensure they are linked to these file paths explicitly.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>outValid <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">outputPath =</span> <span class="st">"validation/"</span>),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"LandR.assertions"</span> <span class="ot">=</span> <span class="cn">TRUE</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"repos"</span> <span class="ot">=</span> repos,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reproducible.destinationPath"</span> <span class="ot">=</span> paths<span class="sc">$</span>inputPath,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spades.inputPath"</span> <span class="ot">=</span> paths<span class="sc">$</span>inputPath,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spades.moduleCodeChecks"</span> <span class="ot">=</span> <span class="cn">FALSE</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_validationKNN@main"</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># SIMULATION SETUP --------------------------------</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># PARAMETERS --------------------------------------</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="st">"Biomass_validationKNN"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"minCoverThreshold"</span> <span class="ot">=</span> SpaDES.core<span class="sc">::</span><span class="fu">params</span>(simOut)<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span>minCoverThreshold,</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pixelGroupBiomassClass"</span> <span class="ot">=</span> SpaDES.core<span class="sc">::</span><span class="fu">params</span>(simOut)<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span>pixelGroupBiomassClass,</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deciduousCoverDiscount"</span> <span class="ot">=</span> SpaDES.core<span class="sc">::</span><span class="fu">params</span>(simOut)<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span>deciduousCoverDiscount,</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sppEquivCol"</span> <span class="ot">=</span> SpaDES.core<span class="sc">::</span><span class="fu">params</span>(simOut)<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span>sppEquivCol,</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">".plots"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"png"</span>) <span class="co"># save all to .png</span></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  )),</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># INPUT OBJECTS -----------------------------------</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> {</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    simOut<span class="sc">$</span>studyArea</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch =</span> {</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">deepcopy</span>(simOut<span class="sc">$</span>rasterToMatch)</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">rawBiomassMapStart =</span> {</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">deepcopy</span>(simOut<span class="sc">$</span>rasterToMatchLarge)</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">simulationOutputs =</span> {</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lapply</span>(simOutExperiment, SpaDES.core<span class="sc">::</span>outputs) <span class="sc">|&gt;</span> </span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rbindlist</span>()</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquiv =</span> simOut<span class="sc">$</span>sppEquiv,</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquivCol =</span> simOut<span class="sc">$</span>sppEquivCol,</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppColorVect =</span> simOut<span class="sc">$</span>sppColorVect,</span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">speciesLayersStart =</span> {</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">deepcopy</span>(simOut<span class="sc">$</span>speciesLayers)</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">standAgeMapStart =</span> {</span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">deepcopy</span>(simOut<span class="sc">$</span>standAgeMap)</span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>simOutValid <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(outValid)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">outValid</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>,</span>
+<span>               outputPath <span class="op">=</span> <span class="st">"validation/"</span><span class="op">)</span>,</span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    <span class="st">"LandR.assertions"</span> <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    <span class="st">"repos"</span> <span class="op">=</span> <span class="va">repos</span>,</span>
+<span>    <span class="st">"reproducible.destinationPath"</span> <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span>,</span>
+<span>    <span class="st">"spades.inputPath"</span> <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span>,</span>
+<span>    <span class="st">"spades.moduleCodeChecks"</span> <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"PredictiveEcology/Biomass_validationKNN@main"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  <span class="co"># SIMULATION SETUP --------------------------------</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">1</span>, end <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,</span>
+<span>  <span class="co"># PARAMETERS --------------------------------------</span></span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"Biomass_validationKNN"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    <span class="st">"minCoverThreshold"</span> <span class="op">=</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_borealDataPrep</span><span class="op">$</span><span class="va">minCoverThreshold</span>,</span>
+<span>    <span class="st">"pixelGroupBiomassClass"</span> <span class="op">=</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_borealDataPrep</span><span class="op">$</span><span class="va">pixelGroupBiomassClass</span>,</span>
+<span>    <span class="st">"deciduousCoverDiscount"</span> <span class="op">=</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_borealDataPrep</span><span class="op">$</span><span class="va">deciduousCoverDiscount</span>,</span>
+<span>    <span class="st">"sppEquivCol"</span> <span class="op">=</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">params</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span><span class="op">$</span><span class="va">Biomass_borealDataPrep</span><span class="op">$</span><span class="va">sppEquivCol</span>,</span>
+<span>    <span class="st">".plots"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"png"</span><span class="op">)</span> <span class="co"># save all to .png</span></span>
+<span>  <span class="op">)</span><span class="op">)</span>,</span>
+<span>  <span class="co"># INPUT OBJECTS -----------------------------------</span></span>
+<span>  studyArea <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">simOut</span><span class="op">$</span><span class="va">studyArea</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rasterToMatch <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/deepcopy.html">deepcopy</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">rasterToMatch</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rawBiomassMapStart <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/deepcopy.html">deepcopy</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">rasterToMatchLarge</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  simulationOutputs <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">simOutExperiment</span>, <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="va"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-outputs.html">outputs</a></span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>      <span class="fu">rbindlist</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  sppEquiv <span class="op">=</span> <span class="va">simOut</span><span class="op">$</span><span class="va">sppEquiv</span>,</span>
+<span>  sppEquivCol <span class="op">=</span> <span class="va">simOut</span><span class="op">$</span><span class="va">sppEquivCol</span>,</span>
+<span>  sppColorVect <span class="op">=</span> <span class="va">simOut</span><span class="op">$</span><span class="va">sppColorVect</span>,</span>
+<span>  speciesLayersStart <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/deepcopy.html">deepcopy</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">speciesLayers</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  standAgeMapStart <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/deepcopy.html">deepcopy</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">standAgeMap</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">simOutValid</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">outValid</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="sec-LandRScenarios" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="sec-LandRScenarios"><span class="header-section-number">16.5</span> Different scenarios and model selection</h2>
+</section><section id="sec-LandRScenarios" class="level2" data-number="16.5"><h2 data-number="16.5" class="anchored" data-anchor-id="sec-LandRScenarios">
+<span class="header-section-number">16.5</span> Different scenarios and model selection</h2>
 <p>In <span class="citation" data-cites="barros2023">Barros et al. (<a href="references.html#ref-barros2023" role="doc-biblioref">2023</a>)</span>, the model was run with two different parameterisation approaches one that was “data hungry” and calibrated tree species growth parameters (using <em>Biomass_speciesParameters</em> as we have done above) and a simpler one that used default parameter values (without <em>Biomass_speciesParameters</em>).</p>
 <p>SpaDES and LandR allow us to swap parameterisation/calibration approaches easily and re-evaluate each and compare the models (see <span class="citation" data-cites="barros2023">Barros et al. (<a href="references.html#ref-barros2023" role="doc-biblioref">2023</a>)</span>).</p>
 <p>Do to this, we simply exclude <em>Biomass_speciesParameters</em> from <code>out</code> and run a second simulation. We also need to save the outputs in a different folder, or the previous ones will be overriden.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>out2 <span class="ot">&lt;-</span> out</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>out2<span class="sc">$</span>modules <span class="ot">&lt;-</span> out2<span class="sc">$</span>modules[out2<span class="sc">$</span>modules <span class="sc">!=</span> <span class="st">"Biomass_speciesParameters"</span>]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>out2<span class="sc">$</span>paths<span class="sc">$</span>outputPath <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">normPath</span>(</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>, <span class="st">"outputsSim2"</span>))</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>simOut2 <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">out2</span> <span class="op">&lt;-</span> <span class="va">out</span></span>
+<span><span class="va">out2</span><span class="op">$</span><span class="va">modules</span> <span class="op">&lt;-</span> <span class="va">out2</span><span class="op">$</span><span class="va">modules</span><span class="op">[</span><span class="va">out2</span><span class="op">$</span><span class="va">modules</span> <span class="op">!=</span> <span class="st">"Biomass_speciesParameters"</span><span class="op">]</span></span>
+<span><span class="va">out2</span><span class="op">$</span><span class="va">paths</span><span class="op">$</span><span class="va">outputPath</span> <span class="op">&lt;-</span> <span class="fu">reproducible</span><span class="fu">::</span><span class="fu"><a href="https://reproducible.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>, <span class="st">"outputsSim2"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">simOut2</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="sec-LandRdebug" class="level2" data-number="16.6">
-<h2 data-number="16.6" class="anchored" data-anchor-id="sec-LandRdebug"><span class="header-section-number">16.6</span> Debugging</h2>
+</section><section id="sec-LandRdebug" class="level2" data-number="16.6"><h2 data-number="16.6" class="anchored" data-anchor-id="sec-LandRdebug">
+<span class="header-section-number">16.6</span> Debugging</h2>
 <p>There are several ways to debug SpaDES modules (see <a href="debugging.html" class="quarto-xref"><span>Chapter 13</span></a>), a relatively easy one for when you are suprised by an error occurring during specific event is to pass the event’s name to <code>spades(..., debug = )</code> argument.</p>
 <p>Below, we debug the <code>plotSummaryBySpecies</code> event of <em>Biomass_core</em>. R interrupts the execution of the code in the chunk that executes this event’s operations (inside <code>doEvent.Biomass_core()</code>)</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut, <span class="at">debug =</span> <span class="st">"plotSummaryBySpecies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span>, debug <span class="op">=</span> <span class="st">"plotSummaryBySpecies"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>R interrupts code execution during this event’s operations (inside <code>doEvent.Biomass_core()</code>):</p>
@@ -1181,40 +1097,33 @@ debug at C:/Users/cbarros/Documents/SpaDES_book/LandRDemo_coreVeg/modules/Biomas
 (...)</code></pre>
 <p>From there you can press ENTER, F10 or the “Next” button to execute the code line-by-line. At some point you will get to this line:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">plotSummaryBySpecies</span>(sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">plotSummaryBySpecies</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>which calls the function that effectively <em>makes</em> the summary plots. If you spotted a problem during the <code>plotSummaryBySpecies</code> event (or maybe you want to see what it does and/or change the code) and it hasn’t been triggered yet, then it’s likely it happened in this function.</p>
 <p><em>Before</em> running the line you can <code>debugonce(plotSummaryBySpecies)</code> to enable debugging the function and spot the issue.</p>
-<p>Another option would be to insert a <code>browser()</code> at the top of the function’s definition inside the module code or the R scripts in the module’s <code>R/</code> folder (<code>&lt;modulePath&gt;/&lt;module_name&gt;/R/</code>). In this case look for <code>plotSummaryBySpecies &lt;- compiler::cmpfun(function(sim) {...}</code> inside the module code (<code>Biomass_core.R</code>) and try putting a <code>browser()</code> inside the <code>{}</code></p>
-</section>
-<section id="try-on-your-own" class="level2" data-number="16.7">
-<h2 data-number="16.7" class="anchored" data-anchor-id="try-on-your-own"><span class="header-section-number">16.7</span> Try on your own</h2>
+<p>Another option would be to insert a <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code> at the top of the function’s definition inside the module code or the R scripts in the module’s <code>R/</code> folder (<code>&lt;modulePath&gt;/&lt;module_name&gt;/R/</code>). In this case look for <code>plotSummaryBySpecies &lt;- compiler::cmpfun(function(sim) {...}</code> inside the module code (<code>Biomass_core.R</code>) and try putting a <code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code> inside the <code><a href="https://rdrr.io/r/base/Paren.html">{}</a></code></p>
+</section><section id="try-on-your-own" class="level2" data-number="16.7"><h2 data-number="16.7" class="anchored" data-anchor-id="try-on-your-own">
+<span class="header-section-number">16.7</span> Try on your own</h2>
 <p>Try re-running the workflow with a different set of study areas. For example:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># studyArea could be</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>studyArea <span class="ot">=</span> {</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  SpaDES.tools<span class="sc">::</span><span class="fu">randomStudyArea</span>(<span class="at">size =</span> <span class="dv">200000000</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># studyAreaLarge</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>studyAreaLarge <span class="ot">=</span> {</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="at">width =</span> <span class="dv">10000</span>)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># studyArea could be</span></span>
+<span><span class="va">studyArea</span> <span class="op">=</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
+<span>  <span class="fu">SpaDES.tools</span><span class="fu">::</span><span class="fu"><a href="https://spades-tools.predictiveecology.org/reference/randomStudyArea.html">randomStudyArea</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">200000000</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># studyAreaLarge</span></span>
+<span><span class="va">studyAreaLarge</span> <span class="op">=</span> <span class="op">{</span></span>
+<span>  <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/buffer.html">buffer</a></span><span class="op">(</span><span class="va">studyArea</span>, width <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li><p>Noticed any differences (speed, cache IDs, …)?</p></li>
 <li><p>were the species simulated the same? How about their trait values (e.g.&nbsp;estimated maxB, species establishment probabilities. )</p></li>
-</ul>
-</section>
-<section id="see-also" class="level2" data-number="16.8">
-<h2 data-number="16.8" class="anchored" data-anchor-id="see-also"><span class="header-section-number">16.8</span> See also</h2>
+</ul></section><section id="see-also" class="level2" data-number="16.8"><h2 data-number="16.8" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">16.8</span> See also</h2>
 <p><a href="Caching.html" class="quarto-xref"><span>Chapter 10</span></a> on caching.</p>
 <p><a href="https://landr-manual.predictiveecology.org/">LandR Manual</a></p>
 <p><a href="https://future.futureverse.org/reference/plan.html"><code>?future::plan</code></a></p>
@@ -1224,179 +1133,176 @@ debug at C:/Users/cbarros/Documents/SpaDES_book/LandRDemo_coreVeg/modules/Biomas
 fill missing land-cover data in recently burned pixels by randomly
 looking for the closes forest land-cover type.
 -->
-</section>
-<section id="barebones-r-script" class="level2" data-number="16.9">
-<h2 data-number="16.9" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">16.9</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="16.9"><h2 data-number="16.9" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">16.9</span> Barebones R script</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OBJECTS needed within this function -----------------------------------</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    these need to come *before* any formal arguments</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    specifically these are needed for params.R</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquivCol =</span> <span class="st">"Boreal"</span>,</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">vegLeadingProportion =</span> <span class="dv">0</span>,</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Named arguments for setupProject -- see ?SpaDES.project::setupProject for help</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>),</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_speciesData@main"</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_speciesParameters@main"</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>    , <span class="st">"PredictiveEcology/Biomass_core@main"</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># , "PredictiveEcology/Biomass_regeneration@main"</span></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># packages only need to be specified if they are needed within this setupProject</span></span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   DiagrammeR is for plotting later in this qmd</span></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/LandR@main"</span>,</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>               <span class="st">"DiagrammeR"</span>, <span class="st">"googledrive"</span>, <span class="st">"httr2"</span>, <span class="st">"terra"</span>),</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">"repos"</span> <span class="ot">=</span> repos,</span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reproducible.destinationPath"</span> <span class="ot">=</span> paths<span class="sc">$</span>inputPath,</span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Require.cloneFrom"</span> <span class="ot">=</span> <span class="fu">Sys.getenv</span>(<span class="st">"R_LIBS_USER"</span>), <span class="co"># faster package installs (from personal library)</span></span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"spades.moduleCodeChecks"</span> <span class="ot">=</span> <span class="cn">FALSE</span></span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># DYNAMIC MODEL SETUP ------------------------------------</span></span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2001</span>, <span class="at">end =</span> <span class="dv">2031</span>),</span>
-<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span></span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # Module optional parameters</span></span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">#params = "PredictiveEcology/PredictiveEcology.org@training-book/tutos/LandRDemo_coreVeg/params.R",</span></span>
-<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">sppEquivCol =</span> <span class="st">"Boreal"</span>, </span>
-<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">PSPdataTypes =</span> <span class="st">"dummy"</span>)), </span>
-<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span></span>
-<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # (more) INPUT OBJECTS -----------------------------------</span></span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # these come after, so that we don't need to pre-install/load LandR</span></span>
-<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # species lists/traits</span></span>
-<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> {</span>
-<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create and use a random study area</span></span>
-<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lambert Conformal Conic for Canada: this is used in NRCan's "KNN" products</span></span>
-<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>    Biomass_corecrs <span class="ot">&lt;-</span> <span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span></span>
-<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>    centre <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(<span class="fu">cbind</span>(<span class="sc">-</span><span class="fl">104.757</span>, <span class="fl">55.68663</span>), <span class="at">crs =</span> <span class="st">"epsg:4326"</span>) <span class="co"># Lat Long</span></span>
-<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>    centre <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">project</span>(centre, Biomass_corecrs)</span>
-<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a>    studyArea <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">randomStudyArea</span>(centre, <span class="at">size =</span> <span class="fl">2e8</span>, <span class="at">seed =</span> <span class="dv">1234</span>)</span>
-<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create a "larger" study area that can be used for parameter estimation, using</span></span>
-<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   more datasets that will fall into this larger area</span></span>
-<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaLarge =</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="at">width =</span> <span class="fl">3e4</span>),</span>
-<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sppEquiv is a table that defines equivalent names for species </span></span>
-<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a>  <span class="co">#    e.g., Pice_mar and Pice_Mar are identical</span></span>
-<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquiv =</span> {</span>
-<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>    speciesInStudy <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">speciesInStudyArea</span>(studyAreaLarge)</span>
-<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a>    species <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">equivalentName</span>(speciesInStudy<span class="sc">$</span>speciesList,</span>
-<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">df =</span> LandR<span class="sc">::</span>sppEquivalencies_CA, sppEquivCol)</span>
-<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a>    LandR<span class="sc">::</span>sppEquivalencies_CA[Boreal <span class="sc">%in%</span> species]</span>
-<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb20-72"><a href="#cb20-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">speciesParams =</span> {</span>
-<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a>      <span class="st">"shadetolerance"</span> <span class="ot">=</span> <span class="fu">list</span>(<span class="at">Lari_Lar =</span> <span class="dv">1</span>, </span>
-<span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a>                              <span class="at">Pice_Gla =</span> <span class="dv">2</span>, <span class="at">Pice_Mar =</span> <span class="dv">3</span>, </span>
-<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>                              <span class="at">Pinu_Ban =</span> <span class="fl">1.5</span>, <span class="at">Popu_Tre =</span> <span class="dv">1</span></span>
-<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a>                              )</span>
-<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a>  <span class="co"># OUTPUTS TO SAVE -----------------------</span></span>
-<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputs =</span> {</span>
-<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a>    <span class="co"># save to disk 2 objects, every year</span></span>
-<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expand.grid</span>(<span class="at">objectName =</span> <span class="fu">c</span>(<span class="st">"cohortData"</span>, <span class="st">"pixelGroupMap"</span>),</span>
-<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a>                <span class="at">saveTime =</span> <span class="fu">seq</span>(times<span class="sc">$</span>start, times<span class="sc">$</span>end))</span>
-<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a><span class="co"># initialise then run simulation </span></span>
-<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a><span class="co"># simInitOut &lt;- SpaDES.core::simInit2(out)</span></span>
-<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a>simInitOut <span class="ot">&lt;-</span> <span class="fu">do.call</span>(SpaDES.core<span class="sc">::</span>simInit, out)</span>
-<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut)</span>
-<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span>
-<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">moduleDiagram</span>(simInitOut)</span>
-<span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">objectDiagram</span>(simInitOut)  </span>
-<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">events</span>(simInitOut)</span>
-<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">events</span>(simOut)</span>
-<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">completed</span>(simInitOut)</span>
-<span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">completed</span>(simOut)</span>
-<span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">inputs</span>(simOut)</span>
-<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">outputs</span>(simOut)</span>
-<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">parameters</span>(simOut)</span>
-<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a><span class="co"># spatial inputs from list above</span></span>
-<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>studyAreaLarge, <span class="at">col =</span> <span class="st">"navyblue"</span>, <span class="at">main =</span> <span class="st">"studyArea &amp; studyAreaLarge"</span>)</span>
-<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>studyArea, <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a><span class="co"># spatial outputs from list above</span></span>
-<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>vegTypeMap, </span>
-<span id="cb20-120"><a href="#cb20-120" aria-hidden="true" tabindex="-1"></a>            <span class="at">col =</span> <span class="fu">hcl.colors</span>(<span class="at">palette =</span> <span class="st">"Dynamic"</span>, <span class="at">n =</span> <span class="fu">length</span>(<span class="fu">unique</span>(simOut<span class="sc">$</span>vegTypeMap[]))), </span>
-<span id="cb20-121"><a href="#cb20-121" aria-hidden="true" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">""</span>, <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a>terra<span class="sc">::</span><span class="fu">plot</span>(simOut<span class="sc">$</span>speciesLayers)</span>
-<span id="cb20-123"><a href="#cb20-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a><span class="co"># model used to estimate species establishment probabilities</span></span>
-<span id="cb20-125"><a href="#cb20-125" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(simOut<span class="sc">$</span>modelBiomass<span class="sc">$</span>mod)</span>
-<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(simOut<span class="sc">$</span>modelBiomass<span class="sc">$</span>mod)</span>
-<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a><span class="co"># model used to calibrate Picea glauca's growth parameters</span></span>
-<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(simOut<span class="sc">$</span>speciesGrowthCurves<span class="sc">$</span>Pice_Gla<span class="sc">$</span>NonLinearModel<span class="sc">$</span>Pice_Gla)</span>
-<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a>simInitOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInit2</span>(out)</span>
-<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">P</span>(simInitOut, <span class="at">param =</span> <span class="st">".plots"</span>, <span class="at">module =</span> <span class="st">"Biomass_core"</span>) <span class="ot">&lt;-</span> <span class="st">"screen"</span></span>
-<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">P</span>(simInitOut, <span class="at">param =</span> <span class="st">".plotMaps"</span>, <span class="at">module =</span> <span class="st">"Biomass_core"</span>) <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
-<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut)</span>
-<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-137"><a href="#cb20-137" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">end</span>(simOut) <span class="ot">&lt;-</span> <span class="dv">2061</span></span>
-<span id="cb20-138"><a href="#cb20-138" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simOut)</span>
-<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-141"><a href="#cb20-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a>out2 <span class="ot">&lt;-</span> out</span>
-<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a>out2<span class="sc">$</span>modules <span class="ot">&lt;-</span> out2<span class="sc">$</span>modules[out2<span class="sc">$</span>modules <span class="sc">!=</span> <span class="st">"Biomass_speciesParameters"</span>]</span>
-<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a>out2<span class="sc">$</span>paths<span class="sc">$</span>outputPath <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">normPath</span>(</span>
-<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>, <span class="st">"outputsSim2"</span>))</span>
-<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-151"><a href="#cb20-151" aria-hidden="true" tabindex="-1"></a>simOut2 <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out2)</span>
-<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a>simOut <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">spades</span>(simInitOut, <span class="at">debug =</span> <span class="st">"plotSummaryBySpecies"</span>)</span>
-<span id="cb20-155"><a href="#cb20-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a><span class="co"># sim &lt;- plotSummaryBySpecies(sim)</span></span>
-<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a><span class="co"># # studyArea could be</span></span>
-<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a><span class="co"># studyArea = {</span></span>
-<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a><span class="co">#   set.seed(123)</span></span>
-<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a><span class="co">#   SpaDES.tools::randomStudyArea(size = 200000000)</span></span>
-<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb20-164"><a href="#cb20-164" aria-hidden="true" tabindex="-1"></a><span class="co"># # studyAreaLarge</span></span>
-<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a><span class="co"># studyAreaLarge = {</span></span>
-<span id="cb20-166"><a href="#cb20-166" aria-hidden="true" tabindex="-1"></a><span class="co">#   terra::buffer(studyArea, width = 10000)</span></span>
-<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  <span class="co"># OBJECTS needed within this function -----------------------------------</span></span>
+<span>  <span class="co">#    these need to come *before* any formal arguments</span></span>
+<span>  <span class="co">#    specifically these are needed for params.R</span></span>
+<span>  sppEquivCol <span class="op">=</span> <span class="st">"Boreal"</span>,</span>
+<span>  vegLeadingProportion <span class="op">=</span> <span class="fl">0</span>,</span>
+<span></span>
+<span>  <span class="co"># Named arguments for setupProject -- see ?SpaDES.project::setupProject for help</span></span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span><span class="op">)</span>,</span>
+<span></span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"PredictiveEcology/Biomass_speciesData@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_speciesParameters@main"</span></span>
+<span>    , <span class="st">"PredictiveEcology/Biomass_core@main"</span></span>
+<span>    <span class="co"># , "PredictiveEcology/Biomass_regeneration@main"</span></span>
+<span>  <span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="co"># packages only need to be specified if they are needed within this setupProject</span></span>
+<span>  <span class="co">#   DiagrammeR is for plotting later in this qmd</span></span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/LandR@main"</span>,</span>
+<span>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
+<span>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
+<span>               <span class="st">"DiagrammeR"</span>, <span class="st">"googledrive"</span>, <span class="st">"httr2"</span>, <span class="st">"terra"</span><span class="op">)</span>,</span>
+<span></span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    <span class="st">"repos"</span> <span class="op">=</span> <span class="va">repos</span>,</span>
+<span>    <span class="st">"reproducible.destinationPath"</span> <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">inputPath</span>,</span>
+<span>    <span class="st">"Require.cloneFrom"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"R_LIBS_USER"</span><span class="op">)</span>, <span class="co"># faster package installs (from personal library)</span></span>
+<span>    <span class="st">"spades.moduleCodeChecks"</span> <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="co"># DYNAMIC MODEL SETUP ------------------------------------</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2001</span>, end <span class="op">=</span> <span class="fl">2031</span><span class="op">)</span>,</span>
+<span>  <span class="co"># </span></span>
+<span>  <span class="co"># # Module optional parameters</span></span>
+<span>  <span class="co">#params = "PredictiveEcology/PredictiveEcology.org@training-book/tutos/LandRDemo_coreVeg/params.R",</span></span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>  .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>sppEquivCol <span class="op">=</span> <span class="st">"Boreal"</span>, </span>
+<span>  PSPdataTypes <span class="op">=</span> <span class="st">"dummy"</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>  <span class="co"># </span></span>
+<span>  <span class="co"># # (more) INPUT OBJECTS -----------------------------------</span></span>
+<span>  <span class="co"># # these come after, so that we don't need to pre-install/load LandR</span></span>
+<span>  <span class="co"># # species lists/traits</span></span>
+<span>  studyArea <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="co"># create and use a random study area</span></span>
+<span>    <span class="co"># Lambert Conformal Conic for Canada: this is used in NRCan's "KNN" products</span></span>
+<span>    <span class="va">Biomass_corecrs</span> <span class="op">&lt;-</span> <span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0 +datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span></span>
+<span>    <span class="va">centre</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/vect.html">vect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="op">-</span><span class="fl">104.757</span>, <span class="fl">55.68663</span><span class="op">)</span>, crs <span class="op">=</span> <span class="st">"epsg:4326"</span><span class="op">)</span> <span class="co"># Lat Long</span></span>
+<span>    <span class="va">centre</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/project.html">project</a></span><span class="op">(</span><span class="va">centre</span>, <span class="va">Biomass_corecrs</span><span class="op">)</span></span>
+<span>    <span class="va">studyArea</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/randomStudyArea.html">randomStudyArea</a></span><span class="op">(</span><span class="va">centre</span>, size <span class="op">=</span> <span class="fl">2e8</span>, seed <span class="op">=</span> <span class="fl">1234</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  <span class="co"># create a "larger" study area that can be used for parameter estimation, using</span></span>
+<span>  <span class="co">#   more datasets that will fall into this larger area</span></span>
+<span>  studyAreaLarge <span class="op">=</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/buffer.html">buffer</a></span><span class="op">(</span><span class="va">studyArea</span>, width <span class="op">=</span> <span class="fl">3e4</span><span class="op">)</span>,</span>
+<span>  </span>
+<span>  <span class="co"># sppEquiv is a table that defines equivalent names for species </span></span>
+<span>  <span class="co">#    e.g., Pice_mar and Pice_Mar are identical</span></span>
+<span>  sppEquiv <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">speciesInStudy</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/speciesInStudyArea.html">speciesInStudyArea</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/equivalentName.html">equivalentName</a></span><span class="op">(</span><span class="va">speciesInStudy</span><span class="op">$</span><span class="va">speciesList</span>,</span>
+<span>                                     df <span class="op">=</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span>, <span class="va">sppEquivCol</span><span class="op">)</span></span>
+<span>    <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="va">Boreal</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">species</span><span class="op">]</span></span>
+<span>  <span class="op">}</span>,</span>
+<span></span>
+<span>  speciesParams <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      <span class="st">"shadetolerance"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>Lari_Lar <span class="op">=</span> <span class="fl">1</span>, </span>
+<span>                              Pice_Gla <span class="op">=</span> <span class="fl">2</span>, Pice_Mar <span class="op">=</span> <span class="fl">3</span>, </span>
+<span>                              Pinu_Ban <span class="op">=</span> <span class="fl">1.5</span>, Popu_Tre <span class="op">=</span> <span class="fl">1</span></span>
+<span>                              <span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span></span>
+<span>  <span class="co"># OUTPUTS TO SAVE -----------------------</span></span>
+<span>  outputs <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="co"># save to disk 2 objects, every year</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cohortData"</span>, <span class="st">"pixelGroupMap"</span><span class="op">)</span>,</span>
+<span>                saveTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="va">times</span><span class="op">$</span><span class="va">start</span>, <span class="va">times</span><span class="op">$</span><span class="va">end</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># initialise then run simulation </span></span>
+<span><span class="co"># simInitOut &lt;- SpaDES.core::simInit2(out)</span></span>
+<span><span class="va">simInitOut</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="va"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span>, <span class="va">out</span><span class="op">)</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/moduleDiagram.html">moduleDiagram</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/objectDiagram.html">objectDiagram</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span>  </span>
+<span></span>
+<span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">events</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-inputs.html">inputs</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-outputs.html">outputs</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">parameters</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># spatial inputs from list above</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">studyAreaLarge</span>, col <span class="op">=</span> <span class="st">"navyblue"</span>, main <span class="op">=</span> <span class="st">"studyArea &amp; studyAreaLarge"</span><span class="op">)</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">studyArea</span>, col <span class="op">=</span> <span class="st">"lightblue"</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># spatial outputs from list above</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">vegTypeMap</span>, </span>
+<span>            col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html">hcl.colors</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dynamic"</span>, n <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">vegTypeMap</span><span class="op">[</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>            main <span class="op">=</span> <span class="st">""</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">speciesLayers</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># model used to estimate species establishment probabilities</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">modelBiomass</span><span class="op">$</span><span class="va">mod</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">modelBiomass</span><span class="op">$</span><span class="va">mod</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># model used to calibrate Picea glauca's growth parameters</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">$</span><span class="va">speciesGrowthCurves</span><span class="op">$</span><span class="va">Pice_Gla</span><span class="op">$</span><span class="va">NonLinearModel</span><span class="op">$</span><span class="va">Pice_Gla</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">simInitOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">P</a></span><span class="op">(</span><span class="va">simInitOut</span>, param <span class="op">=</span> <span class="st">".plots"</span>, module <span class="op">=</span> <span class="st">"Biomass_core"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"screen"</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/params.html">P</a></span><span class="op">(</span><span class="va">simInitOut</span>, param <span class="op">=</span> <span class="st">".plotMaps"</span>, module <span class="op">=</span> <span class="st">"Biomass_core"</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu">end</span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fl">2061</span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simOut</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="va">out2</span> <span class="op">&lt;-</span> <span class="va">out</span></span>
+<span><span class="va">out2</span><span class="op">$</span><span class="va">modules</span> <span class="op">&lt;-</span> <span class="va">out2</span><span class="op">$</span><span class="va">modules</span><span class="op">[</span><span class="va">out2</span><span class="op">$</span><span class="va">modules</span> <span class="op">!=</span> <span class="st">"Biomass_speciesParameters"</span><span class="op">]</span></span>
+<span><span class="va">out2</span><span class="op">$</span><span class="va">paths</span><span class="op">$</span><span class="va">outputPath</span> <span class="op">&lt;-</span> <span class="fu">reproducible</span><span class="fu">::</span><span class="fu"><a href="https://reproducible.predictiveecology.org/reference/normPath.html">normPath</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"~/SpaDES_book/LandRDemo_coreVeg"</span>, <span class="st">"outputsSim2"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">simOut2</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out2</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">simOut</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/spades.html">spades</a></span><span class="op">(</span><span class="va">simInitOut</span>, debug <span class="op">=</span> <span class="st">"plotSummaryBySpecies"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># sim &lt;- plotSummaryBySpecies(sim)</span></span>
+<span></span>
+<span><span class="co"># # studyArea could be</span></span>
+<span><span class="co"># studyArea = {</span></span>
+<span><span class="co">#   set.seed(123)</span></span>
+<span><span class="co">#   SpaDES.tools::randomStudyArea(size = 200000000)</span></span>
+<span><span class="co"># }</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># # studyAreaLarge</span></span>
+<span><span class="co"># studyAreaLarge = {</span></span>
+<span><span class="co">#   terra::buffer(studyArea, width = 10000)</span></span>
+<span><span class="co"># }</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -1409,17 +1315,11 @@ Barros, Ceres, Yong Luo, Alex M. Chubaty, Ian M. S. Eddy, Tatiane Micheletti, C�
 Scheller, Robert M., and Brian R. Miranda. 2015. <em>LANDIS-II Biomass Succession V3.2 Extension <span></span> User Guide</em>.
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p>See <a href="https://rdrr.io/cran/googledrive/man/drive_auth.html"><code>?googledrive::drive_auth</code></a> for more information.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>See <a href="Caching.html" class="quarto-xref"><span>Chapter 10</span></a> about caching.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1835,9 +1735,7 @@ Scheller, Robert M., and Brian R. Miranda. 2015. <em>LANDIS-II Biomass Successio
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./workflowSimple2.html" class="pagination-link" aria-label="Workflows with `setupProject`">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span>
       </a>          
@@ -1849,7 +1747,6 @@ Scheller, Robert M., and Brian R. Miranda. 2015. <em>LANDIS-II Biomass Successio
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

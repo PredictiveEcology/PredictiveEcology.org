@@ -107,6 +107,7 @@ format:
     grid:
       sidebar-width: 350px
     number-sections: true
+    code-link: true
     fig-cap-location: bottom
     tbl-cap-location: top
     title-block-banner: false

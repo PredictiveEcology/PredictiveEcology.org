@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire and Ian Eddy">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>17&nbsp; Forest Succession and Wildfire using setupProject – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -59,7 +56,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -83,8 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,13 +105,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -282,13 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -299,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -319,8 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -337,13 +325,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -352,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -376,14 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -391,15 +377,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -425,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -445,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -454,8 +436,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -492,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -501,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -517,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -527,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -536,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -574,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -583,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -597,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -611,27 +593,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#examining-things" id="toc-examining-things" class="nav-link active" data-scroll-target="#examining-things"><span class="header-section-number">17.1</span> Examining things</a></li>
+<li><a href="#examining-things" id="toc-examining-things" class="nav-link active" data-scroll-target="#examining-things"><span class="header-section-number">17.1</span> Examining things</a></li>
   <li><a href="#changing-things" id="toc-changing-things" class="nav-link" data-scroll-target="#changing-things"><span class="header-section-number">17.2</span> Changing things</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">17.3</span> Barebones R script</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./ForestsAndFire.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./ForestsAndFire.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-scfmEg" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></h1>
 </div>
 
@@ -658,10 +633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-simple callout-tip">
+</header><div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -687,214 +659,199 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This makes for a 10 module project. Using <code>setupProject</code>, we can readily run these from their canonical “i.e., current, up to date, open and available” versions:</p>
 <p><strong>Time to run this</strong> is between 1 and 2 hours.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Restart =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">updateRprofile =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/Wildfire_demo"</span>),</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PredictiveEcology/Biomass_core@main"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PredictiveEcology/Biomass_regeneration@main"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>              <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">c</span>(<span class="st">"scfmLandcoverInit"</span>, <span class="st">"scfmRegime"</span>, <span class="st">"scfmDriver"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>, <span class="st">"scfmSpread"</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"scfmDiagnostics"</span>))</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>              <span class="co">#note scfm is a series of modules on a single git repository</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataYear =</span> <span class="dv">2011</span>, <span class="co">#will get kNN 2011 data, and NTEMS 2011 landcover</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">.plots =</span> <span class="fu">c</span>(<span class="st">"png"</span>),</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCache =</span> <span class="fu">c</span>(<span class="st">".inputObjects"</span>, <span class="st">"init"</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">scfmDriver =</span> <span class="fu">list</span>(<span class="at">targetN =</span> <span class="dv">1000</span>, <span class="co">#default is 4000 - higher targetN adds time + precision</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">.useParallelFireRegimePolys =</span> <span class="cn">TRUE</span>) <span class="co">#assumes parallelization is an otpion</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="co">#spades.allowInitDuringSimInit = TRUE,</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">repos =</span> repos,</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.allowSequentialCaching =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.moduleCodeChecks =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.recoveryMode =</span> <span class="dv">1</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/LandR@main"</span>,</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>               <span class="st">"RCurl"</span>, <span class="st">"XML"</span>, <span class="st">"snow"</span>, <span class="st">"googledrive"</span>),</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2011</span>, <span class="at">end =</span> <span class="dv">2081</span>),</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">#70 years of fire should be enough to evaluate MAAB</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> {</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    targetCRS <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0"</span>,</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"+datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span>)</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(<span class="fu">cbind</span>(<span class="sc">-</span><span class="dv">1209980</span>, <span class="dv">7586865</span>), <span class="at">crs =</span> targetCRS)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">randomStudyArea</span>(<span class="at">center =</span> sa, <span class="at">size =</span> <span class="dv">10000</span> <span class="sc">*</span> <span class="dv">250</span> <span class="sc">*</span> <span class="dv">30000</span>, <span class="at">seed =</span> <span class="dv">1002</span>)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(sa)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaLarge =</span> {</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    sf<span class="sc">::</span><span class="fu">st_buffer</span>(studyArea, <span class="dv">5000</span>)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatchLarge =</span> {</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    rtml<span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(terra<span class="sc">::</span><span class="fu">ext</span>(studyAreaLarge), <span class="at">res =</span> <span class="fu">c</span>(<span class="dv">250</span>, <span class="dv">250</span>))</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">crs</span>(rtml) <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crs</span>(studyAreaLarge)</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyAreaLarge)</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch =</span> {</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    rtm <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crop</span>(rasterToMatchLarge, studyArea)</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    rtm <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rtm, studyArea)</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquiv =</span> {</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    speciesInStudy <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">speciesInStudyArea</span>(studyAreaLarge)</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    species <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">equivalentName</span>(speciesInStudy<span class="sc">$</span>speciesList, <span class="at">df =</span> LandR<span class="sc">::</span>sppEquivalencies_CA, <span class="st">"LandR"</span>)</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    sppEquiv <span class="ot">&lt;-</span> LandR<span class="sc">::</span>sppEquivalencies_CA[LandR <span class="sc">%in%</span> species]</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    sppEquiv <span class="ot">&lt;-</span> sppEquiv[KNN <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> LANDIS_traits <span class="sc">!=</span> <span class="st">""</span>] <span class="co">#avoid a bug with shore pine</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>outSim <span class="ot">&lt;-</span> <span class="fu">do.call</span>(SpaDES.core<span class="sc">::</span>simInitAndSpades, out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  Restart <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  updateRprofile <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/Wildfire_demo"</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span>,</span>
+<span>              <span class="st">"PredictiveEcology/Biomass_core@main"</span>,</span>
+<span>              <span class="st">"PredictiveEcology/Biomass_regeneration@main"</span>,</span>
+<span>              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
+<span>                        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"scfmLandcoverInit"</span>, <span class="st">"scfmRegime"</span>, <span class="st">"scfmDriver"</span>,</span>
+<span>                          <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>, <span class="st">"scfmSpread"</span>,</span>
+<span>                          <span class="st">"scfmDiagnostics"</span><span class="op">)</span><span class="op">)</span></span>
+<span>              <span class="co">#note scfm is a series of modules on a single git repository</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      dataYear <span class="op">=</span> <span class="fl">2011</span>, <span class="co">#will get kNN 2011 data, and NTEMS 2011 landcover</span></span>
+<span>      sppEquivCol <span class="op">=</span> <span class="st">"LandR"</span>,</span>
+<span>      .plots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"png"</span><span class="op">)</span>,</span>
+<span>      .useCache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">".inputObjects"</span>, <span class="st">"init"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    scfmDriver <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>targetN <span class="op">=</span> <span class="fl">1000</span>, <span class="co">#default is 4000 - higher targetN adds time + precision</span></span>
+<span>                      <span class="co"># targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000</span></span>
+<span>                      .useParallelFireRegimePolys <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co">#assumes parallelization is an otpion</span></span>
+<span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="co">#spades.allowInitDuringSimInit = TRUE,</span></span>
+<span>    repos <span class="op">=</span> <span class="va">repos</span>,</span>
+<span>    spades.allowSequentialCaching <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    spades.moduleCodeChecks <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    spades.recoveryMode <span class="op">=</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/LandR@main"</span>,</span>
+<span>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
+<span>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
+<span>               <span class="st">"RCurl"</span>, <span class="st">"XML"</span>, <span class="st">"snow"</span>, <span class="st">"googledrive"</span><span class="op">)</span>,</span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2011</span>, end <span class="op">=</span> <span class="fl">2081</span><span class="op">)</span>,</span>
+<span>  <span class="co">#70 years of fire should be enough to evaluate MAAB</span></span>
+<span>  studyArea <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">targetCRS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0"</span>,</span>
+<span>                       <span class="st">"+datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/vect.html">vect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1209980</span>, <span class="fl">7586865</span><span class="op">)</span>, crs <span class="op">=</span> <span class="va">targetCRS</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/randomStudyArea.html">randomStudyArea</a></span><span class="op">(</span>center <span class="op">=</span> <span class="va">sa</span>, size <span class="op">=</span> <span class="fl">10000</span> <span class="op">*</span> <span class="fl">250</span> <span class="op">*</span> <span class="fl">30000</span>, seed <span class="op">=</span> <span class="fl">1002</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="va">sa</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  studyAreaLarge <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">studyArea</span>, <span class="fl">5000</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rasterToMatchLarge <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">rtml</span><span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/rast.html">rast</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/ext.html">ext</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span>, res <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">250</span>, <span class="fl">250</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crs.html">crs</a></span><span class="op">(</span><span class="va">rtml</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crs.html">crs</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">rtml</span><span class="op">[</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span>    <span class="va">rtml</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/mask.html">mask</a></span><span class="op">(</span><span class="va">rtml</span>, <span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rasterToMatch <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">rtm</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crop.html">crop</a></span><span class="op">(</span><span class="va">rasterToMatchLarge</span>, <span class="va">studyArea</span><span class="op">)</span></span>
+<span>    <span class="va">rtm</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/mask.html">mask</a></span><span class="op">(</span><span class="va">rtm</span>, <span class="va">studyArea</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  sppEquiv <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">speciesInStudy</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/speciesInStudyArea.html">speciesInStudyArea</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/equivalentName.html">equivalentName</a></span><span class="op">(</span><span class="va">speciesInStudy</span><span class="op">$</span><span class="va">speciesList</span>, df <span class="op">=</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span>, <span class="st">"LandR"</span><span class="op">)</span></span>
+<span>    <span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="va">LandR</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">species</span><span class="op">]</span></span>
+<span>    <span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="va">sppEquiv</span><span class="op">[</span><span class="va">KNN</span> <span class="op">!=</span> <span class="st">""</span> <span class="op">&amp;</span> <span class="va">LANDIS_traits</span> <span class="op">!=</span> <span class="st">""</span><span class="op">]</span> <span class="co">#avoid a bug with shore pine</span></span>
+<span>  <span class="op">}</span> </span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">outSim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="va"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades</a></span>, <span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="examining-things" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="examining-things"><span class="header-section-number">17.1</span> Examining things</h2>
+<section id="examining-things" class="level2" data-number="17.1"><h2 data-number="17.1" class="anchored" data-anchor-id="examining-things">
+<span class="header-section-number">17.1</span> Examining things</h2>
 <p>We can do all sorts of things. We will start with a few simple “accessors”, i.e., “access something from the simList”. <code>completed</code> shows the events that were run. <code>elapsedTime</code> shows how much time each event took.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">completed</span>(outSim)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">elapsedTime</span>(outSim, <span class="at">units =</span> <span class="st">"mins"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">completed</span><span class="op">(</span><span class="va">outSim</span><span class="op">)</span></span>
+<span><span class="fu">elapsedTime</span><span class="op">(</span><span class="va">outSim</span>, units <span class="op">=</span> <span class="st">"mins"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The module metadata can be accessed from the <code>sim</code> or can be read from the module source files or it is usually built into the <code>Rmd</code> file that comes with the module.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mm <span class="ot">&lt;-</span> <span class="fu">moduleMetadata</span>(outSim)</span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mm <span class="ot">&lt;-</span> <span class="fu">moduleMetadata</span>(outSim)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># a list of all the module metadata</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mm<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="changing-things" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="changing-things"><span class="header-section-number">17.2</span> Changing things</h2>
+</section><section id="changing-things" class="level2" data-number="17.2"><h2 data-number="17.2" class="anchored" data-anchor-id="changing-things">
+<span class="header-section-number">17.2</span> Changing things</h2>
 <p>Setting <code>.plots = "png"</code> will turn on all known plotting (that uses the <code>Plots</code> function) and save them all as <code>png</code> files in the <code>figures</code> subfolder.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>out<span class="sc">$</span>params<span class="sc">$</span>.globals<span class="sc">$</span>.plots <span class="ot">&lt;-</span> <span class="st">"png"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>outSim <span class="ot">&lt;-</span> <span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">out</span><span class="op">$</span><span class="va">params</span><span class="op">$</span><span class="va">.globals</span><span class="op">$</span><span class="va">.plots</span> <span class="op">&lt;-</span> <span class="st">"png"</span></span>
+<span><span class="va">outSim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades2</span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Then we can look in the <code>outputs/figures</code> folder to see all the figures that the modules created.</p>
-</section>
-<section id="barebones-r-script" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">17.3</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="17.3"><h2 data-number="17.3" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">17.3</span> Barebones R script</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Restart =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">updateRprofile =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/Wildfire_demo"</span>),</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PredictiveEcology/Biomass_core@main"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PredictiveEcology/Biomass_regeneration@main"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>              <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">c</span>(<span class="st">"scfmLandcoverInit"</span>, <span class="st">"scfmRegime"</span>, <span class="st">"scfmDriver"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>, <span class="st">"scfmSpread"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"scfmDiagnostics"</span>))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>              <span class="co">#note scfm is a series of modules on a single git repository</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataYear =</span> <span class="dv">2011</span>, <span class="co">#will get kNN 2011 data, and NTEMS 2011 landcover</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span>,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">.plots =</span> <span class="fu">c</span>(<span class="st">"png"</span>),</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">.useCache =</span> <span class="fu">c</span>(<span class="st">".inputObjects"</span>, <span class="st">"init"</span>)</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">scfmDriver =</span> <span class="fu">list</span>(<span class="at">targetN =</span> <span class="dv">1000</span>, <span class="co">#default is 4000 - higher targetN adds time + precision</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                      <span class="at">.useParallelFireRegimePolys =</span> <span class="cn">TRUE</span>) <span class="co">#assumes parallelization is an otpion</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="co">#spades.allowInitDuringSimInit = TRUE,</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">repos =</span> repos,</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.allowSequentialCaching =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.moduleCodeChecks =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">spades.recoveryMode =</span> <span class="dv">1</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"PredictiveEcology/LandR@main"</span>,</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>               <span class="st">"RCurl"</span>, <span class="st">"XML"</span>, <span class="st">"snow"</span>, <span class="st">"googledrive"</span>),</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2011</span>, <span class="at">end =</span> <span class="dv">2081</span>),</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="co">#70 years of fire should be enough to evaluate MAAB</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyArea =</span> {</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    targetCRS <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0"</span>,</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"+datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span>)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">vect</span>(<span class="fu">cbind</span>(<span class="sc">-</span><span class="dv">1209980</span>, <span class="dv">7586865</span>), <span class="at">crs =</span> targetCRS)</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">randomStudyArea</span>(<span class="at">center =</span> sa, <span class="at">size =</span> <span class="dv">10000</span> <span class="sc">*</span> <span class="dv">250</span> <span class="sc">*</span> <span class="dv">30000</span>, <span class="at">seed =</span> <span class="dv">1002</span>)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    sa <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_as_sf</span>(sa)</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaLarge =</span> {</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    sf<span class="sc">::</span><span class="fu">st_buffer</span>(studyArea, <span class="dv">5000</span>)</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatchLarge =</span> {</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    rtml<span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">rast</span>(terra<span class="sc">::</span><span class="fu">ext</span>(studyAreaLarge), <span class="at">res =</span> <span class="fu">c</span>(<span class="dv">250</span>, <span class="dv">250</span>))</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    terra<span class="sc">::</span><span class="fu">crs</span>(rtml) <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crs</span>(studyAreaLarge)</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyAreaLarge)</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">rasterToMatch =</span> {</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>    rtm <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">crop</span>(rasterToMatchLarge, studyArea)</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>    rtm <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(rtm, studyArea)</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>  <span class="at">sppEquiv =</span> {</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    speciesInStudy <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">speciesInStudyArea</span>(studyAreaLarge)</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>    species <span class="ot">&lt;-</span> LandR<span class="sc">::</span><span class="fu">equivalentName</span>(speciesInStudy<span class="sc">$</span>speciesList, <span class="at">df =</span> LandR<span class="sc">::</span>sppEquivalencies_CA, <span class="st">"LandR"</span>)</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>    sppEquiv <span class="ot">&lt;-</span> LandR<span class="sc">::</span>sppEquivalencies_CA[LandR <span class="sc">%in%</span> species]</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>    sppEquiv <span class="ot">&lt;-</span> sppEquiv[KNN <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> LANDIS_traits <span class="sc">!=</span> <span class="st">""</span>] <span class="co">#avoid a bug with shore pine</span></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>outSim <span class="ot">&lt;-</span> <span class="fu">do.call</span>(SpaDES.core<span class="sc">::</span>simInitAndSpades, out)</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="fu">completed</span>(outSim)</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="fu">elapsedTime</span>(outSim, <span class="at">units =</span> <span class="st">"mins"</span>)</span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>mm <span class="ot">&lt;-</span> <span class="fu">moduleMetadata</span>(outSim)</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="co"># a list of all the module metadata</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>mm<span class="sc">$</span>Biomass_borealDataPrep<span class="sc">$</span></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>out<span class="sc">$</span>params<span class="sc">$</span>.globals<span class="sc">$</span>.plots <span class="ot">&lt;-</span> <span class="st">"png"</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>outSim <span class="ot">&lt;-</span> <span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  Restart <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  updateRprofile <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/Wildfire_demo"</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span>,</span>
+<span>              <span class="st">"PredictiveEcology/Biomass_core@main"</span>,</span>
+<span>              <span class="st">"PredictiveEcology/Biomass_regeneration@main"</span>,</span>
+<span>              <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
+<span>                        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"scfmLandcoverInit"</span>, <span class="st">"scfmRegime"</span>, <span class="st">"scfmDriver"</span>,</span>
+<span>                          <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>, <span class="st">"scfmSpread"</span>,</span>
+<span>                          <span class="st">"scfmDiagnostics"</span><span class="op">)</span><span class="op">)</span></span>
+<span>              <span class="co">#note scfm is a series of modules on a single git repository</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      dataYear <span class="op">=</span> <span class="fl">2011</span>, <span class="co">#will get kNN 2011 data, and NTEMS 2011 landcover</span></span>
+<span>      sppEquivCol <span class="op">=</span> <span class="st">"LandR"</span>,</span>
+<span>      .plots <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"png"</span><span class="op">)</span>,</span>
+<span>      .useCache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">".inputObjects"</span>, <span class="st">"init"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>    scfmDriver <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>targetN <span class="op">=</span> <span class="fl">1000</span>, <span class="co">#default is 4000 - higher targetN adds time + precision</span></span>
+<span>                      <span class="co"># targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000</span></span>
+<span>                      .useParallelFireRegimePolys <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co">#assumes parallelization is an otpion</span></span>
+<span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="co">#spades.allowInitDuringSimInit = TRUE,</span></span>
+<span>    repos <span class="op">=</span> <span class="va">repos</span>,</span>
+<span>    spades.allowSequentialCaching <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    spades.moduleCodeChecks <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>    spades.recoveryMode <span class="op">=</span> <span class="fl">1</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/LandR@main"</span>,</span>
+<span>               <span class="st">"PredictiveEcology/climateData@main"</span>,</span>
+<span>               <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span>,</span>
+<span>               <span class="st">"RCurl"</span>, <span class="st">"XML"</span>, <span class="st">"snow"</span>, <span class="st">"googledrive"</span><span class="op">)</span>,</span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2011</span>, end <span class="op">=</span> <span class="fl">2081</span><span class="op">)</span>,</span>
+<span>  <span class="co">#70 years of fire should be enough to evaluate MAAB</span></span>
+<span>  studyArea <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">targetCRS</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"+proj=lcc +lat_1=49 +lat_2=77 +lat_0=0 +lon_0=-95 +x_0=0 +y_0=0"</span>,</span>
+<span>                       <span class="st">"+datum=NAD83 +units=m +no_defs +ellps=GRS80 +towgs84=0,0,0"</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/vect.html">vect</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1209980</span>, <span class="fl">7586865</span><span class="op">)</span>, crs <span class="op">=</span> <span class="va">targetCRS</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/randomStudyArea.html">randomStudyArea</a></span><span class="op">(</span>center <span class="op">=</span> <span class="va">sa</span>, size <span class="op">=</span> <span class="fl">10000</span> <span class="op">*</span> <span class="fl">250</span> <span class="op">*</span> <span class="fl">30000</span>, seed <span class="op">=</span> <span class="fl">1002</span><span class="op">)</span></span>
+<span>    <span class="va">sa</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html">st_as_sf</a></span><span class="op">(</span><span class="va">sa</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  studyAreaLarge <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html">st_buffer</a></span><span class="op">(</span><span class="va">studyArea</span>, <span class="fl">5000</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rasterToMatchLarge <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">rtml</span><span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/rast.html">rast</a></span><span class="op">(</span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/ext.html">ext</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span>, res <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">250</span>, <span class="fl">250</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crs.html">crs</a></span><span class="op">(</span><span class="va">rtml</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crs.html">crs</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">rtml</span><span class="op">[</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
+<span>    <span class="va">rtml</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/mask.html">mask</a></span><span class="op">(</span><span class="va">rtml</span>, <span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  rasterToMatch <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">rtm</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crop.html">crop</a></span><span class="op">(</span><span class="va">rasterToMatchLarge</span>, <span class="va">studyArea</span><span class="op">)</span></span>
+<span>    <span class="va">rtm</span> <span class="op">&lt;-</span> <span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/mask.html">mask</a></span><span class="op">(</span><span class="va">rtm</span>, <span class="va">studyArea</span><span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
+<span>  sppEquiv <span class="op">=</span> <span class="op">{</span></span>
+<span>    <span class="va">speciesInStudy</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/speciesInStudyArea.html">speciesInStudyArea</a></span><span class="op">(</span><span class="va">studyAreaLarge</span><span class="op">)</span></span>
+<span>    <span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="fu"><a href="https://landr.predictiveecology.org/reference/equivalentName.html">equivalentName</a></span><span class="op">(</span><span class="va">speciesInStudy</span><span class="op">$</span><span class="va">speciesList</span>, df <span class="op">=</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span>, <span class="st">"LandR"</span><span class="op">)</span></span>
+<span>    <span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="fu">LandR</span><span class="fu">::</span><span class="va"><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">sppEquivalencies_CA</a></span><span class="op">[</span><span class="va">LandR</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">species</span><span class="op">]</span></span>
+<span>    <span class="va">sppEquiv</span> <span class="op">&lt;-</span> <span class="va">sppEquiv</span><span class="op">[</span><span class="va">KNN</span> <span class="op">!=</span> <span class="st">""</span> <span class="op">&amp;</span> <span class="va">LANDIS_traits</span> <span class="op">!=</span> <span class="st">""</span><span class="op">]</span> <span class="co">#avoid a bug with shore pine</span></span>
+<span>  <span class="op">}</span> </span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">outSim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="va"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades</a></span>, <span class="va">out</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu">completed</span><span class="op">(</span><span class="va">outSim</span><span class="op">)</span></span>
+<span><span class="fu">elapsedTime</span><span class="op">(</span><span class="va">outSim</span>, units <span class="op">=</span> <span class="st">"mins"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mm</span> <span class="op">&lt;-</span> <span class="fu">moduleMetadata</span><span class="op">(</span><span class="va">outSim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># a list of all the module metadata</span></span>
+<span><span class="va">mm</span><span class="op">$</span><span class="va">Biomass_borealDataPrep</span><span class="op">$</span></span>
+<span></span>
+<span><span class="va">out</span><span class="op">$</span><span class="va">params</span><span class="op">$</span><span class="va">.globals</span><span class="op">$</span><span class="va">.plots</span> <span class="op">&lt;-</span> <span class="st">"png"</span></span>
+<span><span class="va">outSim</span> <span class="op">&lt;-</span> <span class="fu">simInitAndSpades2</span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1310,9 +1267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./LandRDemo_coreVeg.html" class="pagination-link" aria-label="Forest Landscape Modelling with LandR and `setupProject`">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span>
       </a>          
@@ -1324,7 +1279,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

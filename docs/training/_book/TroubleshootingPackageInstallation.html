@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>3&nbsp; Troubleshooting R package installation – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -59,7 +56,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -83,8 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,13 +105,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -282,13 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -299,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -319,8 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -337,13 +325,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -352,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -376,14 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -391,15 +377,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -425,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -445,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -454,8 +436,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -492,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -501,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -517,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -527,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -536,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -574,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -583,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -597,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -611,38 +593,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#general-diagnosing-tools" id="toc-general-diagnosing-tools" class="nav-link active" data-scroll-target="#general-diagnosing-tools"><span class="header-section-number">3.1</span> General diagnosing tools</a></li>
-  <li><a href="#cant-install-a-package" id="toc-cant-install-a-package" class="nav-link" data-scroll-target="#cant-install-a-package"><span class="header-section-number">3.2</span> Can’t install a package</a>
+<li><a href="#general-diagnosing-tools" id="toc-general-diagnosing-tools" class="nav-link active" data-scroll-target="#general-diagnosing-tools"><span class="header-section-number">3.1</span> General diagnosing tools</a></li>
+  <li>
+<a href="#cant-install-a-package" id="toc-cant-install-a-package" class="nav-link" data-scroll-target="#cant-install-a-package"><span class="header-section-number">3.2</span> Can’t install a package</a>
   <ul class="collapse">
-  <li><a href="#package-has-already-been-loaded" id="toc-package-has-already-been-loaded" class="nav-link" data-scroll-target="#package-has-already-been-loaded"><span class="header-section-number">3.2.1</span> Package has already been loaded</a></li>
+<li><a href="#package-has-already-been-loaded" id="toc-package-has-already-been-loaded" class="nav-link" data-scroll-target="#package-has-already-been-loaded"><span class="header-section-number">3.2.1</span> Package has already been loaded</a></li>
   <li><a href="#lock-folder-issues" id="toc-lock-folder-issues" class="nav-link" data-scroll-target="#lock-folder-issues"><span class="header-section-number">3.2.2</span> 00LOCK folder issues</a></li>
   <li><a href="#missing-dependencies" id="toc-missing-dependencies" class="nav-link" data-scroll-target="#missing-dependencies"><span class="header-section-number">3.2.3</span> Missing dependencies</a></li>
   <li><a href="#package-version-cannot-be-met-or-found" id="toc-package-version-cannot-be-met-or-found" class="nav-link" data-scroll-target="#package-version-cannot-be-met-or-found"><span class="header-section-number">3.2.4</span> Package version cannot be met or found</a></li>
-  </ul></li>
-  <li><a href="#installed-a-package-but-it-isnt-showing-up" id="toc-installed-a-package-but-it-isnt-showing-up" class="nav-link" data-scroll-target="#installed-a-package-but-it-isnt-showing-up"><span class="header-section-number">3.3</span> Installed a package, but it isn’t showing up</a>
-  <ul class="collapse">
-  <li><a href="#you-installed-it-to-a-different-library" id="toc-you-installed-it-to-a-different-library" class="nav-link" data-scroll-target="#you-installed-it-to-a-different-library"><span class="header-section-number">3.3.1</span> You installed it to a different library</a></li>
-  <li><a href="#package-loaded-in-ram-collides-with-package-on-disk" id="toc-package-loaded-in-ram-collides-with-package-on-disk" class="nav-link" data-scroll-target="#package-loaded-in-ram-collides-with-package-on-disk"><span class="header-section-number">3.3.2</span> Package loaded in RAM collides with package on disk</a></li>
-  </ul></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">3.4</span> See also</a></li>
   </ul>
-</nav>
+</li>
+  <li>
+<a href="#installed-a-package-but-it-isnt-showing-up" id="toc-installed-a-package-but-it-isnt-showing-up" class="nav-link" data-scroll-target="#installed-a-package-but-it-isnt-showing-up"><span class="header-section-number">3.3</span> Installed a package, but it isn’t showing up</a>
+  <ul class="collapse">
+<li><a href="#you-installed-it-to-a-different-library" id="toc-you-installed-it-to-a-different-library" class="nav-link" data-scroll-target="#you-installed-it-to-a-different-library"><span class="header-section-number">3.3.1</span> You installed it to a different library</a></li>
+  <li><a href="#package-loaded-in-ram-collides-with-package-on-disk" id="toc-package-loaded-in-ram-collides-with-package-on-disk" class="nav-link" data-scroll-target="#package-loaded-in-ram-collides-with-package-on-disk"><span class="header-section-number">3.3.2</span> Package loaded in RAM collides with package on disk</a></li>
+  </ul>
+</li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">3.4</span> See also</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settingUp.html">Setting up your computer and system</a></li><li class="breadcrumb-item"><a href="./TroubleshootingPackageInstallation.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Troubleshooting R package installation</span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settingUp.html">Setting up your computer and system</a></li><li class="breadcrumb-item"><a href="./TroubleshootingPackageInstallation.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Troubleshooting R package installation</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-troubleshoot" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Troubleshooting R package installation</span></span></h1>
 </div>
 
@@ -669,130 +648,114 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>It is common for errors to occur when installing packages in R. The following are issues that we commonly face and their solutions.</p>
+</header><p>It is common for errors to occur when installing packages in R. The following are issues that we commonly face and their solutions.</p>
 <p>In all cases, it is likely that one solution will not totally resolve the issue. More than one may be required.</p>
-<section id="general-diagnosing-tools" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="general-diagnosing-tools"><span class="header-section-number">3.1</span> General diagnosing tools</h2>
+<section id="general-diagnosing-tools" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="general-diagnosing-tools">
+<span class="header-section-number">3.1</span> General diagnosing tools</h2>
 <p>The following help diagnose many of the issues mentioned below.</p>
 <ul>
-<li><p><code>loadedNamespaces()</code> shows which packages are actually loaded</p></li>
-<li><p><code>sessionInfo()</code> shows several other things as well, including package versions. Very useful when called after restarting R to see if there are any packages being pre-loaded</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/ns-load.html">loadedNamespaces()</a></code> shows which packages are actually loaded</p></li>
+<li><p><code><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo()</a></code> shows several other things as well, including package versions. Very useful when called after restarting R to see if there are any packages being pre-loaded</p></li>
 <li><p><code>packageVersion("&lt;packagename&gt;")</code> shows which version of the package your session <em>currently</em> has access to (already loaded or on disk in the library but not yet loaded). It might not necessarily correspond to the installed version.</p></li>
-</ul>
-</section>
-<section id="cant-install-a-package" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="cant-install-a-package"><span class="header-section-number">3.2</span> Can’t install a package</h2>
-<section id="package-has-already-been-loaded" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="package-has-already-been-loaded"><span class="header-section-number">3.2.1</span> Package has already been loaded</h3>
+</ul></section><section id="cant-install-a-package" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="cant-install-a-package">
+<span class="header-section-number">3.2</span> Can’t install a package</h2>
+<section id="package-has-already-been-loaded" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="package-has-already-been-loaded">
+<span class="header-section-number">3.2.1</span> Package has already been loaded</h3>
 <p>Some packages have files that cannot be deleted if they are being used in the current or <em>another</em> R session. This is primarily true for packages with compiled code. This will create several cascading problems, even after restarting the current R session.</p>
-<section id="potential-solutions" class="level4" data-number="3.2.1.1">
-<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="potential-solutions"><span class="header-section-number">3.2.1.1</span> Potential solutions</h4>
+<section id="potential-solutions" class="level4" data-number="3.2.1.1"><h4 data-number="3.2.1.1" class="anchored" data-anchor-id="potential-solutions">
+<span class="header-section-number">3.2.1.1</span> Potential solutions</h4>
 <ul>
 <li><p><strong>Restart R</strong> – The number one solution for many problems is to restart R. If using RStudio, the keyboard shortcut is commonly CTRL-SHIFT-F10.</p></li>
 <li><p><strong>Close other R or RStudio sessions</strong> – If you have more than one session open, each one may have packages loaded. That means you can’t install (update), delete or uninstall a package that has already been loaded elsewhere.</p></li>
 <li><p><strong>Close RStudio and install in a separate R session</strong> – By default, RStudio pre-loads packages before user input. This is convenient under some conditions, but is very difficult to deal with when it doesn’t work correctly – e.g.&nbsp;when these packages need to be updated. You may have to close RStudio, open a separate R session (without RStudio) and install the packages there.</p></li>
-<li><p><strong>Update packages in user library –</strong> Package versions may collide between the user library and the project library. Try to update the packages in the user library. To determine where this is, you can try:</p>
+<li>
+<p><strong>Update packages in user library –</strong> Package versions may collide between the user library and the project library. Try to update the packages in the user library. To determine where this is, you can try:</p>
 <p><code>userLib &lt;- Sys.getenv("R_LIBS_USER")</code></p>
 <p>then update the packages there:</p>
-<p><code>update.packages(userLib, ask = FALSE)</code></p></li>
+<p><code>update.packages(userLib, ask = FALSE)</code></p>
+</li>
 <li><p><strong>Turn off R diagnostics</strong> – Alternatively (or in complement) to the solution above, you can turn off R code diagnostics (temporarily or permanently), in your RStudio’s <em>Global Options</em>. This can greatly reduce the number of pre-loaded packages at the expense of losing some RStudio functionality. Via RStudio GUI:</p></li>
 </ul>
 <ol type="1">
-<li><p>Go to <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Code</em></p>
+<li>
+<p>Go to <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>Code</em></p>
 <ol start="2" type="1">
 <li>Open the <em>Diagnostics</em> tab, and uncheck “Show diagnostics for R”</li>
 </ol>
 <p>Restart R after doing the above. Try the package installations again. If they fail again, see other solutions and try them.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/GOptions_RDiagnostics.PNG" class="img-fluid figure-img" width="469"></p>
-<figcaption>Turning of R diagnostics with RStudio – a potential solution to prevent RStudio from pre-loading several R packages.</figcaption>
-</figure>
+<figure class="figure"><p><img src="assets/img/GOptions_RDiagnostics.PNG" class="img-fluid figure-img" width="469"></p>
+<figcaption>Turning of R diagnostics with RStudio – a potential solution to prevent RStudio from pre-loading several R packages.</figcaption></figure>
 </div>
 <p>Alternatively, you can:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"RStudio.prefs"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>RStudio.prefs<span class="sc">::</span><span class="fu">use_RStudio_prefs</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">show_diagnostics_r =</span> <span class="cn">FALSE</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"RStudio.prefs"</span><span class="op">)</span></span>
+<span><span class="fu">RStudio.prefs</span><span class="fu">::</span><span class="fu">use_RStudio_prefs</span><span class="op">(</span></span>
+<span>show_diagnostics_r <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div></li>
+</div>
+</li>
 </ol>
 <ul>
-<li><p><strong>Turn off previous R session reloading</strong> – If R is reloading a previously saved session (loading an <code>.Rdata</code> file) this may also be loading the packages attached to this previous session. You can turn off this feature off (temporarily or permanently), in your RStudio’s <em>Global Options</em>. Via the RStudio GUI:</p>
+<li>
+<p><strong>Turn off previous R session reloading</strong> – If R is reloading a previously saved session (loading an <code>.Rdata</code> file) this may also be loading the packages attached to this previous session. You can turn off this feature off (temporarily or permanently), in your RStudio’s <em>Global Options</em>. Via the RStudio GUI:</p>
 <ol type="1">
 <li>Go to <em>Tools</em> &gt; <em>Global Options</em> &gt; <em>General</em> and uncheck “Restore .RData into workspace at startup:`</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="assets/img/GOptions_RData.PNG" class="img-fluid figure-img" width="469"></p>
-<figcaption>Turning of restoring previous R session with RStudio – a potential solution to prevent R from loading R packages used in a previous session.</figcaption>
-</figure>
-</div></li>
-</ul>
-</section>
-</section>
-<section id="lock-folder-issues" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="lock-folder-issues"><span class="header-section-number">3.2.2</span> 00LOCK folder issues</h3>
+<figure class="figure"><p><img src="assets/img/GOptions_RData.PNG" class="img-fluid figure-img" width="469"></p>
+<figcaption>Turning of restoring previous R session with RStudio – a potential solution to prevent R from loading R packages used in a previous session.</figcaption></figure>
+</div>
+</li>
+</ul></section></section><section id="lock-folder-issues" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="lock-folder-issues">
+<span class="header-section-number">3.2.2</span> 00LOCK folder issues</h3>
 <p>Once a package installation failure happened and interrupted the process, there may be a 00LOCK folder that R cannot remove, nor overwrite. R can’t install anything until that 00LOCK folder is removed.</p>
-<section id="potential-solutions-1" class="level4" data-number="3.2.2.1">
-<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="potential-solutions-1"><span class="header-section-number">3.2.2.1</span> Potential solutions</h4>
+<section id="potential-solutions-1" class="level4" data-number="3.2.2.1"><h4 data-number="3.2.2.1" class="anchored" data-anchor-id="potential-solutions-1">
+<span class="header-section-number">3.2.2.1</span> Potential solutions</h4>
 <ul>
-<li><strong>Delete 00LOCK folder(s)</strong> – The error message of the package installation failure will indicate if this is the issue and tell you where the 00LOCK folder is located. Make sure all other R sessions are closed and that the current session is restarted (and possibly closed), before deleting the 00LOCK folder. Then try installing the package again. If you can’t delete it, ensure RStudio and R are completely closed and possibly other software such as Git version control software (e.g.&nbsp;GitKraken, Bitbucket).</li>
-</ul>
-</section>
-</section>
-<section id="missing-dependencies" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="missing-dependencies"><span class="header-section-number">3.2.3</span> Missing dependencies</h3>
+<li>
+<strong>Delete 00LOCK folder(s)</strong> – The error message of the package installation failure will indicate if this is the issue and tell you where the 00LOCK folder is located. Make sure all other R sessions are closed and that the current session is restarted (and possibly closed), before deleting the 00LOCK folder. Then try installing the package again. If you can’t delete it, ensure RStudio and R are completely closed and possibly other software such as Git version control software (e.g.&nbsp;GitKraken, Bitbucket).</li>
+</ul></section></section><section id="missing-dependencies" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="missing-dependencies">
+<span class="header-section-number">3.2.3</span> Missing dependencies</h3>
 <p>Although this happens less and less because functions like <code>install.packages</code> now default to installing package dependencies, it can still happen that one of the target package’s dependencies is missing or failed to install. The error message will indicate which one, but bear in mind that when installing many packages/dependencies, the reason why the dependency wasn’t installed may be buried in previous messages and warnings. So read the installation output carefully.</p>
-<section id="potential-solutions-2" class="level4" data-number="3.2.3.1">
-<h4 data-number="3.2.3.1" class="anchored" data-anchor-id="potential-solutions-2"><span class="header-section-number">3.2.3.1</span> Potential solutions</h4>
+<section id="potential-solutions-2" class="level4" data-number="3.2.3.1"><h4 data-number="3.2.3.1" class="anchored" data-anchor-id="potential-solutions-2">
+<span class="header-section-number">3.2.3.1</span> Potential solutions</h4>
 <p>The solution will depend on the reason why the dependency package failed to install. See solutions in <a href="#package-has-already-been-loaded">Package has already been loaded</a> and <a href="#lock-folder-issues">00LOCK folder issues</a>.</p>
-</section>
-</section>
-<section id="package-version-cannot-be-met-or-found" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="package-version-cannot-be-met-or-found"><span class="header-section-number">3.2.4</span> Package version cannot be met or found</h3>
+</section></section><section id="package-version-cannot-be-met-or-found" class="level3" data-number="3.2.4"><h3 data-number="3.2.4" class="anchored" data-anchor-id="package-version-cannot-be-met-or-found">
+<span class="header-section-number">3.2.4</span> Package version cannot be met or found</h3>
 <p>When <code>Require</code> is used to install packages<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, it uses various caching mechanisms. If a package can’t be found, or there is an unexplainable installation failure clearing the package cache may fix it.</p>
-<section id="potential-solutions-3" class="level4" data-number="3.2.4.1">
-<h4 data-number="3.2.4.1" class="anchored" data-anchor-id="potential-solutions-3"><span class="header-section-number">3.2.4.1</span> Potential solutions</h4>
+<section id="potential-solutions-3" class="level4" data-number="3.2.4.1"><h4 data-number="3.2.4.1" class="anchored" data-anchor-id="potential-solutions-3">
+<span class="header-section-number">3.2.4.1</span> Potential solutions</h4>
 <p>Try purging the cache with one or more of these:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Can't find the package remotely</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Require<span class="sc">::</span><span class="fu">purgeCache</span>()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Can't install a particular package, e.g., ggplot2</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Require<span class="sc">::</span><span class="fu">clearRequirePackageCache</span>(<span class="at">packages =</span> <span class="st">"ggplot2"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The above didn't work, clear ALL packages from local cache</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Require<span class="sc">::</span><span class="fu">purgeCache</span>(<span class="at">packages =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## Can't find the package remotely</span></span>
+<span><span class="fu">Require</span><span class="fu">::</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/cachePurge.html">purgeCache</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Can't install a particular package, e.g., ggplot2</span></span>
+<span><span class="fu">Require</span><span class="fu">::</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/clearRequire.html">clearRequirePackageCache</a></span><span class="op">(</span>packages <span class="op">=</span> <span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## The above didn't work, clear ALL packages from local cache</span></span>
+<span><span class="fu">Require</span><span class="fu">::</span><span class="fu"><a href="https://Require.predictiveecology.org/reference/cachePurge.html">purgeCache</a></span><span class="op">(</span>packages <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-</section>
-</section>
-<section id="installed-a-package-but-it-isnt-showing-up" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="installed-a-package-but-it-isnt-showing-up"><span class="header-section-number">3.3</span> Installed a package, but it isn’t showing up</h2>
-<section id="you-installed-it-to-a-different-library" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="you-installed-it-to-a-different-library"><span class="header-section-number">3.3.1</span> You installed it to a different library</h3>
+</section></section></section><section id="installed-a-package-but-it-isnt-showing-up" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="installed-a-package-but-it-isnt-showing-up">
+<span class="header-section-number">3.3</span> Installed a package, but it isn’t showing up</h2>
+<section id="you-installed-it-to-a-different-library" class="level3" data-number="3.3.1"><h3 data-number="3.3.1" class="anchored" data-anchor-id="you-installed-it-to-a-different-library">
+<span class="header-section-number">3.3.1</span> You installed it to a different library</h3>
 <p>As people migrate to using “project” libraries, i.e., a unique R package library for each project, sometimes, the user library (the one that you get by default with a normal R installation) can cause problems.</p>
-<section id="potential-solutions-4" class="level4" data-number="3.3.1.1">
-<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="potential-solutions-4"><span class="header-section-number">3.3.1.1</span> Potential solutions</h4>
+<section id="potential-solutions-4" class="level4" data-number="3.3.1.1"><h4 data-number="3.3.1.1" class="anchored" data-anchor-id="potential-solutions-4">
+<span class="header-section-number">3.3.1.1</span> Potential solutions</h4>
 <ul>
-<li><strong>Become aware of user vs.&nbsp;project library –</strong> <code>.libPaths()</code> is your friend. It tells you what folder the current R session is using as a package library. The default place for a personal library in R depends on operating system. For windows, it is something like:</li>
+<li>
+<strong>Become aware of user vs.&nbsp;project library –</strong> <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code> is your friend. It tells you what folder the current R session is using as a package library. The default place for a personal library in R depends on operating system. For windows, it is something like:</li>
 </ul>
 <pre><code>&gt; Sys.getenv("R_LIBS_USER")
 [1] "C:\\Users\\emcintir\\AppData\\Local/R/win-library/4.4"</code></pre>
 <p>For Linux, it is something like:</p>
 <pre><code>&gt; Sys.getenv("R_LIBS_USER")
 [1] "/home/emcintir/R/x86_64-pc-linux-gnu-library/4.3"</code></pre>
-<p>If you have a project-specific library, including if you use <code>SpaDES.project</code> or <code>renv</code>, <code>.libPaths()</code> will point to somewhere else. For <code>SpaDES.project</code> it will be something like:</p>
+<p>If you have a project-specific library, including if you use <code>SpaDES.project</code> or <code>renv</code>, <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code> will point to somewhere else. For <code>SpaDES.project</code> it will be something like:</p>
 <pre><code># Windows
 &gt; .libPaths()
 [1] "C:/Users/emcintir/AppData/Roaming/R/data/R/SpaDES.project/packages/x86_64-w64-mingw32/4.4"
@@ -801,28 +764,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &gt; .libPaths()
 [1] "/home/emcintir/.local/share/R/SpaDES.project/packages/x86_64-pc-linux-gnu/4.3"</code></pre>
 <p>When you install a package, ensure it was installed in the correct location.</p>
-</section>
-</section>
-<section id="package-loaded-in-ram-collides-with-package-on-disk" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="package-loaded-in-ram-collides-with-package-on-disk"><span class="header-section-number">3.3.2</span> Package loaded in RAM collides with package on disk</h3>
-<p>If you previously loaded a package via e.g., <code>library(ggplot2)</code>, then you happen to update it to a newer version, the newer version will be on disk in your library, but <code>packageVersion("ggplot2")</code> will show the older one. Restart R and it will be solved.</p>
-</section>
-</section>
-<section id="see-also" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="see-also"><span class="header-section-number">3.4</span> See also</h2>
+</section></section><section id="package-loaded-in-ram-collides-with-package-on-disk" class="level3" data-number="3.3.2"><h3 data-number="3.3.2" class="anchored" data-anchor-id="package-loaded-in-ram-collides-with-package-on-disk">
+<span class="header-section-number">3.3.2</span> Package loaded in RAM collides with package on disk</h3>
+<p>If you previously loaded a package via e.g., <code><a href="https://ggplot2.tidyverse.org">library(ggplot2)</a></code>, then you happen to update it to a newer version, the newer version will be on disk in your library, but <code>packageVersion("ggplot2")</code> will show the older one. Restart R and it will be solved.</p>
+</section></section><section id="see-also" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">3.4</span> See also</h2>
 <p>An alternative way to address package management is using the <a href="https://RStudio.github.io/renv/articles/renv.html"><code>renv</code></a> package. Some people have great success with this. Some of us find it not very amenable to modular workflows.</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
-<li id="fn1"><p>For instance, <code>SpaDES.project</code> functions and <code>SpaDES.core::simInit()</code> internally use <code>Require</code> to install package dependencies specified by the user or modules.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<li id="fn1"><p>For instance, <code>SpaDES.project</code> functions and <code><a href="https://spades-core.predictiveecology.org/reference/simInit.html">SpaDES.core::simInit()</a></code> internally use <code>Require</code> to install package dependencies specified by the user or modules.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1238,9 +1191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./PackagesForBook.html" class="pagination-link" aria-label="Pre-installing R packages for book">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span></span>
       </a>          
@@ -1252,7 +1203,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

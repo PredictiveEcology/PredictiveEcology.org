@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Ceres Barros">
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-05-26">
-
 <title>Best practices – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -80,7 +77,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -104,8 +100,7 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -131,13 +126,8 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -162,11 +152,8 @@ const typesetMath = (el) => {
 window.Quarto = {
   typesetMath
 };
-</script>
-
-<link rel="stylesheet" href="assets/css/main.scss">
+</script><link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -332,13 +319,10 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -349,7 +333,7 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -369,8 +353,8 @@ window.Quarto = {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -387,13 +371,13 @@ window.Quarto = {
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -402,7 +386,7 @@ window.Quarto = {
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -426,14 +410,12 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -441,15 +423,11 @@ window.Quarto = {
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -475,8 +453,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -495,7 +473,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -504,8 +482,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -542,7 +520,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -551,8 +529,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -567,7 +545,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -577,7 +555,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -586,8 +564,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -624,7 +602,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -633,8 +611,8 @@ window.Quarto = {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -647,7 +625,7 @@ window.Quarto = {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link active">
@@ -661,27 +639,20 @@ window.Quarto = {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#general-best-practices-for-r3t-workflows" id="toc-general-best-practices-for-r3t-workflows" class="nav-link active" data-scroll-target="#general-best-practices-for-r3t-workflows">General best practices for <span class="math inline">\(R^3T\)</span> workflows</a></li>
+<li><a href="#general-best-practices-for-r3t-workflows" id="toc-general-best-practices-for-r3t-workflows" class="nav-link active" data-scroll-target="#general-best-practices-for-r3t-workflows">General best practices for <span class="math inline">\(R^3T\)</span> workflows</a></li>
   <li><a href="#best-practices-for-spades-workflows" id="toc-best-practices-for-spades-workflows" class="nav-link" data-scroll-target="#best-practices-for-spades-workflows">Best practices for SpaDES workflows</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Best practices</h1>
 </div>
 
@@ -709,91 +680,94 @@ window.Quarto = {
   
 
 
-</header>
-
-
-<p>Developing repeatable, reproducible, reusable and transparent (<span class="math inline">\(R^3T\)</span>) workflows in R (and probably across many other languages) requires not only automating workflow steps/processes, which we can achieve with SpaDES, but also to be attentive to the way we code and setup the actual (SpaDES) workflow.</p>
+</header><p>Developing repeatable, reproducible, reusable and transparent (<span class="math inline">\(R^3T\)</span>) workflows in R (and probably across many other languages) requires not only automating workflow steps/processes, which we can achieve with SpaDES, but also to be attentive to the way we code and setup the actual (SpaDES) workflow.</p>
 <p>Here are some general and workflow best practices that we recommend to SpaDES users and R programmers in general.</p>
-<section id="general-best-practices-for-r3t-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="general-best-practices-for-r3t-workflows">General best practices for <span class="math inline">\(R^3T\)</span> workflows</h2>
+<section id="general-best-practices-for-r3t-workflows" class="level2"><h2 class="anchored" data-anchor-id="general-best-practices-for-r3t-workflows">General best practices for <span class="math inline">\(R^3T\)</span> workflows</h2>
 <ul>
 <li><p><strong>Script, script, script</strong> – this means script <em>everything</em> you do, including package installation.</p></li>
-<li><p><strong>“DOComment” your code</strong> – use comments that describe the intention of the code, not necessarily a code translation into human language.</p>
+<li>
+<p><strong>“DOComment” your code</strong> – use comments that describe the intention of the code, not necessarily a code translation into human language.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Not a very useful comment (we can check <code>?lm</code> to know what it does):</p>
+<p>Not a very useful comment (we can check <code><a href="https://rdrr.io/r/stats/lm.html">?lm</a></code> to know what it does):</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lm fits a linear model</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(biomass <span class="sc">~</span> height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># lm fits a linear model</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">biomass</span> <span class="op">~</span> <span class="va">height</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>A more useful comment:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># model linear relationship between biomass and height</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(biomass <span class="sc">~</span> height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># model linear relationship between biomass and height</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">biomass</span> <span class="op">~</span> <span class="va">height</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </div>
 </div>
-</div></li>
+</div>
+</li>
 <li><p><strong>Minimize the number of software/languages used</strong> – the more jumps between languages/software the less robust and reproducible the workflow is. Remember: other users will need to install the same software and be able to the same jumps/operations that you did without you looking over their shoulder.</p></li>
-<li><p><strong>Modularise and “functionise”</strong> – avoid loooooong scripts, which are harder to read, learn and debug. Instead bundle your code into modules and functions.</p>
+<li>
+<p><strong>Modularise and “functionise”</strong> – avoid loooooong scripts, which are harder to read, learn and debug. Instead bundle your code into modules and functions.</p>
 <ul>
 <li><p>SpaDES helps the modularisation part a great deal but it is still up to the developer to create functions and to decide what workflow components can/should be broken into separate modules or events.</p></li>
 <li><p>When using embedded module and event caching, think about what workflow steps can be cached to speed up development and re-runs and consider turning these into separate modules or events.</p></li>
-<li><p>Consider “packaging” your functions so they can be used across projects and SpaDES modules.</p>
+<li>
+<p>Consider “packaging” your functions so they can be used across projects and SpaDES modules.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://onlinelibrary.wiley.com/cms/asset/680b22bc-1a97-4ab6-8f90-6fd1557e9e27/ele13994%20-fig-0001-m.jpg"><img src="assets/img/PERFICTfig1.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>Functions and modules as key tools for $R^3T$, but also for building integrated and continuous workflows; McIntire et al. (2022)</figcaption>
-</figure>
-</div></li>
-</ul></li>
+<figure class="figure"><p><a href="https://onlinelibrary.wiley.com/cms/asset/680b22bc-1a97-4ab6-8f90-6fd1557e9e27/ele13994%20-fig-0001-m.jpg"><img src="assets/img/PERFICTfig1.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>Functions and modules as key tools for $R^3T$, but also for building integrated and continuous workflows; McIntire et al. (2022)</figcaption></figure>
+</div>
+</li>
+</ul>
+</li>
 <li><p><strong>Centralize workflow in a single script</strong> – this is quite intuitive when using SpaDES, as usually there is a “controller” script that sets up and runs the workflow.</p></li>
 <li><p><strong>Use project-oriented and self-contained workflows</strong> – pick a structure that is self-explanatory and make sure that the project can be “moved” between users/machines without changing the code.</p></li>
-<li><p><strong>Don’t use absolute paths</strong> – use <em>relative</em> paths (relative to project directory) – RStudio Projects and SpaDES.project do this automatically.</p>
+<li>
+<p><strong>Don’t use absolute paths</strong> – use <em>relative</em> paths (relative to project directory) – RStudio Projects and SpaDES.project do this automatically.</p>
 <ul>
 <li>You can even install your R packages into project-level libraries, to allow for different package versions between projects in the same machine</li>
-</ul></li>
-<li><p><strong>Version control</strong> – great for collaboration, great for tracking changes, great to recover old versions of a project/code</p>
+</ul>
+</li>
+<li>
+<p><strong>Version control</strong> – great for collaboration, great for tracking changes, great to recover old versions of a project/code</p>
 <ul>
 <li>When using version control software, it might be best not to use cloud-based storage and syncing (e.g.&nbsp;OneDrive, Google Drive, Dropbox) on the same files/folders, as it can conflict with and slow down the version control software.</li>
-</ul></li>
-<li><p><strong>Test (!)</strong> – test your code and your workflow if you want them to endure and persist through time and users</p>
-<ul>
-<li>Use a combination of <em>assertions</em>, <em>unit tests</em> and <em>integration tests</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
-</ul></li>
 </ul>
-</section>
-<section id="best-practices-for-spades-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices-for-spades-workflows">Best practices for SpaDES workflows</h2>
+</li>
+<li>
+<p><strong>Test (!)</strong> – test your code and your workflow if you want them to endure and persist through time and users</p>
 <ul>
-<li><p><strong>Limit the number of objects in <code>.GlobalEnv</code></strong> – instead, put them in functions or inside a module. When objects are in modules, you can add default object values (e.g.&nbsp;via <code>.inputObjects()</code>), or save them into files that are loaded by <code>setupProject</code> or <code>simInit</code>. Alternatively, you can pass objects or code to make them directly to <code>setupProject()</code> as <code>...</code> arguments, or to the <code>simInit</code> <code>objects</code> arguments. See <a href="ModuleInputs.html" class="quarto-xref"><span>6&nbsp; Providing Module Inputs</span></a> and, for an example with <code>setupProject</code>, <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>16&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a>.</p>
+<li>Use a combination of <em>assertions</em>, <em>unit tests</em> and <em>integration tests</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+</li>
+</ul>
+</li>
+</ul></section><section id="best-practices-for-spades-workflows" class="level2"><h2 class="anchored" data-anchor-id="best-practices-for-spades-workflows">Best practices for SpaDES workflows</h2>
 <ul>
-<li>Why? Because modules might then find/use objects in/from the <code>.GlobalEnv</code> when they shouldn’t (they should use them from the <code>simList</code>). <code>SpaDES.project::setupProject</code> and <code>simInit</code> deal with these issues by loading and objects directly into a separate environment (the <code>simList</code>).</li>
-</ul></li>
-<li><p><strong>Don’t install packages “manually” and “separately”</strong> – script package installation in a reproducible way, i.e.&nbsp;that includes reference to package versions. Even better, let <code>setupProject</code> deal with package installation.</p>
+<li>
+<p><strong>Limit the number of objects in <code>.GlobalEnv</code></strong> – instead, put them in functions or inside a module. When objects are in modules, you can add default object values (e.g.&nbsp;via <code>.inputObjects()</code>), or save them into files that are loaded by <code>setupProject</code> or <code>simInit</code>. Alternatively, you can pass objects or code to make them directly to <code>setupProject()</code> as <code>...</code> arguments, or to the <code>simInit</code> <code>objects</code> arguments. See <a href="ModuleInputs.html" class="quarto-xref"><span>6&nbsp; Providing Module Inputs</span></a> and, for an example with <code>setupProject</code>, <a href="LandRDemo_coreVeg.html" class="quarto-xref"><span>16&nbsp; Forest Landscape Modelling with LandR and setupProject</span></a>.</p>
+<ul>
+<li>Why? Because modules might then find/use objects in/from the <code>.GlobalEnv</code> when they shouldn’t (they should use them from the <code>simList</code>). <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">SpaDES.project::setupProject</a></code> and <code>simInit</code> deal with these issues by loading and objects directly into a separate environment (the <code>simList</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Don’t install packages “manually” and “separately”</strong> – script package installation in a reproducible way, i.e.&nbsp;that includes reference to package versions. Even better, let <code>setupProject</code> deal with package installation.</p>
 <ul>
 <li>Why not? When you have many modules, each with a list of packages it needs it will be hard to figure out what packages need to be installed or updated. <code>setupProject</code> was designed to deal with this issue using the <code>Require</code> package.</li>
-</ul></li>
-<li><p><strong>Don’t pre-load packages</strong> – let <code>simInit</code> do it when the simulation is being initialized and only <em>after</em> it has asserted that packages are available and in the correct versions.</p>
+</ul>
+</li>
+<li>
+<p><strong>Don’t pre-load packages</strong> – let <code>simInit</code> do it when the simulation is being initialized and only <em>after</em> it has asserted that packages are available and in the correct versions.</p>
 <ul>
 <li>Why not? There are many reasons why things can get messed up with modelling in R… e.g., package dependency issues (especially version numbers that collide during development stages), internet availability. Pre-loading a package prevents it from being updated, which can make <code>setupProject</code> (and <code>simInit</code>) fail if they attempt to update a package to respect module requirements.</li>
-</ul></li>
+</ul>
+</li>
 <li><p><strong>Avoid installing packages into a cloud-synced/managed folder</strong> – files in and folders managed by cloud-storage software like OneDrive, Google Drive and Dropbox, are constantly being screened by these software which can lead to conflicts during package installation (e.g., the software holds on to certain files and R is unable to delete and re-install them). If package installation is scripted, there is no need to sync it with a server – you can recover it at any time.</p></li>
 <li><p><strong>Avoid pointing the cache to a cloud-synced/managed folder</strong> – for the same reasons as in the previous point.</p></li>
-</ul>
-</section>
-<section id="see-also" class="level2">
-<h2 class="anchored" data-anchor-id="see-also">See also</h2>
+</ul></section><section id="see-also" class="level2"><h2 class="anchored" data-anchor-id="see-also">See also</h2>
 <p><a href="https://ecoforecast.org/reproducible-forecasting-workflows/">EFI’s reproducible forecasting workflows</a></p>
 <p><a href="http://www.practicereproducibleresearch.org/">The Practice of Reproducible Research</a></p>
 <p><a href="http://adv-r.had.co.nz/Style.html">Advanced R - Style guide; by Hadley Wickham</a></p>
@@ -806,16 +780,10 @@ window.Quarto = {
 Sarma, Gopal P., Travis W. Jacobs, Mark D. Watts, S. Vahid Ghayoomie, Stephen D. Larson, and Richard C. Gerkin. 2016. <span>“Unit Testing, Model Validation, and Biological Simulation.”</span> <em>F1000Research</em> 5 (August): 1946. <a href="https://doi.org/10.12688/f1000research.9315.1">https://doi.org/10.12688/f1000research.9315.1</a>.
 </div>
 </div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
 <ol>
 <li id="fn1"><p><em>Assertions</em> and <em>unit tests</em> are smaller and generally test specific operations within a workflow (e.g. <code>if (1 + x != 2) stop("there is an error")</code>) or things like object integrity (e.g. <code>if (!is(x, "data.frame") stop("there is an error")</code>). <em>Integration tests</em> are larger in the sense that they test many components of a workflow and whether they work well together (they can also test an entire workflow)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1231,9 +1199,7 @@ Sarma, Gopal P., Travis W. Jacobs, Mark D. Watts, S. Vahid Ghayoomie, Stephen D.
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./FireUnderClimateChange.html" class="pagination-link" aria-label="Fire under climate change">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span>
       </a>          
@@ -1245,7 +1211,6 @@ Sarma, Gopal P., Travis W. Jacobs, Mark D. Watts, S. Vahid Ghayoomie, Stephen D.
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

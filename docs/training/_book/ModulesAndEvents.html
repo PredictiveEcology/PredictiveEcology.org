@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>8&nbsp; Modules, Events and Functions – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -79,7 +76,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -103,8 +99,7 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -130,13 +125,9 @@ div.csl-indent {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -302,13 +293,10 @@ div.csl-indent {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -319,7 +307,7 @@ div.csl-indent {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -339,8 +327,8 @@ div.csl-indent {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -357,13 +345,13 @@ div.csl-indent {
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -372,7 +360,7 @@ div.csl-indent {
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -396,14 +384,12 @@ div.csl-indent {
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -411,15 +397,11 @@ div.csl-indent {
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -445,8 +427,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -465,7 +447,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -474,8 +456,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -512,7 +494,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -521,8 +503,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -537,7 +519,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -547,7 +529,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -556,8 +538,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -594,7 +576,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -603,8 +585,8 @@ div.csl-indent {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -617,7 +599,7 @@ div.csl-indent {
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -631,39 +613,36 @@ div.csl-indent {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules"><span class="header-section-number">8.1</span> Modules</a></li>
+<li><a href="#modules" id="toc-modules" class="nav-link active" data-scroll-target="#modules"><span class="header-section-number">8.1</span> Modules</a></li>
   <li><a href="#events" id="toc-events" class="nav-link" data-scroll-target="#events"><span class="header-section-number">8.2</span> Events</a></li>
-  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">8.3</span> Functions</a>
+  <li>
+<a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">8.3</span> Functions</a>
   <ul class="collapse">
-  <li><a href="#adding-functions" id="toc-adding-functions" class="nav-link" data-scroll-target="#adding-functions"><span class="header-section-number">8.3.1</span> Adding functions</a></li>
-  </ul></li>
-  <li><a href="#sec-moduletypes" id="toc-sec-moduletypes" class="nav-link" data-scroll-target="#sec-moduletypes"><span class="header-section-number">8.4</span> Module types</a>
+<li><a href="#adding-functions" id="toc-adding-functions" class="nav-link" data-scroll-target="#adding-functions"><span class="header-section-number">8.3.1</span> Adding functions</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#sec-moduletypes" id="toc-sec-moduletypes" class="nav-link" data-scroll-target="#sec-moduletypes"><span class="header-section-number">8.4</span> Module types</a>
   <ul class="collapse">
-  <li><a href="#static" id="toc-static" class="nav-link" data-scroll-target="#static"><span class="header-section-number">8.4.1</span> Static</a></li>
+<li><a href="#static" id="toc-static" class="nav-link" data-scroll-target="#static"><span class="header-section-number">8.4.1</span> Static</a></li>
   <li><a href="#dynamic" id="toc-dynamic" class="nav-link" data-scroll-target="#dynamic"><span class="header-section-number">8.4.2</span> Dynamic</a></li>
-  </ul></li>
+  </ul>
+</li>
   <li><a href="#where-modules-live" id="toc-where-modules-live" class="nav-link" data-scroll-target="#where-modules-live"><span class="header-section-number">8.5</span> Where modules “live”</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">8.6</span> See also</a></li>
   <li><a href="#more-learning-on-this-subject" id="toc-more-learning-on-this-subject" class="nav-link" data-scroll-target="#more-learning-on-this-subject"><span class="header-section-number">8.7</span> More learning on this subject</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">8.8</span> Barebones R script</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SpaDESbasics.html">SpaDES 101</a></li><li class="breadcrumb-item"><a href="./ModulesAndEvents.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modules, Events and Functions</span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SpaDESbasics.html">SpaDES 101</a></li><li class="breadcrumb-item"><a href="./ModulesAndEvents.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modules, Events and Functions</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-modseventsfuns" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modules, Events and Functions</span></span></h1>
 </div>
 
@@ -690,10 +669,7 @@ div.csl-indent {
   
 
 
-</header>
-
-
-<div class="callout callout-style-simple callout-tip">
+</header><div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -707,8 +683,8 @@ div.csl-indent {
 <p><strong>Events</strong> are ways to name chunks of code that can be run in a particular sequence or at a particular time.</p>
 <p><strong>Functions</strong> are the basic building blocks in R and other languages. We work with all three of these to make robust and re-useable workflows.</p>
 <p>Modules encapsulate events, which encapsulate functions.</p>
-<section id="modules" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="modules"><span class="header-section-number">8.1</span> Modules</h2>
+<section id="modules" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="modules">
+<span class="header-section-number">8.1</span> Modules</h2>
 <p>Modules include the following elements:</p>
 <ul>
 <li><p>a function call to <code>defineModule</code> that defines the metadata (mandatory)</p></li>
@@ -750,77 +726,67 @@ How to decide whether to make a module, or expand an existing one?
 <p>We usually see “data preparation” and “model calibration” steps as semi-independent from “prediction/simulation steps” and have typically created “data preparation”/“calibration” modules to keep these steps separate, and to allow swapping between different approaches to preparing inputs for a model.</p>
 </div>
 </div>
-</section>
-<section id="events" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="events"><span class="header-section-number">8.2</span> Events</h2>
+</section><section id="events" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="events">
+<span class="header-section-number">8.2</span> Events</h2>
 <p>Events are named chunks of code that can be scheduled to be run once or many times. These are scheduled with <code>scheduleEvent()</code>. There are several commonly occurring module types that can be grouped based on the events that they contain (see <a href="#sec-moduletypes" class="quarto-xref"><span>Section 8.4</span></a>).</p>
 <p>To see how to schedule events, see: <a href="Scheduling.html" class="quarto-xref"><span>Chapter 9</span></a>.</p>
-</section>
-<section id="functions" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="functions"><span class="header-section-number">8.3</span> Functions</h2>
+</section><section id="functions" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="functions">
+<span class="header-section-number">8.3</span> Functions</h2>
 <p>Essentially, everything in R is or uses functions. Modules define events (<code>doEvent.*moduleName*</code>), events call specific functions (we some times call the main function an event calls an “event function”, but there can be other nested functions within these), and functions can be defined within modules, R packages, or user code contained in <code>.R</code> scripts inside the module’s <code>R/</code> folder.</p>
 <p><strong>We would not define functions in the <code>.GlobalEnv</code>.</strong></p>
-<section id="adding-functions" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="adding-functions"><span class="header-section-number">8.3.1</span> Adding functions</h3>
+<section id="adding-functions" class="level3" data-number="8.3.1"><h3 data-number="8.3.1" class="anchored" data-anchor-id="adding-functions">
+<span class="header-section-number">8.3.1</span> Adding functions</h3>
 <p>Any function can be written and defined in any <code>.R</code> file in the <code>R</code> folder, just like an R package. They can also be placed in the main module script (the one named <code>&lt;moduleName&gt;.R</code>). The default template includes several functions.</p>
 <p>In this example, instead of writing the code that does what we want inside the <code>doEvent</code> function itself, lets use the <code>Init</code> function. We move the code from the “init” event into a function, then call that function.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>doEvent.My_linear_model.init <span class="ot">&lt;-</span> <span class="cf">function</span>(sim, eventTime, eventType, priority) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  sim <span class="ot">&lt;-</span> <span class="fu">Init</span>(sim)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Init <span class="ot">&lt;-</span> <span class="cf">function</span>(sim) {</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> sim<span class="sc">$</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  sim<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> sim<span class="sc">$</span>x)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">doEvent.My_linear_model.init</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span>, <span class="va">eventTime</span>, <span class="va">eventType</span>, <span class="va">priority</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">Init</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">Init</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">y</span> <span class="op">&lt;-</span> <span class="va">sim</span><span class="op">$</span><span class="va">x</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span>  <span class="va">sim</span><span class="op">$</span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">sim</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We can extend this to any number of functions. Notice, that functions can have any arguments. They don’t have to have <code>sim</code>. The critical point to retain is that the <code>doEvent</code> function must return <code>sim</code>. We can also write documentation using <code>roxygen2</code> tags (though converting this to normal R documentation is still experimental within a SpaDES module).</p>
 <p>Copy these three functions to your module, <strong>replacing the existing functions with these ones</strong> (for <code>doEvent.My_linear_model.init</code> and <code>Init</code>). <code>generateY</code> is completely new, so it won’t replace anything.</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>doEvent.My_linear_model.init <span class="ot">&lt;-</span> <span class="cf">function</span>(sim, eventTime, eventType, priority) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  sim <span class="ot">&lt;-</span> <span class="fu">Init</span>(sim)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use this inside the `doEvent.My_linear_model.init` function</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Init <span class="ot">&lt;-</span> <span class="cf">function</span>(sim) {</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">generateY</span>(sim<span class="sc">$</span>x)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  sim<span class="sc">$</span>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> sim<span class="sc">$</span>x)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#' A function that generates random error around an `x`</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param x Any numeric vector of length 10 </span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>generateY <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">doEvent.My_linear_model.init</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span>, <span class="va">eventTime</span>, <span class="va">eventType</span>, <span class="va">priority</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">Init</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># Use this inside the `doEvent.My_linear_model.init` function</span></span>
+<span><span class="va">Init</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">y</span> <span class="op">&lt;-</span> <span class="fu">generateY</span><span class="op">(</span><span class="va">sim</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="va">sim</span><span class="op">$</span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">sim</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html">invisible</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co">#' A function that generates random error around an `x`</span></span>
+<span><span class="co">#' </span></span>
+<span><span class="co">#' @param x Any numeric vector of length 10 </span></span>
+<span><span class="va">generateY</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">x</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-</section>
-<section id="sec-moduletypes" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="sec-moduletypes"><span class="header-section-number">8.4</span> Module types</h2>
+</section></section><section id="sec-moduletypes" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="sec-moduletypes">
+<span class="header-section-number">8.4</span> Module types</h2>
 <p>SpaDES doesn’t have explicit module types. Rather, by convention, we associate different modules with generic things they do. A fairly comprehensive list of modules types that we create are below. We will revisit this later in [Part 3](ContinuousWorkflows.qmd). <!-- @sec-contWorkflows not working. issue with title cross-refs in "parts" https://github.com/quarto-dev/quarto-cli/issues/5237--></p>
-<section id="static" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="static"><span class="header-section-number">8.4.1</span> Static</h3>
+<section id="static" class="level3" data-number="8.4.1"><h3 data-number="8.4.1" class="anchored" data-anchor-id="static">
+<span class="header-section-number">8.4.1</span> Static</h3>
 <p><strong>Static</strong> modules can be defined as modules that “run once”. This means that they may have only one event. Or a sequence of events that occur one after the other with no rescheduling.</p>
 <p>These could include:</p>
 <ul>
 <li><p>Data preparation modules - one (maybe just the “init” event) or few events and their primary goal is to get and deal with data;</p></li>
 <li><p>GIS modules that do a number of GIS operations to get data into the necessary formats;</p></li>
 <li><p>Data Visualization modules that specialize in creating a set of visuals from a known set of inputs.</p></li>
-</ul>
-</section>
-<section id="dynamic" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="dynamic"><span class="header-section-number">8.4.2</span> Dynamic</h3>
+</ul></section><section id="dynamic" class="level3" data-number="8.4.2"><h3 data-number="8.4.2" class="anchored" data-anchor-id="dynamic">
+<span class="header-section-number">8.4.2</span> Dynamic</h3>
 <p><strong>Dynamic</strong> modules are modules that have <em>events that recur</em>. There are at least 2 types of such models: those that have <strong>cyclic dependencies</strong>, i.e., its outputs are also its inputs (possibly with other modules in between) and those that do not.</p>
 <ul>
 <li><p>Landscape simulation modules (e.g., wildfire, vegetation change)</p></li>
@@ -835,30 +801,25 @@ How to decide whether to make a module, or expand an existing one?
 <li><p>“validation modules” evaluate predictions against independent data.</p></li>
 </ul>
 <p>There are no strict rules to classify a SpaDES module, just as there are no strict rules to classify an R script.</p>
-</section>
-</section>
-<section id="where-modules-live" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="where-modules-live"><span class="header-section-number">8.5</span> Where modules “live”</h2>
+</section></section><section id="where-modules-live" class="level2" data-number="8.5"><h2 data-number="8.5" class="anchored" data-anchor-id="where-modules-live">
+<span class="header-section-number">8.5</span> Where modules “live”</h2>
 <p>Modules can live only locally (e.g.&nbsp;in a computer), but in the spirit of the PERFICT principles (see <a href="intro.html#sec-newexpect" class="quarto-xref"><span>Section 2.1</span></a> in the <a href="./intro.html">Introduction</a>) we like our modules to be shareable.</p>
 <p>The best way to share modules is to host them on GitHub repositories, as SpaDES tools have been developed to download modules from GitHub.</p>
 <p>Most SpaDES modules known to us are hosted in their own GitHub repositories (preferred), or bundled in GitHub repositories with several modules (e.g.&nbsp;<a href="https://github.com/bcgov/castor/tree/main/R/SpaDES-modules">Castor modules</a> and <a href="https://github.com/PredictiveEcology/scfm/tree/master/modules">SCFM modules</a>).</p>
-</section>
-<section id="see-also" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="see-also"><span class="header-section-number">8.6</span> See also</h2>
+</section><section id="see-also" class="level2" data-number="8.6"><h2 data-number="8.6" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">8.6</span> See also</h2>
 <p><a href="Scheduling.html" class="quarto-xref"><span>Chapter 9</span></a> on event scheduling</p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/scheduleEvent.html"><code>?scheduleEvent</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/params.html"><code>?P</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/simList-accessors-times.html"><code>?time</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/simList-accessors-times.html"><code>?start</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/simList-accessors-times.html"><code>?end</code></a></p>
-</section>
-<section id="more-learning-on-this-subject" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="more-learning-on-this-subject"><span class="header-section-number">8.7</span> More learning on this subject</h2>
+</section><section id="more-learning-on-this-subject" class="level2" data-number="8.7"><h2 data-number="8.7" class="anchored" data-anchor-id="more-learning-on-this-subject">
+<span class="header-section-number">8.7</span> More learning on this subject</h2>
 <p><a href="https://spades-workshops.predictiveecology.org/articlesMay2018/MyFirstModule.html">My First Module</a></p>
 <p><a href="https://spades-workshops.predictiveecology.org/articles/02c-Convert_R_code_to_SpaDES_module.html">Creating a seed dispersal module</a></p>
-</section>
-<section id="barebones-r-script" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">8.8</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="8.8"><h2 data-number="8.8" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">8.8</span> Barebones R script</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -866,10 +827,7 @@ How to decide whether to make a module, or expand an existing one?
 Barros, Ceres, Yong Luo, Alex M. Chubaty, Ian M. S. Eddy, Tatiane Micheletti, Céline Boisvenue, David W. Andison, Steven G. Cumming, and Eliot J. B. McIntire. 2023. <span>“Empowering Ecological Modellers with a PERFICT Workflow: Seamlessly Linking Data, Parameterisation, Prediction, Validation and Visualisation.”</span> <em>Methods in Ecology and Evolution</em> 14 (1): 173–88. <a href="https://doi.org/10.1111/2041-210X.14034">https://doi.org/10.1111/2041-210X.14034</a>.
 </div>
 </div>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1285,9 +1243,7 @@ Barros, Ceres, Yong Luo, Alex M. Chubaty, Ian M. S. Eddy, Tatiane Micheletti, C�
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./simList.html" class="pagination-link" aria-label="The `simList` - What is it?">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The <code>simList</code> - What is it?</span></span>
       </a>          
@@ -1299,7 +1255,6 @@ Barros, Ceres, Yong Luo, Alex M. Chubaty, Ian M. S. Eddy, Tatiane Micheletti, C�
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

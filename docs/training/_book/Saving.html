@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-11">
-
 <title>11&nbsp; Saving in SpaDES – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
@@ -59,7 +56,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -83,8 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -110,13 +105,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-<style>html{ scroll-behavior: smooth; }</style>
-
-
+}</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="assets/css/main.scss">
 </head>
-
 <body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
@@ -282,13 +273,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
-    </a>
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
@@ -299,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
@@ -319,8 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-workshops" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Workshops</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">
+<li>
     <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
@@ -337,13 +325,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-training" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Training</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
-        <li>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">
+<li>
     <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
@@ -352,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
-  </li>
+</li>
   <li class="nav-item">
     <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
@@ -376,14 +364,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -391,15 +377,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -425,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
@@ -445,7 +427,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
@@ -454,8 +436,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
@@ -492,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
@@ -501,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Caching.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
@@ -517,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data
   </div>
 </li>
           <li class="sidebar-item">
@@ -527,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
@@ -536,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
@@ -574,7 +556,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
@@ -583,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
@@ -597,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
@@ -611,16 +593,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#model-level-saving-the-outputs-argument" id="toc-model-level-saving-the-outputs-argument" class="nav-link active" data-scroll-target="#model-level-saving-the-outputs-argument"><span class="header-section-number">11.1</span> Model-level saving: the <code>outputs</code> argument</a></li>
+<li><a href="#model-level-saving-the-outputs-argument" id="toc-model-level-saving-the-outputs-argument" class="nav-link active" data-scroll-target="#model-level-saving-the-outputs-argument"><span class="header-section-number">11.1</span> Model-level saving: the <code>outputs</code> argument</a></li>
   <li><a href="#module-level-saving-.saveobjects-and-savefiles" id="toc-module-level-saving-.saveobjects-and-savefiles" class="nav-link" data-scroll-target="#module-level-saving-.saveobjects-and-savefiles"><span class="header-section-number">11.2</span> Module-level saving: <code>.saveObjects</code> and <code>saveFiles()</code></a></li>
   <li><a href="#custom-saving-inside-a-module" id="toc-custom-saving-inside-a-module" class="nav-link" data-scroll-target="#custom-saving-inside-a-module"><span class="header-section-number">11.3</span> Custom saving inside a module</a></li>
   <li><a href="#saving-and-reloading-a-whole-simlist" id="toc-saving-and-reloading-a-whole-simlist" class="nav-link" data-scroll-target="#saving-and-reloading-a-whole-simlist"><span class="header-section-number">11.4</span> Saving and reloading a whole <code>simList</code></a></li>
@@ -628,15 +608,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">11.6</span> Best practices</a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">11.7</span> See also</a></li>
   <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">11.8</span> Barebones R script</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ContinuousWorkflows.html">Working with Continuous Workflows</a></li><li class="breadcrumb-item"><a href="./Saving.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Saving in SpaDES</span></a></li></ol></nav>
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ContinuousWorkflows.html">Working with Continuous Workflows</a></li><li class="breadcrumb-item"><a href="./Saving.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Saving in SpaDES</span></a></li></ol></nav><div class="quarto-title">
 <h1 class="title"><span id="sec-saving" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Saving in SpaDES</span></span></h1>
 </div>
 
@@ -663,10 +638,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<div class="callout callout-style-simple callout-tip">
+</header><div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -676,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>A reproducible workflow eventually needs to put things <em>on disk</em>: maps, tables, fitted models, or the entire state of a simulation so that it can be revisited, shared, or post-processed. Like inputs (see <a href="ModuleInputs.html" class="quarto-xref">Providing Module Inputs&nbsp;<span>6</span></a>), <code>SpaDES</code> treats saving as a first-class, declarative concept: instead of scattering <code>saveRDS()</code> calls through your code, you describe <em>what</em> to save and <em>when</em>, and <code>SpaDES</code> schedules the saving for you.</p>
+<p>A reproducible workflow eventually needs to put things <em>on disk</em>: maps, tables, fitted models, or the entire state of a simulation so that it can be revisited, shared, or post-processed. Like inputs (see <a href="ModuleInputs.html" class="quarto-xref">Providing Module Inputs&nbsp;<span>6</span></a>), <code>SpaDES</code> treats saving as a first-class, declarative concept: instead of scattering <code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code> calls through your code, you describe <em>what</em> to save and <em>when</em>, and <code>SpaDES</code> schedules the saving for you.</p>
 <p>There are three levels at which saving can be controlled, from most to least modular:</p>
 <table class="caption-top table">
 <colgroup>
@@ -684,28 +656,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 28%">
 <col style="width: 53%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Level</th>
 <th>Mechanism</th>
 <th>Who usually sets it</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><strong>Model</strong></td>
-<td>the <code>outputs</code> argument / <code>outputs(sim)</code></td>
+<td>the <code>outputs</code> argument / <code>outputs(sim)</code>
+</td>
 <td>the <em>user</em> of a set of modules</td>
 </tr>
 <tr class="even">
 <td><strong>Module</strong></td>
-<td><code>.saveObjects</code> parameter + <code>saveFiles()</code></td>
-<td>the module <em>developer</em></td>
+<td>
+<code>.saveObjects</code> parameter + <code>saveFiles()</code>
+</td>
+<td>the module <em>developer</em>
+</td>
 </tr>
 <tr class="odd">
 <td><strong>Custom</strong></td>
-<td><code>saveRDS()</code>, <code>qs2::qs_save()</code>, <code>terra::writeRaster()</code>, etc.</td>
-<td>the module <em>developer</em></td>
+<td>
+<code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code>, <code><a href="https://rdrr.io/pkg/qs2/man/qs_save.html">qs2::qs_save()</a></code>, <code><a href="https://rspatial.github.io/terra/reference/writeRaster.html">terra::writeRaster()</a></code>, etc.</td>
+<td>the module <em>developer</em>
+</td>
 </tr>
 </tbody>
 </table>
@@ -716,28 +692,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Most of the machinery below already exists and is documented in <code>SpaDES.core</code>. This chapter is a practical orientation; for the authoritative reference see the <code>SpaDES.core</code> <em>modules</em> vignette (<a href="https://rdrr.io/cran/SpaDES.core/f/vignettes/ii-modules.Rmd"><code>vignette("ii-modules", package = "SpaDES.core")</code></a>) and <code>?SpaDES.core::saveFiles</code>.</p>
+<p>Most of the machinery below already exists and is documented in <code>SpaDES.core</code>. This chapter is a practical orientation; for the authoritative reference see the <code>SpaDES.core</code> <em>modules</em> vignette (<a href="https://rdrr.io/cran/SpaDES.core/f/vignettes/ii-modules.Rmd"><code>vignette("ii-modules", package = "SpaDES.core")</code></a>) and <code><a href="https://spades-core.predictiveecology.org/reference/saveFiles.html">?SpaDES.core::saveFiles</a></code>.</p>
 </div>
 </div>
 </div>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"SpaDES.core"</span>, <span class="st">"terra"</span>),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">repos =</span> repos),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/Saving"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SpaDES.core"</span>, <span class="st">"terra"</span><span class="op">)</span>,</span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/Saving"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="model-level-saving-the-outputs-argument" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="model-level-saving-the-outputs-argument"><span class="header-section-number">11.1</span> Model-level saving: the <code>outputs</code> argument</h2>
+<section id="model-level-saving-the-outputs-argument" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="model-level-saving-the-outputs-argument">
+<span class="header-section-number">11.1</span> Model-level saving: the <code>outputs</code> argument</h2>
 <p>The most common way to save is to hand <code>simInit()</code> (or <code>simInitAndSpades()</code>) an <code>outputs</code> <code>data.frame</code>. It is the saving counterpart of the <code>inputs</code> argument: each row names an object in the <code>simList</code> and, optionally, when and how to save it.</p>
 <p>The <code>data.frame</code> needs, minimally, a column named <code>objectName</code>. The other columns are filled in with sensible defaults if absent:</p>
 <table class="caption-top table">
@@ -745,12 +719,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <col style="width: 38%">
 <col style="width: 61%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Column</th>
 <th>Description</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><strong><code>objectName</code></strong></td>
@@ -781,42 +753,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>SpaDES</code> adds a seventh column, <code>saved</code> (logical), which flips to <code>TRUE</code> once the save has happened, so <code>outputs(sim)</code> doubles as a record of what has already been written to disk.</p>
 <p>In the simplest case, we just name the object. The file lands in the simulation’s <code>outputPath</code>, as an <code>.rds</code>, at the end of the run:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outputDir <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/outputs"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">end =</span> <span class="dv">5</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="st">"randomLandscapes"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">stackName =</span> <span class="st">"landscape"</span>)),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> <span class="fu">getSampleModules</span>(<span class="fu">tempdir</span>()),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">outputPath =</span> outputDir),</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputs =</span> <span class="fu">data.frame</span>(<span class="at">objectName =</span> <span class="st">"landscape"</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)        <span class="co"># one row, saved = NA (not yet saved)</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)        <span class="co"># saved is now TRUE; note the file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">outputDir</span> <span class="op">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/outputs"</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="st">"randomLandscapes"</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>.globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>stackName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="fu">getSampleModules</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>               outputPath <span class="op">=</span> <span class="va">outputDir</span><span class="op">)</span>,</span>
+<span>  outputs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span>        <span class="co"># one row, saved = NA (not yet saved)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span>        <span class="co"># saved is now TRUE; note the file path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>To save the <em>same</em> object several times, give it several rows with different <code>saveTime</code>s. To control the format, set <code>fun</code>, <code>package</code>, and <code>arguments</code>. Here we write a <code>SpatRaster</code> as a GeoTIFF at times 3 and 6. Note that we can set <code>outputs()</code> on an existing <code>simList</code> with the replacement function, rather than only at <code>simInit()</code>:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim) <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">objectName =</span> <span class="st">"landscape"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fun        =</span> <span class="st">"writeRaster"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">package    =</span> <span class="st">"terra"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">saveTime   =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">arguments  =</span> <span class="fu">I</span>(<span class="fu">lapply</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>), <span class="cf">function</span>(x) {</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">datatype =</span> <span class="st">"FLT4S"</span>, <span class="at">filetype =</span> <span class="st">"GTiff"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  }))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  objectName <span class="op">=</span> <span class="st">"landscape"</span>,</span>
+<span>  fun        <span class="op">=</span> <span class="st">"writeRaster"</span>,</span>
+<span>  package    <span class="op">=</span> <span class="st">"terra"</span>,</span>
+<span>  saveTime   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span><span class="op">)</span>,</span>
+<span>  arguments  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>datatype <span class="op">=</span> <span class="st">"FLT4S"</span>, filetype <span class="op">=</span> <span class="st">"GTiff"</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-tip">
@@ -829,21 +797,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="module-level-saving-.saveobjects-and-savefiles" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="module-level-saving-.saveobjects-and-savefiles"><span class="header-section-number">11.2</span> Module-level saving: <code>.saveObjects</code> and <code>saveFiles()</code></h2>
+</section><section id="module-level-saving-.saveobjects-and-savefiles" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="module-level-saving-.saveobjects-and-savefiles">
+<span class="header-section-number">11.2</span> Module-level saving: <code>.saveObjects</code> and <code>saveFiles()</code>
+</h2>
 <p>A module <em>developer</em> can build saving into a module so that future users only need to toggle a few parameters. This relies on a set of <code>.save*</code> parameters and the <code>saveFiles()</code> helper. When a module is created with <code>newModule()</code>, a <code>save</code> event already exists; it just needs to be scheduled.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
 <col style="width: 54%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Parameter</th>
 <th>Description</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td><strong><code>.saveInitialTime</code></strong></td>
@@ -864,83 +830,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">end =</span> <span class="dv">5</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="st">"randomLandscapes"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">stackName =</span> <span class="st">"landscape"</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">randomLandscapes =</span> <span class="fu">list</span>(</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">.saveInitialTime =</span> <span class="dv">0</span>, <span class="at">.saveInterval =</span> <span class="dv">2</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">.saveObjects =</span> <span class="st">"landscape"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">.savePath =</span> <span class="fu">file.path</span>(outputDir, <span class="st">"randomLandscapes"</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> <span class="fu">getSampleModules</span>(<span class="fu">tempdir</span>()),</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">outputPath =</span> outputDir)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="st">"randomLandscapes"</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>stackName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span>,</span>
+<span>    randomLandscapes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      .saveInitialTime <span class="op">=</span> <span class="fl">0</span>, .saveInterval <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>      .saveObjects <span class="op">=</span> <span class="st">"landscape"</span>,</span>
+<span>      .savePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">outputDir</span>, <span class="st">"randomLandscapes"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="fu">getSampleModules</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>               outputPath <span class="op">=</span> <span class="va">outputDir</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Inside a module, the save itself is performed by <code>saveFiles(sim)</code>, and a recurring save is kept going by re-scheduling the event:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### WITHIN A MODULE event:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">saveFiles</span>(sim)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># reschedule the next save</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>nextSave <span class="ot">&lt;-</span> <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>.saveInterval</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, nextSave, <span class="fu">currentModule</span>(sim), <span class="st">"save"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### WITHIN A MODULE event:</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">saveFiles</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># reschedule the next save</span></span>
+<span><span class="va">nextSave</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/time.html">time</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span> <span class="op">+</span> <span class="fu">P</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">$</span><span class="va">.saveInterval</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">scheduleEvent</span><span class="op">(</span><span class="va">sim</span>, <span class="va">nextSave</span>, <span class="fu">currentModule</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="st">"save"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>See <a href="Scheduling.html" class="quarto-xref">Scheduling Events&nbsp;<span>9</span></a> for more on <code>scheduleEvent()</code>.</p>
-</section>
-<section id="custom-saving-inside-a-module" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="custom-saving-inside-a-module"><span class="header-section-number">11.3</span> Custom saving inside a module</h2>
-<p>Sometimes the cleanest thing is to save directly with a normal R function – <code>saveRDS()</code>, <code>qs2::qs_save()</code>, <code>terra::writeRaster()</code>, <code>data.table::fwrite()</code>, and so on – from inside an event. This is the <em>least</em> modular approach (it happens whether the user wants it or not), but it is sometimes the most practical.</p>
+</section><section id="custom-saving-inside-a-module" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="custom-saving-inside-a-module">
+<span class="header-section-number">11.3</span> Custom saving inside a module</h2>
+<p>Sometimes the cleanest thing is to save directly with a normal R function – <code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code>, <code><a href="https://rdrr.io/pkg/qs2/man/qs_save.html">qs2::qs_save()</a></code>, <code><a href="https://rspatial.github.io/terra/reference/writeRaster.html">terra::writeRaster()</a></code>, <code><a href="https://rdrr.io/pkg/data.table/man/fwrite.html">data.table::fwrite()</a></code>, and so on – from inside an event. This is the <em>least</em> modular approach (it happens whether the user wants it or not), but it is sometimes the most practical.</p>
 <p>When you save this way, it is good practice to <em>register</em> the file with the <code>simList</code> using <code>registerOutputs()</code>, so that the file is tracked in <code>outputs(sim)</code> and is picked up by <code>saveSimList()</code> (below):</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### WITHIN A MODULE event:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fname <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim), <span class="fu">paste0</span>(<span class="st">"predictions_"</span>, <span class="fu">time</span>(sim), <span class="st">".rds"</span>))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sim<span class="sc">$</span>predictions, fname)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># record that we saved it</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">registerOutputs</span>(fname, sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### WITHIN A MODULE event:</span></span>
+<span><span class="va">fname</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu">outputPath</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"predictions_"</span>, <span class="fu"><a href="https://rdrr.io/r/stats/time.html">time</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="st">".rds"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span><span class="va">sim</span><span class="op">$</span><span class="va">predictions</span>, <span class="va">fname</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># record that we saved it</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">registerOutputs</span><span class="op">(</span><span class="va">fname</span>, <span class="va">sim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="saving-and-reloading-a-whole-simlist" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="saving-and-reloading-a-whole-simlist"><span class="header-section-number">11.4</span> Saving and reloading a whole <code>simList</code></h2>
-<p>Saving individual objects is not the same as saving the <em>simulation</em>. A <code>simList</code> cannot be reliably saved with <code>save()</code> or <code>saveRDS()</code> for two reasons:</p>
+</section><section id="saving-and-reloading-a-whole-simlist" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="saving-and-reloading-a-whole-simlist">
+<span class="header-section-number">11.4</span> Saving and reloading a whole <code>simList</code>
+</h2>
+<p>Saving individual objects is not the same as saving the <em>simulation</em>. A <code>simList</code> cannot be reliably saved with <code><a href="https://rdrr.io/r/base/save.html">save()</a></code> or <code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code> for two reasons:</p>
 <ol type="1">
 <li>modules rely on <strong>active bindings</strong> (these are what make <code>mod</code> and <code>P(sim)</code>/<code>Par</code> work); and</li>
 <li>file-backed objects such as <code>terra</code> <code>SpatRaster</code>s live partly on disk, not in the R object.</li>
 </ol>
 <p><code>SpaDES.core</code> provides <code>saveSimList()</code> and <code>loadSimList()</code> to handle both correctly:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>simFile <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/mySim.qs2"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">saveSimList</span>(mySim, <span class="at">filename =</span> simFile)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># later, possibly on another machine</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>mySim2 <span class="ot">&lt;-</span> <span class="fu">loadSimList</span>(simFile)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">simFile</span> <span class="op">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/mySim.qs2"</span></span>
+<span></span>
+<span><span class="fu">saveSimList</span><span class="op">(</span><span class="va">mySim</span>, filename <span class="op">=</span> <span class="va">simFile</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># later, possibly on another machine</span></span>
+<span><span class="va">mySim2</span> <span class="op">&lt;-</span> <span class="fu">loadSimList</span><span class="op">(</span><span class="va">simFile</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>If there are file-backed objects (or you ask to include the <code>outputs</code> and <code>inputs</code> files), <code>saveSimList()</code> transparently writes an <em>archive</em> (<code>.tar.gz</code>, or <code>.zip</code> on Windows) so everything travels together:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveSimList</span>(mySim, <span class="at">filename =</span> simFile, <span class="at">outputs =</span> <span class="cn">TRUE</span>, <span class="at">inputs =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># reload an archived simList</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>mySim2 <span class="ot">&lt;-</span> <span class="fu">unzipSimList</span>(<span class="fu">sub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">.qs2$"</span>, <span class="st">".tar.gz"</span>, simFile))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">saveSimList</span><span class="op">(</span><span class="va">mySim</span>, filename <span class="op">=</span> <span class="va">simFile</span>, outputs <span class="op">=</span> <span class="cn">TRUE</span>, inputs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># reload an archived simList</span></span>
+<span><span class="va">mySim2</span> <span class="op">&lt;-</span> <span class="fu">unzipSimList</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="st">"\\.qs2$"</span>, <span class="st">".tar.gz"</span>, <span class="va">simFile</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-simple callout-note">
@@ -953,135 +908,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="where-do-saved-files-go" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="where-do-saved-files-go"><span class="header-section-number">11.5</span> Where do saved files go?</h2>
+</section><section id="where-do-saved-files-go" class="level2" data-number="11.5"><h2 data-number="11.5" class="anchored" data-anchor-id="where-do-saved-files-go">
+<span class="header-section-number">11.5</span> Where do saved files go?</h2>
 <p>Unless a <code>file</code> or <code>.savePath</code> says otherwise, saved objects land in the simulation’s <code>outputPath</code>:</p>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">outputPath</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">outputPath</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>The output path is set via the <code>paths</code> argument to <code>setupProject()</code>, <code>simInit()</code>, or <code>simInitAndSpades()</code> (the <code>outputPath</code> element), in the same way the cache path is set (see <a href="Caching.html" class="quarto-xref">Caching&nbsp;<span>10</span></a>).</p>
-</section>
-<section id="best-practices" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="best-practices"><span class="header-section-number">11.6</span> Best practices</h2>
+<p>The output path is set via the <code>paths</code> argument to <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code>, <code>simInit()</code>, or <code>simInitAndSpades()</code> (the <code>outputPath</code> element), in the same way the cache path is set (see <a href="Caching.html" class="quarto-xref">Caching&nbsp;<span>10</span></a>).</p>
+</section><section id="best-practices" class="level2" data-number="11.6"><h2 data-number="11.6" class="anchored" data-anchor-id="best-practices">
+<span class="header-section-number">11.6</span> Best practices</h2>
 <ol type="1">
 <li>Prefer <strong>model-level</strong> <code>outputs</code> for things a <em>user</em> chooses to save; it requires no module edits.</li>
 <li>Build <strong>module-level</strong> saving (<code>.saveObjects</code>) into modules whose users will predictably want certain objects.</li>
 <li>When you save with a custom function, <strong><code>registerOutputs()</code></strong> the file so it is tracked.</li>
-<li>Use <strong><code>saveSimList()</code>/<code>loadSimList()</code></strong> to checkpoint or share an entire run – not <code>saveRDS()</code>.</li>
+<li>Use <strong><code>saveSimList()</code>/<code>loadSimList()</code></strong> to checkpoint or share an entire run – not <code><a href="https://rdrr.io/r/base/readRDS.html">saveRDS()</a></code>.</li>
 <li>Save only what you need: large file-backed objects can make archives very large.</li>
-</ol>
-</section>
-<section id="see-also" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="see-also"><span class="header-section-number">11.7</span> See also</h2>
+</ol></section><section id="see-also" class="level2" data-number="11.7"><h2 data-number="11.7" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">11.7</span> See also</h2>
 <p><a href="https://rdrr.io/cran/SpaDES.core/f/vignettes/ii-modules.Rmd"><code>vignette("ii-modules", package = "SpaDES.core")</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/saveFiles.html"><code>?SpaDES.core::saveFiles</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/simList-accessors-outputs.html"><code>?SpaDES.core::outputs</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/saveSimList.html"><code>?SpaDES.core::saveSimList</code></a></p>
 <p><a href="https://rdrr.io/cran/SpaDES.core/man/loadSimList.html"><code>?SpaDES.core::loadSimList</code></a></p>
-</section>
-<section id="barebones-r-script" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="barebones-r-script"><span class="header-section-number">11.8</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="11.8"><h2 data-number="11.8" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">11.8</span> Barebones R script</h2>
 <div class="cell">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">"SpaDES.core"</span>, <span class="st">"terra"</span>),</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(<span class="at">repos =</span> repos),</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/Saving"</span>)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>outputDir <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/outputs"</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">end =</span> <span class="dv">5</span>),</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="st">"randomLandscapes"</span>,</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">stackName =</span> <span class="st">"landscape"</span>)),</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> <span class="fu">getSampleModules</span>(<span class="fu">tempdir</span>()),</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">outputPath =</span> outputDir),</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputs =</span> <span class="fu">data.frame</span>(<span class="at">objectName =</span> <span class="st">"landscape"</span>)</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)        <span class="co"># one row, saved = NA (not yet saved)</span></span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)        <span class="co"># saved is now TRUE; note the file path</span></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim) <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">objectName =</span> <span class="st">"landscape"</span>,</span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">fun        =</span> <span class="st">"writeRaster"</span>,</span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">package    =</span> <span class="st">"terra"</span>,</span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">saveTime   =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>),</span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">arguments  =</span> <span class="fu">I</span>(<span class="fu">lapply</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>), <span class="cf">function</span>(x) {</span>
-<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="at">datatype =</span> <span class="st">"FLT4S"</span>, <span class="at">filetype =</span> <span class="st">"GTiff"</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  }))</span>
-<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="fu">outputs</span>(mySim)</span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">simInit</span>(</span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">0</span>, <span class="at">end =</span> <span class="dv">5</span>),</span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules =</span> <span class="st">"randomLandscapes"</span>,</span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">.globals =</span> <span class="fu">list</span>(<span class="at">stackName =</span> <span class="st">"landscape"</span>),</span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">randomLandscapes =</span> <span class="fu">list</span>(</span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">.saveInitialTime =</span> <span class="dv">0</span>, <span class="at">.saveInterval =</span> <span class="dv">2</span>,</span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">.saveObjects =</span> <span class="st">"landscape"</span>,</span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">.savePath =</span> <span class="fu">file.path</span>(outputDir, <span class="st">"randomLandscapes"</span>)</span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">list</span>(<span class="at">modulePath =</span> <span class="fu">getSampleModules</span>(<span class="fu">tempdir</span>()),</span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>               <span class="at">outputPath =</span> outputDir)</span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>mySim <span class="ot">&lt;-</span> <span class="fu">spades</span>(mySim)</span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="do">### WITHIN A MODULE event:</span></span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">saveFiles</span>(sim)</span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="co"># reschedule the next save</span></span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>nextSave <span class="ot">&lt;-</span> <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>.saveInterval</span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, nextSave, <span class="fu">currentModule</span>(sim), <span class="st">"save"</span>)</span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a><span class="do">### WITHIN A MODULE event:</span></span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>fname <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim), <span class="fu">paste0</span>(<span class="st">"predictions_"</span>, <span class="fu">time</span>(sim), <span class="st">".rds"</span>))</span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(sim<span class="sc">$</span>predictions, fname)</span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="co"># record that we saved it</span></span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">registerOutputs</span>(fname, sim)</span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>simFile <span class="ot">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/mySim.qs2"</span></span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu">saveSimList</span>(mySim, <span class="at">filename =</span> simFile)</span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="co"># later, possibly on another machine</span></span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>mySim2 <span class="ot">&lt;-</span> <span class="fu">loadSimList</span>(simFile)</span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a><span class="fu">saveSimList</span>(mySim, <span class="at">filename =</span> simFile, <span class="at">outputs =</span> <span class="cn">TRUE</span>, <span class="at">inputs =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a><span class="co"># reload an archived simList</span></span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>mySim2 <span class="ot">&lt;-</span> <span class="fu">unzipSimList</span>(<span class="fu">sub</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">.qs2$"</span>, <span class="st">".tar.gz"</span>, simFile))</span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="fu">outputPath</span>(mySim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
+<span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SpaDES.core"</span>, <span class="st">"terra"</span><span class="op">)</span>,</span>
+<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/Saving"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">outputDir</span> <span class="op">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/outputs"</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="st">"randomLandscapes"</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>.globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>stackName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="fu">getSampleModules</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>               outputPath <span class="op">=</span> <span class="va">outputDir</span><span class="op">)</span>,</span>
+<span>  outputs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>objectName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span>        <span class="co"># one row, saved = NA (not yet saved)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span>        <span class="co"># saved is now TRUE; note the file path</span></span>
+<span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  objectName <span class="op">=</span> <span class="st">"landscape"</span>,</span>
+<span>  fun        <span class="op">=</span> <span class="st">"writeRaster"</span>,</span>
+<span>  package    <span class="op">=</span> <span class="st">"terra"</span>,</span>
+<span>  saveTime   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span><span class="op">)</span>,</span>
+<span>  arguments  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">6</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>datatype <span class="op">=</span> <span class="st">"FLT4S"</span>, filetype <span class="op">=</span> <span class="st">"GTiff"</span>, overwrite <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span><span class="fu">outputs</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">simInit</span><span class="op">(</span></span>
+<span>  times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">0</span>, end <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="st">"randomLandscapes"</span>,</span>
+<span>  params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    .globals <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>stackName <span class="op">=</span> <span class="st">"landscape"</span><span class="op">)</span>,</span>
+<span>    randomLandscapes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>      .saveInitialTime <span class="op">=</span> <span class="fl">0</span>, .saveInterval <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>      .saveObjects <span class="op">=</span> <span class="st">"landscape"</span>,</span>
+<span>      .savePath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="va">outputDir</span>, <span class="st">"randomLandscapes"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>modulePath <span class="op">=</span> <span class="fu">getSampleModules</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>               outputPath <span class="op">=</span> <span class="va">outputDir</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu">spades</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">### WITHIN A MODULE event:</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">saveFiles</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># reschedule the next save</span></span>
+<span><span class="va">nextSave</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/time.html">time</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span> <span class="op">+</span> <span class="fu">P</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span><span class="op">$</span><span class="va">.saveInterval</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">scheduleEvent</span><span class="op">(</span><span class="va">sim</span>, <span class="va">nextSave</span>, <span class="fu">currentModule</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="st">"save"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">### WITHIN A MODULE event:</span></span>
+<span><span class="va">fname</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="fu">outputPath</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"predictions_"</span>, <span class="fu"><a href="https://rdrr.io/r/stats/time.html">time</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span>, <span class="st">".rds"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span><span class="va">sim</span><span class="op">$</span><span class="va">predictions</span>, <span class="va">fname</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># record that we saved it</span></span>
+<span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu">registerOutputs</span><span class="op">(</span><span class="va">fname</span>, <span class="va">sim</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">simFile</span> <span class="op">&lt;-</span> <span class="st">"~/SpaDES_book/Saving/mySim.qs2"</span></span>
+<span></span>
+<span><span class="fu">saveSimList</span><span class="op">(</span><span class="va">mySim</span>, filename <span class="op">=</span> <span class="va">simFile</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># later, possibly on another machine</span></span>
+<span><span class="va">mySim2</span> <span class="op">&lt;-</span> <span class="fu">loadSimList</span><span class="op">(</span><span class="va">simFile</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">saveSimList</span><span class="op">(</span><span class="va">mySim</span>, filename <span class="op">=</span> <span class="va">simFile</span>, outputs <span class="op">=</span> <span class="cn">TRUE</span>, inputs <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># reload an archived simList</span></span>
+<span><span class="va">mySim2</span> <span class="op">&lt;-</span> <span class="fu">unzipSimList</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="st">"\\.qs2$"</span>, <span class="st">".tar.gz"</span>, <span class="va">simFile</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">outputPath</span><span class="op">(</span><span class="va">mySim</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1497,21 +1440,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./Caching.html" class="pagination-link" aria-label="Introduction to Cache">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./prepInputs.html" class="pagination-link" aria-label="`reproducible::prepInputs` for Data">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code></code></span></span></a><code><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">reproducible::prepInputs</a></code> for Data <i class="bi bi-arrow-right-short"></i>
+      
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
