@@ -1,7 +1,7 @@
 ---
 title: "Forecasting wildlife habitat (an RSF)"
 subtitle: "Forest + fire + wildlife, woven together with `setupProject`"
-author: "Eliot McIntire"
+author: "Eliot McIntire and Julie Turner"
 date: last-modified
 format:
   revealjs:
