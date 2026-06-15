@@ -96,7 +96,8 @@ params = list(
 :::: {.columns}
 ::: {.column width="46%"}
 - `studyArea` -- a **fixed** polygon we report on
-- `studyAreaLarge` -- buffered, to avoid edge effects
+- `studyArea_biomassParam` -- buffered, to avoid edge effects
+- `studyAreaCalibration` -- area to calibrate fire (same here)
 - matching `rasterToMatch*` templates, **derived** from one another
 - objects defined earlier are available to later ones
 :::
@@ -104,13 +105,15 @@ params = list(
 ::: {.small-code}
 ```r
 studyArea = prepInputs(url = saURL, fun = "terra::vect"),
-studyAreaLarge = terra::buffer(studyArea, 10000),
-rasterToMatchLarge = {
+studyArea_biomassParam = terra::buffer(studyArea, 10000),
+studyAreaCalibration   = studyArea_biomassParam,
+rasterToMatch_biomassParam = {
   rtml <- terra::disagg(modelLand[[1]], fact = 2)
   rtml[] <- 1
-  terra::mask(rtml, studyAreaLarge)
+  terra::mask(rtml, studyArea_biomassParam)
 },
-rasterToMatch = postProcess(rasterToMatchLarge,
+rasterToMatchCalibration = rasterToMatch_biomassParam,
+rasterToMatch = postProcess(rasterToMatch_biomassParam,
                   cropTo = studyArea, maskTo = studyArea)
 ```
 :::
@@ -176,10 +179,91 @@ results <- SpaDES.core::simInitAndSpades2(out)
 ::: {.small-code}
 ```r
 if (!require("pak")) install.packages("pak")
-pak::pak("PredictiveEcology/SpaDES.shiny")
+pak::pak("SpaDES.shiny")
 
 SpaDES.shiny::shine("outputs")   # a folder
 # shine(results)                 # or a simList
+```
+:::
+:::
+::::
+
+## Where did the inputs come from? {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+- `prepInputs()` quietly **logs** every dataset it pulls
+- `prepInputsLog()` returns that log as a table
+- handy for **reporting** what data fed a given run
+- (experimental as of `reproducible >= 3.1.1.9058`)
+:::
+::: {.column width="50%"}
+::: {.small-code}
+```r
+reproducible::prepInputsLog() |>
+  data.table::rbindlist()
+```
+:::
+:::
+::::
+
+## Change over time, statically {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+- subtract first year from last to see **net change**
+- the `"differences"` palette is purpose-built (blue→white→red)
+- `rev()` so **red = negative** (worse habitat), **blue = positive**
+:::
+::: {.column width="50%"}
+::: {.small-code}
+```r
+diffMap <- results$simPred$year2075 -
+           results$simPred$year2025
+terra::global(diffMap, fun = 'mean',
+              na.rm = TRUE)
+
+terra::plot(diffMap,
+  col = rev(terra::map.pal("differences")))
+```
+:::
+:::
+::::
+
+## Static-page leaflet: snapshot {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+- `plotSAsLeaflet(results)` renders the simList's **study areas + raster
+  templates** as one **interactive** leaflet widget
+- pan / zoom / toggle layers; ships as static HTML -- no Shiny server
+- great for a snapshot in a Quarto book
+:::
+::: {.column width="52%"}
+::: {.small-code}
+```r
+SpaDES.project::plotSAsLeaflet(results)
+```
+:::
+:::
+::::
+
+## Static-page leaflet: change over time {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+- `plotChangeOverTime(results)` discovers every time-series object in
+  `outputPath(results)` and shows the *first → last* difference
+- **radio buttons** to switch between objects (e.g. `simPred`,
+  `simBinMap`)
+- per-object **legend**: zero-centred `terra::map.pal("differences")`,
+  max at top
+- multi-band rasters split into one radio per band
+:::
+::: {.column width="52%"}
+::: {.small-code}
+```r
+SpaDES.project::plotChangeOverTime(results)
 ```
 :::
 :::
@@ -191,5 +275,8 @@ SpaDES.shiny::shine("outputs")   # a folder
   different authors
 - a **fitted model**, a **fixed study area**, and **cloud caching** make
   it both reproducible *and* cheap to re-run as a team
+- after the run: static `terra::plot()` for snapshots,
+  `plotSAsLeaflet()` / `plotChangeOverTime()` for interactive
+  static-HTML views, `shine()` for full-Shiny exploration
 - the same nimble properties scale from a one-module demo to a
   multi-family forecast

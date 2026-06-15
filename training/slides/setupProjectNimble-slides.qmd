@@ -141,10 +141,10 @@ sim <- spades(sim)
 ::: {.column width="52%"}
 ::: {.small-code}
 ```r
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"),
-         ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 out <- SpaDES.project::setupProject(
   modules = c(
@@ -152,7 +152,7 @@ out <- SpaDES.project::setupProject(
     "PredictiveEcology/Biomass_speciesData",
     "PredictiveEcology/Biomass_core"),
   times = list(start = 1, end = 1),
-  packages = c("PredictiveEcology/LandR@development (>= 1.2.0.9002)"),
+  packages = c("LandR (>= 1.2.0.9002)"),
   shapeZipID = "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik",
   studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
     terra::project("EPSG:3978"),
@@ -177,8 +177,9 @@ finalOut <- SpaDES.core::simInitAndSpades2(out)
 ::: {.small-code}
 ```r
 packages = c(
-  "PredictiveEcology/LandR@development (>= 1.2.0.9002)"
+  "LandR (>= 1.2.0.9002)"
 )
+# fetched from r-universe (prebuilt binaries)
 # SpaDES.core, terra, ... arrive as
 # dependencies of the modules + packages
 ```
