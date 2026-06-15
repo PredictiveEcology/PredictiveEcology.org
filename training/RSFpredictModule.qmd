@@ -1,5 +1,5 @@
 ---
-author: "Eliot McIntire"
+author: "Eliot McIntire and Julie Turner"
 date: last-modified
 editor_options:
   chunk_output_type: console
