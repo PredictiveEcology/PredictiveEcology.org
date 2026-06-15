@@ -2,16 +2,16 @@
   <PAMRasterBand band="1">
     <Description>lyr1</Description>
     <CategoryNames>
-      <Category>[0.025423 - 0.040909]</Category>
-      <Category>(0.040909 - 0.161182]</Category>
-      <Category>(0.161182 - 0.201296]</Category>
-      <Category>(0.201296 - 0.369412]</Category>
-      <Category>(0.369412 - 0.396111]</Category>
-      <Category>(0.396111 - 0.594892]</Category>
-      <Category>(0.594892 - 0.612949]</Category>
-      <Category>(0.612949 - 0.619938]</Category>
-      <Category>(0.619938 - 0.624711]</Category>
-      <Category>(0.624711 - 0.638879]</Category>
+      <Category>[0.023542 - 0.040909]</Category>
+      <Category>(0.040909 - 0.091993]</Category>
+      <Category>(0.091993 - 0.189723]</Category>
+      <Category>(0.189723 - 0.352216]</Category>
+      <Category>(0.352216 - 0.384247]</Category>
+      <Category>(0.384247 - 0.573451]</Category>
+      <Category>(0.573451 - 0.603075]</Category>
+      <Category>(0.603075 - 0.619938]</Category>
+      <Category>(0.619938 - 0.620722]</Category>
+      <Category>(0.620722 - 0.638879]</Category>
       <Category></Category>
       <Category></Category>
       <Category></Category>

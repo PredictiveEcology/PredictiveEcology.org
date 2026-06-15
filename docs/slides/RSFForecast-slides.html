@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Eliot McIntire">
-  <meta name="dcterms.date" content="2026-06-12">
+  <meta name="dcterms.date" content="2026-06-15">
   <title>Forecasting wildlife habitat (an RSF)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1088,7 +1088,7 @@ Eliot McIntire
 </div>
 </div>
 
-  <p class="date">2026-06-12</p>
+  <p class="date">2026-06-15</p>
 </section>
 <section id="the-question" class="slide level2 smaller">
 <h2>The question</h2>
@@ -1161,21 +1161,24 @@ Eliot McIntire
 <div class="column" style="width:46%;">
 <ul>
 <li class="fragment"><code>studyArea</code> – a <strong>fixed</strong> polygon we report on</li>
-<li class="fragment"><code>studyAreaLarge</code> – buffered, to avoid edge effects</li>
+<li class="fragment"><code>studyArea_biomassParam</code> – buffered, to avoid edge effects</li>
+<li class="fragment"><code>studyAreaCalibration</code> – area to calibrate fire (same here)</li>
 <li class="fragment">matching <code>rasterToMatch*</code> templates, <strong>derived</strong> from one another</li>
 <li class="fragment">objects defined earlier are available to later ones</li>
 </ul>
 </div><div class="column" style="width:54%;">
 <div class="small-code">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href></a>studyArea <span class="ot">=</span> <span class="fu">prepInputs</span>(<span class="at">url =</span> saURL, <span class="at">fun =</span> <span class="st">&quot;terra::vect&quot;</span>),</span>
-<span id="cb3-2"><a href></a>studyAreaLarge <span class="ot">=</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="dv">10000</span>),</span>
-<span id="cb3-3"><a href></a>rasterToMatchLarge <span class="ot">=</span> {</span>
-<span id="cb3-4"><a href></a>  rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">disagg</span>(modelLand[[<span class="dv">1</span>]], <span class="at">fact =</span> <span class="dv">2</span>)</span>
-<span id="cb3-5"><a href></a>  rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb3-6"><a href></a>  terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyAreaLarge)</span>
-<span id="cb3-7"><a href></a>},</span>
-<span id="cb3-8"><a href></a>rasterToMatch <span class="ot">=</span> <span class="fu">postProcess</span>(rasterToMatchLarge,</span>
-<span id="cb3-9"><a href></a>                  <span class="at">cropTo =</span> studyArea, <span class="at">maskTo =</span> studyArea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href></a>studyArea_biomassParam <span class="ot">=</span> terra<span class="sc">::</span><span class="fu">buffer</span>(studyArea, <span class="dv">10000</span>),</span>
+<span id="cb3-3"><a href></a>studyAreaCalibration   <span class="ot">=</span> studyArea_biomassParam,</span>
+<span id="cb3-4"><a href></a>rasterToMatch_biomassParam <span class="ot">=</span> {</span>
+<span id="cb3-5"><a href></a>  rtml <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">disagg</span>(modelLand[[<span class="dv">1</span>]], <span class="at">fact =</span> <span class="dv">2</span>)</span>
+<span id="cb3-6"><a href></a>  rtml[] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-7"><a href></a>  terra<span class="sc">::</span><span class="fu">mask</span>(rtml, studyArea_biomassParam)</span>
+<span id="cb3-8"><a href></a>},</span>
+<span id="cb3-9"><a href></a>rasterToMatchCalibration <span class="ot">=</span> rasterToMatch_biomassParam,</span>
+<span id="cb3-10"><a href></a>rasterToMatch <span class="ot">=</span> <span class="fu">postProcess</span>(rasterToMatch_biomassParam,</span>
+<span id="cb3-11"><a href></a>                  <span class="at">cropTo =</span> studyArea, <span class="at">maskTo =</span> studyArea)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1236,10 +1239,79 @@ Eliot McIntire
 </div><div class="column" style="width:52%;">
 <div class="small-code">
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pak&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pak&quot;</span>)</span>
-<span id="cb6-2"><a href></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">&quot;PredictiveEcology/SpaDES.shiny&quot;</span>)</span>
+<span id="cb6-2"><a href></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="st">&quot;SpaDES.shiny&quot;</span>)</span>
 <span id="cb6-3"><a href></a></span>
 <span id="cb6-4"><a href></a>SpaDES.shiny<span class="sc">::</span><span class="fu">shine</span>(<span class="st">&quot;outputs&quot;</span>)   <span class="co"># a folder</span></span>
 <span id="cb6-5"><a href></a><span class="co"># shine(results)                 # or a simList</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="where-did-the-inputs-come-from" class="slide level2 smaller">
+<h2>Where did the inputs come from?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><code>prepInputs()</code> quietly <strong>logs</strong> every dataset it pulls</li>
+<li class="fragment"><code>prepInputsLog()</code> returns that log as a table</li>
+<li class="fragment">handy for <strong>reporting</strong> what data fed a given run</li>
+<li class="fragment">(experimental as of <code>reproducible &gt;= 3.1.1.9058</code>)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="small-code">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a>reproducible<span class="sc">::</span><span class="fu">prepInputsLog</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href></a>  data.table<span class="sc">::</span><span class="fu">rbindlist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="change-over-time-statically" class="slide level2 smaller">
+<h2>Change over time, statically</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">subtract first year from last to see <strong>net change</strong></li>
+<li class="fragment">the <code>&quot;differences&quot;</code> palette is purpose-built (blue→white→red)</li>
+<li class="fragment"><code>rev()</code> so <strong>red = negative</strong> (worse habitat), <strong>blue = positive</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="small-code">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href></a>diffMap <span class="ot">&lt;-</span> results<span class="sc">$</span>simPred<span class="sc">$</span>year2075 <span class="sc">-</span></span>
+<span id="cb8-2"><a href></a>           results<span class="sc">$</span>simPred<span class="sc">$</span>year2025</span>
+<span id="cb8-3"><a href></a>terra<span class="sc">::</span><span class="fu">global</span>(diffMap, <span class="at">fun =</span> <span class="st">&#39;mean&#39;</span>,</span>
+<span id="cb8-4"><a href></a>              <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-5"><a href></a></span>
+<span id="cb8-6"><a href></a>terra<span class="sc">::</span><span class="fu">plot</span>(diffMap,</span>
+<span id="cb8-7"><a href></a>  <span class="at">col =</span> <span class="fu">rev</span>(terra<span class="sc">::</span><span class="fu">map.pal</span>(<span class="st">&quot;differences&quot;</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="static-page-leaflet-snapshot" class="slide level2 smaller">
+<h2>Static-page leaflet: snapshot</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<ul>
+<li class="fragment"><code>plotSAsLeaflet(results)</code> renders the simList’s <strong>study areas + raster templates</strong> as one <strong>interactive</strong> leaflet widget</li>
+<li class="fragment">pan / zoom / toggle layers; ships as static HTML – no Shiny server</li>
+<li class="fragment">great for a snapshot in a Quarto book</li>
+</ul>
+</div><div class="column" style="width:52%;">
+<div class="small-code">
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href></a>SpaDES.project<span class="sc">::</span><span class="fu">plotSAsLeaflet</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="static-page-leaflet-change-over-time" class="slide level2 smaller">
+<h2>Static-page leaflet: change over time</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<ul>
+<li class="fragment"><code>plotChangeOverTime(results)</code> discovers every time-series object in <code>outputPath(results)</code> and shows the <em>first → last</em> difference</li>
+<li class="fragment"><strong>radio buttons</strong> to switch between objects (e.g. <code>simPred</code>, <code>simBinMap</code>)</li>
+<li class="fragment">per-object <strong>legend</strong>: zero-centred <code>terra::map.pal(&quot;differences&quot;)</code>, max at top</li>
+<li class="fragment">multi-band rasters split into one radio per band</li>
+</ul>
+</div><div class="column" style="width:52%;">
+<div class="small-code">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href></a>SpaDES.project<span class="sc">::</span><span class="fu">plotChangeOverTime</span>(results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -1248,6 +1320,7 @@ Eliot McIntire
 <ul>
 <li class="fragment">one <code>setupProject()</code> call composes <strong>three model families</strong> from different authors</li>
 <li class="fragment">a <strong>fitted model</strong>, a <strong>fixed study area</strong>, and <strong>cloud caching</strong> make it both reproducible <em>and</em> cheap to re-run as a team</li>
+<li class="fragment">after the run: static <code>terra::plot()</code> for snapshots, <code>plotSAsLeaflet()</code> / <code>plotChangeOverTime()</code> for interactive static-HTML views, <code>shine()</code> for full-Shiny exploration</li>
 <li class="fragment">the same nimble properties scale from a one-module demo to a multi-family forecast</li>
 </ul>
 

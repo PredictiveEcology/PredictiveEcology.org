@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Eliot McIntire">
-  <meta name="dcterms.date" content="2026-06-12">
+  <meta name="dcterms.date" content="2026-06-15">
   <title>setupProject for nimble workflows</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1088,7 +1088,7 @@ Eliot McIntire
 </div>
 </div>
 
-  <p class="date">2026-06-12</p>
+  <p class="date">2026-06-15</p>
 </section>
 <section id="the-problem" class="slide level2 smaller">
 <h2>The problem</h2>
@@ -1214,10 +1214,10 @@ Eliot McIntire
 </ul>
 </div><div class="column" style="width:52%;">
 <div class="small-code">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pak&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pak&quot;</span>)</span>
-<span id="cb2-2"><a href></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/Require@development&quot;</span>,</span>
-<span id="cb2-3"><a href></a>           <span class="st">&quot;PredictiveEcology/SpaDES.project@development&quot;</span>),</span>
-<span id="cb2-4"><a href></a>         <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;https://predictiveecology.r-universe.dev&quot;</span>, <span class="fu">getOption</span>(<span class="st">&quot;repos&quot;</span>))</span>
+<span id="cb2-2"><a href></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb2-3"><a href></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pak&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pak&quot;</span>)</span>
+<span id="cb2-4"><a href></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">&quot;Require&quot;</span>, <span class="st">&quot;SpaDES.project&quot;</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-5"><a href></a></span>
 <span id="cb2-6"><a href></a>out <span class="ot">&lt;-</span> SpaDES.project<span class="sc">::</span><span class="fu">setupProject</span>(</span>
 <span id="cb2-7"><a href></a>  <span class="at">modules =</span> <span class="fu">c</span>(</span>
@@ -1225,7 +1225,7 @@ Eliot McIntire
 <span id="cb2-9"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_speciesData&quot;</span>,</span>
 <span id="cb2-10"><a href></a>    <span class="st">&quot;PredictiveEcology/Biomass_core&quot;</span>),</span>
 <span id="cb2-11"><a href></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">1</span>, <span class="at">end =</span> <span class="dv">1</span>),</span>
-<span id="cb2-12"><a href></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">&quot;PredictiveEcology/LandR@development (&gt;= 1.2.0.9002)&quot;</span>),</span>
+<span id="cb2-12"><a href></a>  <span class="at">packages =</span> <span class="fu">c</span>(<span class="st">&quot;LandR (&gt;= 1.2.0.9002)&quot;</span>),</span>
 <span id="cb2-13"><a href></a>  <span class="at">shapeZipID =</span> <span class="st">&quot;1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik&quot;</span>,</span>
 <span id="cb2-14"><a href></a>  <span class="at">studyArea =</span> reproducible<span class="sc">::</span><span class="fu">prepInputs</span>(<span class="at">url =</span> shapeZipID, <span class="at">fun =</span> terra<span class="sc">::</span>vect) <span class="sc">|&gt;</span></span>
 <span id="cb2-15"><a href></a>    terra<span class="sc">::</span><span class="fu">project</span>(<span class="st">&quot;EPSG:3978&quot;</span>),</span>
@@ -1248,10 +1248,11 @@ Eliot McIntire
 </div><div class="column" style="width:54%;">
 <div class="small-code">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href></a>packages <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb3-2"><a href></a>  <span class="st">&quot;PredictiveEcology/LandR@development (&gt;= 1.2.0.9002)&quot;</span></span>
+<span id="cb3-2"><a href></a>  <span class="st">&quot;LandR (&gt;= 1.2.0.9002)&quot;</span></span>
 <span id="cb3-3"><a href></a>)</span>
-<span id="cb3-4"><a href></a><span class="co"># SpaDES.core, terra, ... arrive as</span></span>
-<span id="cb3-5"><a href></a><span class="co"># dependencies of the modules + packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href></a><span class="co"># fetched from r-universe (prebuilt binaries)</span></span>
+<span id="cb3-5"><a href></a><span class="co"># SpaDES.core, terra, ... arrive as</span></span>
+<span id="cb3-6"><a href></a><span class="co"># dependencies of the modules + packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
