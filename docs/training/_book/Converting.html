@@ -6,12 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Eliot McIntire">
-<meta name="author" content="Julie Turner">
 <meta name="dcterms.date" content="2026-06-15">
-<meta name="description" content="A 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting">
 
-<title>Robust and Nimble Caribou and Landscape Modelling Using SpaDES – Predictive Ecology Community</title>
+<title>Converting existing code into SpaDES – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,28 +24,30 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/logo/favicon-32x32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-edd601d991e163811c903f99fda7c313.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-a2b0700bf5f885111ecc5f89202c3656.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-edd601d991e163811c903f99fda7c313.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./RSFpredictModule.html" rel="next">
+<link href="./FireUnderClimateChange.html" rel="prev">
+<link href="./assets/logo/favicon-16x16.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5324130f2647aee51b44b7cc1f262e5b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-a714a9eee3bee0b82144c9ccef178639.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,22 +75,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1689MGK5S2"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
-</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../assets/css/main.scss">
+<link rel="stylesheet" href="assets/css/main.scss">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -260,11 +250,11 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/logo/favicon-196x196.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Predictive Ecology Community</span>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Robust and nimble scientific workflows, using SpaDES</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -274,19 +264,19 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link" href="./../../index.html"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../Projects.html"> 
+    <a class="nav-link" href="./../../Projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../SpaDES.html"> 
+    <a class="nav-link" href="./../../SpaDES.html"> 
 <span class="menu-text">SpaDES</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -295,19 +285,19 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-workshops">    
         <li>
-    <a class="dropdown-item" href="../Workshops.html">
+    <a class="dropdown-item" href="./../../Workshops.html">
  <span class="dropdown-text">Workshops</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../workshops/June-2026-NACW-Caribou-SpaDES-workshop.html">
+    <a class="dropdown-item" href="./../../workshops/June-2026-NACW-Caribou-SpaDES-workshop.html">
  <span class="dropdown-text">June 2026 Workshop Agenda</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../workshops/June-2024-SpaDES-workshop.html">
+    <a class="dropdown-item" href="./../../workshops/June-2024-SpaDES-workshop.html">
  <span class="dropdown-text">June 2024 Workshop Agenda</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../workshops/Nov-2024-SpaDES-workshop.html">
+    <a class="dropdown-item" href="./../../workshops/Nov-2024-SpaDES-workshop.html">
  <span class="dropdown-text">November 2024 Workshop Agenda</span></a>
   </li>  
     </ul>
@@ -318,25 +308,25 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-training">    
         <li>
-    <a class="dropdown-item" href="../training/_book/index.html">
+    <a class="dropdown-item" href="./index.html">
  <span class="dropdown-text">Training Book</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../otherTraining.html">
+    <a class="dropdown-item" href="./../otherTraining.html">
  <span class="dropdown-text">Other training resources</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../Manuals.html"> 
+    <a class="nav-link" href="./../../Manuals.html"> 
 <span class="menu-text">Manuals</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications.html"> 
+    <a class="nav-link" href="./../../publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../presentations.html"> 
+    <a class="nav-link" href="./../../presentations.html"> 
 <span class="menu-text">Presentations</span></a>
   </li>  
   <li class="nav-item compact">
@@ -361,7 +351,7 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Robust and Nimble Caribou and Landscape Modelling Using SpaDES</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Converting.html">Converting existing code into SpaDES</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -371,45 +361,263 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/logo/favicon-196x196.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./settingUp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting up your computer and system</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
       </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installRandSpatialPkgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PackagesForBook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./TroubleshootingPackageInstallation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Troubleshooting R package installation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./SpaDESbasics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SpaDES 101</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./NewModuleIntro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introduction to SpaDES Modules</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MetaDataAndModuleFiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Module Files and Metadata</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ModuleInputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Providing Module Inputs</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./simList.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The <code>simList</code> - What is it?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ModulesAndEvents.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modules, Events and Functions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Scheduling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scheduling Events</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./ContinuousWorkflows.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with Continuous Workflows</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Caching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Cache</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Saving.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Saving in SpaDES</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prepInputs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title"><code>reproducible::prepInputs</code> for Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Debugging SpaDES Modules</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./setupProject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SpaDES workflows and projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setupProjectNimble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title"><code>setupProject</code> for nimble workflows</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workflowSimple2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Workflows with <code>setupProject</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./LandRDemo_coreVeg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Forest Landscape Modelling with LandR and <code>setupProject</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ForestsAndFire.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Forest Succession and Wildfire using <code>setupProject</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RSFForecast.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./ExperimentsAndScenarios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experiments, replication, and scenarios</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Converting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Converting existing code into SpaDES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aiAssistedModules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Best practices</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Robust and Nimble Caribou and Landscape Modelling Using SpaDES</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">R</div>
-    <div class="quarto-category">SpaDES Workshops</div>
-    <div class="quarto-category">Training</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    A 2 hour workshop focusing on learning robust approaches to building reuseable, reproducible workflows for Caribou habitat modeling and forecasting
-  </div>
+<h1 class="title">Converting existing code into SpaDES</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Eliot McIntire </p>
-             <p>Julie Turner </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -426,55 +634,10 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
 </header>
 
 
-<section id="date-june-14-2026" class="level2">
-<h2 class="anchored" data-anchor-id="date-june-14-2026">Date: June 14, 2026</h2>
-</section>
-<section id="location-north-american-caribou-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="location-north-american-caribou-workshop">Location: <a href="https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576">North American Caribou Workshop</a></h2>
-<ul>
-<li>Workshop: Robust and Nimble Caribou and Landscape Modelling Using SpaDES</li>
-<li>Workshop leads: <a href="../bios/community/aaaeliot.html">Eliot McIntire</a> and <a href="../bios/community/julie.html">Julie Turner</a> (with on-site assistance from <a href="../bios/current/genevieve.html">Genèvieve Degré-Timmons</a>). Please direct any questions related to the workshop subject and materials to the workshop lead(s).</li>
-<li>Venue: Explorer Hotel, Katimavik B</li>
-<li>Date/Time: Monday, June 15, 13:30-15:30 or until finished</li>
-</ul>
-</section>
-<section id="preparation" class="level2">
-<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
-<p>We will be discussing ideas around reproducibility and reusability in the first part. In the second part, we will have an opportunity to see and run an example using R. If you would like to run code on your laptop, you should have a recent <a href="https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads">Rstudio</a>, or <a href="https://positron.posit.co/install.html">Positron</a> installed, and at least <a href="https://cran.r-project.org/">R 4.5.3 downloaded</a>.</p>
-</section>
-<section id="agenda" class="level2">
-<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>1:30 - 2:00</td>
-<td><a href="https://docs.google.com/presentation/d/1iSxGcCh-ZrrR-Px6rY2SK1yCgSvUknYB">Robust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation</a> | | Background publication to the nimble approach: <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/ele.13994">The PERFICT approach (McIntire et al 2022)</a> |</td>
-</tr>
-<tr class="even">
-<td>2:00 - 2:30</td>
-<td><a href="../training/_book/setupProjectNimble.html"><code>setupProject</code> for nimble workflows</a> |</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>2:30 - 3:30</td>
-<td>We will work through the example in the training manual: <a href="../training/_book/RSFForecast.html">Project with caribou RSF forecasting</a> |</td>
-</tr>
-<tr class="odd">
-<td>Extra time</td>
-<td>Thinking about your own projects. Working through an example: <a href="../training/_book/RSFpredictModule.html">Converting habitat model prediction code into a SpaDES module</a>. <strong>AI assistance</strong> – using an AI assistant to turn a linear R script into a reusable SpaDES module: <a href="../training/_book/aiAssistedModules.html">AI-assisted module development</a></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="next-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="next-workshop">Next workshop</h2>
-<p>If you missed it, but would like to attend a future workshop, please reach out to <a href="../bios/community/aaaeliot.html">Eliot</a> or <a href="../bios/community/julie.html">Julie</a> so that we can add you to the wait list.</p>
+<p>The previous parts of this book taught you how to <em>build</em> SpaDES workflows – modules, projects, experiments – using the conventions that make them composable, reproducible, and re-runnable. But most real projects don’t start clean: there is already a working analysis sitting in an ordinary R script. The question is how to bring that existing code <em>into</em> the SpaDES ecosystem without rewriting it from scratch. Once it is in, it inherits all the properties the framework provides for free: caching, scheduling, swappable parameters, metadata- driven composition with other modules.</p>
+<p>This final part walks through that conversion twice, on the same example – a caribou RSF forecast script. The first chapter does it by hand, step by step, so the <em>mechanics</em> are clear: scaffold the module with <code>SpaDES.core::newModule()</code>, fill in the metadata, then translate the linear setup section into an <code>init</code> event and the annual loop into recurring events. The second chapter does the same conversion as a short conversation with an AI assistant – the metadata block, the event functions, and the debugging cycle are exactly the kind of boilerplate-heavy, convention-bound work an LLM handles well. Both paths land at the same <code>RSFpredict.R</code>; the AI version is just faster and is how new modules are likely to be authored from here on.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -562,7 +725,7 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/predictiveecology\.org\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -894,27 +1057,22 @@ gtag('config', 'G-1689MGK5S2', { 'anonymize_ip': true});
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item">
- This site is maintained by E. McIntire and C. Barros, with contributions by A. Chubaty, T. Micheletti and others. Powered by Quarto
-  </li>  
-</ul>
-    </div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./FireUnderClimateChange.html" class="pagination-link" aria-label="Fire under climate change">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span>
+      </a>          
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="./RSFpredictModule.html" class="pagination-link" aria-label="Converting habitat model prediction code into a SpaDES module">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

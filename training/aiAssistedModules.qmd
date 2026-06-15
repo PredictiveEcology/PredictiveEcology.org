@@ -26,7 +26,7 @@ The hardest part of growing a SpaDES ecosystem isn't writing any one
 module -- it's keeping the *interfaces* consistent across many of them
 so they actually compose. A module that calls a covariate
 `pixelGroupMap` plugs into the same pipeline as `Biomass_core`; one
-that calls it `pgMap` does not, even if the data is identical. The
+that calls it `pgMap` does not, even if the data are identical. The
 metadata (`expectsInput`, `createsOutput`, parameter names, `timeunit`)
 is what turns a clever script into a piece of shared infrastructure.
 

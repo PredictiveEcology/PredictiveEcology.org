@@ -1250,7 +1250,7 @@
     "href": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#agenda",
     "title": "Robust and Nimble Caribou and Landscape Modelling Using SpaDES",
     "section": "Agenda",
-    "text": "Agenda\n\n\n\n1:30 - 2:00\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:00 - 2:30\nsetupProject for nimble workflows |\n\n\n\n\n\n\n2:30 - 3:30\nWe will work through the example in the training manual: Project with caribou RSF forecasting |\n\n\nExtra time\nAI assistance – using an AI assistant to turn a linear R script into a reusable SpaDES module: Converting habitat model prediction code into a SpaDES module and AI-assisted module development"
+    "text": "Agenda\n\n\n\n1:30 - 2:00\nRobust and Nimble Caribou and Landscape Modelling Using SpaDES - presentation | | Background publication to the nimble approach: The PERFICT approach (McIntire et al 2022) |\n\n\n2:00 - 2:30\nsetupProject for nimble workflows |\n\n\n\n\n\n\n2:30 - 3:30\nWe will work through the example in the training manual: Project with caribou RSF forecasting |\n\n\nExtra time\nThinking about your own projects. Working through an example: Converting habitat model prediction code into a SpaDES module. AI assistance – using an AI assistant to turn a linear R script into a reusable SpaDES module: AI-assisted module development"
   },
   {
     "objectID": "workshops/June-2026-NACW-Caribou-SpaDES-workshop.html#next-workshop",
