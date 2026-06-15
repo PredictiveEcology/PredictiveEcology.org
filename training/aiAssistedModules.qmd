@@ -58,15 +58,39 @@ conversion is now a *short conversation*, not a refactor project.
 
 We start from the linear script in [Converting habitat model
 prediction code into a SpaDES module @sec-rsfPredictModule]: one
-setup section, one annual loop, no `sim$`, no `doEvent`. Three prompts
-get us to a working module.
+setup section, one annual loop, no `sim$`, no `doEvent`. Four prompts
+get us to a working module: one to scaffold the module's directory,
+then three to fill in metadata, init, and the recurring events.
 
-### Prompt 1 -- generate the metadata
+### Prompt 0 -- scaffold the module
+
+Before any AI work, generate the standard module directory layout so
+the AI has a *file* to edit rather than a clean slate to author from
+scratch. `SpaDES.core::newModule()` writes the template:
+
+```{r newModule0}
+SpaDES.core::newModule(
+  name = "RSFpredict",
+  path = "~/SpaDES_book/RSF_forecast/modules",
+  open = FALSE
+)
+```
+
+The skeleton has `# ! ----- EDIT BELOW ----- !` markers showing where
+each section goes -- the AI uses these as anchors and the diffs become
+trivially reviewable. You could ask the AI to generate the whole file
+in one shot instead, but starting from `newModule()`'s scaffold gives
+you a stable target that already conforms to SpaDES conventions, and
+keeps each prompt narrow.
+
+### Prompt 1 -- fill in the metadata
 
 > Here is a linear R script that forecasts a Resource Selection
-> Function across a simulated landscape, year by year. I want to
-> convert it into a SpaDES module called `RSFpredict`. Start by
-> writing the `defineModule()` metadata block. Include:
+> Function across a simulated landscape, year by year. I already ran
+> `SpaDES.core::newModule("RSFpredict", path = ...)` so the scaffold
+> exists at `modules/RSFpredict/RSFpredict.R`. Replace the
+> placeholder `defineModule()` block in that file with a real one.
+> Include:
 >
 > - the required packages (`reproducible`, `terra`, `glmmTMB`, plus the
 >   ones the script uses);
@@ -91,10 +115,11 @@ names match what the upstream modules (`Biomass_core`, `scfm`)
 *produce*. If they don't, the project won't wire up; if they do, you
 get composition for free.
 
-### Prompt 2 -- generate the `init` event + baseline computation
+### Prompt 2 -- fill in the `init` event + baseline computation
 
-> Now write the `doEvent.RSFpredict()` function. The `init` event
-> should:
+> Now edit the `doEvent.RSFpredict()` stub `newModule()` already wrote.
+> Keep the `switch()` shell but replace the `init` branch contents.
+> The `init` event should:
 >
 > - schedule a `buildBaselineRSFmap` event at `time(sim)` (runs once,
 >   immediately);
@@ -121,10 +146,12 @@ What you should check in the AI's response:
     AI inlined `10` for `numBins`, push back: "use `P(sim)$numBins`
     instead".
 
-### Prompt 3 -- generate the recurring events
+### Prompt 3 -- add the recurring events
 
-> Now write the `simLayers` and `simRSFmap` events. Each should be the
-> body of one iteration of the original `for (thisYear in years)` loop
+> Now add two new branches to the `switch()` in
+> `doEvent.RSFpredict()`: `simLayers` and `simRSFmap`. Each should be
+> the body of one iteration of the original `for (thisYear in years)`
+> loop
 > -- `simLayers` is the part that builds the year's covariate stack,
 > `simRSFmap` is the part that predicts + classifies + writes
 > GeoTIFFs. Replace `thisYear` with `as.integer(time(sim))` and

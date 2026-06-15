@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.7.32">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Eliot McIntire">
-<meta name="dcterms.date" content="2026-06-11">
-<title>2&nbsp; Pre-installing R packages for book – Robust and nimble scientific workflows, using SpaDES</title>
+<meta name="dcterms.date" content="2026-06-15">
+<title>23&nbsp; AI-assisted module development – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,8 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./TroubleshootingPackageInstallation.html" rel="next">
-<link href="./installRandSpatialPkgs.html" rel="prev">
+<link href="./bestPractices.html" rel="next">
+<link href="./RSFpredictModule.html" rel="prev">
 <link href="./assets/logo/favicon-16x16.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -373,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settingUp.html">Setting up your computer and system</a></li><li class="breadcrumb-item"><a href="./PackagesForBook.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Converting.html">Converting existing code into SpaDES</a></li><li class="breadcrumb-item"><a href="./aiAssistedModules.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -416,7 +416,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PackagesForBook.html" class="sidebar-item-text sidebar-link active">
+  <a href="./PackagesForBook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span></span></a>
   </div>
 </li>
@@ -551,14 +551,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -575,13 +569,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Converting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Converting existing code into SpaDES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aiAssistedModules.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></a>
   </div>
 </li>
       </ul>
@@ -590,12 +607,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best practices</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./aiAssistedModules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -612,16 +623,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#installation-code" id="toc-installation-code" class="nav-link active" data-scroll-target="#installation-code"><span class="header-section-number">2.1</span> Installation code</a></li>
-  <li><a href="#code-explained" id="toc-code-explained" class="nav-link" data-scroll-target="#code-explained"><span class="header-section-number">2.2</span> Code explained</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">2.3</span> See also</a></li>
+<li><a href="#sec-aiAccelerator" id="toc-sec-aiAccelerator" class="nav-link active" data-scroll-target="#sec-aiAccelerator"><span class="header-section-number">23.1</span> AI as an accelerator for a reusable module ecosystem</a></li>
+  <li>
+<a href="#worked-example-turning-an-rsf-forecast-into-a-spades-module" id="toc-worked-example-turning-an-rsf-forecast-into-a-spades-module" class="nav-link" data-scroll-target="#worked-example-turning-an-rsf-forecast-into-a-spades-module"><span class="header-section-number">23.2</span> Worked example: turning an RSF forecast into a SpaDES module</a>
+  <ul class="collapse">
+<li><a href="#prompt-0-scaffold-the-module" id="toc-prompt-0-scaffold-the-module" class="nav-link" data-scroll-target="#prompt-0-scaffold-the-module"><span class="header-section-number">23.2.1</span> Prompt 0 – scaffold the module</a></li>
+  <li><a href="#prompt-1-fill-in-the-metadata" id="toc-prompt-1-fill-in-the-metadata" class="nav-link" data-scroll-target="#prompt-1-fill-in-the-metadata"><span class="header-section-number">23.2.2</span> Prompt 1 – fill in the metadata</a></li>
+  <li><a href="#prompt-2-fill-in-the-init-event-baseline-computation" id="toc-prompt-2-fill-in-the-init-event-baseline-computation" class="nav-link" data-scroll-target="#prompt-2-fill-in-the-init-event-baseline-computation"><span class="header-section-number">23.2.3</span> Prompt 2 – fill in the <code>init</code> event + baseline computation</a></li>
+  <li><a href="#prompt-3-add-the-recurring-events" id="toc-prompt-3-add-the-recurring-events" class="nav-link" data-scroll-target="#prompt-3-add-the-recurring-events"><span class="header-section-number">23.2.4</span> Prompt 3 – add the recurring events</a></li>
+  <li><a href="#what-you-end-up-with" id="toc-what-you-end-up-with" class="nav-link" data-scroll-target="#what-you-end-up-with"><span class="header-section-number">23.2.5</span> What you end up with</a></li>
+  </ul>
+</li>
+  <li><a href="#testing-the-module" id="toc-testing-the-module" class="nav-link" data-scroll-target="#testing-the-module"><span class="header-section-number">23.3</span> Testing the module</a></li>
+  <li>
+<a href="#when-things-break-iterating-with-ai" id="toc-when-things-break-iterating-with-ai" class="nav-link" data-scroll-target="#when-things-break-iterating-with-ai"><span class="header-section-number">23.4</span> When things break: iterating with AI</a>
+  <ul class="collapse">
+<li><a href="#object-x-not-supplied" id="toc-object-x-not-supplied" class="nav-link" data-scroll-target="#object-x-not-supplied"><span class="header-section-number">23.4.1</span> “Object X not supplied”</a></li>
+  <li><a href="#crs-mismatch-extents-dont-match" id="toc-crs-mismatch-extents-dont-match" class="nav-link" data-scroll-target="#crs-mismatch-extents-dont-match"><span class="header-section-number">23.4.2</span> “CRS mismatch” / “extents don’t match”</a></li>
+  <li><a href="#predictions-only-run-for-some-years" id="toc-predictions-only-run-for-some-years" class="nav-link" data-scroll-target="#predictions-only-run-for-some-years"><span class="header-section-number">23.4.3</span> “Predictions only run for some years”</a></li>
+  <li><a href="#i-want-predictions-every-10-years-instead-of-5" id="toc-i-want-predictions-every-10-years-instead-of-5" class="nav-link" data-scroll-target="#i-want-predictions-every-10-years-instead-of-5"><span class="header-section-number">23.4.4</span> “I want predictions every 10 years instead of 5”</a></li>
+  </ul>
+</li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">23.5</span> See also</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./settingUp.html">Setting up your computer and system</a></li><li class="breadcrumb-item"><a href="./PackagesForBook.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pre-installing R packages for book</span>
-</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Converting.html">Converting existing code into SpaDES</a></li><li class="breadcrumb-item"><a href="./aiAssistedModules.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-aiModules" class="quarto-section-identifier"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></h1>
 </div>
 
 
@@ -638,7 +666,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2026</p>
+      <p class="date">June 15, 2026</p>
     </div>
   </div>
   
@@ -647,14 +675,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>The objective of this book is to facilitate lightweight project code and setting up R<sup>3</sup>T workflows<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. To do this, packages and any code that are used must be easy to install and use. We accomplish this by having each chapter installing its own packages, and avoiding having users “pre-installing” packages.</p>
-<p>Furthermore, packages, once installed for one project, will be cached locally so that the next project will be able to install quickly from the local package cache. We have also attempted to allow all sections to be run without administrator privileges.</p>
-<p>Nonetheless, there might be situations where users of this book will need to pre-install packages in one go – e.g., they will run chapter code without internet access. The following instructions are meant to cover this use case.</p>
-<section id="installation-code" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="installation-code">
-<span class="header-section-number">2.1</span> Installation code</h2>
-<p>If you can run the following code, then you will be able to run code in any of the chapters in this book. This code begins by installing <code>SpaDES.project</code> and its dependencies, then uses <code>setupProject</code> to download and install a list of R packages hosted on GitHub and a single SpaDES module (<em>Biomass-core</em>) which has over 130 package dependencies.</p>
+</header><div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>See the <a href="./glossary.html">Glossary</a> for definitions of recurring terms (e.g.&nbsp;<em>SpaDES module</em>, <em>SpaDES event</em>, <em>interoperable model</em>, <em>modular workflow</em>).</p>
+</div>
+</div>
+</div>
+<section id="sec-aiAccelerator" class="level2" data-number="23.1"><h2 data-number="23.1" class="anchored" data-anchor-id="sec-aiAccelerator">
+<span class="header-section-number">23.1</span> AI as an accelerator for a reusable module ecosystem</h2>
+<p>The hardest part of growing a SpaDES ecosystem isn’t writing any one module – it’s keeping the <em>interfaces</em> consistent across many of them so they actually compose. A module that calls a covariate <code>pixelGroupMap</code> plugs into the same pipeline as <code>Biomass_core</code>; one that calls it <code>pgMap</code> does not, even if the data is identical. The metadata (<code>expectsInput</code>, <code>createsOutput</code>, parameter names, <code>timeunit</code>) is what turns a clever script into a piece of shared infrastructure.</p>
+<p>That metadata is largely mechanical to write – and exactly the kind of work an AI assistant handles well. Given a linear R script and a few existing modules to mimic, a current LLM can translate the script into a <code>defineModule</code> + <code>doEvent</code> + scheduling skeleton in seconds, matched to the conventions used by <code>LandR</code>, <code>scfm</code>, <code>RSFpredict</code>, and the rest. The role of the scientist shifts from <em>typing the boilerplate</em> to <em>checking that the boilerplate is right</em> – which inputs are needed, which outputs are produced, which parameters belong to which event.</p>
+<p>There is a network effect: the more existing modules conform to a shared pattern, the better an LLM can produce a <em>new</em> module that fits. Today’s <code>Biomass_core</code> becomes the template for tomorrow’s <code>Biomass_disturbance</code>; today’s <code>RSFpredict</code> becomes the template for the next species’ SDM-as-module. The ecosystem builds itself faster, and stays consistent because nobody has to <em>remember</em> the conventions – the AI re-applies them on every conversion.</p>
+<p>This chapter is a worked example. We will take the linear R script we built in <a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a> and walk through the prompts that turn it into the <code>RSFpredict</code> module. The goal isn’t to show off the prompts – it’s to show that the conversion is now a <em>short conversation</em>, not a refactor project.</p>
+</section><section id="worked-example-turning-an-rsf-forecast-into-a-spades-module" class="level2" data-number="23.2"><h2 data-number="23.2" class="anchored" data-anchor-id="worked-example-turning-an-rsf-forecast-into-a-spades-module">
+<span class="header-section-number">23.2</span> Worked example: turning an RSF forecast into a SpaDES module</h2>
+<p>We start from the linear script in <a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>19</span></a>: one setup section, one annual loop, no <code>sim$</code>, no <code>doEvent</code>. Four prompts get us to a working module: one to scaffold the module’s directory, then three to fill in metadata, init, and the recurring events.</p>
+<section id="prompt-0-scaffold-the-module" class="level3" data-number="23.2.1"><h3 data-number="23.2.1" class="anchored" data-anchor-id="prompt-0-scaffold-the-module">
+<span class="header-section-number">23.2.1</span> Prompt 0 – scaffold the module</h3>
+<p>Before any AI work, generate the standard module directory layout so the AI has a <em>file</em> to edit rather than a clean slate to author from scratch. <code><a href="https://spades-core.predictiveecology.org/reference/newModule.html">SpaDES.core::newModule()</a></code> writes the template:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/newModule.html">newModule</a></span><span class="op">(</span></span>
+<span>  name <span class="op">=</span> <span class="st">"RSFpredict"</span>,</span>
+<span>  path <span class="op">=</span> <span class="st">"~/SpaDES_book/RSF_forecast/modules"</span>,</span>
+<span>  open <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The skeleton has <code># ! ----- EDIT BELOW ----- !</code> markers showing where each section goes – the AI uses these as anchors and the diffs become trivially reviewable. You could ask the AI to generate the whole file in one shot instead, but starting from <code>newModule()</code>’s scaffold gives you a stable target that already conforms to SpaDES conventions, and keeps each prompt narrow.</p>
+</section><section id="prompt-1-fill-in-the-metadata" class="level3" data-number="23.2.2"><h3 data-number="23.2.2" class="anchored" data-anchor-id="prompt-1-fill-in-the-metadata">
+<span class="header-section-number">23.2.2</span> Prompt 1 – fill in the metadata</h3>
+<blockquote class="blockquote">
+<p>Here is a linear R script that forecasts a Resource Selection Function across a simulated landscape, year by year. I already ran <code>SpaDES.core::newModule("RSFpredict", path = ...)</code> so the scaffold exists at <code>modules/RSFpredict/RSFpredict.R</code>. Replace the placeholder <code>defineModule()</code> block in that file with a real one. Include:</p>
+<ul>
+<li>the required packages (<code>reproducible</code>, <code>terra</code>, <code>glmmTMB</code>, plus the ones the script uses);</li>
+<li>
+<code>parameters</code> for every value I had in the <code>params</code> list (numBins, simulationProcess, predictionInterval, predictStartYear, predictLastYear, ts_else, .studyAreaName) – declare type and a sensible default for each;</li>
+<li>
+<code>inputObjects</code> for the variables the script assumed were in scope: <code>model</code> (<code>glmmTMB</code>), <code>studyArea</code> (<code>SpatVector</code>), <code>modelLand</code>, <code>cohortData</code>, <code>pixelGroupMap</code>, <code>timeSinceFire</code>, <code>rasterToMatch</code> (all <code>SpatRaster</code>);</li>
+<li>
+<code>outputObjects</code> for <code>pred</code>, <code>binMap</code>, <code>simLand</code>, <code>simPred</code>, <code>simBinMap</code>.</li>
+</ul>
+<p>Use <code>timeunit = "year"</code>. No event code yet – just the metadata.</p>
+</blockquote>
+<p>The AI’s output is essentially the <code>defineModule(...)</code> block we showed at <a href="RSFpredictModule.html" class="quarto-xref"><span>Chapter 19</span></a> – a declaration of what the module needs, what it produces, and what its parameters are. The <strong>single most important thing to check</strong> is that the <code>inputObjects</code> names match what the upstream modules (<code>Biomass_core</code>, <code>scfm</code>) <em>produce</em>. If they don’t, the project won’t wire up; if they do, you get composition for free.</p>
+</section><section id="prompt-2-fill-in-the-init-event-baseline-computation" class="level3" data-number="23.2.3"><h3 data-number="23.2.3" class="anchored" data-anchor-id="prompt-2-fill-in-the-init-event-baseline-computation">
+<span class="header-section-number">23.2.3</span> Prompt 2 – fill in the <code>init</code> event + baseline computation</h3>
+<blockquote class="blockquote">
+<p>Now edit the <code>doEvent.RSFpredict()</code> stub <code>newModule()</code> already wrote. Keep the <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> shell but replace the <code>init</code> branch contents. The <code>init</code> event should:</p>
+<ul>
+<li>schedule a <code>buildBaselineRSFmap</code> event at <code>time(sim)</code> (runs once, immediately);</li>
+<li>if <code>P(sim)$simulationProcess == "dynamic"</code>, also schedule <code>simLayers</code> and <code>simRSFmap</code> events at <code>P(sim)$predictStartYear</code>;</li>
+<li>if <code>P(sim)$predictLastYear</code> is <code>TRUE</code>, schedule a final <code>simLayers</code> at <code>end(sim)</code>.</li>
+</ul>
+<p>Then write the <code>buildBaselineRSFmap</code> event – that’s the “setup section” of my linear script (the part <em>before</em> the <code>for (thisYear in years)</code> loop), translated to use <code>sim$X</code> instead of bare variables and <code>P(sim)$X</code> instead of <code>params$X</code>.</p>
+<p>Don’t write the <code>simLayers</code> / <code>simRSFmap</code> events yet.</p>
+</blockquote>
+<p>What you should check in the AI’s response:</p>
+<ul>
+<li>Every <code>sim$X</code> that’s <em>read</em> corresponds to a declared <code>expectsInput</code>, and every <code>sim$X</code> that’s <em>written</em> corresponds to a declared <code>createsOutput</code>. Mismatches here are the most common source of “object not found” errors at run time.</li>
+<li>Every parameter accessor is <code>P(sim)$X</code> (or <code>Par$X</code> in newer SpaDES.core) – not <code>params$X</code>, not a hard-coded literal. If the AI inlined <code>10</code> for <code>numBins</code>, push back: “use <code>P(sim)$numBins</code> instead”.</li>
+</ul></section><section id="prompt-3-add-the-recurring-events" class="level3" data-number="23.2.4"><h3 data-number="23.2.4" class="anchored" data-anchor-id="prompt-3-add-the-recurring-events">
+<span class="header-section-number">23.2.4</span> Prompt 3 – add the recurring events</h3>
+<blockquote class="blockquote">
+<p>Now add two new branches to the <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> in <code>doEvent.RSFpredict()</code>: <code>simLayers</code> and <code>simRSFmap</code>. Each should be the body of one iteration of the original <code>for (thisYear in years)</code> loop – <code>simLayers</code> is the part that builds the year’s covariate stack, <code>simRSFmap</code> is the part that predicts + classifies + writes GeoTIFFs. Replace <code>thisYear</code> with <code>as.integer(time(sim))</code> and replace the bare lists <code>simLand</code> / <code>simPred</code> / <code>simBinMap</code> with the simList versions <code>sim$simLand[[key]]</code>, etc.</p>
+<p>At the end of each event, reschedule the same event at <code>time(sim) + P(sim)$predictionInterval</code> so it recurs.</p>
+<p>Also: write the GeoTIFFs under <code>file.path(outputPath(sim), paste0(P(sim)$.studyAreaName, "_sims"))</code>, creating that directory if needed.</p>
+</blockquote>
+<p>The check after this prompt is whether the <strong>self-rescheduling</strong> trailing line is present in both events. Without it the events fire once and stop; the dynamic forecast becomes a static one and the bug is silent – you get <em>some</em> years of output, not a wrong-shaped error.</p>
+</section><section id="what-you-end-up-with" class="level3" data-number="23.2.5"><h3 data-number="23.2.5" class="anchored" data-anchor-id="what-you-end-up-with">
+<span class="header-section-number">23.2.5</span> What you end up with</h3>
+<p>The three prompts together produce a 200-300 line <code>RSFpredict.R</code> roughly identical to the <a href="https://github.com/JWTurn/RSFpredict">JWTurn/RSFpredict</a> module we used in <a href="RSFForecast.html" class="quarto-xref"><span>Chapter 18</span></a>. Drop it under <code>&lt;projectPath&gt;/modules/RSFpredict/RSFpredict.R</code> and put any helper functions (like <code>reclassifyCohortData()</code>) under <code>&lt;projectPath&gt;/modules/RSFpredict/R/</code>.</p>
+</section></section><section id="testing-the-module" class="level2" data-number="23.3"><h2 data-number="23.3" class="anchored" data-anchor-id="testing-the-module">
+<span class="header-section-number">23.3</span> Testing the module</h2>
+<p>The fastest sanity check is a <em>minimal</em> <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> that runs just enough of the upstream chain to populate the inputs <code>RSFpredict</code> needs (<code>cohortData</code>, <code>pixelGroupMap</code>, <code>timeSinceFire</code>). Two years are enough to know whether <code>simLayers</code> + <code>simRSFmap</code> fire correctly:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span><span class="op">)</span>, ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -662,31 +761,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
-<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"SpaDES.core"</span>, <span class="st">"reproducible"</span></span>
+<span>  paths   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/RSFpredict_test"</span><span class="op">)</span>,</span>
+<span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@main"</span>,</span>
+<span>    <span class="st">"PredictiveEcology/Biomass_core@main"</span>,</span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
+<span>              <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"scfmDataPrep"</span>, <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>,</span>
+<span>                <span class="st">"scfmSpread"</span>, <span class="st">"scfmDiagnostics"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    <span class="st">"JWTurn/RSFpredict@main"</span></span>
 <span>  <span class="op">)</span>,</span>
-<span>  options <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span>,</span>
-<span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/Introduction"</span><span class="op">)</span>,</span>
-<span>  modules <span class="op">=</span> <span class="st">"PredictiveEcology/Biomass_core@main"</span></span>
-<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  params  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<span>    .globals   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>.studyAreaName <span class="op">=</span> <span class="st">"dehchoN"</span>, .useCache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">".inputObjects"</span>, <span class="st">"init"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    RSFpredict <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>simulationProcess <span class="op">=</span> <span class="st">"dynamic"</span>, predictionInterval <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span>  <span class="op">)</span>,</span>
+<span>  times   <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2020</span>, end <span class="op">=</span> <span class="fl">2022</span><span class="op">)</span>,</span>
+<span>  packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"LandR"</span>, <span class="st">"climateData"</span><span class="op">)</span>,</span>
+<span>  studyArea <span class="op">=</span> <span class="fu">reproducible</span><span class="fu">::</span><span class="fu"><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">prepInputs</a></span><span class="op">(</span></span>
+<span>    url <span class="op">=</span> <span class="st">"https://drive.google.com/file/d/1ma5qRk2NNidLhrQoiLIzd7W5ogeTaH5-/view"</span>,</span>
+<span>    fun <span class="op">=</span> <span class="st">"terra::vect"</span><span class="op">)</span>,</span>
+<span>  model <span class="op">=</span> <span class="fu">reproducible</span><span class="fu">::</span><span class="fu"><a href="https://reproducible.predictiveecology.org/reference/prepInputs.html">prepInputs</a></span><span class="op">(</span></span>
+<span>    url <span class="op">=</span> <span class="st">"https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view"</span>,</span>
+<span>    fun <span class="op">=</span> <span class="st">"readRDS"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span>
+<span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simList-accessors-events.html">completed</a></span><span class="op">(</span><span class="va">results</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Note that <code>setupProject</code> will change your working directory to <code>~/SpaDES_book/Introduction</code>. If that is not where you want to keep working, restart R and make sure you set your working directory to where you want it to be (if restarting is not sufficient).</p>
-</section><section id="code-explained" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="code-explained">
-<span class="header-section-number">2.2</span> Code explained</h2>
-<p>If you care to know what the code is “doing”, read on.</p>
-<p>The <code>setupProject</code> call above internally uses <code>Require</code> to download and install any missing packages. Although the packages themselves are installed in a folder inside <code>./Introduction/</code> (the project folder) (see <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code> after running the code), <code>Require</code> <em>caches</em> the downloaded package installation files in a user-accessible folder (so independent from any project).</p>
-<p>This means that, should you, e.g., switch projects and attempt to reinstall the same or a subset of these packages, <code>setupProject</code> (via <code>Require</code>) would access the package cache and reinstall them in whatever new project folder library. This is much faster than downloading the packages again.</p>
-<p>The same is true should you lose internet connection, since the downloads do not need to happen again.</p>
-</section><section id="see-also" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="see-also">
-<span class="header-section-number">2.3</span> See also</h2>
-<p><a href="TroubleshootingPackageInstallation.html" class="quarto-xref"><span>Chapter 3</span></a> on R package installation troubleshooting</p>
+<p><code>completed(results)</code> should show every scheduled event having fired: <code>buildBaselineRSFmap</code> once at year 2020, then <code>simLayers</code> and <code>simRSFmap</code> at every year in <code>2020 ... 2022</code> because we set <code>predictionInterval = 1</code>. If you only see <code>init</code> and <code>buildBaselineRSFmap</code>, the recurring events aren’t rescheduling themselves – which is exactly the regression the AI’s self-scheduling line was supposed to prevent.</p>
+</section><section id="when-things-break-iterating-with-ai" class="level2" data-number="23.4"><h2 data-number="23.4" class="anchored" data-anchor-id="when-things-break-iterating-with-ai">
+<span class="header-section-number">23.4</span> When things break: iterating with AI</h2>
+<p>Workflow-level errors fall into a few recognisable shapes. Each one maps to a short follow-up prompt.</p>
+<section id="object-x-not-supplied" class="level3" data-number="23.4.1"><h3 data-number="23.4.1" class="anchored" data-anchor-id="object-x-not-supplied">
+<span class="header-section-number">23.4.1</span> “Object X not supplied”</h3>
+<blockquote class="blockquote">
+<p>When I run <code>simInitAndSpades2(out)</code>, it errors with <code>object 'pixelGroupMap' not supplied</code>. <code>RSFpredict</code> declares it as an <code>expectsInput</code>, and <code>Biomass_core</code> declares it as a <code>createsOutput</code>. What’s wrong?</p>
+</blockquote>
+<p>Three usual answers from the AI: (a) <code>Biomass_core</code> isn’t actually in the <code>modules</code> list (typo or missing); (b) it <em>is</em> in the list, but listed <em>after</em> <code>RSFpredict</code>, so <code>init</code> of <code>RSFpredict</code> runs before <code>Biomass_core</code> creates the object – fix by reordering; (c) the class declared in <code>expectsInput</code> doesn’t match what the upstream module declares in <code>createsOutput</code>, so the wiring is rejected. The AI will usually tell you which.</p>
+</section><section id="crs-mismatch-extents-dont-match" class="level3" data-number="23.4.2"><h3 data-number="23.4.2" class="anchored" data-anchor-id="crs-mismatch-extents-dont-match">
+<span class="header-section-number">23.4.2</span> “CRS mismatch” / “extents don’t match”</h3>
+<blockquote class="blockquote">
+<p>The <code>simLayers</code> event errors in <code><a href="https://rspatial.github.io/terra/reference/resample.html">terra::resample</a></code> with “CRS does not match”. Both rasters say EPSG:3978 when I print them. What else could it be?</p>
+</blockquote>
+<p>This is almost always slight numerical drift in the proj4 string between two layers built by different modules. The fix is one line: <code>terra::crs(b) &lt;- terra::crs(a)</code> before the resample. The AI will suggest this, or point at <code>reproducible::postProcess(to = a)</code> as the SpaDES-idiomatic version.</p>
+</section><section id="predictions-only-run-for-some-years" class="level3" data-number="23.4.3"><h3 data-number="23.4.3" class="anchored" data-anchor-id="predictions-only-run-for-some-years">
+<span class="header-section-number">23.4.3</span> “Predictions only run for some years”</h3>
+<blockquote class="blockquote">
+<p><code>completed(results)</code> shows <code>simLayers</code> fired at year 2020 but never after. Loop should run every 5 years until 2075. What’s wrong?</p>
+</blockquote>
+<p>This is the missing self-reschedule line. Specifically: at the end of the <code>simLayers</code> event there must be a <code>sim &lt;- scheduleEvent(sim, time(sim) + P(sim)$predictionInterval, "RSFpredict", "simLayers")</code>. The AI will spot this immediately if you paste the event body.</p>
+</section><section id="i-want-predictions-every-10-years-instead-of-5" class="level3" data-number="23.4.4"><h3 data-number="23.4.4" class="anchored" data-anchor-id="i-want-predictions-every-10-years-instead-of-5">
+<span class="header-section-number">23.4.4</span> “I want predictions every 10 years instead of 5”</h3>
+<p>You don’t change the module – you change a parameter at the <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> call site:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">params</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>RSFpredict <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>predictionInterval <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Which is exactly the point of putting the value in <code>defineParameter()</code> in Prompt 1. The AI will remind you of this if you ask “how do I change the prediction interval”; if you find yourself editing the module to change the value, that’s a hint the parameter wasn’t exposed.</p>
+</section></section><section id="see-also" class="level2" data-number="23.5"><h2 data-number="23.5" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">23.5</span> See also</h2>
+<p><a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>19</span></a></p>
+<p><a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a></p>
+<p><a href="MetaDataAndModuleFiles.html" class="quarto-xref">Module Files and Metadata&nbsp;<span>5</span></a></p>
+<p><span class="quarto-unresolved-ref">?sec-modulesAndEvents</span></p>
 
 
-</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
-<ol>
-<li id="fn1"><p>See this <a href="https://ceresbarros.github.io/reproducible-workflowsWS/presentations/20230712_BESMacroSIG2023_ReproducibleWorkflowsWS.pdf">introduction to R<sup>3</sup>T workflows</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1103,13 +1243,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./installRandSpatialPkgs.html" class="pagination-link" aria-label="Installing R and Spatial Packages">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing R and Spatial Packages</span></span>
+      <a href="./RSFpredictModule.html" class="pagination-link" aria-label="Converting habitat model prediction code into a SpaDES module">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./TroubleshootingPackageInstallation.html" class="pagination-link" aria-label="Troubleshooting R package installation">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Troubleshooting R package installation</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./bestPractices.html" class="pagination-link" aria-label="Best practices">
+        <span class="nav-page-text">Best practices</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

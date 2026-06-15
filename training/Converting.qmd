@@ -1,0 +1,27 @@
+---
+date: last-modified
+---
+
+# Converting existing code into SpaDES {.unnumbered}
+
+The previous parts of this book taught you how to *build* SpaDES
+workflows -- modules, projects, experiments -- using the conventions
+that make them composable, reproducible, and re-runnable. But most
+real projects don't start clean: there is already a working analysis
+sitting in an ordinary R script. The question is how to bring that
+existing code *into* the SpaDES ecosystem without rewriting it from
+scratch. Once it is in, it inherits all the properties the framework
+provides for free: caching, scheduling, swappable parameters, metadata-
+driven composition with other modules.
+
+This final part walks through that conversion twice, on the same
+example -- a caribou RSF forecast script. The first chapter does it by
+hand, step by step, so the *mechanics* are clear: scaffold the module
+with `SpaDES.core::newModule()`, fill in the metadata, then translate
+the linear setup section into an `init` event and the annual loop into
+recurring events. The second chapter does the same conversion as a
+short conversation with an AI assistant -- the metadata block, the
+event functions, and the debugging cycle are exactly the kind of
+boilerplate-heavy, convention-bound work an LLM handles well. Both
+paths land at the same `RSFpredict.R`; the AI version is just faster
+and is how new modules are likely to be authored from here on.

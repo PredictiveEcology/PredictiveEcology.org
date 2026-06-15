@@ -88,15 +88,17 @@ book:
       - LandRDemo_coreVeg.qmd
       - ForestsAndFire.qmd
       - RSFForecast.qmd
-      - RSFpredictModule.qmd
       #- castorExample.qmd
       - spadesCBMDemo.qmd
     - part: ExperimentsAndScenarios.qmd
       chapters:
       - Experiments.qmd
       - FireUnderClimateChange.qmd
+    - part: Converting.qmd
+      chapters:
+      - RSFpredictModule.qmd
+      - aiAssistedModules.qmd
     - bestPractices.qmd
-    - aiAssistedModules.qmd
     - references.qmd
 
 bibliography: references/references.bib

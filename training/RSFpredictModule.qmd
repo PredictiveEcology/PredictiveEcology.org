@@ -170,11 +170,50 @@ another module's outputs in a principled way: `cohortData`,
 the same code declares those needs and gets them filled in by whoever
 runs the project.
 
-## Step 1: the metadata
+## Step 0: scaffold the module with `newModule()`
 
-The first thing in `RSFpredict.R` is a `defineModule()` block. It
-contains nothing executable yet -- it's a *declaration* of what the
-module is. Three pieces matter:
+Before writing anything, generate the module skeleton with
+`SpaDES.core::newModule()`. It creates the directory layout, the main
+`.R` file with stubbed `defineModule()` / `doEvent.RSFpredict()` /
+`.inputObjects()`, an empty `R/` folder for helper functions, plus
+`README.md`, `NEWS.md`, `RSFpredict.Rmd`, and `citation.bib`. We then
+*edit* the stub rather than writing the whole file from scratch.
+
+```{r newModule}
+SpaDES.core::newModule(
+  name       = "RSFpredict",
+  path       = "~/SpaDES_book/RSF_forecast/modules",   # parent dir
+  open       = FALSE                                    # don't auto-open in RStudio
+)
+```
+
+This drops the following files into
+`~/SpaDES_book/RSF_forecast/modules/RSFpredict/`:
+
+```
+RSFpredict/
+|-- RSFpredict.R       <- defineModule + doEvent.RSFpredict + .inputObjects (stubs)
+|-- RSFpredict.Rmd     <- documentation template
+|-- README.md
+|-- NEWS.md
+|-- citation.bib
+|-- LICENSE.md
+|-- data/
+|-- tests/
+\-- R/                 <- put helper functions here (e.g. reclassifyCohortData.R)
+```
+
+Open `RSFpredict.R` -- it already contains the *shape* we are aiming
+for, with `# ! ----- EDIT BELOW ----- !` markers showing where to put
+each section. The next three steps replace the stub contents with the
+ecology from our linear script.
+
+## Step 1: fill in the metadata
+
+The scaffold's `defineModule()` block already has the right shape --
+it's just stuffed with placeholders (empty `reqdPkgs`, a single example
+`defineParameter`, empty `inputObjects`/`outputObjects`). Replace those
+with the real ones. Three pieces matter:
 
 -   **`reqdPkgs`** -- what the module needs to be installed
     (`setupProject()` reads this and reconciles it with what the rest
@@ -257,13 +296,14 @@ Two practical effects of writing the metadata first:
     `createsOutput()` declarations meet our `expectsInput()`
     declarations and `SpaDES` connects them.
 
-## Step 2: the `init` event
+## Step 2: fill in the `init` event
 
-`doEvent.RSFpredict()` is the function `SpaDES` calls every time one of
-this module's events fires. It's a `switch()` on the event name. The
-**`init` event** runs exactly once, at the start of the simulation.
-This is where the linear script's *setup section* lives -- but with one
-extra job: telling `SpaDES` what to do next.
+`newModule()` left you a stub `doEvent.RSFpredict()` -- the `switch()`
+shell with `init`, `plot`, and `save` placeholder branches. We keep
+the `switch()` and replace what's inside the `init` branch. The
+**`init` event** runs exactly once, at the start of the simulation,
+and is where the linear script's *setup section* lives -- but with
+one extra job: telling `SpaDES` what to do next.
 
 We rename the setup section's "build the baseline" block to
 `buildBaselineRSFmap` (an event), and `init` becomes a tiny scheduler:
@@ -336,12 +376,14 @@ Three things changed translating the setup section into the module:
     `scfm` to advance fire, then our `simLayers` to assemble those
     outputs into RSF covariates, then our `simRSFmap` to predict.
 
-## Step 3: the recurring events
+## Step 3: add the recurring events
 
-`simLayers` and `simRSFmap` are the body of the original annual loop,
-split at the natural seam: build inputs, then predict from them. Each
-ends by scheduling **itself** at `time(sim) + predictionInterval`, so
-they recur:
+`simLayers` and `simRSFmap` aren't in the scaffold -- they're the
+event names you invented for this module. Add them as new `switch()`
+branches alongside `init`. They are the body of the original annual
+loop, split at the natural seam: build inputs, then predict from them.
+Each ends by scheduling **itself** at `time(sim) + predictionInterval`,
+so they recur:
 
 ```{r recurring}
     simLayers = {

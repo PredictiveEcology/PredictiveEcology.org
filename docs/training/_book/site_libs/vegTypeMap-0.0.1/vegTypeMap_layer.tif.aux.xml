@@ -48,14 +48,14 @@
         <F>#DD00FF</F>
       </Row>
       <Row index="6">
-        <F>4</F>
-        <F>Pice_gla</F>
-        <F>#93D4FF</F>
-      </Row>
-      <Row index="7">
         <F>7</F>
         <F>Popu_bal</F>
         <F>#FFACFD</F>
+      </Row>
+      <Row index="7">
+        <F>4</F>
+        <F>Pice_gla</F>
+        <F>#93D4FF</F>
       </Row>
     </GDALRasterAttributeTable>
   </PAMRasterBand>
