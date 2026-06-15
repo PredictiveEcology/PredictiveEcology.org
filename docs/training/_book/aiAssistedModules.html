@@ -693,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This chapter is a worked example. We will take the linear R script we built in <a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a> and walk through the prompts that turn it into the <code>RSFpredict</code> module. The goal isn’t to show off the prompts – it’s to show that the conversion is now a <em>short conversation</em>, not a refactor project.</p>
 </section><section id="worked-example-turning-an-rsf-forecast-into-a-spades-module" class="level2" data-number="23.2"><h2 data-number="23.2" class="anchored" data-anchor-id="worked-example-turning-an-rsf-forecast-into-a-spades-module">
 <span class="header-section-number">23.2</span> Worked example: turning an RSF forecast into a SpaDES module</h2>
-<p>We start from the linear script in <a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>19</span></a>: one setup section, one annual loop, no <code>sim$</code>, no <code>doEvent</code>. Four prompts get us to a working module: one to scaffold the module’s directory, then three to fill in metadata, init, and the recurring events.</p>
+<p>We start from the linear script in <a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>22</span></a>: one setup section, one annual loop, no <code>sim$</code>, no <code>doEvent</code>. Four prompts get us to a working module: one to scaffold the module’s directory, then three to fill in metadata, init, and the recurring events.</p>
 <section id="prompt-0-scaffold-the-module" class="level3" data-number="23.2.1"><h3 data-number="23.2.1" class="anchored" data-anchor-id="prompt-0-scaffold-the-module">
 <span class="header-section-number">23.2.1</span> Prompt 0 – scaffold the module</h3>
 <p>Before any AI work, generate the standard module directory layout so the AI has a <em>file</em> to edit rather than a clean slate to author from scratch. <code><a href="https://spades-core.predictiveecology.org/reference/newModule.html">SpaDES.core::newModule()</a></code> writes the template:</p>
@@ -721,7 +721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Use <code>timeunit = "year"</code>. No event code yet – just the metadata.</p>
 </blockquote>
-<p>The AI’s output is essentially the <code>defineModule(...)</code> block we showed at <a href="RSFpredictModule.html" class="quarto-xref"><span>Chapter 19</span></a> – a declaration of what the module needs, what it produces, and what its parameters are. The <strong>single most important thing to check</strong> is that the <code>inputObjects</code> names match what the upstream modules (<code>Biomass_core</code>, <code>scfm</code>) <em>produce</em>. If they don’t, the project won’t wire up; if they do, you get composition for free.</p>
+<p>The AI’s output is essentially the <code>defineModule(...)</code> block we showed at <a href="RSFpredictModule.html" class="quarto-xref"><span>Chapter 22</span></a> – a declaration of what the module needs, what it produces, and what its parameters are. The <strong>single most important thing to check</strong> is that the <code>inputObjects</code> names match what the upstream modules (<code>Biomass_core</code>, <code>scfm</code>) <em>produce</em>. If they don’t, the project won’t wire up; if they do, you get composition for free.</p>
 </section><section id="prompt-2-fill-in-the-init-event-baseline-computation" class="level3" data-number="23.2.3"><h3 data-number="23.2.3" class="anchored" data-anchor-id="prompt-2-fill-in-the-init-event-baseline-computation">
 <span class="header-section-number">23.2.3</span> Prompt 2 – fill in the <code>init</code> event + baseline computation</h3>
 <blockquote class="blockquote">
@@ -820,7 +820,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Which is exactly the point of putting the value in <code>defineParameter()</code> in Prompt 1. The AI will remind you of this if you ask “how do I change the prediction interval”; if you find yourself editing the module to change the value, that’s a hint the parameter wasn’t exposed.</p>
 </section></section><section id="see-also" class="level2" data-number="23.5"><h2 data-number="23.5" class="anchored" data-anchor-id="see-also">
 <span class="header-section-number">23.5</span> See also</h2>
-<p><a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>19</span></a></p>
+<p><a href="RSFpredictModule.html" class="quarto-xref">Converting habitat model prediction code into a SpaDES module&nbsp;<span>22</span></a></p>
 <p><a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a></p>
 <p><a href="MetaDataAndModuleFiles.html" class="quarto-xref">Module Files and Metadata&nbsp;<span>5</span></a></p>
 <p><span class="quarto-unresolved-ref">?sec-modulesAndEvents</span></p>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-15">
-<title>19&nbsp; Converting habitat model prediction code into a SpaDES module – Robust and nimble scientific workflows, using SpaDES</title>
+<title>22&nbsp; Converting habitat model prediction code into a SpaDES module – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,8 +63,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./spadesCBMDemo.html" rel="next">
-<link href="./RSFForecast.html" rel="prev">
+<link href="./aiAssistedModules.html" rel="next">
+<link href="./Converting.html" rel="prev">
 <link href="./assets/logo/favicon-16x16.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -373,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./RSFpredictModule.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Converting.html">Converting existing code into SpaDES</a></li><li class="breadcrumb-item"><a href="./RSFpredictModule.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -551,14 +551,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -575,13 +569,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Converting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Converting existing code into SpaDES</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aiAssistedModules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></a>
   </div>
 </li>
       </ul>
@@ -590,12 +607,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./bestPractices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Best practices</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./aiAssistedModules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -612,20 +623,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#bootstrap" id="toc-bootstrap" class="nav-link active" data-scroll-target="#bootstrap"><span class="header-section-number">19.1</span> Bootstrap</a></li>
-  <li><a href="#the-starting-point-a-plain-r-script" id="toc-the-starting-point-a-plain-r-script" class="nav-link" data-scroll-target="#the-starting-point-a-plain-r-script"><span class="header-section-number">19.2</span> The starting point: a plain R script</a></li>
-  <li><a href="#step-1-the-metadata" id="toc-step-1-the-metadata" class="nav-link" data-scroll-target="#step-1-the-metadata"><span class="header-section-number">19.3</span> Step 1: the metadata</a></li>
-  <li><a href="#step-2-the-init-event" id="toc-step-2-the-init-event" class="nav-link" data-scroll-target="#step-2-the-init-event"><span class="header-section-number">19.4</span> Step 2: the <code>init</code> event</a></li>
-  <li><a href="#step-3-the-recurring-events" id="toc-step-3-the-recurring-events" class="nav-link" data-scroll-target="#step-3-the-recurring-events"><span class="header-section-number">19.5</span> Step 3: the recurring events</a></li>
-  <li><a href="#running-it" id="toc-running-it" class="nav-link" data-scroll-target="#running-it"><span class="header-section-number">19.6</span> Running it</a></li>
-  <li><a href="#what-the-conversion-bought-us" id="toc-what-the-conversion-bought-us" class="nav-link" data-scroll-target="#what-the-conversion-bought-us"><span class="header-section-number">19.7</span> What the conversion bought us</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">19.8</span> See also</a></li>
-  <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">19.9</span> Barebones R script</a></li>
+<li><a href="#bootstrap" id="toc-bootstrap" class="nav-link active" data-scroll-target="#bootstrap"><span class="header-section-number">22.1</span> Bootstrap</a></li>
+  <li><a href="#the-starting-point-a-plain-r-script" id="toc-the-starting-point-a-plain-r-script" class="nav-link" data-scroll-target="#the-starting-point-a-plain-r-script"><span class="header-section-number">22.2</span> The starting point: a plain R script</a></li>
+  <li><a href="#step-0-scaffold-the-module-with-newmodule" id="toc-step-0-scaffold-the-module-with-newmodule" class="nav-link" data-scroll-target="#step-0-scaffold-the-module-with-newmodule"><span class="header-section-number">22.3</span> Step 0: scaffold the module with <code>newModule()</code></a></li>
+  <li><a href="#step-1-fill-in-the-metadata" id="toc-step-1-fill-in-the-metadata" class="nav-link" data-scroll-target="#step-1-fill-in-the-metadata"><span class="header-section-number">22.4</span> Step 1: fill in the metadata</a></li>
+  <li><a href="#step-2-fill-in-the-init-event" id="toc-step-2-fill-in-the-init-event" class="nav-link" data-scroll-target="#step-2-fill-in-the-init-event"><span class="header-section-number">22.5</span> Step 2: fill in the <code>init</code> event</a></li>
+  <li><a href="#step-3-add-the-recurring-events" id="toc-step-3-add-the-recurring-events" class="nav-link" data-scroll-target="#step-3-add-the-recurring-events"><span class="header-section-number">22.6</span> Step 3: add the recurring events</a></li>
+  <li><a href="#running-it" id="toc-running-it" class="nav-link" data-scroll-target="#running-it"><span class="header-section-number">22.7</span> Running it</a></li>
+  <li><a href="#what-the-conversion-bought-us" id="toc-what-the-conversion-bought-us" class="nav-link" data-scroll-target="#what-the-conversion-bought-us"><span class="header-section-number">22.8</span> What the conversion bought us</a></li>
+  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also"><span class="header-section-number">22.9</span> See also</a></li>
+  <li><a href="#barebones-r-script" id="toc-barebones-r-script" class="nav-link" data-scroll-target="#barebones-r-script"><span class="header-section-number">22.10</span> Barebones R script</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setupProject.html">SpaDES workflows and projects</a></li><li class="breadcrumb-item"><a href="./RSFpredictModule.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-rsfPredictModule" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Converting.html">Converting existing code into SpaDES</a></li><li class="breadcrumb-item"><a href="./RSFpredictModule.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-rsfPredictModule" class="quarto-section-identifier"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></h1>
 </div>
 
 
@@ -682,8 +694,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Recurring events</strong> – the body of the original annual loop, split into <code>simLayers</code> (build the year’s land covariates) and <code>simRSFmap</code> (predict + classify + write).</li>
 </ol>
 <p>We will build the module up in that order.</p>
-<section id="bootstrap" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="bootstrap">
-<span class="header-section-number">19.1</span> Bootstrap</h2>
+<section id="bootstrap" class="level2" data-number="22.1"><h2 data-number="22.1" class="anchored" data-anchor-id="bootstrap">
+<span class="header-section-number">22.1</span> Bootstrap</h2>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu"><a href="https://rdrr.io/r/base/options.html">getOption</a></span><span class="op">(</span><span class="st">"repos"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">repos</span><span class="op">)</span></span>
@@ -693,8 +705,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-project.predictiveecology.org/">SpaDES.project</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="the-starting-point-a-plain-r-script" class="level2" data-number="19.2"><h2 data-number="19.2" class="anchored" data-anchor-id="the-starting-point-a-plain-r-script">
-<span class="header-section-number">19.2</span> The starting point: a plain R script</h2>
+</section><section id="the-starting-point-a-plain-r-script" class="level2" data-number="22.2"><h2 data-number="22.2" class="anchored" data-anchor-id="the-starting-point-a-plain-r-script">
+<span class="header-section-number">22.2</span> The starting point: a plain R script</h2>
 <p>Assume the inputs (<code>model</code>, <code>studyArea</code>, <code>modelLand</code>, <code>cohortData</code>, <code>pixelGroupMap</code>, <code>timeSinceFire</code>, <code>rasterToMatch</code>) are already in the workspace and a helper <code>reclassifyCohortData()</code> is sourced. The script runs one setup section then a year-by-year loop:</p>
 <div class="cell">
 <details class="code-fold"><summary>Show full linear script</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">## ---- parameters ------------------------------------------------------------</span></span>
@@ -787,9 +799,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>This script works – on the machine where it was written, and only as long as someone else loads exactly the right inputs into exactly the right variable names beforehand. It is also impossible to compose with another module’s outputs in a principled way: <code>cohortData</code>, <code>pixelGroupMap</code>, <code>timeSinceFire</code> have to <em>arrive</em> somehow. As a module, the same code declares those needs and gets them filled in by whoever runs the project.</p>
-</section><section id="step-1-the-metadata" class="level2" data-number="19.3"><h2 data-number="19.3" class="anchored" data-anchor-id="step-1-the-metadata">
-<span class="header-section-number">19.3</span> Step 1: the metadata</h2>
-<p>The first thing in <code>RSFpredict.R</code> is a <code>defineModule()</code> block. It contains nothing executable yet – it’s a <em>declaration</em> of what the module is. Three pieces matter:</p>
+</section><section id="step-0-scaffold-the-module-with-newmodule" class="level2" data-number="22.3"><h2 data-number="22.3" class="anchored" data-anchor-id="step-0-scaffold-the-module-with-newmodule">
+<span class="header-section-number">22.3</span> Step 0: scaffold the module with <code>newModule()</code>
+</h2>
+<p>Before writing anything, generate the module skeleton with <code><a href="https://spades-core.predictiveecology.org/reference/newModule.html">SpaDES.core::newModule()</a></code>. It creates the directory layout, the main <code>.R</code> file with stubbed <code>defineModule()</code> / <code>doEvent.RSFpredict()</code> / <code>.inputObjects()</code>, an empty <code>R/</code> folder for helper functions, plus <code>README.md</code>, <code>NEWS.md</code>, <code>RSFpredict.Rmd</code>, and <code>citation.bib</code>. We then <em>edit</em> the stub rather than writing the whole file from scratch.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/newModule.html">newModule</a></span><span class="op">(</span></span>
+<span>  name       <span class="op">=</span> <span class="st">"RSFpredict"</span>,</span>
+<span>  path       <span class="op">=</span> <span class="st">"~/SpaDES_book/RSF_forecast/modules"</span>,   <span class="co"># parent dir</span></span>
+<span>  open       <span class="op">=</span> <span class="cn">FALSE</span>                                    <span class="co"># don't auto-open in RStudio</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>This drops the following files into <code>~/SpaDES_book/RSF_forecast/modules/RSFpredict/</code>:</p>
+<pre><code>RSFpredict/
+|-- RSFpredict.R       &lt;- defineModule + doEvent.RSFpredict + .inputObjects (stubs)
+|-- RSFpredict.Rmd     &lt;- documentation template
+|-- README.md
+|-- NEWS.md
+|-- citation.bib
+|-- LICENSE.md
+|-- data/
+|-- tests/
+\-- R/                 &lt;- put helper functions here (e.g. reclassifyCohortData.R)</code></pre>
+<p>Open <code>RSFpredict.R</code> – it already contains the <em>shape</em> we are aiming for, with <code># ! ----- EDIT BELOW ----- !</code> markers showing where to put each section. The next three steps replace the stub contents with the ecology from our linear script.</p>
+</section><section id="step-1-fill-in-the-metadata" class="level2" data-number="22.4"><h2 data-number="22.4" class="anchored" data-anchor-id="step-1-fill-in-the-metadata">
+<span class="header-section-number">22.4</span> Step 1: fill in the metadata</h2>
+<p>The scaffold’s <code>defineModule()</code> block already has the right shape – it’s just stuffed with placeholders (empty <code>reqdPkgs</code>, a single example <code>defineParameter</code>, empty <code>inputObjects</code>/<code>outputObjects</code>). Replace those with the real ones. Three pieces matter:</p>
 <ul>
 <li>
 <strong><code>reqdPkgs</code></strong> – what the module needs to be installed (<code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> reads this and reconciles it with what the rest of the project needs);</li>
@@ -799,7 +835,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong><code>inputObjects</code> / <code>outputObjects</code></strong> – the names + classes the module <em>expects</em> to find in the simList, and the names + classes it <em>produces</em>. This is what lets <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> and the other modules wire themselves together.</li>
 </ul>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">defineModule</span><span class="op">(</span><span class="va">sim</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">defineModule</span><span class="op">(</span><span class="va">sim</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  name        <span class="op">=</span> <span class="st">"RSFpredict"</span>,</span>
 <span>  description <span class="op">=</span> <span class="st">"Forecast a fitted RSF against simulated landscapes"</span>,</span>
 <span>  keywords    <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"RSF"</span>, <span class="st">"habitat"</span>, <span class="st">"caribou"</span><span class="op">)</span>,</span>
@@ -863,12 +899,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> now knows it has to install <code>glmmTMB</code>, <code>tidyterra</code>, and the rest before this module is asked to run. The user doesn’t list those in their <code>packages</code> argument – the module brought them.</li>
 <li>The forest and fire modules can be plugged in <em>because the names match</em>: <code>LandR::Biomass_core</code> produces <code>cohortData</code> and <code>pixelGroupMap</code>; <code>scfm</code> produces <code>timeSinceFire</code>. Their <code>createsOutput()</code> declarations meet our <code>expectsInput()</code> declarations and <code>SpaDES</code> connects them.</li>
-</ul></section><section id="step-2-the-init-event" class="level2" data-number="19.4"><h2 data-number="19.4" class="anchored" data-anchor-id="step-2-the-init-event">
-<span class="header-section-number">19.4</span> Step 2: the <code>init</code> event</h2>
-<p><code>doEvent.RSFpredict()</code> is the function <code>SpaDES</code> calls every time one of this module’s events fires. It’s a <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> on the event name. The <strong><code>init</code> event</strong> runs exactly once, at the start of the simulation. This is where the linear script’s <em>setup section</em> lives – but with one extra job: telling <code>SpaDES</code> what to do next.</p>
+</ul></section><section id="step-2-fill-in-the-init-event" class="level2" data-number="22.5"><h2 data-number="22.5" class="anchored" data-anchor-id="step-2-fill-in-the-init-event">
+<span class="header-section-number">22.5</span> Step 2: fill in the <code>init</code> event</h2>
+<p><code>newModule()</code> left you a stub <code>doEvent.RSFpredict()</code> – the <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> shell with <code>init</code>, <code>plot</code>, and <code>save</code> placeholder branches. We keep the <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> and replace what’s inside the <code>init</code> branch. The <strong><code>init</code> event</strong> runs exactly once, at the start of the simulation, and is where the linear script’s <em>setup section</em> lives – but with one extra job: telling <code>SpaDES</code> what to do next.</p>
 <p>We rename the setup section’s “build the baseline” block to <code>buildBaselineRSFmap</code> (an event), and <code>init</code> becomes a tiny scheduler:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">doEvent.RSFpredict</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span>, <span class="va">eventTime</span>, <span class="va">eventType</span><span class="op">)</span> <span class="op">{</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">doEvent.RSFpredict</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sim</span>, <span class="va">eventTime</span>, <span class="va">eventType</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/switch.html">switch</a></span><span class="op">(</span></span>
 <span>    <span class="va">eventType</span>,</span>
 <span></span>
@@ -924,97 +960,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Parameters change accessor.</strong> <code>params$numBins</code> becomes <code>P(sim)$numBins</code>. Same value, but the source is now the simList, which means a user can override defaults via <code>setupProject(params = list(RSFpredict = list(numBins = 20)))</code> without editing the module.</li>
 <li>
 <strong>The loop is gone (for now).</strong> Instead of iterating in R, <code>init</code> <em>schedules</em> <code>simLayers</code> and <code>simRSFmap</code> at the right times and <code>SpaDES</code> will fire them. This is what makes the module interleave correctly with other modules: at each timestep, the scheduler can call <code>Biomass_core</code> to advance the forest, then <code>scfm</code> to advance fire, then our <code>simLayers</code> to assemble those outputs into RSF covariates, then our <code>simRSFmap</code> to predict.</li>
-</ul></section><section id="step-3-the-recurring-events" class="level2" data-number="19.5"><h2 data-number="19.5" class="anchored" data-anchor-id="step-3-the-recurring-events">
-<span class="header-section-number">19.5</span> Step 3: the recurring events</h2>
-<p><code>simLayers</code> and <code>simRSFmap</code> are the body of the original annual loop, split at the natural seam: build inputs, then predict from them. Each ends by scheduling <strong>itself</strong> at <code>time(sim) + predictionInterval</code>, so they recur:</p>
+</ul></section><section id="step-3-add-the-recurring-events" class="level2" data-number="22.6"><h2 data-number="22.6" class="anchored" data-anchor-id="step-3-add-the-recurring-events">
+<span class="header-section-number">22.6</span> Step 3: add the recurring events</h2>
+<p><code>simLayers</code> and <code>simRSFmap</code> aren’t in the scaffold – they’re the event names you invented for this module. Add them as new <code><a href="https://rdrr.io/r/base/switch.html">switch()</a></code> branches alongside <code>init</code>. They are the body of the original annual loop, split at the natural seam: build inputs, then predict from them. Each ends by scheduling <strong>itself</strong> at <code>time(sim) + predictionInterval</code>, so they recur:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    simLayers <span class="ot">=</span> {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      template       <span class="ot">&lt;-</span> sim<span class="sc">$</span>rasterToMatch</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">cohortData         =</span> sim<span class="sc">$</span>cohortData,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">sppEquivCol        =</span> <span class="st">"LandR"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">pixelGroupMap      =</span> sim<span class="sc">$</span>pixelGroupMap,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>      forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(prop_needleleaf, prop_mixedforest),</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(sim<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>      tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simLand[[key]],</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>,</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    simRSFmap <span class="ot">=</span> {</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>simLand[[key]]</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simPred[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>simPred[[key]], sim<span class="sc">$</span>studyArea)</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>        pred.mask,</span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,</span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simBinMap[[key]],</span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>,</span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>    },</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    simLayers <span class="ot">=</span> {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      template       <span class="ot">&lt;-</span> sim<span class="sc">$</span>rasterToMatch</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">cohortData         =</span> sim<span class="sc">$</span>cohortData,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">sppEquivCol        =</span> <span class="st">"LandR"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">pixelGroupMap      =</span> sim<span class="sc">$</span>pixelGroupMap,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>      needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>      prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>      mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>      prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(prop_needleleaf, prop_mixedforest),</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>      tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(sim<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simLand[[key]],</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>,</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>    simRSFmap <span class="ot">=</span> {</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>simLand[[key]]</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simPred[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>simPred[[key]], sim<span class="sc">$</span>studyArea)</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>        pred.mask,</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simBinMap[[key]],</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>,</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>    },</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>What’s different from the linear loop:</p>
@@ -1025,11 +1061,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong><code>simLayers</code> and <code>simRSFmap</code> are separate events</strong>, even though they always run for the same year. That separation is what lets <em>other</em> modules (the forest and fire ones) update <code>cohortData</code> / <code>timeSinceFire</code> <strong>between</strong> <code>simLayers</code> of year 2025 and <code>simLayers</code> of year 2030.</li>
 <li>
 <strong>Outputs accumulate on the simList</strong>, not in standalone <code><a href="https://rdrr.io/r/base/list.html">list()</a></code>s. <code>sim$simLand[[key]] &lt;- ...</code> is the module’s way of saying “here is this year’s covariate stack; anyone downstream can use it”.</li>
-</ul></section><section id="running-it" class="level2" data-number="19.6"><h2 data-number="19.6" class="anchored" data-anchor-id="running-it">
-<span class="header-section-number">19.6</span> Running it</h2>
+</ul></section><section id="running-it" class="level2" data-number="22.7"><h2 data-number="22.7" class="anchored" data-anchor-id="running-it">
+<span class="header-section-number">22.7</span> Running it</h2>
 <p>Once the module exists on disk (with <code>RSFpredict.R</code> plus the <code>reclassifyCohortData()</code> helper under <code>R/</code>), it slots into the same <code><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject()</a></code> call we used in <a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a>:</p>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
 <span>  paths    <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/SpaDES_book/RSF_forecast"</span><span class="op">)</span>,</span>
 <span>  modules  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@development"</span>,</span>
@@ -1050,8 +1086,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.core</span><span class="fu">::</span><span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInitAndSpades.html">simInitAndSpades2</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section id="what-the-conversion-bought-us" class="level2" data-number="19.7"><h2 data-number="19.7" class="anchored" data-anchor-id="what-the-conversion-bought-us">
-<span class="header-section-number">19.7</span> What the conversion bought us</h2>
+</section><section id="what-the-conversion-bought-us" class="level2" data-number="22.8"><h2 data-number="22.8" class="anchored" data-anchor-id="what-the-conversion-bought-us">
+<span class="header-section-number">22.8</span> What the conversion bought us</h2>
 <p>Same code, three new capabilities:</p>
 <ul>
 <li>
@@ -1060,322 +1096,328 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <strong>Scheduling.</strong> The <code>simulationProcess = "dynamic"</code> parameter <em>flips a branch</em> in <code>init</code>. The same module supports static and dynamic modes without two scripts.</li>
 <li>
 <strong>Reproducibility.</strong> <code>Cache()</code> calls on the expensive <code><a href="https://rspatial.github.io/terra/reference/predict.html">terra::predict</a></code> step memoize across runs; metadata + setupProject means the same <code>out</code> produces the same results on any machine.</li>
-</ul></section><section id="see-also" class="level2" data-number="19.8"><h2 data-number="19.8" class="anchored" data-anchor-id="see-also">
-<span class="header-section-number">19.8</span> See also</h2>
+</ul></section><section id="see-also" class="level2" data-number="22.9"><h2 data-number="22.9" class="anchored" data-anchor-id="see-also">
+<span class="header-section-number">22.9</span> See also</h2>
 <p><a href="RSFForecast.html" class="quarto-xref">Forecasting wildlife habitat&nbsp;<span>18</span></a></p>
 <p><a href="MetaDataAndModuleFiles.html" class="quarto-xref">Module Files and Metadata&nbsp;<span>5</span></a></p>
 <p><span class="quarto-unresolved-ref">?sec-modulesAndEvents</span></p>
 <p><span class="quarto-unresolved-ref">?sec-scheduling</span></p>
-</section><section id="barebones-r-script" class="level2" data-number="19.9"><h2 data-number="19.9" class="anchored" data-anchor-id="barebones-r-script">
-<span class="header-section-number">19.9</span> Barebones R script</h2>
+</section><section id="barebones-r-script" class="level2" data-number="22.10"><h2 data-number="22.10" class="anchored" data-anchor-id="barebones-r-script">
+<span class="header-section-number">22.10</span> Barebones R script</h2>
 <div class="cell">
-<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> parameters <span class="sc">------------------------------------------------------------</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">numBins            =</span> <span class="dv">10</span>L,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">simulationProcess  =</span> <span class="st">"dynamic"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictionInterval =</span> <span class="dv">5</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictStartYear   =</span> <span class="dv">2025</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictLastYear    =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ts_else            =</span> <span class="dv">100</span>L,</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaName      =</span> <span class="st">"dehchoN"</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"outputs"</span>, <span class="fu">paste0</span>(params<span class="sc">$</span>studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>startYear <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>endYear   <span class="ot">&lt;-</span> <span class="dv">2075</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> SETUP<span class="sc">:</span> build the baseline RSF map <span class="sc">-------------------------------------</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>modLand <span class="ot">&lt;-</span> modelLand</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>modLand<span class="sc">$</span>timeSinceFire[<span class="fu">is.na</span>(modLand<span class="sc">$</span>timeSinceFire)] <span class="ot">&lt;-</span> params<span class="sc">$</span>ts_else</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(model))) {</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> modelLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>pred      <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, model, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(pred, studyArea)</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>                           <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>numBins))</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>binMap    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>                             <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> ANNUAL LOOP <span class="sc">-----------------------------------------------------------</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>simLand   <span class="ot">&lt;-</span> <span class="fu">list</span>(); simPred <span class="ot">&lt;-</span> <span class="fu">list</span>(); simBinMap <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">seq</span>(params<span class="sc">$</span>predictStartYear, endYear, <span class="at">by =</span> params<span class="sc">$</span>predictionInterval)</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (params<span class="sc">$</span>predictLastYear <span class="sc">&amp;&amp;</span> <span class="fu">tail</span>(years, <span class="dv">1</span>L) <span class="sc">!=</span> endYear) years <span class="ot">&lt;-</span> <span class="fu">c</span>(years, endYear)</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (thisYear <span class="cf">in</span> years) {</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>  key <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  template       <span class="ot">&lt;-</span> rasterToMatch</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">cohortData =</span> cohortData, <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span>,</span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">pixelGroupMap =</span> pixelGroupMap, <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>))</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>  prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template, <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>  mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template, <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>  forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(prop_needleleaf, prop_mixedforest), templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>  tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> params<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>  simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(simLand[[key]],</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>, params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>  modLand <span class="ot">&lt;-</span> simLand[[key]]</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(model))) {</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>    w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>    modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>  simPred[[key]]   <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, model, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>  pred.mask        <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(simPred[[key]], studyArea)</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>  breaks           <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>numBins))</span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>  simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(pred.mask,</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,    params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(simBinMap[[key]],</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>, params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="fu">defineModule</span>(sim, <span class="fu">list</span>(</span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">name        =</span> <span class="st">"RSFpredict"</span>,</span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Forecast a fitted RSF against simulated landscapes"</span>,</span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>  <span class="at">keywords    =</span> <span class="fu">c</span>(<span class="st">"RSF"</span>, <span class="st">"habitat"</span>, <span class="st">"caribou"</span>),</span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors     =</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="fu">list</span>(<span class="at">given =</span> <span class="fu">c</span>(<span class="st">"Julie"</span>, <span class="st">"W"</span>),</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">family =</span> <span class="st">"Turner"</span>,</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"aut"</span>, <span class="st">"cre"</span>))),</span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>                          <span class="at">class =</span> <span class="st">"person"</span>),</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">version     =</span> <span class="fu">list</span>(<span class="at">RSFpredict =</span> <span class="st">"0.0.0.9000"</span>),</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">timeunit    =</span> <span class="st">"year"</span>,</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">documentation =</span> <span class="fu">list</span>(<span class="st">"README.md"</span>),</span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>  <span class="do">## packages the module needs -- merged with whoever else's at setupProject()</span></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">reqdPkgs =</span> <span class="fu">list</span>(</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reproducible"</span>, <span class="st">"terra"</span>, <span class="st">"ggplot2"</span>, <span class="st">"glmmTMB"</span>,</span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidyterra"</span>, <span class="st">"viridis"</span>, <span class="st">"ggthemes"</span>,</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SpaDES.core (&gt;= 3.0.3.9003)"</span></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>  <span class="do">## every `params$X` in the linear script becomes a defineParameter()</span></span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> <span class="fu">bindrows</span>(</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"numBins"</span>,            <span class="st">"integer"</span>,   <span class="dv">10</span>L,        <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Number of bins for the classified RSF map"</span>),</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"simulationProcess"</span>,  <span class="st">"character"</span>, <span class="st">"static"</span>,   <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Should the simulation use LandR ('dynamic') or fixed cover ('static')?"</span>),</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictionInterval"</span>, <span class="st">"numeric"</span>,   <span class="dv">5</span>,          <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Years between predictions"</span>),</span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictStartYear"</span>,   <span class="st">"numeric"</span>,   <span class="dv">2025</span>,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"First year to forecast"</span>),</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictLastYear"</span>,    <span class="st">"logical"</span>,   <span class="cn">TRUE</span>,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Force a prediction at the final simulation year"</span>),</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"ts_else"</span>,            <span class="st">"integer"</span>,   <span class="dv">100</span>L,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Fill value for NA cells in time-since-fire"</span>),</span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">".studyAreaName"</span>,     <span class="st">"character"</span>, <span class="cn">NA_character_</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Human-readable name for the study area"</span>)</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>  <span class="do">## inputs the linear script assumed were already in scope</span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputObjects =</span> <span class="fu">bindrows</span>(</span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"model"</span>,         <span class="st">"glmmTMB"</span>,    <span class="st">"Fitted RSF model"</span>),</span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"studyArea"</span>,     <span class="st">"SpatVector"</span>, <span class="st">"Unbuffered study area"</span>),</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"modelLand"</span>,     <span class="st">"SpatRaster"</span>, <span class="st">"Cover layers the model was fit on"</span>),</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"cohortData"</span>,    <span class="st">"data.table"</span>, <span class="st">"LandR cohort data"</span>),</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"pixelGroupMap"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"LandR pixel-group raster"</span>),</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"timeSinceFire"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"Time-since-fire raster (from scfm)"</span>),</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"rasterToMatch"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"Spatial template"</span>)</span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>  <span class="do">## things the linear script wrote to `pred`, `binMap`, `simLand`, ...</span></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputObjects =</span> <span class="fu">bindrows</span>(</span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"pred"</span>,      <span class="st">"SpatRaster"</span>, <span class="st">"Baseline RSF prediction"</span>),</span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"binMap"</span>,    <span class="st">"SpatRaster"</span>, <span class="st">"Baseline RSF prediction binned"</span>),</span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simLand"</span>,   <span class="st">"list"</span>,       <span class="st">"Per-year stack of land covariates"</span>),</span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simPred"</span>,   <span class="st">"list"</span>,       <span class="st">"Per-year RSF predictions"</span>),</span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simBinMap"</span>, <span class="st">"list"</span>,       <span class="st">"Per-year binned RSF predictions"</span>)</span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>doEvent.RSFpredict <span class="ot">&lt;-</span> <span class="cf">function</span>(sim, eventTime, eventType) {</span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>  <span class="cf">switch</span>(</span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>    eventType,</span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>    <span class="at">init =</span> {</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>      <span class="do">## run once: build the baseline RSF map immediately</span></span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim),</span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"buildBaselineRSFmap"</span>)</span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>      <span class="do">## if dynamic, also start the recurring loop at predictStartYear</span></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">P</span>(sim)<span class="sc">$</span>simulationProcess <span class="sc">==</span> <span class="st">"dynamic"</span>) {</span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">P</span>(sim)<span class="sc">$</span>predictStartYear,</span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">P</span>(sim)<span class="sc">$</span>predictStartYear,</span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>      <span class="do">## optionally pin a final-year prediction even if it doesn't fall</span></span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>      <span class="do">## on a predictionInterval step</span></span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">P</span>(sim)<span class="sc">$</span>predictLastYear) {</span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">end</span>(sim), <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>    <span class="at">buildBaselineRSFmap =</span> {</span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>      <span class="do">## the *content* is the linear setup section, with sim$ in place</span></span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>      <span class="do">## of bare variables</span></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>modelLand</span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>      modLand<span class="sc">$</span>timeSinceFire[<span class="fu">is.na</span>(modLand<span class="sc">$</span>timeSinceFire)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else</span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> sim<span class="sc">$</span>modelLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>pred  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>pred, sim<span class="sc">$</span>studyArea)</span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>binMap <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>    <span class="do">## (the recurring events go here -- next section)</span></span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>    simLayers <span class="ot">=</span> {</span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>      template       <span class="ot">&lt;-</span> sim<span class="sc">$</span>rasterToMatch</span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>      templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>      reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>        <span class="at">cohortData         =</span> sim<span class="sc">$</span>cohortData,</span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>        <span class="at">sppEquivCol        =</span> <span class="st">"LandR"</span>,</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>        <span class="at">pixelGroupMap      =</span> sim<span class="sc">$</span>pixelGroupMap,</span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>        <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>)</span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>      ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>      needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>      prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template,</span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>      mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>      prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template,</span>
-<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
-<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>      forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
-<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(prop_needleleaf, prop_mixedforest),</span>
-<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>        templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
-<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>      tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(sim<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
-<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>      tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
-<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
-<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
-<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
-<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simLand[[key]],</span>
-<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>,</span>
-<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
-<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
-<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
-<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>    simRSFmap <span class="ot">=</span> {</span>
-<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
-<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
-<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>simLand[[key]]</span>
-<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
-<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
-<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
-<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simPred[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
-<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
-<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>simPred[[key]], sim<span class="sc">$</span>studyArea)</span>
-<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
-<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
-<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
-<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
-<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a>        pred.mask,</span>
-<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,</span>
-<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
-<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simBinMap[[key]],</span>
-<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>,</span>
-<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
-<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
-<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
-<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
-<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
-<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths    =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/RSF_forecast"</span>),</span>
-<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules  =</span> <span class="fu">c</span>(</span>
-<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@development"</span>,</span>
-<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_core@development"</span>,</span>
-<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_regeneration@master"</span>,</span>
-<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
-<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"scfmDataPrep"</span>, <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>,</span>
-<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>                <span class="st">"scfmSpread"</span>, <span class="st">"scfmDiagnostics"</span>)),</span>
-<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>    <span class="st">"JWTurn/RSFpredict@main"</span></span>
-<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
-<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSFpredict =</span> <span class="fu">list</span>(<span class="at">simulationProcess =</span> <span class="st">"dynamic"</span>)</span>
-<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2020</span>, <span class="at">end =</span> <span class="dv">2075</span>),</span>
-<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ... and your studyArea / model / modelLand prepInputs as before</span></span>
-<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>repos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"https://predictiveecology.r-universe.dev"</span>, <span class="fu">getOption</span>(<span class="st">"repos"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> repos)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pak"</span>)) <span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(<span class="st">"Require"</span>, <span class="st">"SpaDES.project"</span>), <span class="at">ask =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> parameters <span class="sc">------------------------------------------------------------</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">numBins            =</span> <span class="dv">10</span>L,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">simulationProcess  =</span> <span class="st">"dynamic"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictionInterval =</span> <span class="dv">5</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictStartYear   =</span> <span class="dv">2025</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">predictLastYear    =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ts_else            =</span> <span class="dv">100</span>L,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">studyAreaName      =</span> <span class="st">"dehchoN"</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(<span class="st">"outputs"</span>, <span class="fu">paste0</span>(params<span class="sc">$</span>studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>startYear <span class="ot">&lt;-</span> <span class="dv">2020</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>endYear   <span class="ot">&lt;-</span> <span class="dv">2075</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> SETUP<span class="sc">:</span> build the baseline RSF map <span class="sc">-------------------------------------</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>modLand <span class="ot">&lt;-</span> modelLand</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>modLand<span class="sc">$</span>timeSinceFire[<span class="fu">is.na</span>(modLand<span class="sc">$</span>timeSinceFire)] <span class="ot">&lt;-</span> params<span class="sc">$</span>ts_else</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(model))) {</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> modelLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>pred      <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, model, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(pred, studyArea)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>                           <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>numBins))</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>binMap    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>                             <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="sc">----</span> ANNUAL LOOP <span class="sc">-----------------------------------------------------------</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>simLand   <span class="ot">&lt;-</span> <span class="fu">list</span>(); simPred <span class="ot">&lt;-</span> <span class="fu">list</span>(); simBinMap <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">seq</span>(params<span class="sc">$</span>predictStartYear, endYear, <span class="at">by =</span> params<span class="sc">$</span>predictionInterval)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (params<span class="sc">$</span>predictLastYear <span class="sc">&amp;&amp;</span> <span class="fu">tail</span>(years, <span class="dv">1</span>L) <span class="sc">!=</span> endYear) years <span class="ot">&lt;-</span> <span class="fu">c</span>(years, endYear)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (thisYear <span class="cf">in</span> years) {</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  key <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  template       <span class="ot">&lt;-</span> rasterToMatch</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">cohortData =</span> cohortData, <span class="at">sppEquivCol =</span> <span class="st">"LandR"</span>,</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">pixelGroupMap =</span> pixelGroupMap, <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>))</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>  ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>  prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template, <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>  mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>  prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template, <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(prop_needleleaf, prop_mixedforest), templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>  tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>  tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> params<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>  simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(simLand[[key]],</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>, params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>  modLand <span class="ot">&lt;-</span> simLand[[key]]</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(model))) {</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>    w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>    modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>  simPred[[key]]   <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, model, <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>  pred.mask        <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(simPred[[key]], studyArea)</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>  breaks           <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>numBins))</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>  simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(pred.mask,</span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,    params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>  terra<span class="sc">::</span><span class="fu">writeRaster</span>(simBinMap[[key]],</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>, params<span class="sc">$</span>studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>SpaDES.core<span class="sc">::</span><span class="fu">newModule</span>(</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">name       =</span> <span class="st">"RSFpredict"</span>,</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>  <span class="at">path       =</span> <span class="st">"~/SpaDES_book/RSF_forecast/modules"</span>,   <span class="co"># parent dir</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>  <span class="at">open       =</span> <span class="cn">FALSE</span>                                    <span class="co"># don't auto-open in RStudio</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="fu">defineModule</span>(sim, <span class="fu">list</span>(</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">name        =</span> <span class="st">"RSFpredict"</span>,</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Forecast a fitted RSF against simulated landscapes"</span>,</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>  <span class="at">keywords    =</span> <span class="fu">c</span>(<span class="st">"RSF"</span>, <span class="st">"habitat"</span>, <span class="st">"caribou"</span>),</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>  <span class="at">authors     =</span> <span class="fu">structure</span>(<span class="fu">list</span>(<span class="fu">list</span>(<span class="at">given =</span> <span class="fu">c</span>(<span class="st">"Julie"</span>, <span class="st">"W"</span>),</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">family =</span> <span class="st">"Turner"</span>,</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">role =</span> <span class="fu">c</span>(<span class="st">"aut"</span>, <span class="st">"cre"</span>))),</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>                          <span class="at">class =</span> <span class="st">"person"</span>),</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">version     =</span> <span class="fu">list</span>(<span class="at">RSFpredict =</span> <span class="st">"0.0.0.9000"</span>),</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">timeunit    =</span> <span class="st">"year"</span>,</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">documentation =</span> <span class="fu">list</span>(<span class="st">"README.md"</span>),</span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>  <span class="do">## packages the module needs -- merged with whoever else's at setupProject()</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">reqdPkgs =</span> <span class="fu">list</span>(</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reproducible"</span>, <span class="st">"terra"</span>, <span class="st">"ggplot2"</span>, <span class="st">"glmmTMB"</span>,</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidyterra"</span>, <span class="st">"viridis"</span>, <span class="st">"ggthemes"</span>,</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SpaDES.core (&gt;= 3.0.3.9003)"</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>  <span class="do">## every `params$X` in the linear script becomes a defineParameter()</span></span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>  <span class="at">parameters =</span> <span class="fu">bindrows</span>(</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"numBins"</span>,            <span class="st">"integer"</span>,   <span class="dv">10</span>L,        <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Number of bins for the classified RSF map"</span>),</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"simulationProcess"</span>,  <span class="st">"character"</span>, <span class="st">"static"</span>,   <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Should the simulation use LandR ('dynamic') or fixed cover ('static')?"</span>),</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictionInterval"</span>, <span class="st">"numeric"</span>,   <span class="dv">5</span>,          <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Years between predictions"</span>),</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictStartYear"</span>,   <span class="st">"numeric"</span>,   <span class="dv">2025</span>,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"First year to forecast"</span>),</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"predictLastYear"</span>,    <span class="st">"logical"</span>,   <span class="cn">TRUE</span>,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Force a prediction at the final simulation year"</span>),</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">"ts_else"</span>,            <span class="st">"integer"</span>,   <span class="dv">100</span>L,       <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Fill value for NA cells in time-since-fire"</span>),</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>    <span class="fu">defineParameter</span>(<span class="st">".studyAreaName"</span>,     <span class="st">"character"</span>, <span class="cn">NA_character_</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Human-readable name for the study area"</span>)</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>  <span class="do">## inputs the linear script assumed were already in scope</span></span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputObjects =</span> <span class="fu">bindrows</span>(</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"model"</span>,         <span class="st">"glmmTMB"</span>,    <span class="st">"Fitted RSF model"</span>),</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"studyArea"</span>,     <span class="st">"SpatVector"</span>, <span class="st">"Unbuffered study area"</span>),</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"modelLand"</span>,     <span class="st">"SpatRaster"</span>, <span class="st">"Cover layers the model was fit on"</span>),</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"cohortData"</span>,    <span class="st">"data.table"</span>, <span class="st">"LandR cohort data"</span>),</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"pixelGroupMap"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"LandR pixel-group raster"</span>),</span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"timeSinceFire"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"Time-since-fire raster (from scfm)"</span>),</span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expectsInput</span>(<span class="st">"rasterToMatch"</span>, <span class="st">"SpatRaster"</span>, <span class="st">"Spatial template"</span>)</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>  <span class="do">## things the linear script wrote to `pred`, `binMap`, `simLand`, ...</span></span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputObjects =</span> <span class="fu">bindrows</span>(</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"pred"</span>,      <span class="st">"SpatRaster"</span>, <span class="st">"Baseline RSF prediction"</span>),</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"binMap"</span>,    <span class="st">"SpatRaster"</span>, <span class="st">"Baseline RSF prediction binned"</span>),</span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simLand"</span>,   <span class="st">"list"</span>,       <span class="st">"Per-year stack of land covariates"</span>),</span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simPred"</span>,   <span class="st">"list"</span>,       <span class="st">"Per-year RSF predictions"</span>),</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>    <span class="fu">createsOutput</span>(<span class="st">"simBinMap"</span>, <span class="st">"list"</span>,       <span class="st">"Per-year binned RSF predictions"</span>)</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>doEvent.RSFpredict <span class="ot">&lt;-</span> <span class="cf">function</span>(sim, eventTime, eventType) {</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>  <span class="cf">switch</span>(</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>    eventType,</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>    <span class="at">init =</span> {</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>      <span class="do">## run once: build the baseline RSF map immediately</span></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim),</span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"buildBaselineRSFmap"</span>)</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>      <span class="do">## if dynamic, also start the recurring loop at predictStartYear</span></span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">P</span>(sim)<span class="sc">$</span>simulationProcess <span class="sc">==</span> <span class="st">"dynamic"</span>) {</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">P</span>(sim)<span class="sc">$</span>predictStartYear,</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">P</span>(sim)<span class="sc">$</span>predictStartYear,</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>      <span class="do">## optionally pin a final-year prediction even if it doesn't fall</span></span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>      <span class="do">## on a predictionInterval step</span></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">P</span>(sim)<span class="sc">$</span>predictLastYear) {</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a>        sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">end</span>(sim), <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-184"><a href="#cb9-184" aria-hidden="true" tabindex="-1"></a>    <span class="at">buildBaselineRSFmap =</span> {</span>
+<span id="cb9-185"><a href="#cb9-185" aria-hidden="true" tabindex="-1"></a>      <span class="do">## the *content* is the linear setup section, with sim$ in place</span></span>
+<span id="cb9-186"><a href="#cb9-186" aria-hidden="true" tabindex="-1"></a>      <span class="do">## of bare variables</span></span>
+<span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>modelLand</span>
+<span id="cb9-188"><a href="#cb9-188" aria-hidden="true" tabindex="-1"></a>      modLand<span class="sc">$</span>timeSinceFire[<span class="fu">is.na</span>(modLand<span class="sc">$</span>timeSinceFire)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else</span>
+<span id="cb9-189"><a href="#cb9-189" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
+<span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> sim<span class="sc">$</span>modelLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
+<span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>pred  <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
+<span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>pred, sim<span class="sc">$</span>studyArea)</span>
+<span id="cb9-196"><a href="#cb9-196" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
+<span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>binMap <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
+<span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a>    <span class="do">## (the recurring events go here -- next section)</span></span>
+<span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">invisible</span>(sim))</span>
+<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>    simLayers <span class="ot">=</span> {</span>
+<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
+<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
+<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a>      template       <span class="ot">&lt;-</span> sim<span class="sc">$</span>rasterToMatch</span>
+<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>      templateCoarse <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">aggregate</span>(template, <span class="at">fact =</span> <span class="dv">2</span>)</span>
+<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>      reclassForest <span class="ot">&lt;-</span> <span class="fu">reclassifyCohortData</span>(</span>
+<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>        <span class="at">cohortData         =</span> sim<span class="sc">$</span>cohortData,</span>
+<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>        <span class="at">sppEquivCol        =</span> <span class="st">"LandR"</span>,</span>
+<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>        <span class="at">pixelGroupMap      =</span> sim<span class="sc">$</span>pixelGroupMap,</span>
+<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>        <span class="at">mixedForestCutoffs =</span> <span class="fu">c</span>(<span class="fl">0.33</span>, <span class="fl">0.66</span>)</span>
+<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>      ft <span class="ot">&lt;-</span> reclassForest<span class="sc">$</span><span class="st">`</span><span class="at">forest type</span><span class="st">`</span></span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>      needle_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">210</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a>      prop_needleleaf <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(needle_mask, template,</span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_needleleaf) <span class="ot">&lt;-</span> <span class="st">"prop_needleleaf"</span></span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>      mixed_mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(ft,</span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>        <span class="at">rcl =</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">220</span>, <span class="dv">1</span>, <span class="dv">230</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">others =</span> <span class="dv">0</span>)</span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>      prop_mixedforest <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">resample</span>(mixed_mask, template,</span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(prop_mixedforest) <span class="ot">&lt;-</span> <span class="st">"prop_mixedforest"</span></span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a>      forests <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(</span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a>        <span class="fu">c</span>(prop_needleleaf, prop_mixedforest),</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a>        templateCoarse, <span class="at">method =</span> <span class="st">"average"</span>)</span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a>      tsf <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">postProcess</span>(sim<span class="sc">$</span>timeSinceFire, <span class="at">to =</span> templateCoarse)</span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a>      tsf[<span class="fu">is.na</span>(tsf)] <span class="ot">&lt;-</span> <span class="fu">P</span>(sim)<span class="sc">$</span>ts_else <span class="sc">+</span> (thisYear <span class="sc">-</span> <span class="dv">2020</span>)</span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a>      <span class="fu">names</span>(tsf) <span class="ot">&lt;-</span> <span class="st">"timeSinceFire"</span></span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simLand[[key]] <span class="ot">&lt;-</span> <span class="fu">c</span>(forests, tsf)</span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-244"><a href="#cb9-244" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
+<span id="cb9-245"><a href="#cb9-245" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
+<span id="cb9-246"><a href="#cb9-246" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-247"><a href="#cb9-247" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb9-248"><a href="#cb9-248" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simLand[[key]],</span>
+<span id="cb9-249"><a href="#cb9-249" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"mapLayers_"</span>,</span>
+<span id="cb9-250"><a href="#cb9-250" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-251"><a href="#cb9-251" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-252"><a href="#cb9-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-253"><a href="#cb9-253" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
+<span id="cb9-254"><a href="#cb9-254" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
+<span id="cb9-255"><a href="#cb9-255" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simLayers"</span>)</span>
+<span id="cb9-256"><a href="#cb9-256" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb9-257"><a href="#cb9-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-258"><a href="#cb9-258" aria-hidden="true" tabindex="-1"></a>    simRSFmap <span class="ot">=</span> {</span>
+<span id="cb9-259"><a href="#cb9-259" aria-hidden="true" tabindex="-1"></a>      thisYear <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="fu">time</span>(sim))</span>
+<span id="cb9-260"><a href="#cb9-260" aria-hidden="true" tabindex="-1"></a>      key      <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"year"</span>, thisYear)</span>
+<span id="cb9-261"><a href="#cb9-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a>      modLand <span class="ot">&lt;-</span> sim<span class="sc">$</span>simLand[[key]]</span>
+<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(<span class="fu">weights</span>(sim<span class="sc">$</span>model))) {</span>
+<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a>        w <span class="ot">&lt;-</span> modLand[[<span class="dv">1</span>]]; w[] <span class="ot">&lt;-</span> <span class="dv">1</span>; <span class="fu">names</span>(w) <span class="ot">&lt;-</span> <span class="st">"w"</span></span>
+<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a>        modLand <span class="ot">&lt;-</span> <span class="fu">c</span>(modLand, w)</span>
+<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simPred[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">predict</span>(modLand, sim<span class="sc">$</span>model,</span>
+<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">type =</span> <span class="st">"response"</span>, <span class="at">re.form =</span> <span class="cn">NA</span>)</span>
+<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a>      pred.mask <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">mask</span>(sim<span class="sc">$</span>simPred[[key]], sim<span class="sc">$</span>studyArea)</span>
+<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a>      breaks    <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">global</span>(pred.mask, quantile, <span class="at">na.rm =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">P</span>(sim)<span class="sc">$</span>numBins))</span>
+<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a>      sim<span class="sc">$</span>simBinMap[[key]] <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">classify</span>(pred.mask, <span class="fu">t</span>(breaks),</span>
+<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">include.lowest =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-274"><a href="#cb9-274" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">brackets =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-275"><a href="#cb9-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-276"><a href="#cb9-276" aria-hidden="true" tabindex="-1"></a>      outDir <span class="ot">&lt;-</span> reproducible<span class="sc">::</span><span class="fu">checkPath</span>(</span>
+<span id="cb9-277"><a href="#cb9-277" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(<span class="fu">outputPath</span>(sim),</span>
+<span id="cb9-278"><a href="#cb9-278" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">paste0</span>(<span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_sims"</span>)), <span class="at">create =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-279"><a href="#cb9-279" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb9-280"><a href="#cb9-280" aria-hidden="true" tabindex="-1"></a>        pred.mask,</span>
+<span id="cb9-281"><a href="#cb9-281" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfMap"</span>,</span>
+<span id="cb9-282"><a href="#cb9-282" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-283"><a href="#cb9-283" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-284"><a href="#cb9-284" aria-hidden="true" tabindex="-1"></a>      terra<span class="sc">::</span><span class="fu">writeRaster</span>(</span>
+<span id="cb9-285"><a href="#cb9-285" aria-hidden="true" tabindex="-1"></a>        sim<span class="sc">$</span>simBinMap[[key]],</span>
+<span id="cb9-286"><a href="#cb9-286" aria-hidden="true" tabindex="-1"></a>        <span class="fu">file.path</span>(outDir, <span class="fu">paste0</span>(<span class="st">"rsfBinMap_"</span>,</span>
+<span id="cb9-287"><a href="#cb9-287" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">P</span>(sim)<span class="sc">$</span>.studyAreaName, <span class="st">"_"</span>, key, <span class="st">".tif"</span>)),</span>
+<span id="cb9-288"><a href="#cb9-288" aria-hidden="true" tabindex="-1"></a>        <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-289"><a href="#cb9-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-290"><a href="#cb9-290" aria-hidden="true" tabindex="-1"></a>      <span class="do">## schedule self</span></span>
+<span id="cb9-291"><a href="#cb9-291" aria-hidden="true" tabindex="-1"></a>      sim <span class="ot">&lt;-</span> <span class="fu">scheduleEvent</span>(sim, <span class="fu">time</span>(sim) <span class="sc">+</span> <span class="fu">P</span>(sim)<span class="sc">$</span>predictionInterval,</span>
+<span id="cb9-292"><a href="#cb9-292" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"RSFpredict"</span>, <span class="st">"simRSFmap"</span>)</span>
+<span id="cb9-293"><a href="#cb9-293" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb9-294"><a href="#cb9-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-295"><a href="#cb9-295" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">setupProject</span>(</span>
+<span id="cb9-296"><a href="#cb9-296" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths    =</span> <span class="fu">list</span>(<span class="at">projectPath =</span> <span class="st">"~/SpaDES_book/RSF_forecast"</span>),</span>
+<span id="cb9-297"><a href="#cb9-297" aria-hidden="true" tabindex="-1"></a>  <span class="at">modules  =</span> <span class="fu">c</span>(</span>
+<span id="cb9-298"><a href="#cb9-298" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_borealDataPrep@development"</span>,</span>
+<span id="cb9-299"><a href="#cb9-299" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_core@development"</span>,</span>
+<span id="cb9-300"><a href="#cb9-300" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PredictiveEcology/Biomass_regeneration@master"</span>,</span>
+<span id="cb9-301"><a href="#cb9-301" aria-hidden="true" tabindex="-1"></a>    <span class="fu">file.path</span>(<span class="st">"PredictiveEcology/scfm@development/modules"</span>,</span>
+<span id="cb9-302"><a href="#cb9-302" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"scfmDataPrep"</span>, <span class="st">"scfmIgnition"</span>, <span class="st">"scfmEscape"</span>,</span>
+<span id="cb9-303"><a href="#cb9-303" aria-hidden="true" tabindex="-1"></a>                <span class="st">"scfmSpread"</span>, <span class="st">"scfmDiagnostics"</span>)),</span>
+<span id="cb9-304"><a href="#cb9-304" aria-hidden="true" tabindex="-1"></a>    <span class="st">"JWTurn/RSFpredict@main"</span></span>
+<span id="cb9-305"><a href="#cb9-305" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-306"><a href="#cb9-306" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(</span>
+<span id="cb9-307"><a href="#cb9-307" aria-hidden="true" tabindex="-1"></a>    <span class="at">RSFpredict =</span> <span class="fu">list</span>(<span class="at">simulationProcess =</span> <span class="st">"dynamic"</span>)</span>
+<span id="cb9-308"><a href="#cb9-308" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb9-309"><a href="#cb9-309" aria-hidden="true" tabindex="-1"></a>  <span class="at">times =</span> <span class="fu">list</span>(<span class="at">start =</span> <span class="dv">2020</span>, <span class="at">end =</span> <span class="dv">2075</span>),</span>
+<span id="cb9-310"><a href="#cb9-310" aria-hidden="true" tabindex="-1"></a>  <span class="do">## ... and your studyArea / model / modelLand prepInputs as before</span></span>
+<span id="cb9-311"><a href="#cb9-311" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-312"><a href="#cb9-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-313"><a href="#cb9-313" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> SpaDES.core<span class="sc">::</span><span class="fu">simInitAndSpades2</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -1797,13 +1839,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./RSFForecast.html" class="pagination-link" aria-label="Forecasting wildlife habitat (an RSF) with `setupProject`">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Forecasting wildlife habitat (an RSF) with <code>setupProject</code></span></span>
+      <a href="./Converting.html" class="pagination-link" aria-label="Converting existing code into SpaDES">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Converting existing code into SpaDES</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./spadesCBMDemo.html" class="pagination-link" aria-label="Forest Carbon Modelling in SpaDES with `setupProject`">
-        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./aiAssistedModules.html" class="pagination-link" aria-label="AI-assisted module development">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">AI-assisted module development</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
