@@ -1,0 +1,32 @@
+---
+date: last-modified
+bibliography: references/references.bib
+---
+
+# Glossary {#sec-glossary .unnumbered}
+
+The terms below recur throughout this book. They are taken directly from
+Table 1 of @barros2023, where they were introduced to describe the
+PERFICT framework and the SpaDES ecosystem. Individual chapters may link
+back to this glossary the first time a term appears.
+
+| Term | Description |
+|------|-------------|
+| **Caching** | The ability to store the results of an operation in cache memory, to avoid re-running algorithms whose inputs have not changed. |
+| **Code testing** | Testing the code of a model for potential errors that can lead to breakage, or abnormal results. |
+| **Continuous workflow** | A workflow that does not need the user's direct intervention during its execution. |
+| **Dynamic vs. static (non-dynamic) ecological models** | Here, we distinguish two ecological modelling paradigms: non-dynamic (static) ecological models and dynamic ecological models. Dynamic models involve time dependency — for example this year's predictions are next year's inputs. An example of static modelling is to predict species distributions from a statistical model relating observed occurrences and environmental conditions. An example of dynamic modelling is to predict species distributions from a spatially explicit age-based population model. |
+| **FAIR data** | Findable, Accessible, Interoperable and Reusable data (Wilkinson et al., 2016) that enhance both model transferability and reproducibility. |
+| **Iterative forecasting** | The act of updating a model's forecasts several times and as new data become available. |
+| **Interoperable model/workflow** | The ability to remove, replace or add model or workflow sub-components, because these can operate together in different combinations. |
+| **LandR and LandR Biomass** | `LandR` is a family of SpaDES modules geared towards simulating forest dynamics, with several parameterisation modules focused on Canadian boreal and montane forests, simulating fire disturbances and climate change impacts on forest and fire dynamics (among others currently being developed). Not to be confused with the `LandR` R package, which groups R functions used across LandR modules. `LandR Biomass` is a group of these modules focused on forest dynamics and their parameterisation. |
+| **Model validation** | Testing whether a model's outputs are ecologically accurate, by comparing them with out-of-sample data. |
+| **Modular workflow/model** | A workflow or model whose sub-components can be easily changed and turned on or off (e.g. changing a parameterisation approach or the input data) — a necessary condition for interoperability. |
+| **Nimble workflow/model (nimbleness)** | A workflow or model that can be easily transferred into other contexts, such as a different geographical area or changing the parameterisation, prediction and validation approaches and algorithms. |
+| **PERFICT** | Seven principles that should improve the reusability, transparency and nimbleness of ecological models, while bridging gaps between data, models and decisions: frequent **P**redictions and **E**valuations of **R**eusable, **F**reely accessible, **I**nteroperable models, built within **C**ontinuous workflows that are routinely **T**ested [@mcintire2022]. |
+| **SpaDES** | A group of R packages (R meta-package) that provides a toolkit for developing ecological models. Although geared towards spatiotemporally explicit modelling, it can accommodate any type of model as long as it can be written in R or any language that R can call (e.g. Python, Java, C++). |
+| **SpaDES event** | A section of a module usually contained in an R function that executes a relatively self-contained process (e.g. tree cohort growth, or fitting a species distribution model). |
+| **SpaDES model/workflow** | Usually a group of SpaDES modules that work together as a "model" to generate predictions. SpaDES models can be static or dynamic depending on the type of processes their modules include. |
+| **SpaDES module** | Usually a self-contained piece of a SpaDES model or workflow that encapsulates a step, process or mechanism in the model. For instance, parameter estimation for a simulation module can be contained in a single "data module". Here, we distinguish "data" and "calibration" modules, which are focused on preparing data and inputs for another module; "prediction" and "simulation" modules, which run static or dynamic predictions, respectively; and "validation" modules, which validate predictions against out-of-sample data. |
+
+: Glossary of terms used throughout the book, adapted from Table 1 of @barros2023. {#tbl-glossary}

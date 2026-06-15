@@ -123,8 +123,8 @@ out <- setupProject(
     spades.moduleCodeChecks = FALSE,
     spades.recoveryMode = 1
   ),
-  packages = c("PredictiveEcology/LandR@main",
-               "PredictiveEcology/climateData@main",
+  packages = c("LandR",
+               "climateData",
                "SpaDES.core", "reproducible",
                "RCurl", "XML", "snow", "googledrive"),
   times = list(start = 2011, end = 2081),

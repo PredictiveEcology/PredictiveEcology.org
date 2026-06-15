@@ -42,6 +42,8 @@ We will be discussing ideas around reproducibility and reusability in the first 
 +-------------------------+--------------------------------------------------------------------------------------------------------
 +-------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | 2:30 - 3:30             | We will work through the example in the training manual: [Project with caribou RSF forecasting]({{< var book.rsfForecast >}})  |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| Extra time              | **AI assistance** -- using an AI assistant to turn a linear R script into a reusable SpaDES module: [Converting habitat model prediction code into a SpaDES module]({{< var book.rsfPredictModule >}}) and [AI-assisted module development]({{< var book.aiAssistedModules >}}) |
 +-------------------------+--------------------------------------------------------------------------------------------------------
 
 

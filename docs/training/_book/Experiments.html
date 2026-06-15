@@ -9,7 +9,7 @@
 <meta name="author" content="Eliot McIntire">
 <meta name="dcterms.date" content="2026-06-11">
 
-<title>20&nbsp; Experiments – Robust and nimble scientific workflows, using SpaDES</title>
+<title>21&nbsp; Experiments – Robust and nimble scientific workflows, using SpaDES</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ExperimentsAndScenarios.html">Experiments, replication, and scenarios</a></li><li class="breadcrumb-item"><a href="./Experiments.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ExperimentsAndScenarios.html">Experiments, replication, and scenarios</a></li><li class="breadcrumb-item"><a href="./Experiments.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -569,8 +569,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./RSFpredictModule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Converting habitat model prediction code into a SpaDES module</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./spadesCBMDemo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Forest Carbon Modelling in SpaDES with <code>setupProject</code></span></span></a>
   </div>
 </li>
       </ul>
@@ -587,13 +593,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Experiments.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./FireUnderClimateChange.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span></a>
   </div>
 </li>
       </ul>
@@ -620,19 +626,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-an-experiment" id="toc-what-is-an-experiment" class="nav-link active" data-scroll-target="#what-is-an-experiment"><span class="header-section-number">20.1</span> What is an “experiment”?</a></li>
-  <li><a href="#the-running-example" id="toc-the-running-example" class="nav-link" data-scroll-target="#the-running-example"><span class="header-section-number">20.2</span> The running example</a></li>
-  <li><a href="#three-runners-one-queue-model" id="toc-three-runners-one-queue-model" class="nav-link" data-scroll-target="#three-runners-one-queue-model"><span class="header-section-number">20.3</span> Three runners, one queue model</a>
+  <li><a href="#what-is-an-experiment" id="toc-what-is-an-experiment" class="nav-link active" data-scroll-target="#what-is-an-experiment"><span class="header-section-number">21.1</span> What is an “experiment”?</a></li>
+  <li><a href="#the-running-example" id="toc-the-running-example" class="nav-link" data-scroll-target="#the-running-example"><span class="header-section-number">21.2</span> The running example</a></li>
+  <li><a href="#three-runners-one-queue-model" id="toc-three-runners-one-queue-model" class="nav-link" data-scroll-target="#three-runners-one-queue-model"><span class="header-section-number">21.3</span> Three runners, one queue model</a>
   <ul class="collapse">
-  <li><a href="#experimenttmux-live-monitoring" id="toc-experimenttmux-live-monitoring" class="nav-link" data-scroll-target="#experimenttmux-live-monitoring"><span class="header-section-number">20.3.1</span> <code>experimentTmux()</code>: live monitoring</a></li>
-  <li><a href="#experimentfuture-same-thing-no-tmux" id="toc-experimentfuture-same-thing-no-tmux" class="nav-link" data-scroll-target="#experimentfuture-same-thing-no-tmux"><span class="header-section-number">20.3.2</span> <code>experimentFuture()</code>: same thing, no tmux</a></li>
-  <li><a href="#experimentsbatch-same-thing-on-slurm" id="toc-experimentsbatch-same-thing-on-slurm" class="nav-link" data-scroll-target="#experimentsbatch-same-thing-on-slurm"><span class="header-section-number">20.3.3</span> <code>experimentSBATCH()</code>: same thing, on Slurm</a></li>
+  <li><a href="#experimenttmux-live-monitoring" id="toc-experimenttmux-live-monitoring" class="nav-link" data-scroll-target="#experimenttmux-live-monitoring"><span class="header-section-number">21.3.1</span> <code>experimentTmux()</code>: live monitoring</a></li>
+  <li><a href="#experimentfuture-same-thing-no-tmux" id="toc-experimentfuture-same-thing-no-tmux" class="nav-link" data-scroll-target="#experimentfuture-same-thing-no-tmux"><span class="header-section-number">21.3.2</span> <code>experimentFuture()</code>: same thing, no tmux</a></li>
+  <li><a href="#experimentsbatch-same-thing-on-slurm" id="toc-experimentsbatch-same-thing-on-slurm" class="nav-link" data-scroll-target="#experimentsbatch-same-thing-on-slurm"><span class="header-section-number">21.3.3</span> <code>experimentSBATCH()</code>: same thing, on Slurm</a></li>
   </ul></li>
-  <li><a href="#scenario-records-one-tuple-multiple-representations" id="toc-scenario-records-one-tuple-multiple-representations" class="nav-link" data-scroll-target="#scenario-records-one-tuple-multiple-representations"><span class="header-section-number">20.4</span> Scenario records: one tuple, multiple representations</a></li>
-  <li><a href="#output-and-upload-helpers" id="toc-output-and-upload-helpers" class="nav-link" data-scroll-target="#output-and-upload-helpers"><span class="header-section-number">20.5</span> Output and upload helpers</a></li>
-  <li><a href="#operational-helpers" id="toc-operational-helpers" class="nav-link" data-scroll-target="#operational-helpers"><span class="header-section-number">20.6</span> Operational helpers</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">20.7</span> Troubleshooting</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">20.8</span> Summary</a></li>
+  <li><a href="#scenario-records-one-tuple-multiple-representations" id="toc-scenario-records-one-tuple-multiple-representations" class="nav-link" data-scroll-target="#scenario-records-one-tuple-multiple-representations"><span class="header-section-number">21.4</span> Scenario records: one tuple, multiple representations</a></li>
+  <li><a href="#output-and-upload-helpers" id="toc-output-and-upload-helpers" class="nav-link" data-scroll-target="#output-and-upload-helpers"><span class="header-section-number">21.5</span> Output and upload helpers</a></li>
+  <li><a href="#operational-helpers" id="toc-operational-helpers" class="nav-link" data-scroll-target="#operational-helpers"><span class="header-section-number">21.6</span> Operational helpers</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">21.7</span> Troubleshooting</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">21.8</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -640,9 +646,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ExperimentsAndScenarios.html">Experiments, replication, and scenarios</a></li><li class="breadcrumb-item"><a href="./Experiments.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ExperimentsAndScenarios.html">Experiments, replication, and scenarios</a></li><li class="breadcrumb-item"><a href="./Experiments.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-experiments" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experiments</span></span></h1>
+<h1 class="title"><span id="sec-experiments" class="quarto-section-identifier"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Experiments</span></span></h1>
 </div>
 
 
@@ -681,8 +687,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="what-is-an-experiment" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="what-is-an-experiment"><span class="header-section-number">20.1</span> What is an “experiment”?</h2>
+<section id="what-is-an-experiment" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="what-is-an-experiment"><span class="header-section-number">21.1</span> What is an “experiment”?</h2>
 <p>An <em>experiment</em> in this package is a <code>data.frame</code> (or <code>data.table</code>) where each row is one job to run. Column names become R variable names that get assigned in each worker’s <code>.GlobalEnv</code> before the worker sources <code>global.R</code> and produces an output. Conceptually:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Conceptual kernel -- not what you'd actually call. Read for intuition.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))) {</span>
@@ -698,8 +704,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>That kernel does <em>not</em> survive an interrupted R session, can’t be resumed, doesn’t share state across machines, and gives you no introspection while jobs are running. The runners introduced below add exactly those features.</p>
 </section>
-<section id="the-running-example" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="the-running-example"><span class="header-section-number">20.2</span> The running example</h2>
+<section id="the-running-example" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="the-running-example"><span class="header-section-number">21.2</span> The running example</h2>
 <p>Every section of this chapter uses the same pair: a four-row parameter grid <code>df</code> and a one-line <code>global.R</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># global.R -- a worker sources this for every job. The variables</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># `.scenario` and `.rep` are assigned to .GlobalEnv before this runs.</span></span>
@@ -723,10 +729,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4         B    2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Four jobs. Two scenarios crossed with two replicates. <code>global.R</code> writes one <code>.rds</code> per row. We will run this four-row experiment three times – once with each runner – and confirm the output is identical.</p>
 </section>
-<section id="three-runners-one-queue-model" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="three-runners-one-queue-model"><span class="header-section-number">20.3</span> Three runners, one queue model</h2>
-<section id="experimenttmux-live-monitoring" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="experimenttmux-live-monitoring"><span class="header-section-number">20.3.1</span> <code>experimentTmux()</code>: live monitoring</h3>
+<section id="three-runners-one-queue-model" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="three-runners-one-queue-model"><span class="header-section-number">21.3</span> Three runners, one queue model</h2>
+<section id="experimenttmux-live-monitoring" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="experimenttmux-live-monitoring"><span class="header-section-number">21.3.1</span> <code>experimentTmux()</code>: live monitoring</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SpaDES.project)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ex <span class="ot">&lt;-</span> <span class="fu">experimentTmux</span>(</span>
@@ -751,8 +757,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Killing your terminal mid-run leaves the queue intact; rerun <code>experimentTmux()</code> against the same <code>queue_path</code> and the surviving workers pick up where the dead ones left off. <code>runNameLabel</code> is the quoted expression each worker evaluates against its claimed row to build a human-readable identifier for log messages.</p>
 </section>
-<section id="experimentfuture-same-thing-no-tmux" class="level3" data-number="20.3.2">
-<h3 data-number="20.3.2" class="anchored" data-anchor-id="experimentfuture-same-thing-no-tmux"><span class="header-section-number">20.3.2</span> <code>experimentFuture()</code>: same thing, no tmux</h3>
+<section id="experimentfuture-same-thing-no-tmux" class="level3" data-number="21.3.2">
+<h3 data-number="21.3.2" class="anchored" data-anchor-id="experimentfuture-same-thing-no-tmux"><span class="header-section-number">21.3.2</span> <code>experimentFuture()</code>: same thing, no tmux</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ef <span class="ot">&lt;-</span> <span class="fu">experimentFuture</span>(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">df           =</span> df,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">global_path  =</span> <span class="st">"global.R"</span>,</span>
@@ -776,8 +782,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>tail -f logs/worker_01.log</code> from another shell shows live output – no tmux required, scriptable end-to-end. <code>killExperimentFuture(ef)</code> creates a stop file each worker checks between jobs (graceful), or <code>killExperimentFuture(ef, force = TRUE)</code> SIGKILLs them.</p>
 </section>
-<section id="experimentsbatch-same-thing-on-slurm" class="level3" data-number="20.3.3">
-<h3 data-number="20.3.3" class="anchored" data-anchor-id="experimentsbatch-same-thing-on-slurm"><span class="header-section-number">20.3.3</span> <code>experimentSBATCH()</code>: same thing, on Slurm</h3>
+<section id="experimentsbatch-same-thing-on-slurm" class="level3" data-number="21.3.3">
+<h3 data-number="21.3.3" class="anchored" data-anchor-id="experimentsbatch-same-thing-on-slurm"><span class="header-section-number">21.3.3</span> <code>experimentSBATCH()</code>: same thing, on Slurm</h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>es <span class="ot">&lt;-</span> <span class="fu">experimentSBATCH</span>(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">df           =</span> df,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">global_path  =</span> <span class="st">"/scratch/projectX/global.R"</span>,   <span class="co"># absolute, on shared FS</span></span>
@@ -811,8 +817,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The point of these three sections is the <em>same</em> four-line driver script. Replace <code>experimentTmux</code> with <code>experimentFuture</code> or <code>experimentSBATCH</code>, adjust the <code>cores</code> / <code>n_workers</code> / <code>sbatch_opts</code> arguments, and you have a tmux-free or HPC-native experiment without rewriting <code>global.R</code>, <code>df</code>, or any of the post-processing.</p>
 </section>
 </section>
-<section id="scenario-records-one-tuple-multiple-representations" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="scenario-records-one-tuple-multiple-representations"><span class="header-section-number">20.4</span> Scenario records: one tuple, multiple representations</h2>
+<section id="scenario-records-one-tuple-multiple-representations" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="scenario-records-one-tuple-multiple-representations"><span class="header-section-number">21.4</span> Scenario records: one tuple, multiple representations</h2>
 <p>A “scenario” is one row of <code>df</code> – one named tuple of field values that uniquely identifies a run. Once an experiment has been running for a while, you’ll want to refer to those scenarios in three other forms:</p>
 <ul>
 <li>the canonical record (named values),</li>
@@ -850,8 +856,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>For genuinely irregular formats (e.g.&nbsp;two fields joined into one segment), pass <code>build</code> and <code>parse</code> functions to <code>register_scenario_format()</code>. Lookup precedence is: registered slot -&gt; <code>pathBuild</code>/<code>pathParse</code> defined in the global env -&gt; the package default.</p>
 <p><code>scenarioFields()</code> is the cached list of “data” column names (i.e. non-meta columns of the queue). <code>queueRead()</code> sets it as a side effect when you read the queue from a Google Sheet; for a <code>data.frame</code> queue you’ve built yourself, the runners (<code>experimentTmux()</code>, <code>experimentFuture()</code>, <code>experimentSBATCH()</code>) set it for you. You only need to call <code>scenarioFieldsSet()</code> directly if you’re using the <code>scenario</code> family before any runner has fired.</p>
 </section>
-<section id="output-and-upload-helpers" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="output-and-upload-helpers"><span class="header-section-number">20.5</span> Output and upload helpers</h2>
+<section id="output-and-upload-helpers" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="output-and-upload-helpers"><span class="header-section-number">21.5</span> Output and upload helpers</h2>
 <p>If your experiment finishes and writes one tarball per scenario to a shared Google Drive folder, the queue-vs-uploads anti-join is a one-liner:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>.uploadGSdir <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/drive/folders/..."</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ss_id        <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/drive/folders/..."</span></span>
@@ -871,8 +877,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>missing <span class="ot">&lt;-</span> queue[<span class="sc">!</span>(<span class="fu">as_tarname</span>(qScens) <span class="sc">%in%</span> allOnGS<span class="sc">$</span>name), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The companion <code>outScenarios()</code> returns the uploaded files coerced to scenario records, useful when you want to operate on field values rather than tarname strings.</p>
 </section>
-<section id="operational-helpers" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="operational-helpers"><span class="header-section-number">20.6</span> Operational helpers</h2>
+<section id="operational-helpers" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="operational-helpers"><span class="header-section-number">21.6</span> Operational helpers</h2>
 <p>These tools work the same regardless of which runner you used – they read the queue file directly.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tmuxListPanes</span>()                       <span class="co"># which workers are alive (Tmux)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tmuxFindDuplicates</span>()                  <span class="co"># workers running the same row</span></span>
@@ -883,10 +889,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>statusCalculate_LandR</code> – declares a row “done” once the LandR cohort <code>cohortData_year&lt;XXXX&gt;.rds</code> checkpoint reaches the configured end year.</li>
 <li><code>statusCalculate_FireSenseFit</code> – declares a row “done” once the FireSense <code>burnMap_year&lt;XXXX&gt;.tif</code> for the end year exists.</li>
 </ul>
-<p>Both use a positional <code>pathBuild(.ELFind, .samplingRange, .GCM, .SSP, .rep)</code> call to derive the row’s output directory from the row’s field values; see <a href="FireUnderClimateChange.html" class="quarto-xref"><span>Chapter 21</span></a> for a real-world configuration.</p>
+<p>Both use a positional <code>pathBuild(.ELFind, .samplingRange, .GCM, .SSP, .rep)</code> call to derive the row’s output directory from the row’s field values; see <a href="FireUnderClimateChange.html" class="quarto-xref"><span>Chapter 22</span></a> for a real-world configuration.</p>
 </section>
-<section id="troubleshooting" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">20.7</span> Troubleshooting</h2>
+<section id="troubleshooting" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="troubleshooting"><span class="header-section-number">21.7</span> Troubleshooting</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -955,15 +961,15 @@ Warning
 </div>
 </div>
 </section>
-<section id="summary" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">20.8</span> Summary</h2>
+<section id="summary" class="level2" data-number="21.8">
+<h2 data-number="21.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">21.8</span> Summary</h2>
 <ul>
 <li>All three runners (<code>experimentTmux</code>, <code>experimentFuture</code>, <code>experimentSBATCH</code>) consume the same <code>df</code> and <code>global.R</code> and offer the same queue / <code>runNameLabel</code> / <code>statusCalculate</code> API.</li>
 <li>The differences are operational: tmux pane vs.&nbsp;background process vs.&nbsp;Slurm batch job. Pick by environment.</li>
 <li>The <code>scenario</code> family (<code>as_scenario()</code>, <code>as_path()</code>, <code>as_tarname()</code>, <code>pathBuild()</code>, <code>register_scenario_format()</code>) is the canonical way to refer to one run across the queue, the output directory, and the upload folder – always reversibly.</li>
 <li>Resumable queues, anti-joins against an upload folder, and the status calculators are the three tools that make a long-running experiment manageable in practice.</li>
 </ul>
-<p><a href="FireUnderClimateChange.html" class="quarto-xref"><span>Chapter 21</span></a> applies all of this to a real fire-under-climate-change experiment with the LandR and FireSense modules.</p>
+<p><a href="FireUnderClimateChange.html" class="quarto-xref"><span>Chapter 22</span></a> applies all of this to a real fire-under-climate-change experiment with the LandR and FireSense modules.</p>
 
 
 </section>
@@ -1394,7 +1400,7 @@ Warning
   </div>
   <div class="nav-page nav-page-next">
       <a href="./FireUnderClimateChange.html" class="pagination-link" aria-label="Fire under climate change">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Fire under climate change</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,272 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  tidy: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+---
+
+# AI-assisted module development {#sec-aiModules}
+
+::: {.callout-tip appearance="simple"}
+See the [Glossary](glossary.qmd) for definitions of recurring terms
+(e.g. *SpaDES module*, *SpaDES event*, *interoperable model*,
+*modular workflow*).
+:::
+
+## AI as an accelerator for a reusable module ecosystem {#sec-aiAccelerator}
+
+The hardest part of growing a SpaDES ecosystem isn't writing any one
+module -- it's keeping the *interfaces* consistent across many of them
+so they actually compose. A module that calls a covariate
+`pixelGroupMap` plugs into the same pipeline as `Biomass_core`; one
+that calls it `pgMap` does not, even if the data is identical. The
+metadata (`expectsInput`, `createsOutput`, parameter names, `timeunit`)
+is what turns a clever script into a piece of shared infrastructure.
+
+That metadata is largely mechanical to write -- and exactly the kind
+of work an AI assistant handles well. Given a linear R script and a
+few existing modules to mimic, a current LLM can translate the script
+into a `defineModule` + `doEvent` + scheduling skeleton in seconds,
+matched to the conventions used by `LandR`, `scfm`, `RSFpredict`, and
+the rest. The role of the scientist shifts from *typing the
+boilerplate* to *checking that the boilerplate is right* -- which
+inputs are needed, which outputs are produced, which parameters belong
+to which event.
+
+There is a network effect: the more existing modules conform to a
+shared pattern, the better an LLM can produce a *new* module that fits.
+Today's `Biomass_core` becomes the template for tomorrow's
+`Biomass_disturbance`; today's `RSFpredict` becomes the template for
+the next species' SDM-as-module. The ecosystem builds itself faster,
+and stays consistent because nobody has to *remember* the conventions
+-- the AI re-applies them on every conversion.
+
+This chapter is a worked example. We will take the linear R script we
+built in [Forecasting wildlife habitat @sec-rsfForecast] and walk
+through the prompts that turn it into the `RSFpredict` module. The
+goal isn't to show off the prompts -- it's to show that the
+conversion is now a *short conversation*, not a refactor project.
+
+## Worked example: turning an RSF forecast into a SpaDES module
+
+We start from the linear script in [Converting habitat model
+prediction code into a SpaDES module @sec-rsfPredictModule]: one
+setup section, one annual loop, no `sim$`, no `doEvent`. Three prompts
+get us to a working module.
+
+### Prompt 1 -- generate the metadata
+
+> Here is a linear R script that forecasts a Resource Selection
+> Function across a simulated landscape, year by year. I want to
+> convert it into a SpaDES module called `RSFpredict`. Start by
+> writing the `defineModule()` metadata block. Include:
+>
+> - the required packages (`reproducible`, `terra`, `glmmTMB`, plus the
+>   ones the script uses);
+> - `parameters` for every value I had in the `params` list (numBins,
+>   simulationProcess, predictionInterval, predictStartYear,
+>   predictLastYear, ts_else, .studyAreaName) -- declare type and a
+>   sensible default for each;
+> - `inputObjects` for the variables the script assumed were in
+>   scope: `model` (`glmmTMB`), `studyArea` (`SpatVector`),
+>   `modelLand`, `cohortData`, `pixelGroupMap`, `timeSinceFire`,
+>   `rasterToMatch` (all `SpatRaster`);
+> - `outputObjects` for `pred`, `binMap`, `simLand`, `simPred`,
+>   `simBinMap`.
+>
+> Use `timeunit = "year"`. No event code yet -- just the metadata.
+
+The AI's output is essentially the `defineModule(...)` block we showed
+at [@sec-rsfPredictModule § Step 1] -- a declaration of what the
+module needs, what it produces, and what its parameters are. The
+**single most important thing to check** is that the `inputObjects`
+names match what the upstream modules (`Biomass_core`, `scfm`)
+*produce*. If they don't, the project won't wire up; if they do, you
+get composition for free.
+
+### Prompt 2 -- generate the `init` event + baseline computation
+
+> Now write the `doEvent.RSFpredict()` function. The `init` event
+> should:
+>
+> - schedule a `buildBaselineRSFmap` event at `time(sim)` (runs once,
+>   immediately);
+> - if `P(sim)$simulationProcess == "dynamic"`, also schedule
+>   `simLayers` and `simRSFmap` events at `P(sim)$predictStartYear`;
+> - if `P(sim)$predictLastYear` is `TRUE`, schedule a final
+>   `simLayers` at `end(sim)`.
+>
+> Then write the `buildBaselineRSFmap` event -- that's the
+> "setup section" of my linear script (the part *before* the
+> `for (thisYear in years)` loop), translated to use `sim$X` instead
+> of bare variables and `P(sim)$X` instead of `params$X`.
+>
+> Don't write the `simLayers` / `simRSFmap` events yet.
+
+What you should check in the AI's response:
+
+-   Every `sim$X` that's *read* corresponds to a declared
+    `expectsInput`, and every `sim$X` that's *written* corresponds to
+    a declared `createsOutput`. Mismatches here are the most common
+    source of "object not found" errors at run time.
+-   Every parameter accessor is `P(sim)$X` (or `Par$X` in newer
+    SpaDES.core) -- not `params$X`, not a hard-coded literal. If the
+    AI inlined `10` for `numBins`, push back: "use `P(sim)$numBins`
+    instead".
+
+### Prompt 3 -- generate the recurring events
+
+> Now write the `simLayers` and `simRSFmap` events. Each should be the
+> body of one iteration of the original `for (thisYear in years)` loop
+> -- `simLayers` is the part that builds the year's covariate stack,
+> `simRSFmap` is the part that predicts + classifies + writes
+> GeoTIFFs. Replace `thisYear` with `as.integer(time(sim))` and
+> replace the bare lists `simLand` / `simPred` / `simBinMap` with the
+> simList versions `sim$simLand[[key]]`, etc.
+>
+> At the end of each event, reschedule the same event at
+> `time(sim) + P(sim)$predictionInterval` so it recurs.
+>
+> Also: write the GeoTIFFs under
+> `file.path(outputPath(sim), paste0(P(sim)$.studyAreaName, "_sims"))`,
+> creating that directory if needed.
+
+The check after this prompt is whether the **self-rescheduling**
+trailing line is present in both events. Without it the events fire
+once and stop; the dynamic forecast becomes a static one and the bug
+is silent -- you get *some* years of output, not a wrong-shaped error.
+
+### What you end up with
+
+The three prompts together produce a 200-300 line `RSFpredict.R`
+roughly identical to the [JWTurn/RSFpredict](https://github.com/JWTurn/RSFpredict)
+module we used in [@sec-rsfForecast]. Drop it under
+`<projectPath>/modules/RSFpredict/RSFpredict.R` and put any helper
+functions (like `reclassifyCohortData()`) under
+`<projectPath>/modules/RSFpredict/R/`.
+
+## Testing the module
+
+The fastest sanity check is a *minimal* `setupProject()` that runs
+just enough of the upstream chain to populate the inputs `RSFpredict`
+needs (`cohortData`, `pixelGroupMap`, `timeSinceFire`). Two years are
+enough to know whether `simLayers` + `simRSFmap` fire correctly:
+
+```{r test}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+
+out <- setupProject(
+  paths   = list(projectPath = "~/SpaDES_book/RSFpredict_test"),
+  modules = c(
+    "PredictiveEcology/Biomass_borealDataPrep@main",
+    "PredictiveEcology/Biomass_core@main",
+    file.path("PredictiveEcology/scfm@development/modules",
+              c("scfmDataPrep", "scfmIgnition", "scfmEscape",
+                "scfmSpread", "scfmDiagnostics")),
+    "JWTurn/RSFpredict@main"
+  ),
+  params  = list(
+    .globals   = list(.studyAreaName = "dehchoN", .useCache = c(".inputObjects", "init")),
+    RSFpredict = list(simulationProcess = "dynamic", predictionInterval = 1)
+  ),
+  times   = list(start = 2020, end = 2022),
+  packages = c("LandR", "climateData"),
+  studyArea = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1ma5qRk2NNidLhrQoiLIzd7W5ogeTaH5-/view",
+    fun = "terra::vect"),
+  model = reproducible::prepInputs(
+    url = "https://drive.google.com/file/d/1ILE0WmePubjHiwynSjV_EyetnUhuQIJU/view",
+    fun = "readRDS")
+)
+
+results <- SpaDES.core::simInitAndSpades2(out)
+SpaDES.core::completed(results)
+```
+
+`completed(results)` should show every scheduled event having fired:
+`buildBaselineRSFmap` once at year 2020, then `simLayers` and
+`simRSFmap` at every year in `2020 ... 2022` because we set
+`predictionInterval = 1`. If you only see `init` and
+`buildBaselineRSFmap`, the recurring events aren't rescheduling
+themselves -- which is exactly the regression the AI's self-scheduling
+line was supposed to prevent.
+
+## When things break: iterating with AI
+
+Workflow-level errors fall into a few recognisable shapes. Each one
+maps to a short follow-up prompt.
+
+### "Object X not supplied"
+
+> When I run `simInitAndSpades2(out)`, it errors with `object
+> 'pixelGroupMap' not supplied`. `RSFpredict` declares it as an
+> `expectsInput`, and `Biomass_core` declares it as a
+> `createsOutput`. What's wrong?
+
+Three usual answers from the AI: (a) `Biomass_core` isn't actually in
+the `modules` list (typo or missing); (b) it *is* in the list, but
+listed *after* `RSFpredict`, so `init` of `RSFpredict` runs before
+`Biomass_core` creates the object -- fix by reordering; (c) the class
+declared in `expectsInput` doesn't match what the upstream module
+declares in `createsOutput`, so the wiring is rejected. The AI will
+usually tell you which.
+
+### "CRS mismatch" / "extents don't match"
+
+> The `simLayers` event errors in `terra::resample` with "CRS does
+> not match". Both rasters say EPSG:3978 when I print them. What
+> else could it be?
+
+This is almost always slight numerical drift in the proj4 string
+between two layers built by different modules. The fix is one line:
+`terra::crs(b) <- terra::crs(a)` before the resample. The AI will
+suggest this, or point at `reproducible::postProcess(to = a)` as the
+SpaDES-idiomatic version.
+
+### "Predictions only run for some years"
+
+> `completed(results)` shows `simLayers` fired at year 2020 but never
+> after. Loop should run every 5 years until 2075. What's wrong?
+
+This is the missing self-reschedule line. Specifically: at the end of
+the `simLayers` event there must be a
+`sim <- scheduleEvent(sim, time(sim) + P(sim)$predictionInterval,
+"RSFpredict", "simLayers")`. The AI will spot this immediately if you
+paste the event body.
+
+### "I want predictions every 10 years instead of 5"
+
+You don't change the module -- you change a parameter at the
+`setupProject()` call site:
+
+```{r param-override}
+params = list(RSFpredict = list(predictionInterval = 10))
+```
+
+Which is exactly the point of putting the value in `defineParameter()`
+in Prompt 1. The AI will remind you of this if you ask "how do I
+change the prediction interval"; if you find yourself editing the
+module to change the value, that's a hint the parameter wasn't
+exposed.
+
+## See also
+
+[Converting habitat model prediction code into a SpaDES module @sec-rsfPredictModule]
+
+[Forecasting wildlife habitat @sec-rsfForecast]
+
+[Module Files and Metadata @sec-moduleFilesAndMetadata]
+
+[Modules and Events @sec-modulesAndEvents]

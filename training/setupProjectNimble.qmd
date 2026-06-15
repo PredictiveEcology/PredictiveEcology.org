@@ -130,9 +130,10 @@ sim <- spades(sim)
 The same run, expressed declaratively:
 
 ```{r after}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 out <- SpaDES.project::setupProject(
   modules = c(
@@ -142,7 +143,7 @@ out <- SpaDES.project::setupProject(
   ),
   overwrite = TRUE,
   times = list(start = 1, end = 1),
-  packages = c("PredictiveEcology/LandR@development (>= 1.2.0.9002)"),
+  packages = c("LandR (>= 1.2.0.9002)"),
   shapeZipID = "1gycTXyZzgXIUGM6dyAJbmFxq8TOAm-Ik",
   studyArea = reproducible::prepInputs(url = shapeZipID, fun = terra::vect) |>
     terra::project("EPSG:3978"),
@@ -204,21 +205,26 @@ same `if (!require(...))` idiom -- but only to install the *one* tool
 that does the installing:
 
 ```{r pak-bootstrap}
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
 if (!require("pak")) install.packages("pak")
-pak::pak(c("PredictiveEcology/Require@development",
-           "PredictiveEcology/SpaDES.project@development"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 ```
+
+The `repos` line points `pak` at PredictiveEcology's `r-universe`, where
+prebuilt binaries of `Require`, `SpaDES.project`, `LandR`, etc. live --
+no source build, no git authentication, no Rtools needed on Windows.
 
 After that, everything is declarative. And the important part is *where*
 the resolution happens: because `setupProject()` also knows the
 `modules`, it reads each module's own package requirements (declared in
 their metadata) and reconciles them **together with the packages you ask
 for** -- in one step, before anything runs. So a module that needs a
-particular version of `LandR` (note the `@development (>= 1.2.0.9002)`
-pin) and your own analysis needs are satisfied at once, rather than
-discovered one failed `library()` call at a time. We only list `LandR`
-explicitly; `SpaDES.core`, `terra` and the rest arrive as dependencies
-of the requested modules and packages.
+particular version of `LandR` (note the `(>= 1.2.0.9002)` pin) and your
+own analysis needs are satisfied at once, rather than discovered one
+failed `library()` call at a time. We only list `LandR` explicitly;
+`SpaDES.core`, `terra` and the rest arrive as dependencies of the
+requested modules and packages.
 
 ### Paths: from `setPaths()` + manual cache cleanup to defaults
 

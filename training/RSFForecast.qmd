@@ -173,7 +173,7 @@ out <- setupProject(
   ),
   packages = c(
     "httr2",
-    "terra", "PredictiveEcology/SpaDES.core@development (>=3.1.2.9016)",
+    "terra", "SpaDES.core (>=3.1.2.9016)",
     "gert", "remotes"
   ),
   times = list(start = 2020, end = 2075),
@@ -376,33 +376,19 @@ SpaDES.core::elapsedTime(results, units = "mins")     # time per event
 SpaDES.core::moduleMetadata(results)$RSFpredict$outputObjects
 ```
 
-## Using shiny and leaflet to explore outputs
+## Reporting on datasets used via `prepInputs` (new feature)
 
-Because we set `.plots = "png"` and saved maps to the `outputPath`, the
-run leaves behind a folder full of time-stamped `.tif` and `.png` files
--- the forecasted forest, fire, and RSF surfaces, one per simulation
-year. Clicking through those one at a time is tedious. The
-`SpaDES.shiny::shine()` function turns that folder into an interactive
-viewer: it recursively scans the output folder, groups files that share
-a base name but differ by an embedded timestamp into time-series
-"objects", and launches a Shiny app where you can step (or animate)
-`leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
-through time. Maps (`.tif`) are drawn on a choosable web basemap with
-figures (`.png`) are shown as images; two extra tabs show the snapshots.
-You can point it at a `simList` (it uses that object's `last - first`
-change and a user-defined difference between any two `outputPath()`), a
-folder path, or nothing at all (it falls back to
-`getOption("spades.outputPath")`).
+If we use `prepInputs()` to load data, there is a logging feature that keeps
+a record of the objects we are using (still experimental). This can be very
+helpful to report on which datasets are being used. As it is experimental 
+(as of reproducible version 3.1.1.9058 and SpaDES.core version 3.1.2.9016),
+there will be more richness as this grows over time.
 
-```{r shine}
-#| eval: false
-if (!require("pak")) install.packages("pak")
-pak::pak("PredictiveEcology/SpaDES.shiny")
-
-# explore the saved outputs interactively
-SpaDES.shiny::shine("outputs")     # a folder path
-# SpaDES.shiny::shine(results)     # or a simList -> uses outputPath(results)
+```{r prepInputsLog}
+#| eval: true
+reproducible::prepInputsLog() |> data.table::rbindlist()
 ```
+
 
 Keeping in mind this is one simulation of a simple, toy RSF, we see in
 general that habitat is worsening between 2025 and 2075 from the
@@ -425,12 +411,73 @@ diffBinMap <- results$simBinMap$year2075 - results$simBinMap$year2025
 terra::global(diffBinMap, fun = 'mean', na.rm = T)[[1]]
 ```
 
+
 ```{r plot}
 #| eval: true
 #| fig.width: 7
 #| fig.height: 5
 #| fig.cap: "Difference in RSF predicted bins, 2075 minus 2025"
 terra::plot(diffBinMap, col = rev(terra::map.pal("differences")))
+```
+
+
+## Using shiny and leaflet to explore outputs
+
+Because we set `.plots = "png"` and saved maps to the `outputPath`, the
+run leaves behind a folder full of time-stamped `.tif` and `.png` files
+-- the forecasted forest, fire, and RSF surfaces, one per simulation
+year. Clicking through those one at a time is tedious. The
+`SpaDES.shiny::shine()` function turns that folder into an interactive
+viewer: it recursively scans the output folder, groups files that share
+a base name but differ by an embedded timestamp into time-series
+"objects", and launches a Shiny app where you can step (or animate)
+`leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
+through time. Maps (`.tif`) are drawn on a choosable web basemap with
+figures (`.png`) are shown as images; two extra tabs show the snapshots.
+You can point it at a `simList` (it uses that object's `last - first`
+change and a user-defined difference between any two `outputPath()`), a
+folder path, or nothing at all (it falls back to
+`getOption("spades.outputPath")`).
+
+### Using `leaflet`
+
+We can use a tool in `SpaDES.project::plotSAsLeaflet()` that allows us to automatically show several of the layers using `leaflet`. If we run it on `results`, i.e., the `simList` that exists at year 2075, we will see the state of the rasters and polygons at the end. Since some of them do not change during the 50 years, some will reflect the starting conditions. To know what each object name is, we need to look at the metadata of each module.
+
+```{r plotSAsLeaflet}
+#| eval: true
+SpaDES.project::plotSAsLeaflet(results)
+```
+
+We can pull out the *change over time* with:
+
+```{r plotChangeOverTime}
+#| eval: true
+SpaDES.project::plotChangeOverTime(results)
+```
+
+
+We can pull out the *the time series of each layer that has this* with:
+
+```{r plotTimeSeriesLeaflet}
+#| eval: true
+SpaDES.project::plotTimeSeriesLeaflet(results)
+```
+
+These functions are intended to be used to explore outputs, rather than present publication-ready visuals.
+
+### Using `shiny`
+
+We can get a little more power to visualize with a full shiny web page (but won't render for this training manual). 
+
+
+```{r shine}
+#| eval: false
+if (!require("pak")) install.packages("pak")
+pak::pak("SpaDES.shiny")
+
+# explore the saved outputs interactively
+SpaDES.shiny::shine("outputs")     # a folder path
+# SpaDES.shiny::shine(results)     # or a simList -> uses outputPath(results)
 ```
 
 ## How is this useful?

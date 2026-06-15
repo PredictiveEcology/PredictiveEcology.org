@@ -33,9 +33,13 @@ book:
   landRDemo: training/_book/LandRDemo_coreVeg.html
   forestsAndFire: training/_book/ForestsAndFire.html
   rsfForecast: training/_book/RSFForecast.html
+  rsfPredictModule: training/_book/RSFpredictModule.html
   shine: training/_book/RSFForecast.html#using-shiny-and-leaflet-to-explore-outputs
   spadesCBM: training/_book/spadesCBMDemo.html
 
   # Experiments and scenarios
   experiments: training/_book/Experiments.html
   fireUnderClimateChange: training/_book/FireUnderClimateChange.html
+
+  # AI-assisted development
+  aiAssistedModules: training/_book/aiAssistedModules.html

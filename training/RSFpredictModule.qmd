@@ -1,0 +1,524 @@
+---
+author: "Eliot McIntire"
+date: last-modified
+editor_options:
+  chunk_output_type: console
+execute:
+  eval: false
+  tidy: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+---
+
+# Converting habitat model prediction code into a SpaDES module {#sec-rsfPredictModule}
+
+::: {.callout-tip appearance="simple"}
+See [Barebones R script] for the code shown in this chapter
+:::
+
+::: {.callout-tip appearance="simple"}
+See the [Glossary](glossary.qmd) for definitions of recurring terms
+(e.g. *SpaDES module*, *SpaDES event*, *continuous workflow*,
+*interoperable model*).
+:::
+
+In the previous chapter, we built up a `setupProject()` call from a
+hand-rolled script. That moved the **project-level bookkeeping**
+(packages, paths, modules, inputs) out of the script and into one
+declarative call. This chapter takes the next step: turning the
+**ecology** -- the actual prediction code -- into a `SpaDES` module so
+it can be composed with the forest (`LandR`) and fire (`scfm`) families
+into the dynamic forecast we ran in [Forecasting wildlife habitat
+@sec-rsfForecast].
+
+The starting point is a linear R script that runs an RSF forecast on
+its own: one setup section (load inputs, build the baseline map) and
+one annual loop (re-evaluate the model against simulated landscapes,
+write GeoTIFFs). The end state is `RSFpredict.R` -- the same logic,
+factored into a `SpaDES` module's three required pieces:
+
+1.  **Metadata** -- a `defineModule()` block that declares what the
+    module needs, what it produces, and what its parameters are.
+2.  **Init event** -- runs once at the start of the simulation; it
+    builds the baseline map and **schedules** the recurring annual
+    events.
+3.  **Recurring events** -- the body of the original annual loop,
+    split into `simLayers` (build the year's land covariates) and
+    `simRSFmap` (predict + classify + write).
+
+We will build the module up in that order.
+
+## Bootstrap
+
+```{r bootstrap}
+#| eval: true
+repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
+options(repos = repos)
+if (!require("pak")) install.packages("pak")
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+
+library(SpaDES.project)
+```
+
+## The starting point: a plain R script
+
+Assume the inputs (`model`, `studyArea`, `modelLand`, `cohortData`,
+`pixelGroupMap`, `timeSinceFire`, `rasterToMatch`) are already in the
+workspace and a helper `reclassifyCohortData()` is sourced. The script
+runs one setup section then a year-by-year loop:
+
+```{r linearScript}
+#| code-fold: true
+#| code-summary: "Show full linear script"
+
+## ---- parameters ------------------------------------------------------------
+params <- list(
+  numBins            = 10L,
+  simulationProcess  = "dynamic",
+  predictionInterval = 5,
+  predictStartYear   = 2025,
+  predictLastYear    = TRUE,
+  ts_else            = 100L,
+  studyAreaName      = "dehchoN"
+)
+
+outDir <- reproducible::checkPath(
+  file.path("outputs", paste0(params$studyAreaName, "_sims")), create = TRUE)
+
+startYear <- 2020
+endYear   <- 2075
+
+## ---- SETUP: build the baseline RSF map -------------------------------------
+modLand <- modelLand
+modLand$timeSinceFire[is.na(modLand$timeSinceFire)] <- params$ts_else
+if (!is.null(weights(model))) {
+  w <- modelLand[[1]]; w[] <- 1; names(w) <- "w"
+  modLand <- c(modLand, w)
+}
+pred      <- terra::predict(modLand, model, type = "response", re.form = NA)
+pred.mask <- terra::mask(pred, studyArea)
+breaks    <- terra::global(pred.mask, quantile, na.rm = TRUE,
+                           probs = seq(0, 1, 1 / params$numBins))
+binMap    <- terra::classify(pred.mask, t(breaks),
+                             include.lowest = TRUE, brackets = TRUE)
+
+## ---- ANNUAL LOOP -----------------------------------------------------------
+simLand   <- list(); simPred <- list(); simBinMap <- list()
+years <- seq(params$predictStartYear, endYear, by = params$predictionInterval)
+if (params$predictLastYear && tail(years, 1L) != endYear) years <- c(years, endYear)
+
+for (thisYear in years) {
+  key <- paste0("year", thisYear)
+  template       <- rasterToMatch
+  templateCoarse <- terra::aggregate(template, fact = 2)
+
+  reclassForest <- reclassifyCohortData(
+    cohortData = cohortData, sppEquivCol = "LandR",
+    pixelGroupMap = pixelGroupMap, mixedForestCutoffs = c(0.33, 0.66))
+  ft <- reclassForest$`forest type`
+
+  needle_mask <- terra::classify(ft,
+    rcl = matrix(c(210, 1), ncol = 2, byrow = TRUE), others = 0)
+  prop_needleleaf <- terra::resample(needle_mask, template, method = "average")
+  names(prop_needleleaf) <- "prop_needleleaf"
+
+  mixed_mask <- terra::classify(ft,
+    rcl = matrix(c(220, 1, 230, 1), ncol = 2, byrow = TRUE), others = 0)
+  prop_mixedforest <- terra::resample(mixed_mask, template, method = "average")
+  names(prop_mixedforest) <- "prop_mixedforest"
+
+  forests <- reproducible::postProcess(
+    c(prop_needleleaf, prop_mixedforest), templateCoarse, method = "average")
+
+  tsf <- reproducible::postProcess(timeSinceFire, to = templateCoarse)
+  tsf[is.na(tsf)] <- params$ts_else + (thisYear - 2020)
+  names(tsf) <- "timeSinceFire"
+
+  simLand[[key]] <- c(forests, tsf)
+  terra::writeRaster(simLand[[key]],
+    file.path(outDir, paste0("mapLayers_", params$studyAreaName, "_", key, ".tif")),
+    overwrite = TRUE)
+
+  modLand <- simLand[[key]]
+  if (!is.null(weights(model))) {
+    w <- modLand[[1]]; w[] <- 1; names(w) <- "w"
+    modLand <- c(modLand, w)
+  }
+  simPred[[key]]   <- terra::predict(modLand, model, type = "response", re.form = NA)
+  pred.mask        <- terra::mask(simPred[[key]], studyArea)
+  breaks           <- terra::global(pred.mask, quantile, na.rm = TRUE,
+                                    probs = seq(0, 1, 1 / params$numBins))
+  simBinMap[[key]] <- terra::classify(pred.mask, t(breaks),
+                                      include.lowest = TRUE, brackets = TRUE)
+
+  terra::writeRaster(pred.mask,
+    file.path(outDir, paste0("rsfMap",    params$studyAreaName, "_", key, ".tif")),
+    overwrite = TRUE)
+  terra::writeRaster(simBinMap[[key]],
+    file.path(outDir, paste0("rsfBinMap_", params$studyAreaName, "_", key, ".tif")),
+    overwrite = TRUE)
+}
+```
+
+This script works -- on the machine where it was written, and only as
+long as someone else loads exactly the right inputs into exactly the
+right variable names beforehand. It is also impossible to compose with
+another module's outputs in a principled way: `cohortData`,
+`pixelGroupMap`, `timeSinceFire` have to *arrive* somehow. As a module,
+the same code declares those needs and gets them filled in by whoever
+runs the project.
+
+## Step 1: the metadata
+
+The first thing in `RSFpredict.R` is a `defineModule()` block. It
+contains nothing executable yet -- it's a *declaration* of what the
+module is. Three pieces matter:
+
+-   **`reqdPkgs`** -- what the module needs to be installed
+    (`setupProject()` reads this and reconciles it with what the rest
+    of the project needs);
+-   **`parameters`** -- every knob the script exposed (`numBins`,
+    `simulationProcess`, etc.), with type + default;
+-   **`inputObjects` / `outputObjects`** -- the names + classes the
+    module *expects* to find in the simList, and the names + classes it
+    *produces*. This is what lets `setupProject()` and the other
+    modules wire themselves together.
+
+```{r meta}
+defineModule(sim, list(
+  name        = "RSFpredict",
+  description = "Forecast a fitted RSF against simulated landscapes",
+  keywords    = c("RSF", "habitat", "caribou"),
+  authors     = structure(list(list(given = c("Julie", "W"),
+                                    family = "Turner",
+                                    role = c("aut", "cre"))),
+                          class = "person"),
+  version     = list(RSFpredict = "0.0.0.9000"),
+  timeunit    = "year",
+  documentation = list("README.md"),
+
+  ## packages the module needs -- merged with whoever else's at setupProject()
+  reqdPkgs = list(
+    "reproducible", "terra", "ggplot2", "glmmTMB",
+    "tidyterra", "viridis", "ggthemes",
+    "SpaDES.core (>= 3.0.3.9003)"
+  ),
+
+  ## every `params$X` in the linear script becomes a defineParameter()
+  parameters = bindrows(
+    defineParameter("numBins",            "integer",   10L,        NA, NA,
+                    "Number of bins for the classified RSF map"),
+    defineParameter("simulationProcess",  "character", "static",   NA, NA,
+                    "Should the simulation use LandR ('dynamic') or fixed cover ('static')?"),
+    defineParameter("predictionInterval", "numeric",   5,          NA, NA,
+                    "Years between predictions"),
+    defineParameter("predictStartYear",   "numeric",   2025,       NA, NA,
+                    "First year to forecast"),
+    defineParameter("predictLastYear",    "logical",   TRUE,       NA, NA,
+                    "Force a prediction at the final simulation year"),
+    defineParameter("ts_else",            "integer",   100L,       NA, NA,
+                    "Fill value for NA cells in time-since-fire"),
+    defineParameter(".studyAreaName",     "character", NA_character_, NA, NA,
+                    "Human-readable name for the study area")
+  ),
+
+  ## inputs the linear script assumed were already in scope
+  inputObjects = bindrows(
+    expectsInput("model",         "glmmTMB",    "Fitted RSF model"),
+    expectsInput("studyArea",     "SpatVector", "Unbuffered study area"),
+    expectsInput("modelLand",     "SpatRaster", "Cover layers the model was fit on"),
+    expectsInput("cohortData",    "data.table", "LandR cohort data"),
+    expectsInput("pixelGroupMap", "SpatRaster", "LandR pixel-group raster"),
+    expectsInput("timeSinceFire", "SpatRaster", "Time-since-fire raster (from scfm)"),
+    expectsInput("rasterToMatch", "SpatRaster", "Spatial template")
+  ),
+
+  ## things the linear script wrote to `pred`, `binMap`, `simLand`, ...
+  outputObjects = bindrows(
+    createsOutput("pred",      "SpatRaster", "Baseline RSF prediction"),
+    createsOutput("binMap",    "SpatRaster", "Baseline RSF prediction binned"),
+    createsOutput("simLand",   "list",       "Per-year stack of land covariates"),
+    createsOutput("simPred",   "list",       "Per-year RSF predictions"),
+    createsOutput("simBinMap", "list",       "Per-year binned RSF predictions")
+  )
+))
+```
+
+Two practical effects of writing the metadata first:
+
+-   `setupProject()` now knows it has to install `glmmTMB`, `tidyterra`,
+    and the rest before this module is asked to run. The user doesn't
+    list those in their `packages` argument -- the module brought them.
+-   The forest and fire modules can be plugged in *because the names
+    match*: `LandR::Biomass_core` produces `cohortData` and
+    `pixelGroupMap`; `scfm` produces `timeSinceFire`. Their
+    `createsOutput()` declarations meet our `expectsInput()`
+    declarations and `SpaDES` connects them.
+
+## Step 2: the `init` event
+
+`doEvent.RSFpredict()` is the function `SpaDES` calls every time one of
+this module's events fires. It's a `switch()` on the event name. The
+**`init` event** runs exactly once, at the start of the simulation.
+This is where the linear script's *setup section* lives -- but with one
+extra job: telling `SpaDES` what to do next.
+
+We rename the setup section's "build the baseline" block to
+`buildBaselineRSFmap` (an event), and `init` becomes a tiny scheduler:
+
+```{r init}
+doEvent.RSFpredict <- function(sim, eventTime, eventType) {
+  switch(
+    eventType,
+
+    init = {
+      ## run once: build the baseline RSF map immediately
+      sim <- scheduleEvent(sim, time(sim),
+                           "RSFpredict", "buildBaselineRSFmap")
+
+      ## if dynamic, also start the recurring loop at predictStartYear
+      if (P(sim)$simulationProcess == "dynamic") {
+        sim <- scheduleEvent(sim, P(sim)$predictStartYear,
+                             "RSFpredict", "simLayers")
+        sim <- scheduleEvent(sim, P(sim)$predictStartYear,
+                             "RSFpredict", "simRSFmap")
+      }
+
+      ## optionally pin a final-year prediction even if it doesn't fall
+      ## on a predictionInterval step
+      if (P(sim)$predictLastYear) {
+        sim <- scheduleEvent(sim, end(sim), "RSFpredict", "simLayers")
+      }
+    },
+
+    buildBaselineRSFmap = {
+      ## the *content* is the linear setup section, with sim$ in place
+      ## of bare variables
+      modLand <- sim$modelLand
+      modLand$timeSinceFire[is.na(modLand$timeSinceFire)] <- P(sim)$ts_else
+      if (!is.null(weights(sim$model))) {
+        w <- sim$modelLand[[1]]; w[] <- 1; names(w) <- "w"
+        modLand <- c(modLand, w)
+      }
+      sim$pred  <- terra::predict(modLand, sim$model,
+                                  type = "response", re.form = NA)
+      pred.mask <- terra::mask(sim$pred, sim$studyArea)
+      breaks    <- terra::global(pred.mask, quantile, na.rm = TRUE,
+                                 probs = seq(0, 1, 1 / P(sim)$numBins))
+      sim$binMap <- terra::classify(pred.mask, t(breaks),
+                                    include.lowest = TRUE, brackets = TRUE)
+    }
+
+    ## (the recurring events go here -- next section)
+  )
+  return(invisible(sim))
+}
+```
+
+Three things changed translating the setup section into the module:
+
+-   **Plain variables become `sim$X`.** The simList is the module's
+    scope; instead of `model`, `studyArea`, etc. coming from the caller's
+    workspace, they live on the simList and the module reads/writes
+    them as `sim$model`, `sim$pred`, ....
+-   **Parameters change accessor.** `params$numBins` becomes
+    `P(sim)$numBins`. Same value, but the source is now the simList,
+    which means a user can override defaults via
+    `setupProject(params = list(RSFpredict = list(numBins = 20)))`
+    without editing the module.
+-   **The loop is gone (for now).** Instead of iterating in R,
+    `init` *schedules* `simLayers` and `simRSFmap` at the right times
+    and `SpaDES` will fire them. This is what makes the module
+    interleave correctly with other modules: at each timestep, the
+    scheduler can call `Biomass_core` to advance the forest, then
+    `scfm` to advance fire, then our `simLayers` to assemble those
+    outputs into RSF covariates, then our `simRSFmap` to predict.
+
+## Step 3: the recurring events
+
+`simLayers` and `simRSFmap` are the body of the original annual loop,
+split at the natural seam: build inputs, then predict from them. Each
+ends by scheduling **itself** at `time(sim) + predictionInterval`, so
+they recur:
+
+```{r recurring}
+    simLayers = {
+      thisYear <- as.integer(time(sim))
+      key      <- paste0("year", thisYear)
+
+      template       <- sim$rasterToMatch
+      templateCoarse <- terra::aggregate(template, fact = 2)
+
+      reclassForest <- reclassifyCohortData(
+        cohortData         = sim$cohortData,
+        sppEquivCol        = "LandR",
+        pixelGroupMap      = sim$pixelGroupMap,
+        mixedForestCutoffs = c(0.33, 0.66)
+      )
+      ft <- reclassForest$`forest type`
+
+      needle_mask <- terra::classify(ft,
+        rcl = matrix(c(210, 1), ncol = 2, byrow = TRUE), others = 0)
+      prop_needleleaf <- terra::resample(needle_mask, template,
+                                         method = "average")
+      names(prop_needleleaf) <- "prop_needleleaf"
+
+      mixed_mask <- terra::classify(ft,
+        rcl = matrix(c(220, 1, 230, 1), ncol = 2, byrow = TRUE), others = 0)
+      prop_mixedforest <- terra::resample(mixed_mask, template,
+                                          method = "average")
+      names(prop_mixedforest) <- "prop_mixedforest"
+
+      forests <- reproducible::postProcess(
+        c(prop_needleleaf, prop_mixedforest),
+        templateCoarse, method = "average")
+
+      tsf <- reproducible::postProcess(sim$timeSinceFire, to = templateCoarse)
+      tsf[is.na(tsf)] <- P(sim)$ts_else + (thisYear - 2020)
+      names(tsf) <- "timeSinceFire"
+
+      sim$simLand[[key]] <- c(forests, tsf)
+
+      outDir <- reproducible::checkPath(
+        file.path(outputPath(sim),
+                  paste0(P(sim)$.studyAreaName, "_sims")), create = TRUE)
+      terra::writeRaster(
+        sim$simLand[[key]],
+        file.path(outDir, paste0("mapLayers_",
+                                 P(sim)$.studyAreaName, "_", key, ".tif")),
+        overwrite = TRUE)
+
+      ## schedule self
+      sim <- scheduleEvent(sim, time(sim) + P(sim)$predictionInterval,
+                           "RSFpredict", "simLayers")
+    },
+
+    simRSFmap = {
+      thisYear <- as.integer(time(sim))
+      key      <- paste0("year", thisYear)
+
+      modLand <- sim$simLand[[key]]
+      if (!is.null(weights(sim$model))) {
+        w <- modLand[[1]]; w[] <- 1; names(w) <- "w"
+        modLand <- c(modLand, w)
+      }
+      sim$simPred[[key]] <- terra::predict(modLand, sim$model,
+                                           type = "response", re.form = NA)
+      pred.mask <- terra::mask(sim$simPred[[key]], sim$studyArea)
+      breaks    <- terra::global(pred.mask, quantile, na.rm = TRUE,
+                                 probs = seq(0, 1, 1 / P(sim)$numBins))
+      sim$simBinMap[[key]] <- terra::classify(pred.mask, t(breaks),
+                                              include.lowest = TRUE,
+                                              brackets = TRUE)
+
+      outDir <- reproducible::checkPath(
+        file.path(outputPath(sim),
+                  paste0(P(sim)$.studyAreaName, "_sims")), create = TRUE)
+      terra::writeRaster(
+        pred.mask,
+        file.path(outDir, paste0("rsfMap",
+                                 P(sim)$.studyAreaName, "_", key, ".tif")),
+        overwrite = TRUE)
+      terra::writeRaster(
+        sim$simBinMap[[key]],
+        file.path(outDir, paste0("rsfBinMap_",
+                                 P(sim)$.studyAreaName, "_", key, ".tif")),
+        overwrite = TRUE)
+
+      ## schedule self
+      sim <- scheduleEvent(sim, time(sim) + P(sim)$predictionInterval,
+                           "RSFpredict", "simRSFmap")
+    },
+```
+
+What's different from the linear loop:
+
+-   **No `for (thisYear in years)`.** The "current year" is just
+    `time(sim)`, and the recurrence is the trailing `scheduleEvent()`
+    call. `SpaDES` walks the queue and fires our events at the right
+    moments -- *interleaved* with whatever other modules' events fall
+    between.
+-   **`simLayers` and `simRSFmap` are separate events**, even though
+    they always run for the same year. That separation is what lets
+    *other* modules (the forest and fire ones) update `cohortData` /
+    `timeSinceFire` **between** `simLayers` of year 2025 and
+    `simLayers` of year 2030.
+-   **Outputs accumulate on the simList**, not in standalone
+    `list()`s. `sim$simLand[[key]] <- ...` is the module's way of
+    saying "here is this year's covariate stack; anyone downstream can
+    use it".
+
+## Running it
+
+Once the module exists on disk (with `RSFpredict.R` plus the
+`reclassifyCohortData()` helper under `R/`), it slots into the same
+`setupProject()` call we used in [Forecasting wildlife habitat
+@sec-rsfForecast]:
+
+```{r run}
+out <- setupProject(
+  paths    = list(projectPath = "~/SpaDES_book/RSF_forecast"),
+  modules  = c(
+    "PredictiveEcology/Biomass_borealDataPrep@development",
+    "PredictiveEcology/Biomass_core@development",
+    "PredictiveEcology/Biomass_regeneration@master",
+    file.path("PredictiveEcology/scfm@development/modules",
+              c("scfmDataPrep", "scfmIgnition", "scfmEscape",
+                "scfmSpread", "scfmDiagnostics")),
+    "JWTurn/RSFpredict@main"
+  ),
+  params = list(
+    RSFpredict = list(simulationProcess = "dynamic")
+  ),
+  times = list(start = 2020, end = 2075),
+  ## ... and your studyArea / model / modelLand prepInputs as before
+)
+
+results <- SpaDES.core::simInitAndSpades2(out)
+```
+
+## What the conversion bought us
+
+Same code, three new capabilities:
+
+-   **Composability.** Because the `inputObjects` declarations name
+    `cohortData`, `pixelGroupMap`, and `timeSinceFire`, the forest and
+    fire modules can supply them. The linear script had no way to ask
+    for those.
+-   **Scheduling.** The `simulationProcess = "dynamic"` parameter
+    *flips a branch* in `init`. The same module supports static and
+    dynamic modes without two scripts.
+-   **Reproducibility.** `Cache()` calls on the expensive
+    `terra::predict` step memoize across runs; metadata + setupProject
+    means the same `out` produces the same results on any machine.
+
+## See also
+
+[Forecasting wildlife habitat @sec-rsfForecast]
+
+[Module Files and Metadata @sec-moduleFilesAndMetadata]
+
+[Modules and Events @sec-modulesAndEvents]
+
+[Scheduling @sec-scheduling]
+
+## Barebones R script
+
+```{r}
+#| eval: true
+#| echo: false
+#| purl: false
+#| cache: false
+
+fileName <- file.path("R/Chapter_scripts", sub("rmarkdown", "R", knitr::current_input()))
+```
+
+```{r file = fileName}
+#| eval: false
+#| echo: true
+#| purl: false
+#| cache: false
+
+```
