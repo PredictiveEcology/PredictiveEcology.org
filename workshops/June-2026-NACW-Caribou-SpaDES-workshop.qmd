@@ -16,7 +16,7 @@ editor:
     wrap: 150
 ---
 
-## Date: June 14, 2026
+## Date: June 15, 2026
 
 ## Location: [North American Caribou Workshop](https://event.fourwaves.com/nacw2026/pages/3276a5bf-46ef-4f7a-a4e0-acf2b1ce5576)
 
