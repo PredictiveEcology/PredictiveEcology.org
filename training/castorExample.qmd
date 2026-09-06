@@ -142,7 +142,7 @@ out <- setupProject(
   options = list(repos = repos),
   functions = "bcgov/castor@main/R/functions/R_Postgres.R",
   # install and load
-  require = "dplyr",
+  require = c("dplyr", "data.table"),
   # install but don't load these:
   packages = c(
     "DBI", 
@@ -361,7 +361,7 @@ out <- setupProject(
   options = list(repos = repos),
   functions = "bcgov/castor@main/R/functions/R_Postgres.R",
   # install and load
-  require = "dplyr",
+  require = c("dplyr", "data.table"),
   # install but don't load these:
   packages = c(
     "DBI",

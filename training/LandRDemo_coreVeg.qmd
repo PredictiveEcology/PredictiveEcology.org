@@ -562,7 +562,7 @@ outValid <- setupProject(
   },
   simulationOutputs = {
     lapply(simOutExperiment, SpaDES.core::outputs) |> 
-      rbindlist()
+      data.table::rbindlist()
   },
   sppEquiv = simOut$sppEquiv,
   sppEquivCol = simOut$sppEquivCol,
