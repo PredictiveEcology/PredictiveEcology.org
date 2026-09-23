@@ -21,27 +21,31 @@ out <- setupProject(
               "bcgov/growingStockCastor",
               "bcgov/forestryCastor",
               "bcgov/blockingCastor"),
-  functions = "bcgov/castor@main/R/functions/R_Postgres.R",
+  functions = "bcgov/castor@main/functions/R_Postgres.R",
   ## install and load
-  require = c("dplyr", "reproducible"),
+  require = c("dplyr", "reproducible", "DBI"), ## DBI should be in dataCastor reqpkgs
   ## install but don't load these:
   packages = c(
-    "DBI",
     "DiagrammeR",
     "data.table",
     "googledrive",
     "keyring",
     "rgdal",
     "RPostgreSQL",
+    "RSQLite",  ## should be in dataCastor reqpkgs
     "sp",
     "terra"
   ),
   sideEffects = {
     reproducible::preProcess(url = "https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing",
-                             destinationPath = "R/scenarios/comparison_stsm",
+                             destinationPath = "scenarios/comparison_stsm/inputs",
+                             fun = NA)
+    reproducible::preProcess(url = "https://github.com/be918a03-6ba0-44c1-a4ab-ab3c67a3859e",
+                             targetFile = "params.R",
+                             destinationPath = "R/",
                              fun = NA)
   },
-  params = "params.R",
+  params = "R/params.R",
   times = list(start = 0, end = 20),
   outputs = {
     data.frame(objectName = c("harvestReport",
