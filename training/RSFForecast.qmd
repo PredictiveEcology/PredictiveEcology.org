@@ -232,7 +232,6 @@ Now run the modules with `simInitAndSpades2`
 
 ```{r rsf-shown}
 #| code-fold: false
-#| eval: false
 results <- SpaDES.core::simInitAndSpades2(out)
 ```
 
@@ -472,7 +471,6 @@ We can get a little more power to visualize with a full shiny web page (but won'
 
 
 ```{r shine}
-#| eval: false
 if (!require("pak")) install.packages("pak")
 pak::pak("SpaDES.shiny")
 
@@ -509,7 +507,6 @@ fileName <- file.path(qmdPath, "R/Chapter_scripts", sub("rmarkdown", "R", knitr:
 ```
 
 ```{r file = fileName}
-#| eval: false
 #| echo: true
 #| purl: false
 #| cache: false
