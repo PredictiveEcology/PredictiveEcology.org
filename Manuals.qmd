@@ -6,16 +6,36 @@ listing:
   - id: Manuals
     type: table
     contents: 
+      # - path: https://predictiveecology.github.io/fireSenseManual/
+      #   image: 
+      #   title: "fireSense Manual"
+      #   description: "Manual for using the fireSense ecosystem of modules"
+      #   categories: [SpaDES, fireSense]
+        
       - path: https://landr-manual.predictiveecology.org/index.html
         image: https://landr-manual.predictiveecology.org/modules/Biomass_core/figures/Biomass_coreOutPlots1.png
         title: "LandR Manual"
         description: "Manual for using the LandR ecosystem of modules"
         categories: [SpaDES, LandR]
+        
+      - path: https://predictiveecology.github.io/LandRCBM/
+        image: assets/img/LandRCBM.png
+        title: "LandRCBM Manual"
+        description: "Manual for using LandRCBM, a framework linking the LandR and spadesCBM ecosystems of modules"
+        categories: [SpaDES, LandR, spadesCBM]
+        
       - path: https://predictiveecology.github.io/LandWeb/
         image: https://predictiveecology.github.io/LandWeb/figures/LandWeb_gg.png
         title: "LandWeb Manual"
         description: "The LandWeb project"
         categories: [SpaDES, LandR]
+        
+      - path: https://predictiveecology.github.io/spadesCBM/
+        image: 
+        title: "spadesCBM Manual"
+        description: "Manual for using spadesCBM ecosystem of modules"
+        categories: [SpaDES, spadesCBM]
+
     fields: [image, title, description]
     max-description-length: 1000000
     image-height: 150px
