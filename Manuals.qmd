@@ -6,11 +6,11 @@ listing:
   - id: Manuals
     type: table
     contents: 
-      # - path: https://predictiveecology.github.io/fireSenseManual/
-      #   image: 
-      #   title: "fireSense Manual"
-      #   description: "Manual for using the fireSense ecosystem of modules"
-      #   categories: [SpaDES, fireSense]
+      - path: https://predictiveecology.github.io/fireSenseManual/
+        image:
+        title: "fireSense Manual"
+        description: "Manual for using the fireSense ecosystem of modules"
+        categories: [SpaDES, fireSense]
         
       - path: https://landr-manual.predictiveecology.org/index.html
         image: https://landr-manual.predictiveecology.org/modules/Biomass_core/figures/Biomass_coreOutPlots1.png
