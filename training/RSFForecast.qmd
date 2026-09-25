@@ -174,7 +174,7 @@ out <- setupProject(
   packages = c(
     "httr2",
     "terra", "SpaDES.core (>=3.1.2.9016)",
-    "gert", "remotes"
+    "gert", "remotes", "reproducible"
   ),
   times = list(start = 2020, end = 2075),
 
