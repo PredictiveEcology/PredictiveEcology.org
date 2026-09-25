@@ -120,7 +120,7 @@ options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.v
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 options(repos = repos)
 if (!require("pak")) install.packages("pak")
-pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project", "reproducible"), ask = FALSE)
 
 library(SpaDES.project)
 
