@@ -120,7 +120,7 @@ options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.v
 repos <- c("https://predictiveecology.r-universe.dev", getOption("repos"))
 options(repos = repos)
 if (!require("pak")) install.packages("pak")
-pak::pak(c("Require", "SpaDES.project", "reproducible"), ask = FALSE)
+pak::pak(c("Require", "SpaDES.project"), ask = FALSE)
 
 library(SpaDES.project)
 
@@ -174,7 +174,7 @@ out <- setupProject(
   packages = c(
     "httr2",
     "terra", "SpaDES.core (>=3.1.2.9016)",
-    "gert", "remotes", "reproducible"
+    "gert", "remotes"
   ),
   times = list(start = 2020, end = 2075),
 
