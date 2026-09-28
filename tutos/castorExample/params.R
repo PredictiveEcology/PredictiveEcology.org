@@ -4,7 +4,7 @@ list(
   dataCastor = list (dbName='castor',
                      saveCastorDB = FALSE,
                      sqlite_dbname = "stsm_compare_noroads_noblocks",
-                     useCastorDB = "scenarios/comparison_stsm/inpus/stsm_compare_noroads_noblocks_castordb.sqlite",
+                     useCastorDB = "scenarios/comparison_stsm/inputs/stsm_compare_noroads_noblocks_castordb.sqlite",
                      nameBoundaryFile = "castor_stsm_compare.bounds_tsa99",
                      nameBoundaryColumn = "tsa_name",
                      nameBoundary = "tsa99",

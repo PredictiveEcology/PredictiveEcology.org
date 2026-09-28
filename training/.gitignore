@@ -21,3 +21,5 @@ CHECKSUMS.txt
 Rplot*.png
 gadm/
 SpeciesPresentInCanadianForests_SCANFI_2020.*
+
+**/*.quarto_ipynb
