@@ -40,12 +40,8 @@ out <- setupProject(
     reproducible::preProcess(url = "https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing",
                              destinationPath = "scenarios/comparison_stsm/inputs",
                              fun = NA)
-    reproducible::preProcess(url = "https://raw.githubusercontent.com/PredictiveEcology/PredictiveEcology.org/refs/heads/main/tutos/castorExample/params.R",
-                             targetFile = "params.R",
-                             destinationPath = "R/",
-                             fun = NA)
   },
-  params = "R/params.R",
+  params = "PredictiveEcology/PredictiveEcology.org@main/tutos/castorExample/params.R",
   times = list(start = 0, end = 20),
   outputs = {
     data.frame(objectName = c("harvestReport",
