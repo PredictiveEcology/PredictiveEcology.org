@@ -36,11 +36,7 @@ out <- setupProject(
     "sp",
     "terra"
   ),
-  sideEffects = {
-    reproducible::preProcess(url = "https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing",
-                             destinationPath = "scenarios/comparison_stsm/inputs",
-                             fun = NA)
-  },
+  sideEffects = "fixDb.R",   ## necessary if using database in stsm_compare_noroads_noblocks_castordb.sqlite in https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing
   params = "PredictiveEcology/PredictiveEcology.org@main/tutos/castorExample/params.R",
   times = list(start = 0, end = 20),
   outputs = {
@@ -94,6 +90,7 @@ out <- setupProject(
   },
   Restart = TRUE
 )
+
 
 ## initialize simulation
 castorInit <- do.call(SpaDES.core::simInit, out)
