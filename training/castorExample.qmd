@@ -128,82 +128,80 @@ None of this happens if the RStudio project file is already active
 # set up the workflow paths, dependencies and modules
 # as well as simulation parameters, (some) inputs and outputs
 out <- setupProject(
-  paths = list("inputPath" = "modules/forestryCastor/inputs",
-               "outputPath" = "R/scenarios/comparison_stsm/outputs",
-               "modulePath" = "modules/",
-               "cachePath" = "modules/forestryCastor",
-               "projectPath" = "~/SpaDES_book/castorExample"),
-  modules = file.path("bcgov/castor@main/R/SpaDES-modules",
-                      c("dataCastor",
-                      "growingStockCastor",
-                      "blockingCastor",
-                      "forestryCastor",
-                      "roadCastor")),
-  options = list(repos = repos),
-  functions = "bcgov/castor@main/R/functions/R_Postgres.R",
-  # install and load
-  require = c("dplyr", "data.table"),
-  # install but don't load these:
+  paths = list("projectPath" = "~/tests/castorExample",
+               "inputPath" = "scenarios/comparison_stsm/inputs",
+               "outputPath" = "scenarios/comparison_stsm/outputs"),
+  modules = c("bcgov/dataCastor",
+              "bcgov/growingStockCastor",
+              "bcgov/forestryCastor",
+              "bcgov/blockingCastor"),
+  functions = "bcgov/castor@main/functions/R_Postgres.R",
+  ## install and load
+  require = c("dplyr", "reproducible", "DBI"), ## DBI should be in dataCastor reqpkgs
+  ## install but don't load these:
   packages = c(
-    "DBI", 
     "DiagrammeR",
+    "data.table",
+    "googledrive",
     "keyring",
-    "rgdal", 
-    "RPostgreSQL", 
+    "rgdal",
+    "RPostgreSQL",
+    "RSQLite",  ## should be in dataCastor reqpkgs
     "sp",
     "terra"
   ),
-  params = "PredictiveEcology/PredictiveEcology.org@main/tutos/castorExample/params.R",  
+  sideEffects = "fixDb.R",   ## necessary if using database in stsm_compare_noroads_noblocks_castordb.sqlite in https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing
+  params = "PredictiveEcology/PredictiveEcology.org@main/tutos/castorExample/params.R",
   times = list(start = 0, end = 20),
   outputs = {
     data.frame(objectName = c("harvestReport",
                               "growingStockReport"))
   },
   scenario = {
-    data.table(name = "stsm_base_case",
-               description = paste("Priority queue = oldest first. Adjacency constraint",
-                                   "= None. Includes roads (mst) and blocks (pre).",
-                                   "Harvest flow = 147,300 m3/year in decade 1, 133,500",
-                                   "m3/year in decade 2, 132,300 m3/year in decades 3 to",
-                                   "14 and 135,400 m3/year in decades 15 to 25.",
-                                   "Minimum harvest age = 80 and minimum harvest volume = 150"))
+    data.table::data.table(name = "stsm_base_case",
+                           description = paste("Priority queue = oldest first. Adjacency constraint",
+                                               "= None. Includes roads (mst) and blocks (pre).",
+                                               "Harvest flow = 147,300 m3/year in decade 1, 133,500",
+                                               "m3/year in decade 2, 132,300 m3/year in decades 3 to",
+                                               "14 and 135,400 m3/year in decades 15 to 25.",
+                                               "Minimum harvest age = 80 and minimum harvest volume = 150"))
   },
   harvestFlow = {
-    rbindlist(list(data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 1,
-                                                 to = 1, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1473000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 2,
-                                                 to = 2, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1335000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 3,
-                                                 to = 14, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1323000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 15,
-                                                 to = 25, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1354000, 
-                              partition_type = 'live')  
+    data.table::rbindlist(list(
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 1,
+                                                to = 1,
+                                                by = 1),
+                                           1),
+                             flow = 1473000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 2,
+                                                to = 2,
+                                                by = 1),
+                                           1),
+                             flow = 1335000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 3,
+                                                to = 14,
+                                                by = 1),
+                                           1),
+                             flow = 1323000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 15,
+                                                to = 25,
+                                                by = 1),
+                                           1),
+                             flow = 1354000,
+                             partition_type = 'live')
     ))
   },
-  # overwrite = TRUE,  ## activate if you want to keep modules up-to-date the with online repository
   Restart = TRUE
 )
 ```
@@ -347,78 +345,80 @@ re-generating a new workflow with little effort from the user.
 ```{r newWF}
 #| eval: false
 
-modules <- c("dataCastor", 
-             "growingStockCastor", 
-             "forestryCastor")
+modules <- c("bcgov/dataCastor",
+              "bcgov/growingStockCastor",
+              "bcgov/forestryCastor")
 
 out <- setupProject(
-  paths = list("inputPath" = "modules/forestryCastor/inputs",
-               "outputPath" = "/R/scenarios/comparison_stsm/outputs",
-               "modulePath" = "modules/",
-               "cachePath" = "modules/forestryCastor",
-               "projectPath" = "~/SpaDES_book/castorExample/"),
+  paths = list("projectPath" = "~/tests/castorExample",
+               "inputPath" = "scenarios/comparison_stsm/inputs",
+               "outputPath" = "scenarios/comparison_stsm/outputs"),
   modules = modules,
-  options = list(repos = repos),
-  functions = "bcgov/castor@main/R/functions/R_Postgres.R",
-  # install and load
-  require = c("dplyr", "data.table"),
-  # install but don't load these:
+  functions = "bcgov/castor@main/functions/R_Postgres.R",
+  ## install and load
+  require = c("dplyr", "reproducible", "DBI"), ## DBI should be in dataCastor reqpkgs
+  ## install but don't load these:
   packages = c(
-    "DBI",
+    "DiagrammeR",
+    "data.table",
+    "googledrive",
     "keyring",
     "rgdal",
     "RPostgreSQL",
+    "RSQLite",  ## should be in dataCastor reqpkgs
     "sp",
     "terra"
   ),
-  params = "params.R",
+  sideEffects = "fixDb.R",   ## necessary if using database in stsm_compare_noroads_noblocks_castordb.sqlite in https://drive.google.com/file/d/1-2POunzC7aFbkKK5LeBJNsFYMBBY8dNx/view?usp=sharing
+  params = "PredictiveEcology/PredictiveEcology.org@main/tutos/castorExample/params.R",
   times = list(start = 0, end = 20),
   outputs = {
     data.frame(objectName = c("harvestReport",
                               "growingStockReport"))
   },
   scenario = {
-    data.table(name = "stsm_base_case",
-               description = paste("Priority queue = oldest first. Adjacency constraint",
-                                   "= None. Includes roads (mst) and blocks (pre).",
-                                   "Harvest flow = 147,300 m3/year in decade 1, 133,500",
-                                   "m3/year in decade 2, 132,300 m3/year in decades 3 to",
-                                   "14 and 135,400 m3/year in decades 15 to 25.",
-                                   "Minimum harvest age = 80 and minimum harvest volume = 150"))
+    data.table::data.table(name = "stsm_base_case",
+                           description = paste("Priority queue = oldest first. Adjacency constraint",
+                                               "= None. Includes roads (mst) and blocks (pre).",
+                                               "Harvest flow = 147,300 m3/year in decade 1, 133,500",
+                                               "m3/year in decade 2, 132,300 m3/year in decades 3 to",
+                                               "14 and 135,400 m3/year in decades 15 to 25.",
+                                               "Minimum harvest age = 80 and minimum harvest volume = 150"))
   },
   harvestFlow = {
-    rbindlist(list(data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 1,
-                                                 to = 1, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1473000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 2,
-                                                 to = 2, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1335000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 3,
-                                                 to = 14, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1323000, 
-                              partition_type = 'live'),
-                   data.table(compartment = "tsa99",
-                              partition = ' age > 79 AND vol > 149 ', 
-                              period = rep( seq (from = 15,
-                                                 to = 25, 
-                                                 by = 1),
-                                            1), 
-                              flow = 1354000, 
-                              partition_type = 'live')  
+    data.table::rbindlist(list(
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 1,
+                                                to = 1,
+                                                by = 1),
+                                           1),
+                             flow = 1473000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 2,
+                                                to = 2,
+                                                by = 1),
+                                           1),
+                             flow = 1335000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 3,
+                                                to = 14,
+                                                by = 1),
+                                           1),
+                             flow = 1323000,
+                             partition_type = 'live'),
+      data.table::data.table(compartment = "tsa99",
+                             partition = ' age > 79 AND vol > 149 ',
+                             period = rep( seq (from = 15,
+                                                to = 25,
+                                                by = 1),
+                                           1),
+                             flow = 1354000,
+                             partition_type = 'live')
     ))
   },
   Restart = TRUE
