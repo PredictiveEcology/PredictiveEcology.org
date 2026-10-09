@@ -98,7 +98,7 @@ out <- setupProject(
   modules = c("PredictiveEcology/Biomass_borealDataPrep@main",
               "PredictiveEcology/Biomass_core@main",
               "PredictiveEcology/Biomass_regeneration@main",
-              "PredictiveEcology/scfm@main"
+              "PredictiveEcology/scfm"
               # scfm is a parent module: it brings in scfmDataPrep, scfmIgnition,
               # scfmEscape, scfmSpread and scfmDiagnostics from the same repository
   ),
