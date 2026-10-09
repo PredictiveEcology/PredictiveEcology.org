@@ -75,10 +75,9 @@ University (thus the name: **S**teve **C**umming **F**ire **M**odel).
 
 As with other examples, we also include all the parameterization modules
 here, with `Biomass_borealDataPrep` for the `Biomass_***` modules and
-`scfmLandcoverInit`, `scfmRegime` and `scfmDriver` for the `scfm`
-family.
+`scfmDataPrep` for the `scfm` family.
 
-This makes for a 10 module project. Using `setupProject`, we can readily
+This makes for an 8 module project. Using `setupProject`, we can readily
 run these from their canonical "i.e., current, up to date, open and
 available" versions:
 
@@ -99,11 +98,9 @@ out <- setupProject(
   modules = c("PredictiveEcology/Biomass_borealDataPrep@main",
               "PredictiveEcology/Biomass_core@main",
               "PredictiveEcology/Biomass_regeneration@main",
-              file.path("PredictiveEcology/scfm@development/modules",
-                        c("scfmLandcoverInit", "scfmRegime", "scfmDriver",
-                          "scfmIgnition", "scfmEscape", "scfmSpread",
-                          "scfmDiagnostics"))
-              #note scfm is a series of modules on a single git repository
+              "PredictiveEcology/scfm"
+              # scfm is a parent module: it brings in scfmDataPrep, scfmIgnition,
+              # scfmEscape, scfmSpread and scfmDiagnostics from the same repository
   ),
   params = list(
     .globals = list(
@@ -112,7 +109,7 @@ out <- setupProject(
       .plots = c("png"),
       .useCache = c(".inputObjects", "init")
     ),
-    scfmDriver = list(targetN = 1000, #default is 4000 - higher targetN adds time + precision
+    scfmDataPrep = list(targetN = 1000, #default is 4000 - higher targetN adds time + precision
                       # targetN would ideally be minimum 2000 - mean fire size estimates will be bad with 1000
                       .useParallelFireRegimePolys = TRUE) #assumes parallelization is an otpion
 
@@ -136,21 +133,21 @@ out <- setupProject(
     sa <- LandR::randomStudyArea(center = sa, size = 10000 * 250 * 30000, seed = 1002)
     sa <- sf::st_as_sf(sa)
   },
-  studyAreaLarge = {
+  studyArea_biomassParam = {
     sf::st_buffer(studyArea, 5000)
   },
-  rasterToMatchLarge = {
-    rtml<- terra::rast(terra::ext(studyAreaLarge), res = c(250, 250))
-    terra::crs(rtml) <- terra::crs(studyAreaLarge)
+  rasterToMatch_biomassParam = {
+    rtml<- terra::rast(terra::ext(studyArea_biomassParam), res = c(250, 250))
+    terra::crs(rtml) <- terra::crs(studyArea_biomassParam)
     rtml[] <- 1
-    rtml <- terra::mask(rtml, studyAreaLarge)
+    rtml <- terra::mask(rtml, studyArea_biomassParam)
   },
   rasterToMatch = {
-    rtm <- terra::crop(rasterToMatchLarge, studyArea)
+    rtm <- terra::crop(rasterToMatch_biomassParam, studyArea)
     rtm <- terra::mask(rtm, studyArea)
   },
   sppEquiv = {
-    speciesInStudy <- LandR::speciesInStudyArea(studyAreaLarge)
+    speciesInStudy <- LandR::speciesInStudyArea(studyArea_biomassParam)
     species <- LandR::equivalentName(speciesInStudy$speciesList, df = LandR::sppEquivalencies_CA, "LandR")
     sppEquiv <- LandR::sppEquivalencies_CA[LandR %in% species]
     sppEquiv <- sppEquiv[KNN != "" & LANDIS_traits != ""] #avoid a bug with shore pine
