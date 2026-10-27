@@ -36,8 +36,9 @@ jobs:
           version: 1.3.450
 
       - name: Install units
-        if: runner.os == 'Linux'
-        run: sudo apt-get install libudunits2-dev libarchive-dev
+        uses: PredictiveEcology/actions/install-apt-packages@main
+        with:
+          packages: libudunits2-dev libarchive-dev
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2

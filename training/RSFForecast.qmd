@@ -109,6 +109,7 @@ options(spades.packagePath = .libPaths()[1], reproducible.verbose = 0, Require.v
 
 ```{r setupProject}
 #| eval: true
+#| error: false
 #| results: hide
 #| cache: false
 #| outputs: false
