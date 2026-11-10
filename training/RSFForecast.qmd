@@ -131,10 +131,6 @@ out <- setupProject(
   # useGit = "yourGitHubName",   # optional: clone modules as git repos under your account
   paths = list(projectPath = projPath),
   options = list(
-    # We host several files on both GoogleDrive and Compute Canada. This redirects the GoogleDrive
-    #   file requests to Compute Canada so we don't need to log in to GoogleDrive
-    reproducible.urlRemap =
-      "https://object-arbutus.cloud.computecanada.ca/predictiveecology/SCANFI_v2/SCANFI_v2_files_on_arbutus.csv",
     # a shared cloud cache folder, so a whole team can re-use cached results
     reproducible.cloudFolderID =
       "https://drive.google.com/drive/folders/199oEp-TVaCyacwqS4PPf3XWMbhPe4YBN?usp=share_link"
@@ -442,25 +438,65 @@ folder path, or nothing at all (it falls back to
 
 We can use a tool in `SpaDES.project::plotSAsLeaflet()` that allows us to automatically show several of the layers using `leaflet`. If we run it on `results`, i.e., the `simList` that exists at year 2075, we will see the state of the rasters and polygons at the end. Since some of them do not change during the 50 years, some will reflect the starting conditions. To know what each object name is, we need to look at the metadata of each module.
 
+These functions draw interactive maps you can pan and zoom. Run them in
+your own session; this manual shows static versions of the same layers
+below each one.
+
 ```{r plotSAsLeaflet}
-#| eval: true
-#| outputs: false
+#| eval: false
 SpaDES.project::plotSAsLeaflet(results)
+```
+
+```{r plotSAsStatic}
+#| eval: true
+#| echo: false
+#| purl: false
+#| fig-width: 9
+#| fig-height: 6
+#| fig-cap: "Some of the spatial layers in `results` at the end of the simulation (2075)"
+endLayers <- c("standAgeMap", "vegTypeMap", "rstLCC", "timeSinceFire",
+               "simulatedBiomassMap", "ecoregionMap")
+endLayers <- Filter(function(nm) inherits(results[[nm]], "SpatRaster"), endLayers)
+op <- par(mfrow = c(2, 3))
+for (nm in endLayers) terra::plot(results[[nm]][[1]], main = nm)
+par(op)
 ```
 
 We can pull out the *change over time* with:
 
 ```{r plotChangeOverTime}
-#| eval: true
+#| eval: false
 SpaDES.project::plotChangeOverTime(results)
 ```
 
+```{r plotChangeOverTimeStatic}
+#| eval: true
+#| echo: false
+#| purl: false
+#| fig-width: 7
+#| fig-height: 5
+#| fig-cap: "Change in predicted RSF, 2075 minus 2025"
+terra::plot(diffMap, col = rev(terra::map.pal("differences")))
+```
 
 We can pull out the *the time series of each layer that has this* with:
 
 ```{r plotTimeSeriesLeaflet}
-#| eval: true
+#| eval: false
 SpaDES.project::plotTimeSeriesLeaflet(results)
+```
+
+```{r plotTimeSeriesStatic}
+#| eval: true
+#| echo: false
+#| purl: false
+#| fig-width: 9
+#| fig-height: 7
+#| fig-cap: "Binned RSF predictions in each simulated year"
+binMaps <- terra::rast(results$simBinMap)
+names(binMaps) <- sub("^year", "", names(results$simBinMap))
+terra::plot(binMaps, type = "continuous", nc = 4,
+            range = range(terra::minmax(binMaps)))
 ```
 
 These functions are intended to be used to explore outputs, rather than present publication-ready visuals.
