@@ -426,12 +426,12 @@ year. Clicking through those one at a time is tedious. The
 viewer: it recursively scans the output folder, groups files that share
 a base name but differ by an embedded timestamp into time-series
 "objects", and launches a Shiny app where you can step (or animate)
-`leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
 through time. Maps (`.tif`) are drawn on a choosable web basemap with
-figures (`.png`) are shown as images; two extra tabs show the snapshots.
-You can point it at a `simList` (it uses that object's `last - first`
-change and a user-defined difference between any two `outputPath()`), a
-folder path, or nothing at all (it falls back to
+`leaflet`/`leafem` (reprojected and tiled so pan/zoom stay fast), while
+figures (`.png`) are shown as images; two extra tabs show the
+`last - first` change and a user-defined difference between any two
+snapshots. You can point it at a `simList` (it uses that object's
+`outputPath()`), a folder path, or nothing at all (it falls back to
 `getOption("spades.outputPath")`).
 
 ### Using `leaflet`
