@@ -1,0 +1,12 @@
+Package: PredictiveEcology.org
+Title: Source for the predictiveecology.org website and training book
+Version: 0.0.1
+Description: Not an R package. Lists the R packages the site render needs, so
+    CI can install them with PredictiveEcology/actions/setup-r-deps.
+Imports:
+    httr,
+    igraph,
+    knitr,
+    quarto,
+    rmarkdown,
+    terra
